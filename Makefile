@@ -10,9 +10,7 @@ RM=del
 
 # Builder directories
 CONFIG_DIR=config
-GMAP_DIR=map
 STYLES_DIR=styles
-
 
 # External data sources
 GEOFABRIK_URL=http://download.geofabrik.de/europe/
@@ -41,6 +39,7 @@ TILES_DIR=$(DATASET_DIR)\tiles
 TILE_ARGS=$(TILES_DIR)\template.args
 
 # Garmin map generation
+GMAP_DIR=c:\Dataset\gmap
 OHM_ARGS_TEMPLATE=$(CONFIG_DIR)\ohm-template.args
 TYP_FILE=$(CONFIG_DIR)\ohm.typ
 STYLE_NAME=hiking

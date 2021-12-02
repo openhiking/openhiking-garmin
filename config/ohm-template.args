@@ -1,0 +1,31 @@
+#######################################################
+# OpenHikingMap
+#
+# mkgmap options file
+#
+########################################################
+
+family-id:3690
+family-name: OpenHiking
+overview-mapname:openhiking
+series-name:OpenHiking
+description:openhiking
+style=hiking
+drive-on=right
+draw-priority=10
+code-page=1250
+show-profiles=1
+dem-interpolation=bilinear
+dem-dists=9942,9942,9942,13248,44176
+overview-dem-dist=88368
+remove-short-arcs
+keep-going
+#report-roundabout-issues
+fix-roundabout-direction
+index
+route
+nsis
+tdbfile
+add-pois-to-areas
+add-pois-to-lines
+lower-case

@@ -1,0 +1,467 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering style definitions
+#
+########################################################
+amenity=* & mkgmap:line2poi=true {delete amenity}
+barrier=* & mkgmap:line2poi=true {delete barrier}
+historic=* & mkgmap:line2poi=true {delete historic}
+landuse=* & mkgmap:line2poi=true {delete landuse}
+leisure=* & mkgmap:line2poi=true {delete leisure}
+man_made=* & mkgmap:line2poi=true {delete man_made}
+natural=* & mkgmap:line2poi=true {delete natural}
+place=* & mkgmap:line2poi=true {delete place}
+shop=* & mkgmap:line2poi=true {delete shop}
+sport=* & mkgmap:line2poi=true {delete sport}
+tourism=* & mkgmap:line2poi=true {delete tourism}
+#highway=* & mkgmap:line2poi=true & mkgmap:line2poitype!=mid {delete highway}
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & fixme='resurvey'  [0x12416 resolution 24 continue ]
+fixme='continue' & mkgmap:line2poi!=true [0x12416 resolution 24 continue]
+
+access=no | access=private | access=customers { add foot=no }
+foot=private | foot=customers { set foot=no }
+
+
+#######################################
+# Shopping
+#
+
+shop=*  {name '${short_name}'|'${name}'}
+
+shop=department_store | shop=mall [0x2e01 resolution 23]
+shop=general | shop=supermarket [0x02E04 resolution 24]
+shop=convenience [0x02E06 resolution 24]
+
+shop=greengrocer [0x02E02 resolution 24]
+shop=clothes | shop=boutique | shop=shoes | shop=leather [0x02E07 resolution 24]
+shop=doityourself | shop=electrical | shop=florist | shop=garden_centre | shop=houseware [0x02E08 resolution 24]
+shop=furniture | shop=interior_decoration | shop=kitchen  [0x02E09 resolution 24]
+shop=bicycle [0x02E0A resolution 24]
+shop=computer | shop=electronics | shop=mobile_phone  [0x02E0B resolution 24]
+
+shop=bakery   [0x02E0C resolution 24]
+shop=confectionery | shop=pastry [0x02E0D resolution 24]
+shop=ice_cream  [0x02E0E resolution 24]
+shop=kiosk [0x02E0F resolution 24]
+
+(shop=alcohol & drink:wine=retail) | craft=winery [0x02C0A resolution 24]
+shop=* [0x02E00 resolution 24]
+
+amenity=marketplace {name '${short_name}'|'${name}'} [0x300A resolution 24]
+
+
+#######################################
+#  Public Services
+#
+office=government {name '${short_name}'|'${name}'} [0x03000 resolution 24]
+amenity=townhall {name '${short_name}'|'${name}'} [0x03003 resolution 24]
+amenity=courthouse {name '${short_name}'|'${name}'} [0x03004 resolution 24]
+amenity=police {name '${short_name}'|'${name}'} [0x03001 resolution 24]
+amenity=fire_station {name '${short_name}'|'${name}'} [0x03008 resolution 24]
+
+amenity=post_office [0x02F05 resolution 24]
+#amenity=post_box & access=private [0x12F0A resolution 24]
+amenity=post_box & access!=private [0x640F resolution 24]
+
+amenity=community_centre  {name '${short_name}'|'${name}'} [0x03005 resolution 24]
+
+tourism=information & information=office  {name '${short_name}'|'${name}'} [0x4C04 resolution 24]
+
+amenity=toilets & foot!=no [0x02F0C resolution 24]
+amenity=drinking_water [0x5000 resolution 24]
+amenity=recycling [0x11616 resolution 24]
+
+# old
+amenity=taxi [0x1151E resolution 24]
+
+
+
+#######################################
+# Amenity - Food
+#
+amenity=restaurant {name '${short_name}'|'${name}'} [0x02A00 resolution 24]
+amenity=fast_food  {name '${short_name}'|'${name}'} [0x02A07 resolution 24]
+amenity=ice_cream {name '${short_name}'|'${name}'} [0x02E0E resolution 24]
+amenity=cafe {name '${short_name}'|'${name}'} [0x02A0E resolution 24]
+
+amenity=pub | amenity=biergarten | amenity=bar {name '${short_name}'|'${name}'} [0x2D02 resolution 24]
+
+
+#######################################
+# Accomodation
+#
+tourism=hotel | tourism=motel {name '${short_name}'|'${name}'} [0x02B01 resolution 24]
+tourism=bed_and_breakfast | tourism=guest_house	{name '${short_name}'|'${name}'} [0x02B02 resolution 23]
+tourism=hostel  {name '${short_name}'|'${name}'} [0x02B06 resolution 24]
+tourism=chalet  {name '${short_name}'|'${name}'} [0x02B04 resolution 24]
+tourism=camp_site | tourism=caravan_site {name '${short_name}'|'${name}'} [0x02B03 resolution 24]
+
+tourism=alpine_hut  {name '${short_name}'|'${name}'} [0x02B05 resolution 24]
+tourism=wilderness_hut  {name '${short_name}'|'${name}'} [0x02B07 resolution 24]
+amenity=shelter & shelter_type=basic_hut  {name '${short_name}'|'${name}'} [0x02B08 resolution 24]
+
+
+#######################################
+#  Entertainment, Arts and Culture
+#
+tourism=theme_park {name '${short_name}'|'${name}'} [0x02C01 resolution 24]
+tourism=museum {name '${short_name}'|'${name}'} [0x02C02 resolution 24]
+amenity=library {name '${short_name}'|'${name}'} [0x02C03 resolution 24]
+tourism=zoo {name '${short_name}'|'${name}'} [0x02C07 resolution 24]
+amenity=theatre {name '${short_name}'|'${name}'} [0x02D01 resolution 24]
+amenity=cinema {name '${short_name}'|'${name}'} [0x02D03 resolution 24]
+
+historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine {name '${short_name}'|'${name}'} [0x2C13 resolution 24]
+
+historic=city_gate & ruins!=yes {name '${short_name}'|'${name}'} [0x2C16 resolution 24]
+historic=castle & castle_type=palace & ruins!=yes {name '${short_name}'|'${name}'} [0x2C17 resolution 24]
+historic=castle & (castle_type=stately | castle_type=manor) & ruins!=yes {name '${short_name}'|'${name}'} [0x2C18 resolution 24]
+historic=castle & (castle_type=fortress | castle_type=castrum | castle_type=defensive ) & ruins!=yes {name '${short_name}'|'${name}'} [0x2C19 resolution 24]
+historic=fort {name '${short_name}'|'${name}'} [0x2C19 resolution 24]
+man_made=tower & tower:type=defensive & ruins!=yes {name '${short_name}'|'${name}'} [0x2C1A resolution 24]
+
+man_made=cross {name '${short_name}'|'${name}'} [0x2C1B resolution 24]
+tourism=artwork {name '${short_name}'|'${name}'} [0x2C1C resolution 24]
+man_made=obelisk {name '${short_name}'|'${name}'} [0x2C1D resolution 24]
+amenity=fountain {name '${short_name}'|'${name}'} [0x2C1E resolution 24]
+#man_made=water_well {name '${short_name}'|'${name}'} [0x06415 resolution 24]
+leisure=playground [0x02C06 resolution 24]
+
+
+#######################################
+# Religion
+#
+amenity=place_of_worship & religion=muslim  {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0D resolution 24]
+amenity=place_of_worship & religion=jewish {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C10 resolution 24]
+amenity=place_of_worship &(building=chapel | name~'.*k.polna') {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0F resolution 24]
+amenity=place_of_worship {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0E resolution 24]
+amenity=grave_yard | historic=tomb {name '${short_name}'|'${name}'} [0x06403 resolution 24]
+
+#man_made=stupa {name '${short_name}'|'${name}'} [0x2C0B resolution 24]
+
+man_made=campanile  [0x2C0C resolution 24]
+man_made=tower & tower:type=bell_tower  [0x2C0C resolution 24]
+
+
+
+#######################################
+# Education
+#
+amenity=kindergarten {name '${short_name}'|'${name}'} [0x02C14 resolution 24]
+amenity=school {name '${short_name}'|'${name}'} [0x02C05 resolution 24]
+amenity=college | amenity=university {name '${short_name}'|'${name}'} [0x02C15 resolution 24]
+
+#######################################
+# Healthcare
+#
+amenity=hospital | amenity=clinic {name '${short_name}'|'${name}'} [0x03002 resolution 24]
+amenity=doctors {name '${short_name}'|'${name}'}[0x4B01 resolution 24]
+amenity=dentist {name '${short_name}'|'${name}'}[0x4B02 resolution 24]
+amenity=pharmacy  {name '${short_name}'|'${name}'} [0x02E05 resolution 24]
+emergency=ambulance_station [0x3009 resolution 24]
+
+
+#######################################
+# Financial
+#
+amenity=bank { name '${short_name}'|'${name}'| '${operator}' }	[0x2F06 resolution 22]
+amenity=atm  { name '${short_name}'|'${name}'| '${operator}' }[0x02F06 resolution 24]
+
+
+
+#######################################
+# Transportation
+#
+amenity=parking [0x02F0B resolution 24]
+amenity=fuel {name '${short_name}'|'${name}'} [0x02F01 resolution 24]
+
+
+highway=bus_stop {name '${short_name}'|'${name}'} [0x02F08 resolution 24]
+highway=tram_stop {name '${short_name}'|'${name}'} [0x02F08 resolution 24]
+
+railway=station {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
+railway=halt {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
+
+amenity=ferry_terminal {name '${short_name}'|'${name}'} [0x02F09 resolution 24]
+aeroway=aerodrome {name '${short_name}'|'${name}'} [0x02F04 resolution 24]
+aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 resolution 24]
+
+highway=milestone {name '${distance}'} [0x5A00 resolution 24]
+railway=crossing | railway=level_crossing [0x6406 resolution 24]
+
+# old
+amenity=bus_station {name '${short_name}'|'${name}'} [0x1151D resolution 24]
+highway=speed_camera [0x13002 resolution 24]
+aerialway=station {name '${short_name}'|'${name}'} [0x12F06 resolution 24]
+
+#######################################
+# Barriers
+#
+barrier=border_control {name '${short_name}'|'${name}'} [0x03006 resolution 24]
+(barrier=gate | barrier=sliding_gate) & foot=yes & entrance!=home {name '${short_name}'|'${name}'} [0x11501 resolution 24]
+(barrier=gate | barrier=sliding_gate) & foot=no & entrance!=home {name '${short_name}'|'${name}'} [0x11502 resolution 24]
+(barrier=gate | barrier=sliding_gate) & entrance!=home {name '${short_name}'|'${name}'} [0x11500 resolution 24]
+barrier=lift_gate | barrier=swing_gate {name '${short_name}'|'${name}'} [0x11503 resolution 24]
+barrier=stile [0x11504 resolution 24]
+
+
+#######################################
+# Sport
+#
+leisure=stadium | leisure=sports_centre {name '${short_name}'|'${name}'} [0x02C08 resolution 24]
+leisure=horse_riding {name '${short_name}'|'${name}'} [0x11615 resolution 24]
+amenity=swimming_pool {name '${short_name}'|'${name}'} [0x02D09 resolution 24]
+sport=skiing [0x02D06 resolution 24]
+
+leisure=beach_resort {name '${short_name}'|'${name}'} [0x06604 resolution 24]
+amenity=spa {name '${short_name}'|'${name}'} [0x05400 resolution 24]
+
+
+
+#######################################
+# Nature
+#
+
+waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x6508 resolution 24]
+
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+natural=spring & drinking_water=yes  [0x6514 resolution 24]
+natural=spring & drinking_water=no [0x6515 resolution 24]
+natural=spring [0x6511 resolution 24]
+natural=cliff  [0x6607 resolution 22]
+natural=rock[0x06614 resolution 22]
+natural=stone  [0x06614 resolution 24]
+natural=peak [0x06616 resolution 24]
+natural=sinkhole   [0x0660C resolution 24]
+natural=cave_entrance  [0x06608 resolution 24]
+natural=saddle & name=*  [0x06613 resolution 24]
+
+natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]
+#natural=anthill [0x1150B resolution 24]
+#old
+#natural=spring & seasonal=yes {name '${short_name}'|'${name}'} [0x11608 resolution 24]
+
+
+
+
+#######################################
+# Wilderness Facilities
+#
+man_made=tower & tower:type=observation & tourism=viewpoint {name '${short_name}'|'${name}'} [0x4A06 resolution 22]
+tourism=viewpoint {name '${short_name}'|'${name}'} [0x5200 resolution 24]
+#tourism=picnic_site & fireplace=yes {name '${short_name}'|'${name}'}[0x4A01 resolution 24]
+tourism=picnic_site {name '${short_name}'|'${name}'} [0x4A00 resolution 24]
+amenity=bench {name '${short_name}'|'${name}'} [0x4A02 resolution 24]
+leisure=firepit [0x4A03 resolution 24]
+amenity=shelter & shelter_type=picnic_shelter {name '${short_name}'|'${name}'} [0x4A05 resolution 24]
+amenity=shelter {name '${short_name}'|'${name}'} [0x4A04 resolution 24]
+
+information=map  {name '${short_name}'|'${name}'; add mkgmap:label:2='${description}'} 	[0x4C01 resolution 23]
+information=guidepost  {name '${short_name}'|'${name}'; add mkgmap:label:2='${description}'} [0x4C02 resolution 23]
+information=board  {name '${short_name}'|'${name}'; add mkgmap:label:2='${description}'} [0x4C03 resolution 23]
+checkpoint=hiking {name '${short_name}'|'${name}'; add mkgmap:label:2='${course}'} [0x4C05 resolution 22]
+
+amenity=hunting_stand  [0x11508 resolution 24]
+amenity=feeding_place | amenity=game_feeding [0x11509 resolution 24]
+ford=yes [0x1150A resolution 24]
+man_made=insect_hotel | natural=anthill  [0x1150B resolution 24]
+man_made=survey_point [0x1150F resolution 24]
+
+
+
+#######################################
+# Industrial
+#
+man_made=adit & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [0x0640C resolution 24]
+man_made=mineshaft  & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [0x11510 resolution 24]
+
+man_made=petroleum_well [0x11511 resolution 24]
+
+man_made=works {name '${short_name}'|'${name}'} [0x11512 resolution 24]
+man_made=chimney [0x11513 resolution 24]
+
+power=plant {name '${short_name}'|'${name}'} [0x11514 resolution 24]
+power=generator & generator:source=wind {name '${short_name}'|'${name}'} [0x11515 resolution 24]
+
+man_made=water_works { name '${short_name}'|'${name}'} [0x11516 resolution 24]
+man_made=water_tower { name '${short_name}'|'${name}'} [0x11518 resolution 24]
+man_made=wastewater_plant [0x11519 resolution 24]
+
+man_made=communications_tower  {name '${short_name}'|'${name}'} [0x1151B resolution 20]
+man_made=mast {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=tower & tower:type=communication {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=tower & tower:type=observation {name '${short_name}'|'${name}'} [0x1151C resolution 24]
+
+man_made=tower {name '${short_name}'|'${name}'} [0x06411 resolution 24]
+
+
+#old
+#waterway=lock_gate | waterway=weir {name '${short_name}'|'${name}'} [0x06407 resolution 24]
+waterway=weir & name=* {name '${short_name}'|'${name}'} [0x06407 resolution 22]
+
+#######################################
+# Military
+#
+military=bunker [0x640B resolution 24]
+
+#######################################
+# Historical
+#
+historic=castle & ruins=yes {name '${short_name}'|'${name}'} [0x11601 resolution 24]
+historic=ruins & (ruins=castle | ruins=fort | ruins=tower) {name '${short_name}'|'${name}'} [0x11601 resolution 24]
+historic=ruins & (ruins=church | ruins=temple | ruins=chapel) {name '${short_name}'|'${name}'} [0x11602 resolution 24]
+historic=ruins {name '${short_name}'|'${name}'} [0x11600 resolution 24]
+
+historic=archaeological_site & site_type=fortification {name '${short_name}'|'${name}'} [0x11604 resolution 24]
+historic=archaeological_site {name '${short_name}'|'${name}'} [0x11603 resolution 24]
+
+#historic=archaeological_site & site_type=tumulus {name '${short_name}'|'${name}'} [0x11605 resolution 24]
+historic=tomb  {name '${short_name}'|'${name}'} [0x11606 resolution 24]
+
+historic=mine | historic=adit {name '${short_name}'|'${name}'} [0x11607 resolution 24]
+man_made=adit & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'} [0x11607 resolution 24]
+man_made=mineshaft & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'} [0x11607 resolution 24]
+
+man_made=watermill {name '${short_name}'|'${name}'} [0x11608 resolution 24]
+man_made=windmill {name '${short_name}'|'${name}'} [0x11609 resolution 24]
+#man_made=kiln & historic=yes  [0x1160A resolution 24]
+
+historic=memorial & memorial=plaque {name '${short_name}'|'${name}'} [0x1160C resolution 24]
+historic=memorial {name '${short_name}'|'${name}'} [0x1160B resolution 24]
+historic=monument {name '${short_name}'|'${name}'} [0x1160B resolution 24]
+
+
+historic=yes & man_made=water_well & description:hu~'g.mesk.t' { name '${short_name}'|'${name}'} [0x1150D resolution 24]
+
+
+
+
+#######################################
+# Other
+#
+#man_made=flagpole
+#man_made=observatory
+
+
+
+#######################################
+# Localities
+#
+place=town | place=village  {name '${short_name}'|'${name}'} [0x00300 resolution 18 ]
+place=town | place=suburb | place=village | place=hamlet | place=farm  | place=locality {name '${short_name}'|'${name}'} [0x00300 resolution 20 ]
+
+#place=city & name!='Budapest'  {name '${short_name}'|'${name}'} [0x00800 resolution 14  ]
+#place=city & admin_level=2 {name '${short_name}'|'${name}'} [0x00200 resolution 14]
+
+
+
+
+#######################################
+# Hiking symbols
+#--------------------------------------
+
+trail_p1_color=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p1_symbol}' }
+trail_p2_color=* & trail_p1_color!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p2_symbol}' }
+trail_p3_color=* & trail_p2_color!=* & trail_p1_color!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p3_symbol}' }
+trail_p4_color=* & trail_p3_color!=* & trail_p2_color!=* & trail_p1_color!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p4_symbol}' }
+
+trail_p5_color=* & trail_imp_high!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p5_symbol}' }
+trail_p6_color=* & trail_p5_color!=* & trail_imp_high!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p6_symbol}' }
+trail_p7_color=* & trail_p6_color!=* & trail_p5_color!=* & trail_imp_high!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p7_symbol}' }
+trail_p8_color=* & trail_p7_color!=* & trail_p6_color!=* & trail_p5_color!=* & trail_imp_high!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p8_symbol}' }
+
+trail_p9_color=* & trail_imp_high!=* & trail_imp_med!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p9_symbol}' }
+trail_p10_color=* & trail_p9_color!=* & trail_imp_high!=* & trail_imp_med!=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add turajel='${trail_p10_symbol}' }
+
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='k'  [0x12900 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='k+' [0x12901 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='k3' [0x12902 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='k4' [0x12903 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kq' [0x12904 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kb' [0x12905 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kl' [0x12906 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='ktmp' [0x12907 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='keml' [0x12908 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kpec' [0x12909 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kc' [0x1290A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kt' [0x1290B resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='katl' [0x1290C resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='katlv' [0x1290D resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='p'  [0x12910 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='p+' [0x12911 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='p3' [0x12912 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='p4' [0x12913 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pq' [0x12914 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pb' [0x12915 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pl' [0x12916 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='ptmp' [0x12917 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='peml' [0x12918 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='ppec' [0x12919 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pc' [0x1291A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pt' [0x1291B resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='s'  [0x12A00 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='s+' [0x12A01 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='s3' [0x12A02 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='s4' [0x12A03 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='sq' [0x12A04 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='sb' [0x12A05 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='sl' [0x12A06 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='stmp' [0x12A07 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='seml' [0x12A08 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='spec' [0x12A09 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='sc' [0x12A0A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='st' [0x12A0B resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='z'  [0x12A10 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='z+' [0x12A11 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='z3' [0x12A12 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='z4' [0x12A13 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zq' [0x12A14 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zb' [0x12A15 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zl' [0x12A16 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='ztmp' [0x12A17 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zeml' [0x12A18 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zpec' [0x12A19 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zc' [0x12A1A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zt' [0x12A1B resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='f' [0x12B00 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='f+' [0x12B01 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='f+' [0x12B02 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='t' [0x12B03 resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='kx' [0x12B04 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='px' [0x12B05 resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='km' [0x12B10 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='pm' [0x12B11 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='sm' [0x12B12 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='zm' [0x12B13 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='lm' [0x12B14 resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & turajel='smz' [0x12B16 resolution 22]
+
+
+#######################################
+# Obstacles
+#
+obstacle=fallen_tree & mkgmap:line2poi!=* {name '${obstacle_description}'|'${name}'} [0x11611 resolution 24 ]
+obstacle=fallen_tree & mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  {name '${obstacle_description}'|'${name}'}  [0x11611 resolution 24 ]
+obstacle=fallen_tree & (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20 {name '${obstacle_description}'|'${name}'}  [0x11611 resolution 24 ]
+
+
+obstacle=vegetation & mkgmap:line2poi!=*  {name '${obstacle_description}'|'${name}'} [0x11612 resolution 24 ]
+obstacle=vegetation & mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  {name '${obstacle_description}'|'${name}'}  [0x11612 resolution 24 ]
+obstacle=vegetation & (mkgmap:line2poitype=start | mkgmap:line2poitype=end)  &  mkgmap:way-length>=20 {name '${obstacle_description}'|'${name}'}  [0x11612 resolution 24 ]
+
+
+obstacle=* & mkgmap:line2poi!=* {name '${obstacle_description}'|'${name}'}  [0x11610 resolution 24 ]
+obstacle=* & mkgmap:line2poitype=mid &  (mkgmap:way-length<20 | mkgmap:way-length>150)  {name '${obstacle_description}'|'${name}'}  [0x11610 resolution 24 ]
+obstacle=* & (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20 {name '${obstacle_description}'|'${name}'}  [0x11610 resolution 24 ]
+
+
