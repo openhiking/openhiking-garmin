@@ -1,0 +1,190 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking relations in Hungary
+#
+########################################################
+
+
+#######################################################
+# Standard hiking trails
+#
+
+
+# High-priority hiking symbols
+type=route & route=hiking & jel=k {
+apply {
+	set trail_p1_color='B';
+	set trail_p1_symbol='${jel}';
+	set trail_p1_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_high=yes;
+	}
+}
+
+type=route & route=hiking & jel=p {
+apply {
+	set trail_p2_color=R;
+	set trail_p2_symbol='${jel}';
+	set trail_p2_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_high=yes;
+	}
+}
+type=route & route=hiking & jel=z {
+apply {
+	set trail_p3_color=G;
+	set trail_p3_symbol='${jel}';
+	set trail_p3_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_high=yes;
+	}
+}
+type=route & route=hiking & jel=s {
+apply {
+	set trail_p4_color=Y;
+	set trail_p4_symbol='${jel}';
+	set trail_p4_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_high=yes;
+	}
+}
+
+# Other standard hiking symbols
+type=route & route=hiking & (jel='k+' | jel='k3' | jel='k4' | jel='kq' | jel='kb' |  jel='kl' | jel='ktmp' | jel='keml' | jel='kpec' | jel='kc') {
+apply {
+	set trail_p5_color=B;
+	set trail_p5_symbol='${jel}';
+	set trail_p5_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_med=yes;
+	}
+}
+
+type=route & route=hiking & (jel='p+' | jel='p3' | jel='p4' | jel='pq' | jel='pb' | jel='pl' | jel='ptmp' | jel='peml' | jel='ppec' | jel='pc') {
+apply {
+	set trail_p6_color=R;
+	set trail_p6_symbol='${jel}';
+	set trail_p6_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_med=yes;
+	}
+}
+
+type=route & route=hiking & (jel='z+' | jel='z3' | jel='z4' | jel='zq' | jel='zb' | jel='zl' | jel='ztmp' | jel='zeml' | jel='zpec' | jel='zc') {
+apply {
+	set trail_p7_color=G;
+	set trail_p7_symbol='${jel}';
+	set trail_p7_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_med=yes;
+	}
+}
+
+type=route & route=hiking & (jel='s+' | jel='s3' | jel='s4' | jel='sq' | jel='sb' |  jel='sl' | jel='stmp' | jel='seml' | jel='spec' | jel='sc') {
+apply {
+	set trail_p8_color=Y;
+	set trail_p8_symbol='${jel}';
+	set trail_p8_name='${short_name}'|'${name}'|'${ref}'|'${jel}';
+	set trail_imp_med=yes;
+	}
+}
+
+
+#######################################################
+# Pilgrim trails in Hungary
+#
+
+type=route & route=hiking & (jel='km') {
+apply {
+	set trail_p9_color=B;
+	set trail_p9_symbol='${jel}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & route=hiking & (jel='pm' ) {
+apply {
+	set trail_p9_color=R;
+	set trail_p9_symbol='${jel}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+
+type=route & route=hiking & (jel='sm' ) {
+apply {
+	set trail_p9_color=Y;
+	set trail_p9_symbol='${jel}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & route=hiking & (jel='zm' ) {
+apply {
+	set trail_p9_color=G;
+	set trail_p9_symbol='${jel}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+
+type=route & route=hiking & (jel='lm' ) {
+apply {
+	set trail_p9_color=P;
+	set trail_p9_symbol='${jel}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+#######################################################
+# Local educational trails, others
+#
+
+type=route & route=hiking & (jel~'^k.+' | jel=t) {
+apply {
+	set trail_p10_color=B;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+
+type=route & route=hiking & jel~'^p.+'  {
+apply {
+	set trail_p10_color=R;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+type=route & route=hiking & jel!=zut & jel~'^z.+' {
+apply {
+	set trail_p10_color=G;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+type=route & route=hiking & jel~'^s.+'  {
+apply {
+	set trail_p10_color=Y;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+#######################################################
+# Ski routes
+#
+
+
+type=route & route=piste & jel=kx {
+apply {
+	set trail_p10_color=B;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+
+type=route & route=piste & jel=px {
+apply {
+	set trail_p10_color=R;
+	set trail_p10_symbol='${jel}';
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+

@@ -5,10 +5,9 @@
 #
 ########################################################
 
-family-id:3690
-family-name: OpenHiking
 overview-mapname:openhiking
 series-name:OpenHiking
+family-name: OpenHiking
 description:openhiking
 style=hiking
 drive-on=right

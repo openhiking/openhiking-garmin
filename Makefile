@@ -1,12 +1,14 @@
 
 # Tools
-OSMOSIS=c:\Apps\osmosis-0-48\bin\osmosis.bat
+OSMCONVERT=osmconvert64.exe
 SPLITTER=c:\Apps\splitter\splitter.jar
 MKGMAP=c:\Apps\mkgmap-4819\mkgmap.jar
+#MKGMAP=c:\Apps\mkgmap-3498\mkgmap.jar
 MKNSIS="c:\Program Files (x86)\NSIS\Bin\makensis.exe"
 WGET=wget
 COPY=copy /b
-RM=del
+MOVE=move
+DEL=del
 
 # Builder directories
 CONFIG_DIR=config
@@ -14,25 +16,30 @@ STYLES_DIR=styles
 
 # External data sources
 GEOFABRIK_URL=http://download.geofabrik.de/europe/
-OSM_PBF_NAME=hungary-latest.osm.pbf
+OSM_DS_LIST=hungary-latest
+
+TJEL_URL=https://data2.openstreetmap.hu/
+TJEL_NAME=vjel.osm
 
 # Local data caches
 DATASET_DIR=c:\Dataset\map
-PBF_CACHE_DIR=$(DATASET_DIR)\osm
-DEM_DIR=$(DATASET_DIR)\dem
+OSM_CACHE_DIR=$(DATASET_DIR)\osm
 CONTOUR_DIR=$(DATASET_DIR)\contour
+TJEL_CACHE_DIR=$(DATASET_DIR)\jelek
+DEM_DIR=$(DATASET_DIR)\dem
 
-CONTOUR_FILE_NAME=contour-hungary.pbf
 
-# PBF Generation
+CONTOUR_DS_LIST=contour-hungary.o5m
+
+# Dataset merging
 BOUNDARY_POLYGON=$(CONFIG_DIR)\hungary.poly
 
-MERGED_PBF_NAME=hungary-merged.pbf
-MERGED_PBF=$(PBF_CACHE_DIR)\$(MERGED_PBF_NAME)
+OSM_O5M_LIST := $(foreach ds,$(OSM_DS_LIST),$(OSM_CACHE_DIR)\$(ds).o5m)
+CONTOUR_O5M_LIST := $(foreach ds,$(CONTOUR_DS_LIST),$(CONTOUR_DIR)\$(ds))
+TJEL_CACHED := $(TJEL_CACHE_DIR)\$(TJEL_NAME)
 
-OSMOSIS_INP_OSM_PBF := $(foreach pbf,$(OSM_PBF_NAME),--read-pbf file=$(PBF_CACHE_DIR)\$(pbf))
-OSMOSIS_INP_CONT_PBF := $(foreach pbf,$(CONTOUR_FILE_NAME),--read-pbf file=$(CONTOUR_DIR)\$(pbf))
-OSMOSIS_INP_PBF=$(OSMOSIS_INP_OSM_PBF) $(OSMOSIS_INP_CONT_PBF)
+MERGED_PBF_NAME=openhiking.pbf
+MERGED_PBF=$(OSM_CACHE_DIR)\$(MERGED_PBF_NAME)
 
 # Tile splitting
 TILES_DIR=$(DATASET_DIR)\tiles
@@ -51,21 +58,27 @@ STYLES2 := $(foreach wrd,$(STYLES),$(STYLES_DIR)\$(STYLE_NAME)\$(wrd))
 MDX_FILE=$(GMAP_DIR)\openhiking.mdx
 
 refresh:
-	$(WGET) $(GEOFABRIK_URL)$(OSM_PBF_NAME) -P $(PBF_DIR)
+	$(DEL)  $(OSM_CACHE_DIR)\*.o5m
+	$(MOVE) $(OSM_CACHE_DIR)\$(OSM_DS_LIST).osm.pbf $(OSM_CACHE_DIR)\$(OSM_DS_LIST).osm.pbf.bkp
+	$(WGET) $(GEOFABRIK_URL)$(OSM_DS_LIST).osm.pbf -P $(OSM_CACHE_DIR)
+	$(MOVE) $(TJEL_CACHE_DIR)\$(TJEL_NAME) $(TJEL_CACHE_DIR)\$(TJEL_NAME).bkp
+	$(WGET) $(TJEL_URL)$(TJEL_NAME) -P $(TJEL_CACHE_DIR)
 
-$(MERGED_PBF): $(OSM_PBF)
-	$(OSMOSIS) $(OSMOSIS_INP_PBF) --merge --bp file=$(BOUNDARY_POLYGON) --write-pbf file=$(MERGED_PBF) omitmetadata=yes
+$(OSM_CACHE_DIR)\\%.o5m: $(OSM_CACHE_DIR)\\%.osm.pbf
+	$(OSMCONVERT) $< -o=$@
+
+$(MERGED_PBF): $(OSM_O5M_LIST)
+	$(OSMCONVERT) $(OSM_O5M_LIST) $(CONTOUR_O5M_LIST) $(TJEL_CACHED) -B=$(BOUNDARY_POLYGON) -o=$(MERGED_PBF)
 
 tiles: $(MERGED_PBF)
-	java -Xmx1024m -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $(MERGED_PBF) --output-dir=$(TILES_DIR)
-
+	java -Xmx4192M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $(MERGED_PBF) --output-dir=$(TILES_DIR)
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
 	$(COPY) $(OHM_ARGS_TEMPLATE) + $(TILE_ARGS) $(MERGED_ARGS)
 
 $(MDX_FILE): $(STYLES2) $(MERGED_ARGS)
-	java -Xmx4192M -ea -jar $(MKGMAP) $(TYP_FILE) --dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON) --style-file=$(STYLES_DIR)\ --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
-
+	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=71221559 --family-id=3690 $(TYP_FILE) --dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON) \
+	--style-file=$(STYLES_DIR)\ --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
 
 map: $(MDX_FILE)
 	@echo "Completed"
@@ -76,4 +89,9 @@ install:
 	$(MKNSIS) $(GMAP_DIR)\openhiking.nsi
 
 clean:
-	$(RM) $(GMAP_DIR)\*
+	$(DEL) $(GMAP_DIR)\*
+
+cleanall:
+	$(DEL) $(MERGED_PBF)
+	$(DEL) $(TILES_DIR)\*
+	$(DEL) $(GMAP_DIR)\*

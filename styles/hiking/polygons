@@ -30,17 +30,22 @@ landuse=cemetery | amenity=grave_yard {name '${name}'} [0x1a resolution 22]
 #######################################
 # Natural
 #
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+
 waterway=riverbank | waterway=dock {name '${name}'} [0x47 resolution 16]
 natural=water & water=river {name '${name}'} [0x47 resolution 16]
-natural=water | landuse=reservoir {name '${name}'} [0x3e00 resolution 16]
-natural=marsh | natural=wetland {name '${short_name}'|'${name}'} [0x51 resolution 16]
-(natural=wood | landuse=forest) & (wood=coniferous | leaf_type=needleleaved) {name '${name}'} [0x10F00 resolution 16]
-#(natural=wood | landuse=forest) & (wood=mixed | leaf_type=mixed ) {name '${name}'} [0x10F01 resolution 16]
-natural=wood | landuse=forest {name '${name}'} [0x50 resolution 16]
-landuse=meadow | natural=grassland | landuse=grass | natural=fell {name '${name}'} [0x16 resolution 16]
-natural=heath {name '${name}'} [0x1160F resolution 16]
-natural=scrub {name '${name}'} [0x4f resolution 16]
-natural=bare_rock {name '${name}'} [0x11611 resolution 16]
+
+(natural=water | landuse=reservoir) & area_size()<10000 [0x4000 resolution 16]
+natural=water | landuse=reservoir  [0x3e00 resolution 16]
+
+natural=marsh | natural=wetland [0x51 resolution 16]
+(natural=wood | landuse=forest) & (wood=coniferous | leaf_type=needleleaved)  [0x10F00 resolution 16]
+#(natural=wood | landuse=forest) & (wood=mixed | leaf_type=mixed ) [0x10F01 resolution 16]
+natural=wood | landuse=forest [0x50 resolution 16]
+landuse=meadow | natural=grassland | landuse=grass | natural=fell  [0x16 resolution 16]
+natural=heath  [0x1160F resolution 16]
+natural=scrub  [0x4f resolution 16]
+natural=bare_rock  [0x11611 resolution 16]
 natural=scree [0x10F10 resolution 16]
 natural=beach & natural!=bay [0x1b resolution 20]
 
@@ -100,9 +105,9 @@ man_made = pier [0x1160C resolution 20]
 #
 building=commercial [0x08 resolution 24]
 
-building=* & name!=* & area_size()>150 [0x11612 resolution 24]
+building=* & name!=* & area_size()>160 [0x11612 resolution 24]
 building=* & name=* & amenity!=* & shop!=* & tourism!=*  {name '${short_name}'|'${name}'} [0x11612 resolution 24]
-building=* & name=*  [0x11612 resolution 24]
+building=* & name=* & man_made!=tower [0x11612 resolution 24]
 
 #######################################
 # Other

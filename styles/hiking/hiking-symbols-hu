@@ -1,0 +1,76 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking symbols rendering for Hungary
+#
+########################################################
+
+mkgmap:line2poi!=* & jel='k'  [0x12900 resolution 22]
+mkgmap:line2poi!=* &  jel='k+' [0x12901 resolution 22]
+mkgmap:line2poi!=* &  jel='k3' [0x12902 resolution 22]
+mkgmap:line2poi!=* &  jel='k4' [0x12903 resolution 22]
+mkgmap:line2poi!=* &  jel='kq' [0x12904 resolution 22]
+mkgmap:line2poi!=* &  jel='kb' [0x12905 resolution 22]
+mkgmap:line2poi!=* &  jel='kl' [0x12906 resolution 22]
+mkgmap:line2poi!=* &  jel='ktmp' [0x12907 resolution 22]
+mkgmap:line2poi!=* &  jel='keml' [0x12908 resolution 22]
+mkgmap:line2poi!=* &  jel='kpec' [0x12909 resolution 22]
+mkgmap:line2poi!=* &  jel='kc' [0x1290A resolution 22]
+mkgmap:line2poi!=* &  jel='kt' [0x1290B resolution 22]
+mkgmap:line2poi!=* &  jel='katl' [0x1290C resolution 22]
+mkgmap:line2poi!=* &  jel='katlv' [0x1290D resolution 22]
+
+mkgmap:line2poi!=* &  jel='p'  [0x12910 resolution 22]
+mkgmap:line2poi!=* &  jel='p+' [0x12911 resolution 22]
+mkgmap:line2poi!=* &  jel='p3' [0x12912 resolution 22]
+mkgmap:line2poi!=* &  jel='p4' [0x12913 resolution 22]
+mkgmap:line2poi!=* &  jel='pq' [0x12914 resolution 22]
+mkgmap:line2poi!=* &  jel='pb' [0x12915 resolution 22]
+mkgmap:line2poi!=* &  jel='pl' [0x12916 resolution 22]
+mkgmap:line2poi!=* &  jel='ptmp' [0x12917 resolution 22]
+mkgmap:line2poi!=* &  jel='peml' [0x12918 resolution 22]
+mkgmap:line2poi!=* &  jel='ppec' [0x12919 resolution 22]
+mkgmap:line2poi!=* &  jel='pc' [0x1291A resolution 22]
+mkgmap:line2poi!=* &  jel='pt' [0x1291B resolution 22]
+
+mkgmap:line2poi!=* &  jel='s'  [0x12A00 resolution 22]
+mkgmap:line2poi!=* &  jel='s+' [0x12A01 resolution 22]
+mkgmap:line2poi!=* &  jel='s3' [0x12A02 resolution 22]
+mkgmap:line2poi!=* &  jel='s4' [0x12A03 resolution 22]
+mkgmap:line2poi!=* &  jel='sq' [0x12A04 resolution 22]
+mkgmap:line2poi!=* &  jel='sb' [0x12A05 resolution 22]
+mkgmap:line2poi!=* &  jel='sl' [0x12A06 resolution 22]
+mkgmap:line2poi!=* &  jel='stmp' [0x12A07 resolution 22]
+mkgmap:line2poi!=* &  jel='seml' [0x12A08 resolution 22]
+mkgmap:line2poi!=* &  jel='spec' [0x12A09 resolution 22]
+mkgmap:line2poi!=* &  jel='sc' [0x12A0A resolution 22]
+mkgmap:line2poi!=* &  jel='st' [0x12A0B resolution 22]
+
+mkgmap:line2poi!=* &  jel='z'  [0x12A10 resolution 22]
+mkgmap:line2poi!=* &  jel='z+' [0x12A11 resolution 22]
+mkgmap:line2poi!=* &  jel='z3' [0x12A12 resolution 22]
+mkgmap:line2poi!=* &  jel='z4' [0x12A13 resolution 22]
+mkgmap:line2poi!=* &  jel='zq' [0x12A14 resolution 22]
+mkgmap:line2poi!=* &  jel='zb' [0x12A15 resolution 22]
+mkgmap:line2poi!=* &  jel='zl' [0x12A16 resolution 22]
+mkgmap:line2poi!=* &  jel='ztmp' [0x12A17 resolution 22]
+mkgmap:line2poi!=* &  jel='zeml' [0x12A18 resolution 22]
+mkgmap:line2poi!=* &  jel='zpec' [0x12A19 resolution 22]
+mkgmap:line2poi!=* &  jel='zc' [0x12A1A resolution 22]
+mkgmap:line2poi!=* &  jel='zt' [0x12A1B resolution 22]
+
+mkgmap:line2poi!=* &  jel='f' [0x12B00 resolution 22]
+mkgmap:line2poi!=* &  jel='f+' [0x12B01 resolution 22]
+mkgmap:line2poi!=* &  jel='f+' [0x12B02 resolution 22]
+mkgmap:line2poi!=* &  jel='t' [0x12B03 resolution 22]
+
+mkgmap:line2poi!=* &  jel='kx' [0x12B04 resolution 22]
+mkgmap:line2poi!=* &  jel='px' [0x12B05 resolution 22]
+
+mkgmap:line2poi!=* &  jel='km' [0x12B10 resolution 22]
+mkgmap:line2poi!=* &  jel='pm' [0x12B11 resolution 22]
+mkgmap:line2poi!=* &  jel='sm' [0x12B12 resolution 22]
+mkgmap:line2poi!=* &  jel='zm' [0x12B13 resolution 22]
+mkgmap:line2poi!=* &  jel='lm' [0x12B14 resolution 22]
+
+

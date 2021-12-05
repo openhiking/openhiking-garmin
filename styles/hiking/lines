@@ -10,10 +10,8 @@ foot=private | foot=customers { set foot=no }
 
 
 #######################################
-# Hiking Trails
+# Hiking Trail Color Setting
 #
-
-# Colors
 trail_p1_color=* { add trail_color='${trail_p1_color}'; add trail_name='${trail_p1_name}'; }
 trail_p2_color=* & trail_p1_color!=* { add trail_color='${trail_p2_color}'; add trail_name='${trail_p2_name}'; }
 trail_p3_color=* & trail_p2_color!=* & trail_p1_color!=* { add trail_color='${trail_p3_color}'; add trail_name='${trail_p3_name}'; }
@@ -27,8 +25,26 @@ trail_p8_color=* & trail_p7_color!=* & trail_p6_color!=* & trail_p5_color!=* & t
 trail_p9_color=* & trail_imp_high!=* & trail_imp_med!=* { add trail_color='${trail_p9_color}'; add trail_name='${trail_p9_name}'; }
 trail_p10_color=* & trail_p9_color!=* & trail_imp_high!=* & trail_imp_med!=* { add trail_color='${trail_p10_color}'; add trail_name='${trail_p10_name}'; }
 
+#######################################
+# Highway highlighting
+#
+highway=*
+& (surface=fine_gravel | surface=compacted )
+{ add unpaved_hard=1; add mkgmap:unpaved=1 }
 
-highway=path | highway=footway | highway=platform | highway = track { add highway_width=2 }
+highway=*
+& (surface=cobblestone |  surface=dirt |
+   surface=earth | surface=grass | surface=grass_paver |
+   surface=gravel | surface=grit | surface=ground | surface=mud |
+   surface=pebblestone | surface=sand | surface=unpaved |
+   tracktype ~ 'grade[2-6]' )
+{ add unpaved_soft=1; add mkgmap:unpaved=1 }
+
+highway=track & tracktype!=* { add unpaved_soft=1; add mkgmap:unpaved=1 }
+
+
+# Remember to keep proper order with 'add'
+highway=path | highway=footway | highway=platform | highway = track | unpaved_hard=1 | unpaved_soft=1 { add highway_width=2 }
 highway=cycleway | highway=pedestrian | highway = service { add highway_width=3 }
 highway=residential | highway=living_street | highway = unclassified { add highway_width=4 }
 highway=steps | highway=teritary { add highway_width=5 }
@@ -60,24 +76,10 @@ trail_color=Y &  highway_width=4  [0x10011   resolution 22 continue]
 trail_color=Y &  highway_width=5  [0x10012   resolution 22 continue]
 trail_color=Y &  highway_width=6  [0x10013   resolution 22 continue]
 
-
 #######################################
 # Highways
 #
-highway=*
-& (surface=fine_gravel | surface=compacted )
-{ add unpaved_hard=1; add mkgmap:unpaved=1 }
 
-
-highway=*
-& (surface=cobblestone |  surface=dirt |
-   surface=earth | surface=grass | surface=grass_paver |
-   surface=gravel | surface=grit | surface=ground | surface=mud |
-   surface=pebblestone | surface=sand | surface=unpaved |
-   tracktype ~ 'grade[2-6]' )
-{ add unpaved_soft=1; add mkgmap:unpaved=1 }
-
-highway=track & tracktype!=* { add unpaved_soft=1; add mkgmap:unpaved=1 }
 
 highway=* & name=* { set mkgmap:street='${name}' }
 highway=* {set mkgmap:label:2='${alt_name}'}
@@ -87,7 +89,7 @@ highway=* & motorcar=destination { set mkgmap:throughroute=no; set motorcar=yes 
 highway=* & access=destination { set mkgmap:throughroute=no; set access=yes }
 highway=* & motor_vehicle=destination { set mkgmap:throughroute=no; set motor_vehicle=yes }
 
-
+# Supplementary info: bridge, tunnel etc
 highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10107 resolution 22 continue]
 highway=* & tunnel=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E10 resolution 22 continue]
 highway=* & embankment=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E11 resolution 22 continue]
@@ -98,16 +100,23 @@ highway=* & oneway=-1 & highway!=proposed & highway!=construction & proposed!=*	
 
 highway=* & foot=no & highway!=proposed & highway!=construction & proposed!=* & highway!=motorway & highway != trunk [0x10E15 resolution 22 continue]
 
+# Highway rendering
 highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link 
 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 18]
 
-highway=primary | highway=primary_link 
+highway=primary | highway=primary_link
 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
 
+(highway=secondary | highway=secondary_link) &  unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 18]
 highway=secondary | highway=secondary_link   [0x03 road_class=2 road_speed=4 resolution 18]
+
+(highway=tertiary | highway=tertiary_link)  &  unpaved_hard=1 { name '${name} ${route_name}'|'${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
 highway=tertiary | highway=tertiary_link { name '${name} ${route_name}'|'${name}'}   [0x04 road_class=1 road_speed=4 resolution 19]
 
+highway=unclassified & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
+highway=unclassified & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=3 resolution 19]
 highway=unclassified   {name  '${name}'}   [0x05 road_class=0 road_speed=3 resolution 19]
+
 highway=residential & unpaved_hard=1 { name '${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
 highway=residential & unpaved_soft=1 { name '${name}'}   [0x0a road_class=0 road_speed=3 resolution 19]
 highway=residential  { name '${name}'}   [0x06 road_class=0 road_speed=3 resolution 19]
