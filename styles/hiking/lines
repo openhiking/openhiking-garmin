@@ -47,7 +47,7 @@ highway=track & tracktype!=* { add unpaved_soft=1; add mkgmap:unpaved=1 }
 highway=path | highway=footway | highway=platform | highway = track | unpaved_hard=1 | unpaved_soft=1 { add highway_width=2 }
 highway=cycleway | highway=pedestrian | highway = service { add highway_width=3 }
 highway=residential | highway=living_street | highway = unclassified { add highway_width=4 }
-highway=steps | highway=teritary { add highway_width=5 }
+highway=steps | highway=tertiary { add highway_width=5 }
 highway=primary | highway=secondary | highway = trunk { add highway_width=6 }
 route=ferry { add highway_width= 2 }
 

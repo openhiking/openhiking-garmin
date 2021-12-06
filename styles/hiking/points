@@ -115,10 +115,11 @@ amenity=cinema {name '${short_name}'|'${name}'} [0x02D03 resolution 24]
 historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine {name '${short_name}'|'${name}'} [0x2C13 resolution 24]
 
 historic=city_gate & ruins!=yes {name '${short_name}'|'${name}'} [0x2C16 resolution 24]
-historic=castle & castle_type=palace & ruins!=yes {name '${short_name}'|'${name}'} [0x2C17 resolution 22]
-historic=castle & (castle_type=stately | castle_type=manor) & ruins!=yes {name '${short_name}'|'${name}'} [0x2C18 resolution 22]
+#historic=castle & castle_type=palace & ruins!=yes {name '${short_name}'|'${name}'} [0x2C17 resolution 22]
+#historic=castle & (castle_type=stately | castle_type=manor) & ruins!=yes {name '${short_name}'|'${name}'} [0x2C18 resolution 22]
 historic=castle & (castle_type=fortress | castle_type=castrum | castle_type=defensive ) & ruins!=yes {name '${short_name}'|'${name}'} [0x2C19 resolution 22]
-historic=fort {name '${short_name}'|'${name}'} [0x2C19 resolution 22]
+historic=castle & ruins!=yes {name '${short_name}'|'${name}'} [0x2C17 resolution 22]
+historic=fort  & ruins!=yes {name '${short_name}'|'${name}'} [0x2C19 resolution 22]
 man_made=tower & tower:type=defensive & ruins!=yes {name '${short_name}'|'${name}'} [0x2C1A resolution 22]
 
 man_made=cross {name '${short_name}'|'${name}'} [0x2C1B resolution 24]
@@ -248,7 +249,7 @@ natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]
 #######################################
 # Wilderness Facilities
 #
-man_made=tower & tower:type=observation & tourism=viewpoint {name '${short_name}'|'${name}'} [0x4A06 resolution 22]
+man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) {name '${short_name}'|'${name}'} [0x4A06 resolution 22]
 tourism=viewpoint {name '${short_name}'|'${name}'} [0x5200 resolution 22]
 #tourism=picnic_site & fireplace=yes {name '${short_name}'|'${name}'}[0x4A01 resolution 24]
 tourism=picnic_site {name '${short_name}'|'${name}'} [0x4A00 resolution 24]
@@ -310,14 +311,15 @@ military=bunker [0x640B resolution 24]
 # Historical
 #
 historic=castle & ruins=yes {name '${short_name}'|'${name}'} [0x11601 resolution 22]
+historic=fort & ruins=yes {name '${short_name}'|'${name}'} [0x11601 resolution 22]
 historic=ruins & (ruins=castle | ruins=fort | ruins=tower) {name '${short_name}'|'${name}'} [0x11601 resolution 22]
 historic=ruins & (ruins=church | ruins=temple | ruins=chapel) {name '${short_name}'|'${name}'} [0x11602 resolution 24]
 historic=ruins {name '${short_name}'|'${name}'} [0x11600 resolution 24]
 
-historic=archaeological_site & site_type=fortification {name '${short_name}'|'${name}'} [0x11604 resolution 24]
+historic=archaeological_site & site_type=fortification & fortification_type=hillfort {name '${short_name}'|'${name}'} [0x11604 resolution 24]
+historic=archaeological_site & site_type=tumulus {name '${short_name}'|'${name}'} [0x11605 resolution 24]
 historic=archaeological_site {name '${short_name}'|'${name}'} [0x11603 resolution 24]
 
-#historic=archaeological_site & site_type=tumulus {name '${short_name}'|'${name}'} [0x11605 resolution 24]
 historic=tomb  {name '${short_name}'|'${name}'} [0x11606 resolution 24]
 
 historic=mine | historic=adit {name '${short_name}'|'${name}'} [0x11607 resolution 24]
