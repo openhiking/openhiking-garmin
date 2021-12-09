@@ -1,0 +1,46 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking symbols rendering for Slovakia
+#
+########################################################
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:major'     [0x12C00 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:ruin'      [0x12C01 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:peak'      [0x12C02 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:spring'    [0x12C03 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:interesting_object'  [0x12C04 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:roundtrip' [0x12C05 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:education'   [0x12C06 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:blue:local'      [0x12C07 resolution 22]
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:major'     [0x12C08 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:ruin'      [0x12C09 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:peak'      [0x12C0A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:spring'    [0x12C0B resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:interesting_object'  [0x12C0C resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:roundtrip' [0x12C0D resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:education'   [0x12C0E resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:red:local'      [0x12C0F resolution 22]
+
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:major'     [0x12C10 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:ruin'      [0x12C11 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:peak'      [0x12C12 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:spring'    [0x12C13 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:interesting_object'  [0x12C14 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:roundtrip' [0x12C15 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:education'   [0x12C16 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:yellow:local'      [0x12C17 resolution 22]
+
+
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:major'     [0x12C18 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:ruin'      [0x12C19 resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:peak'      [0x12C1A resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:spring'    [0x12C1B resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:interesting_object'  [0x12C1C resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:roundtrip' [0x12C1D resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:education'   [0x12C1E resolution 22]
+mkgmap:line2poi=true & mkgmap:line2poitype=mid & trail_symbol='sk:green:local'      [0x12C1F resolution 22]
+
+

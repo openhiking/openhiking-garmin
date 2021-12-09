@@ -5,39 +5,40 @@
 #
 ########################################################
 
-include 'hiking-relations-hu'
+include 'relations-hiking-hu'
+include 'relations-hiking-sk'
 
 
 # Generic OSMC parsing
 
 type=route & route=hiking & osmc:symbol~'^blue.+'  {
 apply {
-	set trail_p10_color=B;
-	set trail_p10_symbol='${jel}';
-	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	add trail_p10_color=blue;
+	add trail_p10_symbol='${symbol}'|'${jel}';
+	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
 type=route & route=hiking & osmc:symbol~'^red.+' {
 apply {
-	set trail_p10_color=R;
-	set trail_p10_symbol='${jel}';
-	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	add trail_p10_color=red;
+	add trail_p10_symbol='${symbol}'|'${jel}';
+	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
 type=route & route=hiking & jel!=zut & osmc:symbol~'^green.+' {
 apply {
-	set trail_p10_color=G;
-	set trail_p10_symbol='${jel}';
-	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	add trail_p10_color=green;
+	add trail_p10_symbol='${symbol}'|'${jel}';
+	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 type=route & route=hiking & osmc:symbol~'^yellow.+' {
 apply {
-	set trail_p10_color=Y;
-	set trail_p10_symbol='${jel}';
-	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	add trail_p10_color=yellow;
+	add trail_p10_symbol='${symbol}'|'${jel}';
+	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 

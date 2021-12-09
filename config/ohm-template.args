@@ -6,8 +6,8 @@
 ########################################################
 
 overview-mapname:openhiking
-series-name:OpenHiking
-family-name: OpenHiking
+#series-name:OpenHiking
+#family-name: OpenHiking
 description:openhiking
 style=hiking
 drive-on=right
