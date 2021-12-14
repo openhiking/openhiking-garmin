@@ -1,0 +1,138 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking symbols rendering based on osmc:symbol
+#
+########################################################
+
+if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
+
+	trail_symbol~'^[^:]+:white:red_triangle_line.*'  [0x12B1B resolution 22]
+
+	trail_symbol~'^.+:white:blue_bar.*'       [0x12900 resolution 22]
+	trail_symbol~'^.+:white:blue_rectangle.*' [0x12903 resolution 22]
+	trail_symbol~'^.+:white:blue_arch.*'      [0x12905 resolution 22]
+	trail_symbol~'^.+:white:blue_L.*'         [0x12906 resolution 22]
+	trail_symbol~'^.+:white:blue_slash.*'     [0x1290C resolution 22]
+	trail_symbol~'^.+:white:blue_blackslash.*'[0x1290D resolution 22]
+
+	trail_symbol~'^.+:white:blue_stripe.*'    [0x12B05 resolution 22]
+	trail_symbol~'^.+:white:blue_dot.*'       [0x12B06 resolution 22]
+	trail_symbol~'^.+:white:blue_cross.*'     [0x12B07 resolution 22]
+	trail_symbol~'^.+:white:blue_triangle.*'  [0x12B08 resolution 22]
+	trail_symbol~'^.+:white:blue_circle.*'    [0x12B09 resolution 22]
+
+	trail_symbol~'^.+:white:blue_bowl.*'      [0x12C03 resolution 22]
+	trail_symbol~'^.+:white:blue_turned_T.*'  [0x12C04 resolution 22]
+	trail_symbol~'^.+:white:blue_corner.*'    [0x12C07 resolution 22]
+
+
+	trail_symbol~'^.+:white:red_bar.*'       [0x12910 resolution 22]
+	trail_symbol~'^.+:white:red_rectangle.*' [0x12913 resolution 22]
+	trail_symbol~'^.+:white:red_arch.*'      [0x12915 resolution 22]
+	trail_symbol~'^.+:white:red_L.*'         [0x12916 resolution 22]
+	trail_symbol~'^.+:white:red_slash.*'     [0x1291C resolution 22]
+	trail_symbol~'^.+:white:red_blackslash.*'[0x1291D resolution 22]
+
+	trail_symbol~'^.+:white:red_stripe.*'    [0x12B00 resolution 22]
+	trail_symbol~'^.+:white:red_dot.*'       [0x12B01 resolution 22]
+	trail_symbol~'^.+:white:red_cross.*'     [0x12B02 resolution 22]
+	trail_symbol~'^.+:white:red_triangle.*'  [0x12B03 resolution 22]
+	trail_symbol~'^.+:white:red_circle.*'    [0x12B04 resolution 22]
+
+	trail_symbol~'^.+:white:red_bowl.*'      [0x12C0B resolution 22]
+	trail_symbol~'^.+:white:red_turned_T.*'  [0x12C0C resolution 22]
+	trail_symbol~'^.+:white:red_corner.*'    [0x12C0F resolution 22]
+
+
+	trail_symbol~'^\w+:white:green_bar.*'       [0x12A10 resolution 22]
+	trail_symbol~'^\w+:white:green_cross.*'     [0x12A11 resolution 22]
+	trail_symbol~'^\w+:white:green_triangle.*'  [0x12A12 resolution 22]
+	trail_symbol~'^\w+:white:green_rectangle.*' [0x12A13 resolution 22]
+	trail_symbol~'^\w+:none:green_rectangle.*' [0x12A13 resolution 22]	
+	trail_symbol~'^\w+:white:green_dot.*'       [0x12A14 resolution 22]
+	trail_symbol~'^\w+:white:green_arch.*'      [0x12A15 resolution 22]
+	trail_symbol~'^\w+:white:green_L.*'         [0x12A16 resolution 22]
+	trail_symbol~'^\w+:white:green_slash.*'     [0x12A1C resolution 22]
+	trail_symbol~'^\w+:white:green_blackslash.*'[0x12A1D resolution 22]
+	trail_symbol~'^\w+:white:green_stripe.*'    [0x12A1E resolution 22]
+	trail_symbol~'^\w+:white:green_bowl.*'      [0x12C1B resolution 22]
+	trail_symbol~'^\w+:white:green_turned_T.*'  [0x12C1C resolution 22]
+	trail_symbol~'^\w+:white:green_corner.*'    [0x12C1F resolution 22]
+
+
+	trail_symbol~'^.+:white:yellow_bar.*'       [0x12A00 resolution 22]
+	trail_symbol~'^.+:white:yellow_rectangle.*' [0x12A03 resolution 22]
+	trail_symbol~'^.+:white:yellow_arch.*'      [0x12A05 resolution 22]
+	trail_symbol~'^.+:white:yellow_L.*'         [0x12A06 resolution 22]
+	trail_symbol~'^.+:white:yellow_slash.*'     [0x12A0C resolution 22]
+	trail_symbol~'^.+:white:yellow_blackslash.*'[0x12A0D resolution 22]
+
+        trail_symbol~'^.+:white:yellow_stripe.*'    [0x12B0A resolution 22]
+	trail_symbol~'^.+:white:yellow_dot.*'       [0x12B0B resolution 22]
+	trail_symbol~'^.+:white:yellow_cross.*'     [0x12B0C resolution 22]
+	trail_symbol~'^.+:white:yellow_triangle.*'  [0x12B0D resolution 22]
+	trail_symbol~'^.+:white:yellow_circle.*'    [0x12B0E resolution 22]
+
+	trail_symbol~'^.+:white:yellow_bowl.*'      [0x12C13 resolution 22]
+	trail_symbol~'^.+:white:yellow_turned_T.*'  [0x12C14 resolution 22]
+	trail_symbol~'^.+:white:yellow_corner.*'    [0x12C17 resolution 22]
+
+
+	trail_symbol='blue:white:::M:blue'         [0x12B10 resolution 22]
+	trail_symbol='red:white:::M:red'           [0x12B11 resolution 22]
+	trail_symbol='yellow:white:::M:yellow'     [0x12B12 resolution 22]
+	trail_symbol='green:white:::M:green'        [0x12B13 resolution 22]
+	trail_symbol='purple:white:::M:purple'      [0x12B14 resolution 22]
+
+
+	trail_symbol~'^[^:]+:red:white_bar.*'            [0x12B18 resolution 22]
+	trail_symbol~'^[^:]+:red:white_stripe.*'         [0x12B19 resolution 22]
+
+	trail_symbol~'^[^:]+:white:black_bar.*'          [0x12B1C resolution 22]
+	trail_symbol~'^[^:]+:white:orange_corner.*'      [0x12B1D resolution 22]
+
+	trail_symbol~'^[^:]+:red::.*'       	[0x12D00 resolution 22]
+	trail_symbol~'^[^:]+:blue::.*'       	[0x12D01 resolution 22]
+	trail_symbol~'^[^:]+:yellow::.*'       	[0x12D02 resolution 22]
+	trail_symbol~'^[^:]+:green::.*'       	[0x12D03 resolution 22]
+	trail_symbol~'^[^:]+:black::.*'       	[0x12D04 resolution 22]
+	trail_symbol~'^[^:]+:brown::.*'       	[0x12D05 resolution 22]
+
+	trail_symbol~'^[^:]+:white:red_lower.*'     [0x12D06 resolution 22]
+	trail_symbol~'^[^:]+:white:blue_lower.*'    [0x12D07 resolution 22]
+	trail_symbol~'^[^:]+:white:yellow_lower.*'  [0x12D08 resolution 22]
+	trail_symbol~'^[^:]+:white:green_lower.*'   [0x12D09 resolution 22]
+	trail_symbol~'^[^:]+:yellow:red_lower.*'    [0x12D0A resolution 22]
+	trail_symbol~'^[^:]+:yellow:blue_lower.*'   [0x12D0B resolution 22]
+	trail_symbol~'^[^:]+:yellow:green_lower.*'  [0x12D0C resolution 22]
+	trail_symbol~'^[^:]+:yellow:white_lower.*'  [0x12D0D resolution 22]
+	trail_symbol~'^[^:]+:blue:red_lower.*'      [0x12D0E resolution 22]
+	trail_symbol~'^[^:]+:blue:yellow_lower.*'   [0x12D0F resolution 22]
+	trail_symbol~'^[^:]+:blue:white_lower.*'    [0x12D10 resolution 22]
+	trail_symbol~'^[^:]+:red:blue_lower.*'      [0x12D11 resolution 22]
+	trail_symbol~'^[^:]+:red:yellow_lower.*'    [0x12D12 resolution 22]
+	trail_symbol~'^[^:]+:red:white_lower.*'     [0x12D13 resolution 22]
+	trail_symbol~'^[^:]+:green:red_lower.*'     [0x12D14 resolution 22]
+	trail_symbol~'^[^:]+:green:yellow_lower.*'  [0x12D15 resolution 22]
+	trail_symbol~'^[^:]+:green:white_lower.*'   [0x12D16 resolution 22]
+
+        trail_symbol~'^[^:]+:red_round::.*'  	 [0x12E00 resolution 22]
+        trail_symbol~'^[^:]+:red_round:none.*'  	 [0x12E00 resolution 22]
+        trail_symbol~'^[^:]+:blue_round::.*'  	 [0x12E01 resolution 22]
+        trail_symbol~'^[^:]+:blue_round:none.*'  	 [0x12E01 resolution 22]
+        trail_symbol~'^[^:]+:yellow_round::.*'  	 [0x12E02 resolution 22]
+        trail_symbol~'^[^:]+:yellow_round:none.*'   [0x12E02 resolution 22]
+        trail_symbol~'^[^:]+:green_round::.*'  	 [0x12E03 resolution 22]
+        trail_symbol~'^[^:]+:green_round:none.*'  	 [0x12E03 resolution 22]
+
+	trail_symbol~'^[^:]+:white:red_circle.*'  	 [0x12E04 resolution 22]
+	trail_symbol~'^[^:]+:white_round:red_circle.*'  [0x12E05 resolution 22]
+	trail_symbol~'^[^:]+:white_round:red_dot.*'  [0x12E06 resolution 22]
+	trail_symbol~'^[^:]+:white_round:blue_dot.*'  [0x12E07 resolution 22]
+	trail_symbol~'^[^:]+:white_round:yellow_dot.*'  [0x12E08 resolution 22]
+	trail_symbol~'^[^:]+:red_circle:white_circle.*'  [0x12E09 resolution 22]
+	trail_symbol~'^[^:]+:blue:green_circle.*'  [0x12E0B resolution 22]
+	trail_symbol~'^[^:]+:blue_round:yellow_dot.*'  [0x12E0C resolution 22]
+	trail_symbol~'^[^:]+:green_circle:red_circle.*'  [0x12E0F resolution 22]
+end

@@ -1,0 +1,108 @@
+# OpenHikingMap
+#
+# Hiking relations in Czechia
+#
+########################################################
+
+
+#######################################################
+# Standard trails
+
+type=route & (route=hiking | route=foot) & kct_red=major {
+apply {
+	set trail_p1_color=red;
+	set trail_p1_symbol='cz:red:${kct_red}';
+	set trail_p1_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_blue=major {
+apply {
+	set trail_p2_color=blue;
+	set trail_p2_symbol='czsk:blue:${kct_blue}';
+	set trail_p2_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_green=major {
+apply {
+	set trail_p3_color=green;
+	set trail_p3_symbol='czsk:green:${kct_green}';
+	set trail_p3_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_yellow=major {
+apply {
+	set trail_p4_color=yellow;
+	set trail_p4_symbol='czsk:yellow:${kct_yellow}';
+	set trail_p4_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_red=* & (kct_red!=learning & kct_red!=local) {
+apply {
+	set trail_p5_color=red;
+	set trail_p5_symbol='czsk:red:${kct_red}';
+	set trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_blue=* & ( kct_blue!=learning & kct_blue!=local) {
+apply {
+	set trail_p6_color=blue;
+	set trail_p6_symbol='czsk:blue:${kct_blue}';
+	set trail_p6_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_green=* & (kct_green!=learning & kct_green!=local) {
+apply {
+	set trail_p7_color=green;
+	set trail_p7_symbol='czsk:green:${kct_green}';
+	set trail_p7_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & kct_yellow=* & (kct_yellow!=learning & kct_yellow!=local) {
+apply {
+	set trail_p8_color=yellow;
+	set trail_p8_symbol='czsk:yellow:${kct_yellow}';
+	set trail_p8_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+#######################################################
+# Local trails
+
+type=route & (route=hiking | route=foot) & (kct_red=learning | kct_red=local) {
+apply {
+	set trail_p5_color=red;
+	set trail_p5_symbol='czsk:red:${kct_red}';
+	set trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) &  ( kct_blue=learning | kct_blue=local) {
+apply {
+	set trail_p6_color=blue;
+	set trail_p6_symbol='czsk:blue:${kct_blue}';
+	set trail_p6_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) &  (kct_green=learning | kct_green=local) {
+apply {
+	set trail_p7_color=green;
+	set trail_p7_symbol='czsk:green:${kct_green}';
+	set trail_p7_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+type=route & (route=hiking | route=foot) & (kct_yellow=learning | kct_yellow=local) {
+apply {
+	set trail_p9_color=yellow;
+	set trail_p9_symbol='czsk:yellow:${kct_yellow}';
+	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	}
+}

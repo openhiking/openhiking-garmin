@@ -109,8 +109,8 @@ tourism=chalet   [0x02B04 resolution 24]
 tourism=camp_site | tourism=caravan_site  [0x02B03 resolution 24]
 
 tourism=alpine_hut   [0x02B05 resolution 22]
-tourism=wilderness_hut   [0x02B07 resolution 24]
-amenity=shelter & shelter_type=basic_hut  [0x02B08 resolution 24]
+tourism=wilderness_hut   [0x02B07 resolution 22]
+amenity=shelter & shelter_type=basic_hut  [0x02B08 resolution 22]
 
 
 #######################################
@@ -202,10 +202,11 @@ aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 r
 highway=milestone {name '${distance}'} [0x5A00 resolution 24]
 railway=crossing | railway=level_crossing [0x6406 resolution 24]
 
+aerialway=station {name '${short_name}'|'${name}'} [0x11617 resolution 24]
 # old
 #amenity=bus_station {name '${short_name}'|'${name}'} [0x1151D resolution 22]
 #highway=speed_camera [0x13002 resolution 24]
-aerialway=station {name '${short_name}'|'${name}'} [0x12F06 resolution 24]
+
 
 #######################################
 # Barriers
@@ -237,12 +238,13 @@ amenity=spa {name '${short_name}'|'${name}'} [0x05400 resolution 24]
 
 waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x6508 resolution 24]
 
+natural=bay   [0x6503 resolution 22]
 natural=spring & drinking_water=yes  [0x6514 resolution 22]
 natural=spring & drinking_water=no [0x6515 resolution 24]
 natural=spring [0x6511 resolution 24]
 natural=cliff  [0x6607 resolution 22]
 natural=rock[0x06614 resolution 23]
-natural=stone  [0x06614 resolution 24]
+natural=stone  [0x06615 resolution 24]
 natural=peak [0x06616 resolution 24]
 natural=sinkhole   [0x0660C resolution 24]
 natural=cave_entrance  [0x06608 resolution 24]
@@ -376,9 +378,9 @@ trail_p8_color=*  & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_s
 trail_p9_color=*  & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_symbol='${trail_p9_symbol}' }
 trail_p10_color=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_symbol='${trail_p10_symbol}' }
 
-include 'points-hiking-symbols-hu'
-include 'points-hiking-symbols-sk'
-
+include 'points-hiking-symbols-hu';
+include 'points-hiking-symbols-czsk';
+include 'points-hiking-symbols-osmc';
 
 #######################################
 # Obstacles

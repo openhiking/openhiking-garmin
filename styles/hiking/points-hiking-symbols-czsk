@@ -1,0 +1,52 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking symbols rendering for Czechia and Slovakia
+#
+########################################################
+
+if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
+
+	trail_symbol='czsk:blue:major'     [0x12C00 resolution 22]
+	trail_symbol='czsk:blue:ruin'      [0x12C01 resolution 22]
+	trail_symbol='czsk:blue:peak'      [0x12C02 resolution 22]
+	trail_symbol='czsk:blue:spring'    [0x12C03 resolution 22]
+	trail_symbol='czsk:blue:interesting_object'  [0x12C04 resolution 22]
+	trail_symbol='czsk:blue:roundtrip' [0x12C05 resolution 22]
+	trail_symbol='czsk:blue:education'   [0x12C06 resolution 22]
+	trail_symbol='czsk:blue:learning'   [0x12C06 resolution 22]
+	trail_symbol='czsk:blue:local'      [0x12C07 resolution 22]
+	
+	trail_symbol='czsk:red:major'     [0x12C08 resolution 22]
+	trail_symbol='czsk:red:ruin'      [0x12C09 resolution 22]
+	trail_symbol='czsk:red:peak'      [0x12C0A resolution 22]
+	trail_symbol='czsk:red:spring'    [0x12C0B resolution 22]
+	trail_symbol='czsk:red:interesting_object'  [0x12C0C resolution 22]
+	trail_symbol='czsk:red:roundtrip' [0x12C0D resolution 22]
+	trail_symbol='czsk:red:education'   [0x12C0E resolution 22]
+	trail_symbol='czsk:red:learning'   [0x12C0E resolution 22]
+	trail_symbol='czsk:red:local'      [0x12C0F resolution 22]
+	
+	
+	trail_symbol='czsk:yellow:major'     [0x12C10 resolution 22]
+	trail_symbol='czsk:yellow:ruin'      [0x12C11 resolution 22]
+	trail_symbol='czsk:yellow:peak'      [0x12C12 resolution 22]
+	trail_symbol='czsk:yellow:spring'    [0x12C13 resolution 22]
+	trail_symbol='czsk:yellow:interesting_object'  [0x12C14 resolution 22]
+	trail_symbol='czsk:yellow:roundtrip' [0x12C15 resolution 22]
+	trail_symbol='czsk:yellow:education'   [0x12C16 resolution 22]
+	trail_symbol='czsk:yellow:learning'   [0x12C16 resolution 22]
+	trail_symbol='czsk:yellow:local'      [0x12C17 resolution 22]
+	
+	
+	trail_symbol='czsk:green:major'     [0x12C18 resolution 22]
+	trail_symbol='czsk:green:ruin'      [0x12C19 resolution 22]
+	trail_symbol='czsk:green:peak'      [0x12C1A resolution 22]
+	trail_symbol='czsk:green:spring'    [0x12C1B resolution 22]
+	trail_symbol='czsk:green:interesting_object'  [0x12C1C resolution 22]
+	trail_symbol='czsk:green:roundtrip' [0x12C1D resolution 22]
+	trail_symbol='czsk:green:education'   [0x12C1E resolution 22]
+	trail_symbol='czsk:green:learning'   [0x12C1E resolution 22]
+	trail_symbol='czsk:green:local'      [0x12C1F resolution 22]
+	
+end

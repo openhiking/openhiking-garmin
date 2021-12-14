@@ -12,6 +12,9 @@
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 
+#######################################
+# Simplifications
+#
 
 oneway=true | oneway=1 {set oneway=yes}
 tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
@@ -21,6 +24,13 @@ access=no | access=private { add foot=no }
 access=customers { add foot=customers }
 foot=private { set foot=no }
 
+highway=path & via_ferrata_scale = * {set highway=via_ferrata}
+highway=* & abandoned=yes  { set highway=abandoned }
+highway=* & proposed=yes  { set highway=proposed }
+
+railway=* & abandoned=yes { set abandoned='${railway}'; set railway=abandoned; }
+railway=* & disused=yes { set disused='${railway}'; set railway=disused; }
+railway=* & proposed=yes  { set railway=proposed }
 
 #######################################
 # Hiking Trail Color Setting
@@ -57,37 +67,53 @@ highway=track & tracktype!=* { add unpaved_soft=1; add mkgmap:unpaved=1 }
 
 
 # Remember to keep proper order with 'add'
-highway=path | highway=footway | highway=platform | highway = track | unpaved_hard=1 | unpaved_soft=1 { add highway_width=2 }
-highway=cycleway | highway=pedestrian | highway = service { add highway_width=3 }
-highway=residential | highway=living_street | highway = unclassified { add highway_width=4 }
-highway=steps | highway=tertiary { add highway_width=5 }
-highway=primary | highway=secondary | highway = trunk { add highway_width=6 }
+highway=via_ferrata { add highway_width=5 }
+highway=path { add highway_width=2 }
+highway=footway | highway=platform  { add highway_width=1 }
 route=ferry { add highway_width= 2 }
+highway = track | unpaved_hard=1 | unpaved_soft=1  { add highway_width=2 }
+highway=cycleway | highway=pedestrian | highway = service { add highway_width=3 }
+highway=residential | highway=living_street | highway = unclassified | highway=tertiary { add highway_width=4 }
+highway=steps  { add highway_width=5 }
+highway=primary | highway=secondary  { add highway_width=5 }
+highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link { add highway_width=6 }
 
 
-trail_color=blue &  highway_width=2  [0x10000   resolution 22 continue]
-trail_color=blue &  highway_width=3  [0x10001   resolution 22 continue]
-trail_color=blue &  highway_width=4  [0x10002   resolution 22 continue]
-trail_color=blue &  highway_width=5  [0x10003   resolution 22 continue]
-trail_color=blue &  highway_width=6  [0x10004   resolution 22 continue]
+trail_color=blue &  highway_width=1  [0x10000   resolution 22 continue]
+trail_color=blue &  highway_width=2  [0x10001   resolution 22 continue]
+trail_color=blue &  highway_width=3  [0x10002   resolution 22 continue]
+trail_color=blue &  highway_width=4  [0x10003   resolution 22 continue]
+trail_color=blue &  highway_width=5  [0x10004   resolution 22 continue]
+trail_color=blue &  highway_width=6  [0x10005   resolution 22 continue]
 
-trail_color=red &  highway_width=2  [0x10005   resolution 22 continue]
-trail_color=red &  highway_width=3  [0x10006   resolution 22 continue]
-trail_color=red &  highway_width=4  [0x10007   resolution 22 continue]
-trail_color=red &  highway_width=5  [0x10008   resolution 22 continue]
-trail_color=red &  highway_width=6  [0x10009   resolution 22 continue]
+trail_color=red &  highway_width=1  [0x10006   resolution 22 continue]
+trail_color=red &  highway_width=2  [0x10007   resolution 22 continue]
+trail_color=red &  highway_width=3  [0x10008   resolution 22 continue]
+trail_color=red &  highway_width=4  [0x10009   resolution 22 continue]
+trail_color=red &  highway_width=5  [0x1000a   resolution 22 continue]
+trail_color=red &  highway_width=6  [0x1000b   resolution 22 continue]
 
-trail_color=green &  highway_width=2  [0x1000a   resolution 22 continue]
-trail_color=green &  highway_width=3  [0x1000b   resolution 22 continue]
-trail_color=green &  highway_width=4  [0x1000c   resolution 22 continue]
-trail_color=green &  highway_width=5  [0x1000d   resolution 22 continue]
-trail_color=green &  highway_width=6  [0x1000e   resolution 22 continue]
+trail_color=green &  highway_width=1  [0x1000c   resolution 22 continue]
+trail_color=green &  highway_width=2  [0x1000d   resolution 22 continue]
+trail_color=green &  highway_width=3  [0x1000e   resolution 22 continue]
+trail_color=green &  highway_width=4  [0x1000f   resolution 22 continue]
+trail_color=green &  highway_width=5  [0x10010   resolution 22 continue]
+trail_color=green &  highway_width=6  [0x10011   resolution 22 continue]
 
-trail_color=yellow &  highway_width=2  [0x1000f   resolution 22 continue]
-trail_color=yellow &  highway_width=3  [0x10010   resolution 22 continue]
-trail_color=yellow &  highway_width=4  [0x10011   resolution 22 continue]
-trail_color=yellow &  highway_width=5  [0x10012   resolution 22 continue]
-trail_color=yellow &  highway_width=6  [0x10013   resolution 22 continue]
+trail_color=yellow &  highway_width=1  [0x10012   resolution 22 continue]
+trail_color=yellow &  highway_width=2  [0x10013   resolution 22 continue]
+trail_color=yellow &  highway_width=3  [0x10014   resolution 22 continue]
+trail_color=yellow &  highway_width=4  [0x10015   resolution 22 continue]
+trail_color=yellow &  highway_width=5  [0x10016   resolution 22 continue]
+trail_color=yellow &  highway_width=6  [0x10017   resolution 22 continue]
+
+trail_color=black &  highway_width=1  [0x10018   resolution 22 continue]
+trail_color=black &  highway_width=2  [0x10019   resolution 22 continue]
+trail_color=black &  highway_width=3  [0x1001a   resolution 22 continue]
+trail_color=black &  highway_width=4  [0x1001b   resolution 22 continue]
+trail_color=black &  highway_width=5  [0x1001c   resolution 22 continue]
+trail_color=black &  highway_width=6  [0x1001d   resolution 22 continue]
+
 
 #######################################
 # Highways
@@ -104,80 +130,106 @@ highway=* & foot=no { set mkgmap:foot=no }
 
 # Supplementary info: bridge, tunnel etc
 highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10107 resolution 22 continue]
-highway=* & tunnel=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E10 resolution 22 continue]
-highway=* & embankment=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E11 resolution 22 continue]
-highway=* & cutting=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E12 resolution 22 continue]
+highway=* & tunnel=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E10 resolution 22 continue]
+highway=* & tunnel=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E11 resolution 22 continue]
+highway=* & embankment=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E12 resolution 22 continue]
+highway=* & cutting=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10E13 resolution 22 continue]
 
-highway=* & oneway=yes & highway!=proposed & highway!=construction & proposed!=* & highway!=motorway & highway!=trunk & highway!=primary [0x10E13 resolution 22 continue]
-highway=* & oneway=-1 & highway!=proposed & highway!=construction & proposed!=*	& highway!=motorway & highway!=trunk & highway!=primary  [0x10E14 resolution 22 continue]
+highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E14 resolution 22 continue]
+highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E15 resolution 22 continue]
 
-highway=* & (foot=no | foot=customers) & highway!=proposed & highway!=construction & proposed!=* & highway!=motorway & highway != trunk [0x10E15 resolution 22 continue]
+highway=* & (foot=no | foot=customers) & highway!=proposed & highway!=construction & highway!=motorway & highway != trunk [0x10E16 resolution 22 continue]
 
 # Highway rendering
-highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link
-{name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 18]
+if (highway=motorway | highway=trunk) then
+	length()>5000 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
+	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
+end
 
-highway=primary | highway=primary_link
-{name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
+highway=motorway_link | highway=trunk_link
+{name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
 
-(highway=secondary | highway=secondary_link) &  unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 18]
-highway=secondary | highway=secondary_link   [0x03 road_class=2 road_speed=4 resolution 18]
+if (highway=primary) then
+	length()>3000 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
+	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
+end
 
-(highway=tertiary | highway=tertiary_link)  &  unpaved_hard=1 { name '${name} ${route_name}'|'${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
+highway=primary_link {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
+
+(highway=secondary | highway=secondary_link) &  unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
+highway=secondary | highway=secondary_link   [0x03 road_class=2 road_speed=4 resolution 19]
+
+(highway=tertiary | highway=tertiary_link)  &  unpaved_hard=1 { name '${name} ${route_name}'|'${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
 highway=tertiary | highway=tertiary_link { name '${name} ${route_name}'|'${name}'}   [0x04 road_class=1 road_speed=4 resolution 19]
 
-highway=unclassified & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
-highway=unclassified & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=3 resolution 19]
+highway=unclassified & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
+highway=unclassified & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=3 resolution 20]
 highway=unclassified   {name  '${name}'}   [0x05 road_class=0 road_speed=3 resolution 19]
 
-highway=residential & unpaved_hard=1 { name '${name}'}   [0x0d road_class=0 road_speed=3 resolution 19]
-highway=residential & unpaved_soft=1 { name '${name}'}   [0x0a road_class=0 road_speed=3 resolution 19]
+highway=residential & unpaved_hard=1 { name '${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
+highway=residential & unpaved_soft=1 { name '${name}'}   [0x0a road_class=0 road_speed=3 resolution 20]
 highway=residential  { name '${name}'}   [0x06 road_class=0 road_speed=3 resolution 19]
 
 highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 19]
 
-highway=service & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=1 resolution 19]
-highway=service & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=1 resolution 19]
-highway=service { name '${name}'}   [0x07 road_class=0 road_speed=1 resolution 19]
+highway=service & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=1 resolution 20]
+highway=service & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=1 resolution 20]
+highway=service { name '${name}'}   [0x07 road_class=0 road_speed=1 resolution 20]
 
-highway=track & tracktype=grade1 { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}   [0x0d road_class=0 road_speed=1 resolution 20]
-highway=track & tracktype=grade2 { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x0d road_class=0 road_speed=1 resolution 20]
-highway=track & tracktype=grade3 { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x0a road_class=0 road_speed=1 resolution 21]
-highway=track & tracktype=grade4 { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x0a road_class=0 road_speed=1 resolution 21]
-highway=track & tracktype=grade5 { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x0e road_class=0 road_speed=1 resolution 22]
-highway=track & tracktype!=* { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}   [0x0a road_class=0 road_speed=1 resolution 21]
-
+if (highway=track) then
+	() { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
+	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
+	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 20]
+	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
+	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
+	tracktype=grade5    [0x0e road_class=0 road_speed=1 resolution 22]
+	tracktype!=*        [0x0a road_class=0 road_speed=1 resolution 21]
+end
 
 highway=pedestrian   [0x0f road_class=0 road_speed=1 resolution 21]
-highway=footway | (highway=path & surface=asphalt)  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 21]
-highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 21]
-highway=path  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}   [0x16 road_class=0 road_speed=1 resolution 22]
-highway=cycleway   [0x11 road_class=0 road_speed=1 resolution 21]
+highway=footway | (highway=path & surface=asphalt)  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
+highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
+highway=cycleway   [0x08 road_class=0 road_speed=1 resolution 21]
+highway=steps   [0x11 road_class=0 road_speed=1 resolution 22]
 
-highway=steps   [0x12 road_class=0 road_speed=1 resolution 21]
+highway=via_ferrata { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x13 resolution 22]
+
+if (highway=path) then
+#	sac_scale=hiking {add sac_scale_level=1; add sac_scale_tag='T1'; }
+	sac_scale='mountain_hiking' {add sac_scale_level=2; add sac_scale_tag='T2'; }
+	sac_scale='demanding_mountain_hiking' {add sac_scale_level=3; add sac_scale_tag='T3'; }
+	sac_scale='alpine_hiking' {add sac_scale_level=4; add sac_scale_tag='T4'; }
+	sac_scale='demanding_alpine_hiking' {add sac_scale_level=5; add sac_scale_tag='T5'; }
+	sac_scale='difficult_alpine_hiking' {add sac_scale_level=6; add sac_scale_tag='T6'; }
+
+	assisted_trail=* | safety_rope=* | ladder=* | rungs=*  [0x10E17 resolution 22 continue]
+
+	sac_scale_tag=*  { name '${name} ${trail_name} (${sac_scale_tag})'|'${name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
+	sac_scale_tag!=* { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
+	sac_scale_level>2  [0x12 road_class=0 road_speed=1 resolution 22]
+	() [0x16 road_class=0 road_speed=1 resolution 22]
+end
+
+
 
 #######################################
 # Railways
 #
-railway=* & bridge=yes & railway!=proposed & railway!=construction & railway!=disused & disused !=* [0x10107 resolution 22 continue]
-railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=disused & disused !=* [0x10E10 resolution 22 continue]
-#railway=* & embankment=yes & railway!=proposed & railway!=construction & railway!=disused & disused !=* [0x10E11 resolution 22 continue]
+railway=* & bridge=yes & railway!=proposed & railway!=construction &  railway!=abandoned  [0x10107 resolution 22 continue]
+railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=abandoned  [0x10E10 resolution 22 continue]
 
-railway=rail & disused!=* & abandoned!=*  { name '${name}'} [0x14  resolution 17 ]
-railway=rail & disused=yes [0x10F02  resolution 22 ]
+railway=rail  { name '${name}'} [0x14  resolution 18 ]
 railway=disused	& disused!=narrow_gauge [0x10F02 resolution 22]
 disused:railway=rail [0x10F02  resolution 22]
 
 railway=light_rail  { name '${name}'} [0x10F00 resolution 20 ]
 railway=tram [0x10F01 resolution 20 ]
 
-railway=narrow_gauge & disused!=* { name '${name}'} [0x10F03 resolution 22 ]
-railway=narrow_gauge & disused=* { name '${name}'} [0x10F04 resolution 22 ]
+railway=narrow_gauge { name '${name}'} [0x10F03 resolution 20 ]
 railway=disused	& disused=narrow_gauge [0x10F04 resolution 22]
-disused:railway=narrow_gauge [0x10F04  resolution 17]
+disused:railway=narrow_gauge [0x10F04  resolution 22]
 
-railway=funicular & disused!=* { name '${name}'} [0x10F03 resolution 22 ]
-railway=funicular & disused=* { name '${name}'} [0x10F04 resolution 22 ]
+railway=funicular  { name '${name}'} [0x10F03 resolution 21 ]
 railway=disused	& disused=funicular [0x10F04 resolution 22]
 
 #######################################
@@ -202,10 +254,11 @@ aeroway=runway [0x10F05 resolution 22]
 #######################################
 # Ski & lift
 #
-aerialway=gondola | aerialway=cable_car [0x10E09 resolution 22]
-aerialway=chair_lift  | aerialway=mixed_lift { name '${name}'} [0x10E0A resolution 24]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=platter  { name '${name}'} [0x10E0B resolution 24]
-aerialway=rope_tow | aerialway=magic_carpet { name '${name}'} [0x10E0C resolution 24]
+aerialway=gondola | aerialway=cable_car [0x10E08 resolution 22]
+aerialway=chair_lift  | aerialway=mixed_lift { name '${name}'} [0x10E09 resolution 24]
+aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=platter  { name '${name}'} [0x10E0A resolution 24]
+aerialway=rope_tow | aerialway=magic_carpet { name '${name}'} [0x10E0B resolution 24]
+aerialway=goods  { name '${name}'} [0x10E0C resolution 24]
 
 piste:type = downhill & piste:difficulty = novice       [0x10E0D resolution 24]
 piste:type = downhill & piste:difficulty = easy         [0x10E0D resolution 24]

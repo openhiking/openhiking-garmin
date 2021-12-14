@@ -17,7 +17,6 @@ apply {
 	set trail_p1_color=blue;
 	set trail_p1_symbol='hu:${jel}';
 	set trail_p1_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
@@ -26,7 +25,6 @@ apply {
 	set trail_p2_color=red;
 	set trail_p2_symbol='hu:${jel}';
 	set trail_p2_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 type=route & route=hiking & jel=z {
@@ -34,7 +32,6 @@ apply {
 	set trail_p3_color=green;
 	set trail_p3_symbol='hu:${jel}';
 	set trail_p3_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 type=route & route=hiking & jel=s {
@@ -42,7 +39,6 @@ apply {
 	set trail_p4_color=yellow;
 	set trail_p4_symbol='hu:${jel}';
 	set trail_p4_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
@@ -52,7 +48,6 @@ apply {
 	set trail_p5_color=blue;
 	set trail_p5_symbol='hu:${jel}';
 	set trail_p5_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_med=yes;
 	}
 }
 
@@ -61,7 +56,6 @@ apply {
 	set trail_p6_color=red;
 	set trail_p6_symbol='hu:${jel}';
 	set trail_p6_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_med=yes;
 	}
 }
 
@@ -70,7 +64,6 @@ apply {
 	set trail_p7_color=green;
 	set trail_p7_symbol='hu:${jel}';
 	set trail_p7_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_med=yes;
 	}
 }
 
@@ -79,7 +72,6 @@ apply {
 	set trail_p8_color=yellow;
 	set trail_p8_symbol='hu:${jel}';
 	set trail_p8_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_med=yes;
 	}
 }
 

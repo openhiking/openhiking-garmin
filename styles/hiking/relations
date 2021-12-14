@@ -5,40 +5,8 @@
 #
 ########################################################
 
-include 'relations-hiking-hu'
-include 'relations-hiking-sk'
-
-
-# Generic OSMC parsing
-
-type=route & route=hiking & osmc:symbol~'^blue.+'  {
-apply {
-	add trail_p10_color=blue;
-	add trail_p10_symbol='${symbol}'|'${jel}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
-	}
-}
-
-type=route & route=hiking & osmc:symbol~'^red.+' {
-apply {
-	add trail_p10_color=red;
-	add trail_p10_symbol='${symbol}'|'${jel}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
-	}
-}
-
-type=route & route=hiking & jel!=zut & osmc:symbol~'^green.+' {
-apply {
-	add trail_p10_color=green;
-	add trail_p10_symbol='${symbol}'|'${jel}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
-	}
-}
-type=route & route=hiking & osmc:symbol~'^yellow.+' {
-apply {
-	add trail_p10_color=yellow;
-	add trail_p10_symbol='${symbol}'|'${jel}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
-	}
-}
+include 'relations-hiking-hu';
+include 'relations-hiking-sk';
+include 'relations-hiking-cz';
+include 'relations-hiking-osmc';
 

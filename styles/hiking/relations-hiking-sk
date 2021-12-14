@@ -11,67 +11,63 @@
 type=route & (route=hiking | route=foot) & symbol=major & colour=red {
 apply {
 	set trail_p1_color=red;
-	set trail_p1_symbol='sk:${colour}:${symbol}';
+	set trail_p1_symbol='czsk:${colour}:${symbol}';
 	set trail_p1_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
 type=route & (route=hiking | route=foot) & symbol=major & colour=blue {
 apply {
 	set trail_p2_color=blue;
-	set trail_p2_symbol='sk:${colour}:${symbol}';
+	set trail_p2_symbol='czsk:${colour}:${symbol}';
 	set trail_p2_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
 type=route & (route=hiking | route=foot) & symbol=major & colour=green {
 apply {
 	set trail_p3_color=green;
-	set trail_p3_symbol='sk:${colour}:${symbol}';
+	set trail_p3_symbol='czsk:${colour}:${symbol}';
 	set trail_p3_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
 type=route & (route=hiking | route=foot) & symbol=major & colour=yellow {
 apply {
 	set trail_p4_color=yellow;
-	set trail_p4_symbol='sk:${colour}:${symbol}';
+	set trail_p4_symbol='czsk:${colour}:${symbol}';
 	set trail_p4_name='${short_name}'|'${name}'|'${ref}';
-	set trail_imp_high=yes;
 	}
 }
 
-type=route & (route=hiking | route=foot) & colour=red & symbol=* & symbol!=education & symbol!=local {
+type=route & (route=hiking | route=foot) & operator=KST & colour=red & symbol=* & symbol!=education & symbol!=local {
 apply {
 	set trail_p5_color=red;
-	set trail_p5_symbol='sk:${colour}:${symbol}';
+	set trail_p5_symbol='czsk:${colour}:${symbol}';
 	set trail_p5_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-type=route & (route=hiking | route=foot) & colour=blue & symbol=* & symbol!=education & symbol!=local {
+type=route & (route=hiking | route=foot) & operator=KST & colour=blue & symbol=* & symbol!=education & symbol!=local {
 apply {
 	set trail_p6_color=blue;
-	set trail_p6_symbol='sk:${colour}:${symbol}';
+	set trail_p6_symbol='czsk:${colour}:${symbol}';
 	set trail_p6_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-type=route & (route=hiking | route=foot) & colour=green & symbol=* & symbol!=education & symbol!=local {
+type=route & (route=hiking | route=foot) & operator=KST & colour=green & symbol=* & symbol!=education & symbol!=local {
 apply {
 	set trail_p7_color=green;
-	set trail_p7_symbol='sk:${colour}:${symbol}';
+	set trail_p7_symbol='czsk:${colour}:${symbol}';
 	set trail_p7_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-type=route & (route=hiking | route=foot) & colour=yellow & symbol=* & symbol!=education & symbol!=local {
+type=route & (route=hiking | route=foot) & operator=KST & colour=yellow & symbol=* & symbol!=education & symbol!=local {
 apply {
 	set trail_p8_color=yellow;
-	set trail_p8_symbol='sk:${colour}:${symbol}';
+	set trail_p8_symbol='czsk:${colour}:${symbol}';
 	set trail_p8_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
@@ -79,10 +75,10 @@ apply {
 #######################################################
 # Local trails
 
-type=route & (route=hiking | route=foot) & (symbol=education | symbol=local) {
+type=route & (route=hiking | route=foot) & colour=* & (symbol=education | symbol=local) {
 apply {
 	set trail_p9_color='${colour}';
-	set trail_p9_symbol='sk:${colour}:${symbol}';
+	set trail_p9_symbol='czsk:${colour}:${symbol}';
 	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
