@@ -1,0 +1,96 @@
+OpenHiking térképek készítése
+1 Szoftver eszközök
+1.1 GNU Make
+A GNU Make szofterek összeállítását automatizáló eszköz, amelyben a Makefile "receptkönyve" specifikálja a a célszoftver felépítésének összetevõit és módját. A térkép gyártása során a make automatizálja a felhasznált komponensek (például Openstreetmap adatfájlok, szintvonalak) összegyûjtését és feldolgozásának lépéseit. 
+A Windowsnak alapból nem része a Make, lehetséges telepítési módok:
+a) (ajánlott) Telepíteni kell a Chocolatey csomagkezelõt a https://chocolatey.org/install oldalról az ott megadott PowerShell parancs lefuttatásával (admin módban). A Chocolatey sikeres telepítését követõen a "choco install make" konzol parancs telepíteni fogja a make-et
+b) Windows 10 esetén a Windows Subsystem for Linux (WSL) telepítése után Linuxos környezetbõl telepíthetõ a make
+c) A MinGW csomagnak is része a GNU Make, a MinGw a https://sourceforge.net/projects/mingw-w64/ oldalról telepíthetõ 
+
+1.2 Phyghtmap  (opcionális)
+A phyghtmap Python szoftver, amely a NASA SRTM adatai alapján megadott területre legenerálja a szintvonalakat, és OSM fájlként lemeneti. A szintvonalak elkészítése csak egyszer szükséges, a térkép frissítés a késõbbiekben a már legenerált szintvonal adatfájlokat használja.
+A phyghtmap helyettesíthetõ elõre elkészített szintvonal fájlok használatával, ebben az esetben nincs szükség erre az eszközre..
+A phyghtmap futtatásához Python környezetre van szükség, például a WinPython telepítésével: https://winpython.github.io
+A Python telepítése után az itt megadott instrukciók szerint telepíthetõ a phyghtmap : http://katze.tfiu.de/projects/phyghtmap/
+
+1.3 GNU Wget
+A wget egyszerû web kliens az OSM fájlok parancssoros letöltéséhez, telepíthetõ pl innen: https://eternallybored.org/misc/wget/
+
+1.4 Osmconvert
+Az osmconvertet OSM fájlok konvertálására és összefûzésére használjuk, illetõleg ennek segítségével vághatjuk ki megadott terület adatait a bemenõ adatfájlokból.
+Windows alá az itt megadott linkekrõl telepíthetõ: https://wiki.openstreetmap.org/wiki/Osmconvert#Windows (2021. decemberében csak a 64 bites nagy fájlokat is támogató (large file support) variáns linkje élt)
+
+1.5 Splitter
+A splitter a megadott OSM fájlt kisebb csempékre vágja és OSM/PBF formátumban lementi a csempék tartalmát. A splitter Java program, futtatásához Java futtató környezet (JRE) szükséges.
+Letöltés: https://www.mkgmap.org.uk/download/splitter.html
+
+1.6 mkgmap
+Az mkgmap építi fel a Garmin image fájlokat az OSM csempékbõl a stílusfájlokban szereplõ leképezési szabályok szerint. Emellett, az mkgmap készíti a domborzatárnyékolást is. Az mkgmapJava program, futtatásához Java futtató környezet (JRE) szükséges.
+Letöltés: https://www.mkgmap.org.uk/download/mkgmap.html
+
+1.7 NSIS (Null Scriptable Install System)
+Az NSIS készíti el a legyártott Garmin fájlokból a Windows telepítõt, ami a Mapsource/BaseCamp szoftverek alá telepíti az elkészített térképet.
+Letöltés: https://sourceforge.net/projects/nsis/
+
+
+2. Térképek paraméterei
+A térképeket rövid belsõ kóddal azonosítjuk, például "hu" vagy "ce". A térképek paramétereit a Makefile "Map configurations" szekciójában kell megadni, a kód szerint if ágban. A beállítandó paraméterek a következõk:
+FAMILY_ID: térképcsalád azonosító száma, 1 és 65535 közé kell hogy essen, minden térképnek kötelezõen egyedi azonosító számmal kell rendelkeznie. Példa: FAMILY_ID=3691
+FAMILY_NAME: térképcsalád szöveges megnevezése, amit a Garmin a térkép kiválasztásakor mutat. Példa: FAMILY_NAME="OpenHiking CE"
+SERIES_NAME: térképcsalád szöveges megnevezése, amit a PCs szoftverek mutatnak a térkép kiválasztásakor. Példa: SERIES_NAME="OpenHiking CE"
+OSM_COUNTRY_LIST: azon országok felsorolása, amelyek OSM adatfájljait a térkép gyártásához felhasználjuk. Az ország nevét csupa kisbetûvel, a http://download.geofabrik.de oldalon használt alakban kell megadni. Példa: OSM_COUNTRY_LIST=hungary slovakia 
+SUPPLEMENTARY_DATA: az országok mellett kiegészítõ OSM adatfájlokat lehet itt megadni, amit a gyártás során még felhasználunk. Ha nincs ilyen, akkor üresen maradhat. A gyártás az országok, a szintvonalak és a kiegészítõ OSM fájlok összegyúrásával építi fel a térkép OSM adatfájlját. Figyelmeztetés: az osmconvert csak O5M és OSM formátumot fogad el.
+CONTOUR_LINE_STEP: szintvonalak sûrûsége méterben, a phyghtmap használja. Példa: CONTOUR_LINE_STEP=20
+CONTOUR_LINES: szintvonalakat tartalmazó OSM adatfájl neve. Figyelmeztetés: az osmconvert csak O5M és OSM formátumot fogad el. Példa: CONTOUR_LINES=contour-ce-20-v3.o5m
+BOUNDARY_POLYGON: térképhatároló poligont tartalmazó fájl neve. A fájl OSM POLY formátumú kell, hogy legyen. Példa: BOUNDARY_POLYGON=central-europe.poly
+MAP_THEME: a térkép témájának azonosító neve. Ezen paraméter határozza meg, hogy az általános stílusfájlok mellett melyik témaspecifikus stílusfájlokat fogja alkalmazni az mkgmap a térkép legyártása során. Példa: MAP_STYLE=hiking
+GENERATE_SEA: ha yes-re van állítva, az mkgmap legenerálja a tenger (natural=sea) és szárazföld poligonokat (natural=land), amelyeket a stílusfájlokban kell Garmin típusokra leképezni. Alkalmazása esetén a TYP-ben a polygonok felrajzolási sorrendjében elsõnek a tengert, másodiknak a szárazföldet, majd minden mást ezt követõnek kell megadni. Példa: GENERATE_SEA=yes
+TYP_FILE (opcionális): a TYP fájl neve, amit a gyártás felhasznál. Ha nincs megadva, az alapértelmezett név ohm<térképkód>.typ, például ohmce.typ
+ICON_FILE (opcionális): telepítõ EXE készítéséhez felhasznált ikon fájl neve. Ha nincs megadva, a telepítõ az alapértelmezett ikont használja.
+CODE_PAGE (opcionális): a Garmin térképhez használt kódlap. A Windows-1250 kódlaphoz 1250-t, Unicode kódlaphoz 65001-et kell megadni. Ha nincs megadva, a térkép Unicode kódlappal készül. 
+
+Az mkgmap opciókról bõvebb leírás itt érhetõ el: https://www.mkgmap.org.uk/doc/options
+
+
+3. Adattároló könyvtárak
+Ezen könyvtárak pontos helyét a Makefile "Data cache locations" szekciójában kell beállítani. Ezen könyvtárakat használja a gyártás a különbözõ bemenõ adatfájlok és az elkészített térkép tárolására. A könyvtárakat az elsõ használat elõtt kézzel kell létrehozni.
+DATASET_DIR: adattároló könyvtárak helye, alapértelmezésben ez alá kerül minden más
+HGT_DIR: a különbözõ digitális magassági fájlok (SRTM és Viewfinder) letárolására használja a phyghtmap. Alapértelmezett helye <DATASET_DIR>\hgy
+DEM_DIR: digitális magassági fájlok a domborzatárnyékolás számára. Alapesetben a <HGT_DIR>\VIEW3 van megadva, hogy a domborzatárnyékolás felhasználja a phyghtmap által letöltött Viewfinder fájlokat. Ha a könyvtár üres, akkor nem készül domborzatárnyékolás.
+OSM_CACHE_DIR: ide kerülnek a letöltött OSM fájlok és az OSM fájlokból összegyûrt mester OSM fájlok. Alapértelmezett helye  <DATASET_DIR>\osm.
+CONTOUR_DIR: a gyártás itt keresi a szintvonalakat tartalmazó OSM fájlokat. Alapértelmezett helye  <DATASET_DIR>\contour
+TILES_DIR: a gyártás ide helyezi a splitter által elkészített csempéket. Alapértelmezett helye: <DATASET_DIR>\tiles-<térképkód>, például c:\Dataset\tiles-ce
+GMAP_DIR: a gyártás ide helyezi az elkészült Garmin fájlokat (img, mdx, tdb stb). Alapértelmezett helye: <DATASET_DIR>\gmap-<térképkód>, például c:\Dataset\gmap-ce
+
+
+4. Konfigurációs könyvtárak
+Határoló poligonok: <openhiking-garmin>\boundaries. A gyártás itt keresi a térkép BOUNDARY_POLYGON paraméterében megadott poligon fájlt.
+Konfiguráció: <openhiking-garmin>\config, a gyártás itt keresi a TYP fájlokat. Az itt szereplõ mkmap.args fájl tartalmazza az mkgmap egyes parancssori argumentumait is.
+
+
+5. Stílusfájlok rendszere
+A stílusfájlok tartalmazzák az OSM -> Garmin leképezési szabályokat. A stílusfájlok általános és témaspecifikus stílusfájlokból állnak, az általános fájlok valamennyi térképkimenetre alkalmazásra kerülnek, a témaspecifikus fájlok közül pedig a térkép MAP_THEME értékének megfelelõek.
+A stílusfájlok az <openhiking-garmin>\styles könyvtár alatt találhatóak, és ez alatti könyvtárakban a témaspeficikus fájlok.
+Az általános szinten a négy legfontosabb stílusfájl: polygons, lines, points, relations. Ezek sorrendben az OSM poligonok, vonalak, pontok és kapcsolatok (relációk) leképezési szabályait tartalmazzák.
+A témaspecifikus stílusfájlok akkor kerülnek alkalmazásra, ha azokat az általános stílusfájlok "include" paranccsal beillesztik. Általános konvencióként, minden témakönyvtárban célszerû lines, points és relations fájlokat tartani, amik az általános stílusokat egészítik ki. 
+A stílusfájlokban alkalmazható szabályok dokumentációja itt érhetõ el: https://www.mkgmap.org.uk/doc/pdf/style-manual.pdf
+
+
+6. Térképgyártás
+A térképgyártás lépései a make MAP=<térképkód> <parancs> utasításokkal hívhatóak, például "make MAP=ce tiles". Az egyes utasítások a következõek:
+make MAP=<térképkód> clean : törli az elkészült Garmin fájlokat, a GMAP_DIR tartalmát
+make MAP=<térképkód> cleanall : törli az elkészült Garmin fájlokat és a csempéket, azaz GMAP_DIR és a TILES_DIR tartalmát, valamit az összeállított master OSM fájlt
+make MAP=<térképkód> cleancache: törli a letöltött OSM fájlokat, az OSM_CACHE_DIR tartalmát
+ make MAP=<térképkód> contour : legenerálja a szintvonalakat
+make MAP=<térképkód> refresh: letölti az OSM országfájlokat, és kivágja belõlük a határoló poligonon belüli részeket, majd tárolja O5M fájlokban
+make MAP=<térképkód> tiles : az országok, a szintvonalak és a kiegészítõ OSM fájlok összegyúrásával felépíti a térkép mester OSM adatfájlját, majd a splitter legyártja a csempéket
+make MAP=<térképkód> map : a csempékre lefuttatja az mkgmap-et, és legyártja a Garmin fájlokat
+make MAP=<térképkód> install : a legyártott Garmin fájlokból elkészíti a telepítõ EXE-t
+
+A parancsokat refresh > tiles > map > install sorrendben kell kiadni.
+Ha változtatunk a stílusfájlokon, de az adatfájlok változatlanok, akkor a korábban legyártott csempék használhatóak (nem kell új make tiles), csak a térképkészítést (make map) kell megismételni.
+A make csak akkor hajt végre egy munkafázist, ha vagy a bemenõ fájlok megváltoztak, vagy a munkafázis kimenetét töröltük. Így a refresh például csak akkor tölt le friss OSM adatfájlokat, ha a régieket töröltük a cleancache paranccsal. Hasonlóan, a tiles csak akkor gyárt friss csempéket, ha az adatfájlok frissültek, vagy ha a cleanall paranccsal töröltük a TILES_DIR tartalmát.
+
+
+
+

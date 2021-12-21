@@ -1,12 +1,12 @@
 #######################################################
-# OpenHikingMap
+# OpenHikingMap - Hiking style
 #
-# Relation handling rules
+# Relation rendering definitions
 #
 ########################################################
 
-include 'relations-hiking-hu';
-include 'relations-hiking-sk';
-include 'relations-hiking-cz';
-include 'relations-hiking-osmc';
+include 'hiking/hiking-relations-hu';
+include 'hiking/hiking-relations-sk';
+include 'hiking/hiking-relations-cz';
+include 'hiking/hiking-relations-osmc';
 

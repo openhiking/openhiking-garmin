@@ -1,0 +1,160 @@
+#######################################################
+# OpenHikingMap
+#
+# Line rendering style definitions
+#
+########################################################
+
+
+#######################################
+# General settings
+#
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+
+#######################################
+# Simplifications
+#
+
+oneway=true | oneway=1 {set oneway=yes}
+tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
+bridge=true | bridge=1 | bridge=viaduct {set bridge=yes}
+
+access=no | access=private { add foot=no }
+access=customers { add foot=customers }
+foot=private { set foot=no }
+
+highway=path & via_ferrata_scale = * {set highway=via_ferrata}
+highway=* & abandoned=yes  { set highway=abandoned }
+highway=* & proposed=yes  { set highway=proposed }
+
+railway=* & abandoned=yes { set abandoned='${railway}'; set railway=abandoned; }
+railway=* & disused=yes { set disused='${railway}'; set railway=disused; }
+railway=* & proposed=yes  { set railway=proposed }
+
+
+#######################################
+# Tematic rendering rules
+#
+
+if (mkgmap:option:hiking=true) then
+	include 'hiking/lines';
+end
+
+if (mkgmap:option:biking=true) then
+	include 'biking/lines';
+end
+
+
+#######################################
+# Railways
+#
+railway=* & bridge=yes & railway!=proposed & railway!=construction &  railway!=abandoned  [0x10107 resolution 22 continue]
+railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=abandoned  [0x10E00 resolution 22 continue]
+
+railway=rail  { name '${name}'} [0x14  resolution 18 ]
+railway=disused	& disused!=narrow_gauge [0x10F02 resolution 22]
+disused:railway=rail [0x10F02  resolution 22]
+
+railway=light_rail  { name '${name}'} [0x10F00 resolution 20 ]
+railway=tram [0x10F01 resolution 20 ]
+
+railway=narrow_gauge { name '${name}'} [0x10F03 resolution 20 ]
+railway=disused	& disused=narrow_gauge [0x10F04 resolution 22]
+disused:railway=narrow_gauge [0x10F04  resolution 22]
+
+railway=funicular  { name '${name}'} [0x10F03 resolution 21 ]
+railway=disused	& disused=funicular [0x10F04 resolution 22]
+
+#######################################
+# Waterways
+#
+waterway=river  [0x18 resolution 16 ]
+waterway=stream | waterway=canal  [0x18 resolution 22 ]
+waterway=ditch & name=*  [0x10a00 resolution 22 ]
+waterway=drain   [0x10a00 resolution 22 ]
+
+#######################################
+# Ferries
+#
+route=ferry { name '${name}'} [0x1b resolution 22 ]
+
+#######################################
+# Aeroways
+#
+#aeroway=taxiway [0x27 resolution 24 ]
+aeroway=runway [0x27 resolution 22]
+
+#######################################
+# Ski & lift
+#
+aerialway=gondola | aerialway=cable_car [0x10F18 resolution 22]
+aerialway=chair_lift  | aerialway=mixed_lift { name '${name}'} [0x10F19 resolution 24]
+aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=platter  { name '${name}'} [0x10F1A resolution 24]
+aerialway=rope_tow | aerialway=magic_carpet { name '${name}'} [0x10F1B resolution 24]
+aerialway=goods  { name '${name}'} [0x10F1C resolution 24]
+
+piste:type = downhill & piste:difficulty = novice       [0x10F1D resolution 24]
+piste:type = downhill & piste:difficulty = easy         [0x10F1D resolution 24]
+piste:type = downhill & piste:difficulty = intermediate [0x10F1E resolution 24]
+piste:type = downhill & piste:difficulty = advanced     [0x10F1F resolution 24]
+piste:type = downhill & piste:difficulty = expert       [0x10F1E resolution 24]
+piste:type = downhill & piste:difficulty = freeride     [0x10F1E resolution 24]
+piste:type = downhill & piste:difficulty = extreme      [0x10F1E resolution 24]
+
+
+#######################################
+# Walls
+#
+barrier=wall & wall=castle_wall [0x10F10 resolution 24 ]
+barrier=city_wall [0x10F10 resolution 24]
+barrier=wall & wall!=castle_wall [0x10F11 resolution 24 ]
+
+
+#######################################
+# Natural
+#
+natural=cliff   [0x10F0B resolution 24 continue]
+natural=cliff   { deletealltags }
+
+natural=valley & name=*  [0x10F0C resolution 24]
+natural=ridge & name=*  [0x10F0D resolution 24]
+#natural=tree_row & name=*  [0x10F0E resolution 24]
+
+#######################################
+# Nature reserve boundaries
+#
+boundary=protected_area & protect_class=1  {name '${name}'} [0x10F0A resolution 20 ]
+boundary=protected_area & protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
+boundary=protected_area  {name '${name}'} [0x10F08 resolution 20 ]
+
+boundary=protected_landscape_area {name '${name}'} [0x10F08 resolution 20 ]
+leisure=nature_reserve  {name '${name}'} [0x10F08 resolution 20 ]
+boundary=national_park 	{name '${name}'} [0x10F09 resolution 18 ]
+
+
+
+#######################################
+# Administrative boundaries
+#
+admin_level=2 & boundary=administrative [0x1e resolution 15]
+
+
+#######################################
+# Pipes
+#
+man_made=pipeline & location=overground [0x028 resolution 24]
+power=line | power=minor_line [0x029  resolution 23]
+
+#######################################
+# Contours
+#
+contour=elevation & contour_ext=elevation_minor		{ name '${ele|conv:m=>ft}'; }	[0x20 resolution 23]
+contour=elevation & contour_ext=elevation_medium	{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 22]
+contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[0x22 resolution 21]
+contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
+
+#######################################
+# Other
+#
+leisure=track [0x10F13 resolution 24]

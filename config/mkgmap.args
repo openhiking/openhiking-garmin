@@ -6,13 +6,10 @@
 ########################################################
 
 overview-mapname:openhiking
-#series-name:OpenHiking
-#family-name: OpenHiking
 description:openhiking
-style=hiking
 drive-on=right
 draw-priority=10
-code-page=1250
+#code-page:65001
 show-profiles=1
 dem-interpolation=bilinear
 dem-dists=9942,9942,9942,13248,44176
