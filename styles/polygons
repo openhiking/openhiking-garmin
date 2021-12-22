@@ -77,11 +77,22 @@ landuse=recreation_ground  [0x17 resolution 20]
 leisure=common | leisure = village_green  [0x17 resolution 22]
 leisure=park   [0x17 resolution 22]
 leisure=garden  [0x17 resolution 22]
-
-leisure=stadium | leisure=pitch | leisure=sports_centre  [0x14 resolution 20]
-leisure=swimming | leisure=swimming_pool | leisure=pool  [0x3f00 resolution 22]
-
 leisure=beach_resort [0x0900 resolution 20]
+
+leisure=sports_centre  [0x10F09 resolution 20]
+leisure=stadium  [0x10F0A resolution 20]
+
+if (leisure=pitch) then
+	sport=soccer | sport=baseball | sport=equestrian { add surface=grass; }
+	sport=tennis { add surface=clay; }
+	sport=basketball { add surface=asphalt; }
+	surface=grass | surface=artificial_turf [0x10F0C resolution 20]
+	surface=clay | surface=tartan | surface=carpet [0x10F0D resolution 20]
+	() [0x10F0B resolution 20]
+
+end
+
+leisure=swimming | leisure=swimming_pool | leisure=pool  [0x3f00 resolution 22]
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
 
 
