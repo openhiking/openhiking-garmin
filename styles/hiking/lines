@@ -46,8 +46,8 @@ highway=via_ferrata { add highway_width=5 }
 highway=path { add highway_width=2 }
 highway=footway | highway=platform  { add highway_width=1 }
 route=ferry { add highway_width= 2 }
-highway = track | unpaved_hard=1 | unpaved_soft=1  { add highway_width=2 }
-highway=cycleway | highway=pedestrian | highway = service { add highway_width=3 }
+highway = track | unpaved_hard=1 | unpaved_soft=1 | highway=cycleway | highway=pedestrian  { add highway_width=2 }
+highway = service { add highway_width=3 }
 highway=residential | highway=living_street | highway = unclassified | highway=tertiary { add highway_width=4 }
 highway=steps  { add highway_width=5 }
 highway=primary | highway=secondary  { add highway_width=5 }
@@ -135,30 +135,47 @@ end
 
 highway=primary_link {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
 
-(highway=secondary | highway=secondary_link) &  unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
-highway=secondary | highway=secondary_link   [0x03 road_class=2 road_speed=4 resolution 19]
+if (highway=secondary | highway=secondary_link) then
+	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' } 
+	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
+	() [0x03 road_class=2 road_speed=4 resolution 18]
+end
 
-(highway=tertiary | highway=tertiary_link)  &  unpaved_hard=1 { name '${name} ${route_name}'|'${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
-highway=tertiary | highway=tertiary_link { name '${name} ${route_name}'|'${name}'}   [0x04 road_class=1 road_speed=4 resolution 19]
+if (highway=tertiary | highway=tertiary_link) then
+	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }
+	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
+	()  [0x04 road_class=1 road_speed=4 resolution 19]
+end
 
-highway=unclassified & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
-highway=unclassified & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=3 resolution 20]
-highway=unclassified   {name  '${name}'}   [0x05 road_class=0 road_speed=3 resolution 19]
+if (highway=unclassified) then
+	()  {name  '${name}'}
+	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
+	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
+	()  [0x05 road_class=0 road_speed=3 resolution 19]
+end
 
-highway=residential & unpaved_hard=1 { name '${name}'}   [0x0d road_class=0 road_speed=3 resolution 20]
-highway=residential & unpaved_soft=1 { name '${name}'}   [0x0a road_class=0 road_speed=3 resolution 20]
-highway=residential  { name '${name}'}   [0x06 road_class=0 road_speed=3 resolution 19]
+if (highway=residential) then
+	()  {name  '${name}'}
+	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
+	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
+	()  [0x06 road_class=0 road_speed=3 resolution 20]
+end
 
-highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 19]
 
-highway=service & unpaved_hard=1  {name  '${name}'}   [0x0d road_class=0 road_speed=1 resolution 20]
-highway=service & unpaved_soft=1  {name  '${name}'}   [0x0a road_class=0 road_speed=1 resolution 20]
-highway=service { name '${name}'}   [0x07 road_class=0 road_speed=1 resolution 20]
+if (highway=service) then
+	()  {name  '${name}'}
+	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
+	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
+	()  [0x07 road_class=0 road_speed=1 resolution 20]
+end
+
+
+highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 20]
 
 if (highway=track) then
 	() { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
 	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
-	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 20]
+	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 21]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade5    [0x0e road_class=0 road_speed=1 resolution 22]

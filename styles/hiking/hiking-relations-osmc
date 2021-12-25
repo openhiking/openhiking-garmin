@@ -237,7 +237,7 @@ apply {
 }
 
 
-type=route & route=hiking & osmc:symbol~'^green.+'  {
+type=route & route=hiking & osmc:symbol~'^green.+' & jel!=zut {
 apply {
 	add trail_p10_color=green;
 	add trail_p10_symbol='${osmc:symbol}';

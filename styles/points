@@ -31,7 +31,7 @@ amenity=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}
 leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 historic=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-
+place=*   {name '${name} (${name:hu|not-equal:name})' |'${name}' }
 
 #######################################
 # Tematic rendering rules
@@ -369,12 +369,15 @@ historic=yes & man_made=water_well & description:hu~'g.mesk.t'  [0x1150D resolut
 
 
 #######################################
-# Localities
+# Named locations
 #
-place=town | place=village  {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x00300 resolution 18 ]
-place=town | place=suburb | place=village | place=hamlet | place=farm  | place=locality {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x00300 resolution 20 ]
 
-#place=city & name!='Budapest'  {name '${short_name}'|'${name}'} [0x00800 resolution 14  ]
-#place=city & admin_level=2 {name '${short_name}'|'${name}'} [0x00200 resolution 14]
-
-
+place=city & population>1000000 [0x00200 resolution 14  ]
+place=city  [0x00700 resolution 18-19 continue ]
+place=city  [0x00800 resolution 20-24  ]
+place=town  [0x00900 resolution 18-19 continue ]
+place=town  [0x00A00 resolution 20-24  ]
+place=village  [0x00C00 resolution 20 ]
+place=suburb  [0x00d00 resolution 20  ]
+place=hamlet | place=farm  [0x00C00 resolution 22 ]
+place=locality [0x00d00 resolution 24 ]

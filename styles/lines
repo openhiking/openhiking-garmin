@@ -50,7 +50,7 @@ end
 # Railways
 #
 railway=* & bridge=yes & railway!=proposed & railway!=construction &  railway!=abandoned  [0x10107 resolution 22 continue]
-railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=abandoned  [0x10E00 resolution 22 continue]
+railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=abandoned & railway!=subway  [0x10E00 resolution 22 continue]
 
 railway=rail  { name '${name}'} [0x14  resolution 18 ]
 railway=disused	& disused!=narrow_gauge [0x10F02 resolution 22]

@@ -23,7 +23,6 @@ natural=background [0x27 resolution 14]
 
 
 landuse=residential  [0x02 resolution 16]
-#place=city [0x02 resolution 12-18]
 landuse=allotments [0x10F06 resolution 16]
 landuse=farmland    [0x10F03 resolution 16]
 landuse=farmyard   [0x10F04 resolution 20]
@@ -54,7 +53,7 @@ natural=water & (tidal=yes | wetland=tidalflag )  [0x51 resolution 16]
 natural=water | landuse=reservoir  [0x3e00 resolution 16]
 
 natural=glacier [0x4D resolution 16]
-natural=marsh | natural=wetland [0x51 resolution 16]
+
 (natural=wood | landuse=forest) & (wood=coniferous | leaf_type=needleleaved)  [0x10F00 resolution 16]
 #(natural=wood | landuse=forest) & (wood=mixed | leaf_type=mixed ) [0x10F01 resolution 16]
 natural=wood | landuse=forest [0x50 resolution 16]
@@ -66,9 +65,16 @@ natural=bare_rock  [0x11611 resolution 16]
 natural=scree [0x10F10 resolution 16]
 natural=beach & natural!=bay [0x1b resolution 20]
 
+natural=marsh  [0x51 resolution 16]
+
+if (natural=wetland) then
+	wetland=reedbed  [0x10F11 resolution 16]
+	wetland=swamp  [0x10F12 resolution 16]
+	() [0x51 resolution 16]
+end
 
 #######################################
-# Parks, recreation areas
+# Parks, sport, recreation areas
 #
 
 leisure=playground  [0x0300 resolution 22]
@@ -77,23 +83,31 @@ landuse=recreation_ground  [0x17 resolution 20]
 leisure=common | leisure = village_green  [0x17 resolution 22]
 leisure=park   [0x17 resolution 22]
 leisure=garden  [0x17 resolution 22]
+tourism=zoo [0x1160B resolution 22]
 leisure=beach_resort [0x0900 resolution 20]
 
 leisure=sports_centre  [0x10F09 resolution 20]
 leisure=stadium  [0x10F0A resolution 20]
 
 if (leisure=pitch) then
-	sport=soccer | sport=baseball | sport=equestrian { add surface=grass; }
+	sport=soccer | sport=baseball | sport=equestrian  { add surface=grass; }
+	sport=croquet | sport=shooting | sport=model_aerodrome { add surface=grass; }
+	sport=rugby_league { add surface=grass; }
 	sport=tennis { add surface=clay; }
-	sport=basketball { add surface=asphalt; }
+	sport=basketball | sport=skateboard { add surface=asphalt; }
+	sport=beach_handball | sport=beachvolleyball | sport=ultimate | sport=volleyball { add surface=sand; }
+
 	surface=grass | surface=artificial_turf [0x10F0C resolution 20]
 	surface=clay | surface=tartan | surface=carpet [0x10F0D resolution 20]
+	surface=sand [0x10F0E resolution 20]
 	() [0x10F0B resolution 20]
 
 end
 
-leisure=swimming | leisure=swimming_pool | leisure=pool  [0x3f00 resolution 22]
+(leisure=swimming | leisure=swimming_pool | leisure=pool) & (location!=indoor)  [0x3f00 resolution 22]
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
+
+higway=pedestrian & area=yes [0x10F07 resolution 20]
 
 
 #######################################

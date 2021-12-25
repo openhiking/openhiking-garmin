@@ -20,7 +20,7 @@ MKGMAP=c:\Apps\mkgmap-4819\mkgmap.jar
 MKNSIS="c:\Program Files (x86)\NSIS\Bin\makensis.exe"
 WGET=wget
 COPY=copy /b
-MOVE=ren
+MOVE=move
 DEL=del
 
 ##############################################
@@ -43,6 +43,7 @@ ifeq ($(MAP), ce)
 	CONTOUR_LINES=contour-ce-20-v3.o5m
 	BOUNDARY_POLYGON=central-europe.poly
 	MAP_THEME=hiking
+	TYP_BASE=ohm
 	GENERATE_SEA=yes
 else ifeq ($(MAP), hu)
 	FAMILY_ID=3690
@@ -54,6 +55,7 @@ else ifeq ($(MAP), hu)
 	CONTOUR_LINES=contour-hungary-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=hiking
+	TYP_BASE=ohm
 	GENERATE_SEA=no
 else ifeq ($(MAP), bike)
 	FAMILY_ID=62
@@ -79,6 +81,7 @@ else ifeq ($(MAP), exp)
 	CONTOUR_LINES=contour-hungary-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=hiking
+	TYP_BASE=ohm
 	GENERATE_SEA=no
 endif
 
@@ -145,10 +148,11 @@ GMAP_DIR=$(DATASET_DIR)\gmap-$(MAP)
 OHM_ARGS_TEMPLATE=$(CONFIG_DIR)\mkgmap.args
 
 ifeq ($(TYP_FILE),)
-	TYP_FILE=ohm$(MAP).typ
+	TYP_FILE=$(TYP_BASE)$(MAP).typ
 endif
 
 TYP_FILE_FP=$(CONFIG_DIR)\$(TYP_FILE)
+LICENSE_FILE=$(CONFIG_DIR)\license.txt
 
 STYLES=info lines options points polygons relations version
 
@@ -199,11 +203,15 @@ tiles: $(OHM_OUT_PBF_FP)
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
 	$(COPY) $(OHM_ARGS_TEMPLATE) + $(TILE_ARGS) $(MERGED_ARGS)
 
+$(CONFIG_DIR)\ohm%.typ: $(CONFIG_DIR)\ohm.txt
+	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
+	  --code-page=$(CODE_PAGE) $< --output-dir=$(GMAP_DIR)
+	$(MOVE) ohm.typ $(CONFIG_DIR)\ohm$(MAP).typ
 
-map:  $(STYLES_RP) $(MERGED_ARGS)
-	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --series-name=$(SERIES_NAME) $(TYP_FILE_FP) \
-	--dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
-	--style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
+map:  $(STYLES_RP) $(MERGED_ARGS) $(TYP_FILE_FP)
+	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
+	--series-name=$(SERIES_NAME) $(TYP_FILE_FP) --dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
+	--style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
 
 install:
 	$(COPY) $(CONFIG_DIR)\$(ICON_FILE) $(GMAP_DIR)
@@ -228,9 +236,6 @@ cleancache:
 	$(DEL) $(OSM_CACHE_DIR)\*.o5m
 	$(DEL) $(OSM_CACHE_DIR)\*.pbf
 
-test:
+test: $(TYP_FILE_FP)
 	@echo $(TYP_FILE_FP)
-	@echo $(GMAP_DIR)
-	@echo $(MERGED_ARGS)
-	@echo $(FAMILY_ID)
 
