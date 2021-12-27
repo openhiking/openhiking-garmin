@@ -45,9 +45,10 @@ CONTOUR_LINES: szintvonalakat tartalmazó OSM adatfájl neve. Figyelmeztetés: az o
 BOUNDARY_POLYGON: térképhatároló poligont tartalmazó fájl neve. A fájl OSM POLY formátumú kell, hogy legyen. Példa: BOUNDARY_POLYGON=central-europe.poly
 MAP_THEME: a térkép témájának azonosító neve. Ezen paraméter határozza meg, hogy az általános stílusfájlok mellett melyik témaspecifikus stílusfájlokat fogja alkalmazni az mkgmap a térkép legyártása során. Példa: MAP_STYLE=hiking
 GENERATE_SEA: ha yes-re van állítva, az mkgmap legenerálja a tenger (natural=sea) és szárazföld poligonokat (natural=land), amelyeket a stílusfájlokban kell Garmin típusokra leképezni. Alkalmazása esetén a TYP-ben a polygonok felrajzolási sorrendjében elsõnek a tengert, másodiknak a szárazföldet, majd minden mást ezt követõnek kell megadni. Példa: GENERATE_SEA=yes
-TYP_FILE (opcionális): a TYP fájl neve, amit a gyártás felhasznál. Ha nincs megadva, az alapértelmezett név ohm<térképkód>.typ, például ohmce.typ
+TYP_FILE (opcionális): a bináris TYP fájl neve, amit a gyártás felhasznál. Ha nincs megadva, a gyártás a master TYP fájlból generálja a binárist.
+TYP_BASE (opcionális): a TXT formátumú master TYP fájl neve, amibõl a gyártás generálja a térkép-specifikus bináris TYP fájlokat. 
 ICON_FILE (opcionális): telepítõ EXE készítéséhez felhasznált ikon fájl neve. Ha nincs megadva, a telepítõ az alapértelmezett ikont használja.
-CODE_PAGE (opcionális): a Garmin térképhez használt kódlap. A Windows-1250 kódlaphoz 1250-t, Unicode kódlaphoz 65001-et kell megadni. Ha nincs megadva, a térkép Unicode kódlappal készül. 
+CODE_PAGE (opcionális): a Garmin térképhez használt kódlap. A Windows-1250 kódlaphoz 1250-t, Unicode kódlaphoz 65001-et kell megadni. Ha nincs megadva, a térkép 1250-es` kódlappal készül. 
 
 Az mkgmap opciókról bõvebb leírás itt érhetõ el: https://www.mkgmap.org.uk/doc/options
 
@@ -84,7 +85,7 @@ make MAP=<térképkód> cleancache: törli a letöltött OSM fájlokat, az OSM_CACHE_DI
  make MAP=<térképkód> contour : legenerálja a szintvonalakat
 make MAP=<térképkód> refresh: letölti az OSM országfájlokat, és kivágja belõlük a határoló poligonon belüli részeket, majd tárolja O5M fájlokban
 make MAP=<térképkód> tiles : az országok, a szintvonalak és a kiegészítõ OSM fájlok összegyúrásával felépíti a térkép mester OSM adatfájlját, majd a splitter legyártja a csempéket
-make MAP=<térképkód> map : a csempékre lefuttatja az mkgmap-et, és legyártja a Garmin fájlokat
+make MAP=<térképkód> map : a master TYP fájlból felépíti a térképspeficikus bináris TYP-et, majd a csempékre lefuttatja az mkgmap-et, és legyártja a Garmin IMG fájlokat
 make MAP=<térképkód> install : a legyártott Garmin fájlokból elkészíti a telepítõ EXE-t
 
 A parancsokat refresh > tiles > map > install sorrendben kell kiadni.

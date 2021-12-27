@@ -8,7 +8,11 @@
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 landuse=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+amenity=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+man_made=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+military=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+aeroway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 
 
 #######################################
@@ -29,8 +33,8 @@ landuse=farmyard   [0x10F04 resolution 20]
 landuse=vineyard [0x10F05 resolution 16]
 landuse=orchard   [0x4E resolution 16]
 landuse=quarry  [0x11610 resolution 20]
-landuse=industrial   [0x0c resolution 20]
-landuse=railway    [0x10F08 resolution 20]
+landuse=industrial & plant:source!=solar & generator:source!=solar [0x0c resolution 20]
+landuse=railway    [0x10F11 resolution 20]
 landuse=landfill   [0x13 resolution 20]
 landuse=brownfield   [0x13 resolution 20]
 landuse=construction   [0x13 resolution 20]
@@ -52,26 +56,30 @@ natural=water & (tidal=yes | wetland=tidalflag )  [0x51 resolution 16]
 (natural=water | landuse=reservoir) & area_size()<10000 [0x4000 resolution 16]
 natural=water | landuse=reservoir  [0x3e00 resolution 16]
 
-natural=glacier [0x4D resolution 16]
-
-(natural=wood | landuse=forest) & (wood=coniferous | leaf_type=needleleaved)  [0x10F00 resolution 16]
-#(natural=wood | landuse=forest) & (wood=mixed | leaf_type=mixed ) [0x10F01 resolution 16]
-natural=wood | landuse=forest [0x50 resolution 16]
-landuse=meadow | natural=grassland | landuse=grass | natural=fell  [0x16 resolution 16]
-natural=heath  [0x1160F resolution 16]
-natural=scrub  [0x4f resolution 16]
-natural=sand [0x53 resolution 16]
-natural=bare_rock  [0x11611 resolution 16]
-natural=scree [0x10F10 resolution 16]
-natural=beach & natural!=bay [0x1b resolution 20]
+if (natural=wetland) then
+	wetland=reedbed  [0x10F09 resolution 16]
+	wetland=swamp  [0x10F0A resolution 16]
+	() [0x51 resolution 16]
+end
 
 natural=marsh  [0x51 resolution 16]
 
-if (natural=wetland) then
-	wetland=reedbed  [0x10F11 resolution 16]
-	wetland=swamp  [0x10F12 resolution 16]
-	() [0x51 resolution 16]
-end
+natural=mud [0x10F08 resolution 16]
+
+landuse=meadow | natural=grassland | landuse=grass | natural=fell  [0x16 resolution 16]
+natural=heath  [0x1160F resolution 16]
+natural=scrub  [0x4f resolution 16]
+
+(natural=wood | landuse=forest) & (wood=coniferous | leaf_type=needleleaved)  [0x10F00 resolution 16]
+natural=wood | landuse=forest [0x50 resolution 16]
+
+natural=bare_rock  [0x11611 resolution 16]
+natural=scree | natural=shingle [0x10F07 resolution 16]
+natural=glacier [0x4D resolution 16]
+
+natural=sand [0x53 resolution 16]
+natural=beach & natural!=bay [0x1b resolution 20]
+
 
 #######################################
 # Parks, sport, recreation areas
@@ -83,11 +91,11 @@ landuse=recreation_ground  [0x17 resolution 20]
 leisure=common | leisure = village_green  [0x17 resolution 22]
 leisure=park   [0x17 resolution 22]
 leisure=garden  [0x17 resolution 22]
-tourism=zoo [0x1160B resolution 22]
+tourism=zoo [0x10F12 resolution 22]
 leisure=beach_resort [0x0900 resolution 20]
 
-leisure=sports_centre  [0x10F09 resolution 20]
-leisure=stadium  [0x10F0A resolution 20]
+leisure=sports_centre  [0x10F18 resolution 20]
+leisure=stadium  [0x10F19 resolution 20]
 
 if (leisure=pitch) then
 	sport=soccer | sport=baseball | sport=equestrian  { add surface=grass; }
@@ -97,17 +105,33 @@ if (leisure=pitch) then
 	sport=basketball | sport=skateboard { add surface=asphalt; }
 	sport=beach_handball | sport=beachvolleyball | sport=ultimate | sport=volleyball { add surface=sand; }
 
-	surface=grass | surface=artificial_turf [0x10F0C resolution 20]
-	surface=clay | surface=tartan | surface=carpet [0x10F0D resolution 20]
-	surface=sand [0x10F0E resolution 20]
-	() [0x10F0B resolution 20]
+	surface=grass | surface=artificial_turf [0x10F1B resolution 20]
+	surface=clay | surface=tartan | surface=carpet [0x10F1C resolution 20]
+	surface=sand [0x10F1D resolution 20]
+	() [0x10F1A resolution 20]
 
 end
 
 (leisure=swimming | leisure=swimming_pool | leisure=pool) & (location!=indoor)  [0x3f00 resolution 22]
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
 
-higway=pedestrian & area=yes [0x10F07 resolution 20]
+higway=pedestrian & area=yes [0x10F10 resolution 20]
+
+
+#######################################
+# Amenities & Industrial
+#
+
+(amenity=school | amenity=childcare) & building!=* [0x0d resolution 24]
+(amenity=hospital | amenity=clinic) & building!=*  [0x0b resolution 22]
+amenity=prison & building!=*  [0x10F13 resolution 22]
+
+amenity=parking & (access!=no | access!=private ) [0x05 resolution 16]
+
+power=plant & plant:source=solar {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x010f14 resolution 20]
+power=generator & generator:source=solar {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x010f14 resolution 20]
+man_made=wastewater_plant [0x13 resolution 22]
+man_made=pier [0x1160C resolution 20]
 
 
 #######################################
@@ -128,17 +152,6 @@ aeroway=apron [0x07 resolution 20]
 aeroway=helipad  [0x07 resolution 22]
 aeroway=terminal [0x07 resolution 23]
 
-#######################################
-# Amenities
-#
-man_made=wastewater_plant [0x13 resolution 22]
-amenity=prison  {name '${name}'} [0x13 resolution 22]
-
-amenity=school | amenity=childcare {name '${short_name}'|'${name}'} [0x0d resolution 24]
-(amenity=hospital | amenity=clinic) & building!=*   {name '${name}'} [0x0b resolution 22]
-amenity=parking & (access!=no | access!=private ) {name '${name}'} [0x05 resolution 16]
-
-man_made = pier [0x1160C resolution 20]
 
 
 #######################################
@@ -147,9 +160,24 @@ man_made = pier [0x1160C resolution 20]
 
 building=residential { delete building; }
 
-building=commercial [0x08 resolution 24]
+building=* & (amenity=* | shop=* | tourism=* | leisure=*) { add has_amenity=true; }
 
-building=* & name!=* & area_size()>160 [0x11612 resolution 24]
-building=* & name=* & amenity!=* & shop!=* & tourism!=*  {name '${short_name}'|'${name}'} [0x11612 resolution 24]
+if (building=commercial | building=retail | building=supermarket | building=warehouse) then
+	has_amenity!=true {name '${short_name}'|'${name}'} [0x08 resolution 24]
+	() [0x08 resolution 24]
+end
+
+building=* & name=* & has_amenity!=true  {name '${short_name}'|'${name}'} [0x11612 resolution 24]
+
+building=cathedral | building=church | building=temple | building=monastery [0x11612 resolution 24]
+building=mosque | building=synagogue [0x11612 resolution 24]
+
+building=government | building=hospital | building=public | building=civic [0x11612 resolution 24]
+building=train_station | building=transportation | building=parking [0x11612 resolution 24]
+building=kindergarten | building=school | building=college | building=university [0x11612 resolution 24]
+building=riding_hall | building=sports_hall | building=stadium  [0x11612 resolution 24]
+
 building=* & name=* & man_made!=tower [0x11612 resolution 24]
 
+building=industrial & area_size()>160 [0x11612 resolution 24]
+building=* & is_in(landuse,residential,all)=false & area_size()>160 [0x11612 resolution 24]

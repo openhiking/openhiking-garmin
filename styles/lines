@@ -69,8 +69,8 @@ railway=disused	& disused=funicular [0x10F04 resolution 22]
 #######################################
 # Waterways
 #
-waterway=river  [0x18 resolution 16 ]
-waterway=stream | waterway=canal  [0x18 resolution 22 ]
+(waterway=river | waterway=stream | waterway=canal) & intermittent=yes  [0x26 resolution 16 ]
+waterway=river | waterway=stream | waterway=canal  [0x18 resolution 16 ]
 waterway=ditch & name=*  [0x10a00 resolution 22 ]
 waterway=drain   [0x10a00 resolution 22 ]
 
@@ -119,6 +119,7 @@ natural=cliff   { deletealltags }
 
 natural=valley & name=*  [0x10F0C resolution 24]
 natural=ridge & name=*  [0x10F0D resolution 24]
+natural=arete & name=*  [0x10F0D resolution 24]
 #natural=tree_row & name=*  [0x10F0E resolution 24]
 
 #######################################

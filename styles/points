@@ -25,7 +25,6 @@ tourism=* & mkgmap:line2poi=true {delete tourism}
 access=no | access=private | access=customers { add foot=no }
 foot=private | foot=customers { set foot=no }
 
-natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 tourism=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 amenity=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
@@ -54,6 +53,36 @@ end
 
 fixme='resurvey' & mkgmap:line2poi=true & mkgmap:line2poitype=mid  [0x12416 resolution 24 continue ]
 fixme='continue' & mkgmap:line2poi!=true [0x12416 resolution 24 continue]
+
+
+#######################################
+# Nature
+#
+waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x6508 resolution 24]
+natural=peak & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' } [0x06616 resolution 22]
+
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+
+
+natural=peak [0x06616 resolution 22]
+natural=bay   [0x6503 resolution 22]
+natural=spring & water_characteristic=mineral  [0x6517 resolution 22]
+natural=spring & (drinking_water=yes | drinking_water:legal=yes) [0x6514 resolution 22]
+natural=spring & drinking_water=no [0x6515 resolution 24]
+natural=hot_spring | spring:type=hot [0x6516 resolution 24]
+natural=spring  [0x6511 resolution 24]
+natural=cliff  [0x6607 resolution 22]
+natural=rock[0x06614 resolution 23]
+natural=arch  [0x06601 resolution 24]
+natural=stone  [0x06615 resolution 24]
+
+natural=sinkhole   [0x0660C resolution 24]
+natural=cave_entrance  [0x06608 resolution 24]
+natural=saddle & name=*  [0x06613 resolution 24]
+natural=geyser  [0x06509 resolution 24]
+
+natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]
+#natural=anthill [0x1150B resolution 24]
 
 
 #######################################
@@ -99,8 +128,11 @@ amenity=community_centre [0x03005 resolution 24]
 tourism=information & information=office [0x4C05 resolution 24]
 
 amenity=toilets & foot!=no [0x02F0C resolution 24]
-amenity=drinking_water & foot!=no [0x5000 resolution 23]
 amenity=recycling & foot!=no [0x11616 resolution 24]
+
+# Keep after spring as some springs are dual-tagged
+amenity=drinking_water & foot!=no [0x5000 resolution 23]
+
 
 #amenity=taxi [0x1151E resolution 24]
 
@@ -258,27 +290,6 @@ amenity=spa  [0x05400 resolution 24]
 
 
 
-#######################################
-# Nature
-#
-
-waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x6508 resolution 24]
-
-natural=bay   [0x6503 resolution 22]
-natural=spring & drinking_water=yes  [0x6514 resolution 22]
-natural=spring & drinking_water=no [0x6515 resolution 24]
-natural=spring [0x6511 resolution 24]
-natural=cliff  [0x6607 resolution 22]
-natural=rock[0x06614 resolution 23]
-natural=stone  [0x06615 resolution 24]
-natural=peak [0x06616 resolution 22]
-natural=sinkhole   [0x0660C resolution 24]
-natural=cave_entrance  [0x06608 resolution 24]
-natural=saddle & name=*  [0x06613 resolution 24]
-
-natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]
-#natural=anthill [0x1150B resolution 24]
-
 
 #######################################
 # Wilderness Facilities
@@ -312,7 +323,7 @@ man_made=mineshaft  & disused!=yes & abandoned!=yes {name '${short_name}'|'${nam
 
 man_made=petroleum_well [0x11511 resolution 24]
 
-man_made=works {name '${short_name}'|'${name}'} [0x11512 resolution 24]
+man_made=works & building!=* {name '${short_name}'|'${name}'} [0x11512 resolution 24]
 man_made=chimney [0x11513 resolution 24]
 
 power=plant {name '${short_name}'|'${name}'} [0x11514 resolution 24]
@@ -380,4 +391,5 @@ place=town  [0x00A00 resolution 20-24  ]
 place=village  [0x00C00 resolution 20 ]
 place=suburb  [0x00d00 resolution 20  ]
 place=hamlet | place=farm  [0x00C00 resolution 22 ]
+place=islet [0x00d00 resolution 24 ]
 place=locality [0x00d00 resolution 24 ]

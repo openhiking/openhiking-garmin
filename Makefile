@@ -37,11 +37,12 @@ ifeq ($(MAP), ce)
 	FAMILY_ID=3691
 	FAMILY_NAME="OpenHiking CE"
 	SERIES_NAME="OpenHiking CE"
-	OSM_COUNTRY_LIST=hungary slovakia czech-republic poland austria italy slovenia croatia bosnia-herzegovina montenegro serbia romania ukraine
+#	OSM_COUNTRY_LIST=hungary slovakia czech-republic poland austria italy slovenia croatia bosnia-herzegovina montenegro serbia romania ukraine
+	OSM_COUNTRY_LIST=hungary romania slovenia slovakia czech-republic poland austria italy croatia bosnia-herzegovina montenegro serbia ukraine
 	SUPPLEMENTARY_DATA=$(TJEL_NAME)
 	CONTOUR_LINE_STEP=20
-	CONTOUR_LINES=contour-ce-20-v3.o5m
-	BOUNDARY_POLYGON=central-europe.poly
+	CONTOUR_LINES=contour-ce-20-v4.o5m
+	BOUNDARY_POLYGON=central-europe-v4.poly
 	MAP_THEME=hiking
 	TYP_BASE=ohm
 	GENERATE_SEA=yes
@@ -51,7 +52,7 @@ else ifeq ($(MAP), hu)
 	SERIES_NAME="OpenHiking HU"
 	OSM_COUNTRY_LIST=hungary
 	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-	CONTOUR_LINE_STEP=10	
+	CONTOUR_LINE_STEP=10
 	CONTOUR_LINES=contour-hungary-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=hiking
@@ -70,16 +71,16 @@ else ifeq ($(MAP), bike)
 	GENERATE_SEA=no
 	TYP_FILE=bikemap.typ
 	ICON_FILE=icon.ico
-	CODE_PAGE=65001
 else ifeq ($(MAP), exp)
 	FAMILY_ID=3692
 	FAMILY_NAME="OpenHiking EXP"
 	SERIES_NAME="OpenHiking EXP"
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=$(TJEL_NAME)
+	OSM_COUNTRY_LIST=romania
+#	SUPPLEMENTARY_DATA=$(TJEL_NAME)
+	SUPPLEMENTARY_DATA=
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-hungary-10.o5m
-	BOUNDARY_POLYGON=hungary.poly
+	CONTOUR_LINES=contour-romania-20.o5m
+	BOUNDARY_POLYGON=romania.poly
 	MAP_THEME=hiking
 	TYP_BASE=ohm
 	GENERATE_SEA=no
@@ -170,7 +171,7 @@ ifeq ($(ICON_FILE),)
 endif
 
 ifeq ($(CODE_PAGE),)
-	CODE_PAGE=65001
+	CODE_PAGE=1250
 endif
 
 
@@ -208,6 +209,9 @@ $(CONFIG_DIR)\ohm%.typ: $(CONFIG_DIR)\ohm.txt
 	  --code-page=$(CODE_PAGE) $< --output-dir=$(GMAP_DIR)
 	$(MOVE) ohm.typ $(CONFIG_DIR)\ohm$(MAP).typ
 
+typ: $(TYP_FILE_FP)
+	@echo "Completed"
+
 map:  $(STYLES_RP) $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
 	--series-name=$(SERIES_NAME) $(TYP_FILE_FP) --dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
@@ -233,6 +237,7 @@ cleanall:
 	$(DEL) $(GMAP_DIR)\*
 
 cleancache:
+	$(DEL) $(OSM_CACHE_DIR)\*.osm
 	$(DEL) $(OSM_CACHE_DIR)\*.o5m
 	$(DEL) $(OSM_CACHE_DIR)\*.pbf
 

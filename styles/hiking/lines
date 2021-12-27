@@ -188,6 +188,8 @@ highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [
 highway=cycleway   [0x08 road_class=0 road_speed=1 resolution 21]
 highway=steps   [0x11 road_class=0 road_speed=1 resolution 22]
 
+highway=bridleway   [0x16 road_class=0 road_speed=1 resolution 22]
+
 highway=via_ferrata { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x13 resolution 22]
 
 if (highway=path) then
