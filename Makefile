@@ -59,7 +59,7 @@ else ifeq ($(MAP), hu)
 	TYP_BASE=ohm
 	GENERATE_SEA=no
 else ifeq ($(MAP), bike)
-	FAMILY_ID=62
+	FAMILY_ID=63
 	FAMILY_NAME="Bike Map"
 	SERIES_NAME="Bike Map"
 	OSM_COUNTRY_LIST=hungary
@@ -69,18 +69,19 @@ else ifeq ($(MAP), bike)
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=biking
 	GENERATE_SEA=no
-	TYP_FILE=bikemap.typ
+	TYP_BASE=ohm
 	ICON_FILE=icon.ico
 else ifeq ($(MAP), exp)
 	FAMILY_ID=3692
-	FAMILY_NAME="OpenHiking EXP"
-	SERIES_NAME="OpenHiking EXP"
-	OSM_COUNTRY_LIST=romania
-#	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-	SUPPLEMENTARY_DATA=
+	FAMILY_NAME="OpenHiking-EXP"
+	SERIES_NAME="OpenHiking-EXP"
+	OSM_COUNTRY_LIST=hungary
+	SUPPLEMENTARY_DATA=$(TJEL_NAME)
+#	SUPPLEMENTARY_DATA=
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-romania-20.o5m
-	BOUNDARY_POLYGON=romania.poly
+#	CONTOUR_LINES=contour-romania-20.o5m
+	CONTOUR_LINES=contour-hungary-10.o5m
+	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=hiking
 	TYP_BASE=ohm
 	GENERATE_SEA=no

@@ -108,14 +108,14 @@ highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*
 highway=* & tunnel=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E00 resolution 22 continue]
 highway=* & tunnel=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E01 resolution 22 continue]
 
-highway=* & embankment=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E02 resolution 22 continue]
-highway=* & embankment=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E03 resolution 22 continue]
+highway=* & embankment=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E02 resolution 24 continue]
+highway=* & embankment=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E03 resolution 24 continue]
 
-highway=* & cutting=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E04 resolution 22 continue]
-highway=* & cutting=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E05 resolution 22 continue]
+highway=* & cutting=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E04 resolution 24 continue]
+highway=* & cutting=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E05 resolution 24 continue]
 
-highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E06 resolution 22 continue]
-highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E07 resolution 22 continue]
+highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E06 resolution 24 continue]
+highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E07 resolution 24 continue]
 
 highway=* & (foot=no | foot=customers) & highway!=proposed & highway!=construction & highway!=motorway & highway != trunk [0x10E08 resolution 22 continue]
 
