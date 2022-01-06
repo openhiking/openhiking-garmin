@@ -1,0 +1,22 @@
+#######################################################
+# OpenHikingMap
+#
+# Biking relations
+#
+########################################################
+
+
+# High-priority hiking symbols
+type=route & route=mtb  {
+apply {
+	set mtb_route=true;
+	set route_ref='${ref}';
+	}
+}
+
+type=route & route=bicycle  {
+apply {
+	set bicycle_route=true;
+	set route_ref='${ref}';
+	}
+}

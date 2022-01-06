@@ -69,12 +69,13 @@ else ifeq ($(MAP), bike)
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=biking
 	GENERATE_SEA=no
-	TYP_BASE=ohm
+#	TYP_BASE=ohm
+	TYP_FILE=bikemap.typ
 	ICON_FILE=icon.ico
 else ifeq ($(MAP), exp)
 	FAMILY_ID=3692
-	FAMILY_NAME="OpenHiking-EXP"
-	SERIES_NAME="OpenHiking-EXP"
+	FAMILY_NAME="OpenHiking EXP"
+	SERIES_NAME="OpenHiking EXP"
 	OSM_COUNTRY_LIST=hungary
 	SUPPLEMENTARY_DATA=$(TJEL_NAME)
 #	SUPPLEMENTARY_DATA=
@@ -100,6 +101,7 @@ CONTOUR_DIR=$(DATASET_DIR)\contour
 TJEL_CACHED=$(OSM_CACHE_DIR)\$(TJEL_NAME)
 
 EXP_MAPSOURCE_DIR:="c:\Garmin\OpenHiking EXP"
+BIKE_MAPSOURCE_DIR:="c:\Garmin\Bike Map"
 
 ##############################################
 # Builder configuration
@@ -228,6 +230,12 @@ expcopy:
 	$(COPY) $(GMAP_DIR)\openhiking.img $(EXP_MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)\*.mdx $(EXP_MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)\*.tdb $(EXP_MAPSOURCE_DIR)
+
+bikecopy:
+	$(COPY) $(GMAP_DIR)\7*.img $(BIKE_MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\openhiking.img $(BIKE_MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\*.mdx $(BIKE_MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\*.tdb $(BIKE_MAPSOURCE_DIR)
 
 clean:
 	$(DEL) $(GMAP_DIR)\*

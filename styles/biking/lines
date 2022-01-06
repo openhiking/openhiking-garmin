@@ -1,145 +1,58 @@
 #######################################################
 # OpenHiking - Bike Map style
 #
-# Highway rendering definitions
+# Lines rendering definitions
 #
 ########################################################
 
 
-#######################################
-# Highway highlighting
-#
-highway=*
-& (surface=fine_gravel | surface=compacted )
-{ add unpaved_hard=1; add mkgmap:unpaved=1 }
-
-highway=*
-& (surface=cobblestone |  surface=dirt |
-   surface=earth | surface=grass | surface=grass_paver |
-   surface=gravel | surface=grit | surface=ground | surface=mud |
-   surface=pebblestone | surface=sand | surface=unpaved |
-   tracktype ~ 'grade[2-6]' )
-{ add unpaved_soft=1; add mkgmap:unpaved=1 }
-
-highway=track & tracktype!=* { add unpaved_soft=1; add mkgmap:unpaved=1 }
-
-
-#######################################
-# Highways
-#
-
-highway=* & name=* { set mkgmap:street='${name}' }
-highway=* {set mkgmap:label:2='${alt_name}'}
-highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
-
-highway=* & motorcar=destination { set mkgmap:throughroute=no; set motorcar=yes }
-highway=* & access=destination { set mkgmap:throughroute=no; set access=yes }
-highway=* & motor_vehicle=destination { set mkgmap:throughroute=no; set motor_vehicle=yes }
-highway=* & foot=no { set mkgmap:foot=no }
-
-# Supplementary info: bridge, tunnel etc
-highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10107 resolution 22 continue]
-highway=* & tunnel=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E00 resolution 22 continue]
-highway=* & tunnel=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E01 resolution 22 continue]
-
-highway=* & embankment=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E02 resolution 24 continue]
-highway=* & embankment=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E03 resolution 24 continue]
-
-highway=* & cutting=yes & highway_width<5 & highway!=proposed & highway!=construction & proposed!=*	[0x10E04 resolution 24 continue]
-highway=* & cutting=yes & highway_width>4 & highway!=proposed & highway!=construction & proposed!=*	[0x10E05 resolution 24 continue]
-
-highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E06 resolution 24 continue]
-highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E07 resolution 24 continue]
-
-highway=* & (foot=no | foot=customers) & highway!=proposed & highway!=construction & highway!=motorway & highway != trunk [0x10E08 resolution 22 continue]
-
-# Highway rendering
-if (highway=motorway | highway=trunk) then
-	length()>5000 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
-	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
+if (highway=cycleway) then
+	()  [0x0b road_class=0 road_speed=1 resolution 21 continue]
+	foot=designated & segregated=yes [0x11003  resolution 21]
+	() [0x11000  resolution 21]
 end
 
-highway=motorway_link | highway=trunk_link
-{name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})'; add bicycle=no; add foot=no }   [0x01 road_class=4 road_speed=6 resolution 17]
-
-if (highway=primary) then
-	length()>3000 {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
-	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
+if (restricted_with_biking=true) then
+	()  [0x0b road_class=0 road_speed=1 resolution 20 continue]
+	() [0x1100A  resolution 20]
 end
 
-highway=primary_link {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }    [0x02 road_class=3 road_speed=5 resolution 18]
-
-if (highway=secondary | highway=secondary_link) then
-	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' } 
-	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
-	() [0x03 road_class=2 road_speed=4 resolution 18]
+if (mtb_route=true | bicycle_route=true) then
+	() { name '${route_ref|highway-symbol:box}' } [0x0b road_class=0 road_speed=1 resolution 20 continue]
+	highway=primary  [0x11101  resolution 18]
+	highway=secondary  [0x11102  resolution 18]
+	highway=tertiary  [0x11103  resolution 19]
+	highway=unclassified & (_pvmnt=unpaved_hard | _pvmnt=unpaved_soft)  [0x11107  resolution 19]
+	highway=unclassified  [0x11104  resolution 19]
+	highway=residential & (_pvmnt=unpaved_hard | _pvmnt=unpaved_soft)  [0x11107  resolution 20]
+	highway=residential  [0x11104  resolution 20]
+	highway=service & (_pvmnt=unpaved_hard | _pvmnt=unpaved_soft)  [0x11107  resolution 20]
+	highway=service  [0x11104  resolution 20]
+	highway=track & _pvmnt=paved   [0x11104  resolution 20]
+	highway=track & (tracktype=grade1 | tracktype=grade2) & _pvmnt=unpaved_hard  [0x11107  resolution 20]
+	highway=track  [0x11108  resolution 21]
+	highway=path  [0x1110A  resolution 22]
 end
 
-if (highway=tertiary | highway=tertiary_link) then
-	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }
-	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
-	()  [0x04 road_class=1 road_speed=4 resolution 19]
+if (oneway=yes & (cycleway=opposite | oneway:bicycle=no)) then
+	highway=* [0x0b road_class=0 road_speed=1 resolution 20 continue]
+	highway=* [0x11017 resolution 22]
 end
 
-if (highway=unclassified) then
-	()  {name  '${name}'}
-	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
-	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
-	()  [0x05 road_class=0 road_speed=3 resolution 19]
+if (icn=proposed | ncn=proposed | rcn=proposed | lcn=proposed) then
+	highway=*  [0x0b road_class=0 road_speed=1 resolution 20 continue]
+	highway=*  [0x11110 continue]
+	highway=primary [0x11111 resolution 18]
+	highway=secondary [0x11112 resolution 18]
+	highway=tertiary [0x11113 resolution 19]
+	highway=unclassified [0x11114 resolution 19]
+	highway=residential [0x11115 resolution 20]
 end
 
-if (highway=residential) then
-	()  {name  '${name}'}
-	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
-	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
-	()  [0x06 road_class=0 road_speed=3 resolution 20]
+if (bicycle=permit) then
+	highway=tertiary | highway=unclassified | highway=residential | highway=service [0x0b road_class=0 road_speed=1 resolution 20 continue]
+	highway=tertiary [0x11213 resolution 19]
+	highway=unclassified  [0x11214 resolution 19]
+	highway=residential | highway=service [0x11215 resolution 19]
 end
-
-
-if (highway=service) then
-	()  {name  '${name}'}
-	unpaved_hard=1  [0x0d road_class=0 road_speed=1 resolution 20]
-	unpaved_soft=1  [0x0a road_class=0 road_speed=1 resolution 20]
-	()  [0x07 road_class=0 road_speed=1 resolution 20]
-end
-
-
-highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 20]
-
-if (highway=track) then
-	() { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
-	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
-	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 21]
-	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
-	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
-	tracktype=grade5    [0x0e road_class=0 road_speed=1 resolution 22]
-	tracktype!=*        [0x0a road_class=0 road_speed=1 resolution 21]
-end
-
-highway=pedestrian   [0x0f road_class=0 road_speed=1 resolution 21]
-highway=footway | (highway=path & surface=asphalt)  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
-highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
-highway=cycleway   [0x08 road_class=0 road_speed=1 resolution 21]
-highway=steps   [0x11 road_class=0 road_speed=1 resolution 22]
-
-highway=bridleway   [0x16 road_class=0 road_speed=1 resolution 22]
-
-highway=via_ferrata { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x13 resolution 22]
-
-if (highway=path) then
-#	sac_scale=hiking {add sac_scale_level=1; add sac_scale_tag='T1'; }
-	sac_scale='mountain_hiking' {add sac_scale_level=2; add sac_scale_tag='T2'; }
-	sac_scale='demanding_mountain_hiking' {add sac_scale_level=3; add sac_scale_tag='T3'; }
-	sac_scale='alpine_hiking' {add sac_scale_level=4; add sac_scale_tag='T4'; }
-	sac_scale='demanding_alpine_hiking' {add sac_scale_level=5; add sac_scale_tag='T5'; }
-	sac_scale='difficult_alpine_hiking' {add sac_scale_level=6; add sac_scale_tag='T6'; }
-
-	assisted_trail=* | safety_rope=* | ladder=* | rungs=*  [0x10E0A resolution 22 continue]
-
-	sac_scale_tag=*  { name '${name} ${trail_name} (${sac_scale_tag})'|'${name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
-	sac_scale_tag!=* { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
-	sac_scale_level>2  [0x12 road_class=0 road_speed=1 resolution 22]
-	() [0x16 road_class=0 road_speed=1 resolution 22]
-end
-
 

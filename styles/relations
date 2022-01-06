@@ -8,7 +8,11 @@
 # This if does not work! Style-options do not seem to be properly propagated to relations
 
 #if (mkgmap:option:hiking=true) then
-include 'hiking/relations';
+	include 'hiking/relations';
+#end
+
+#if (mkgmap:option:biking=true) then
+	include 'biking/relations';
 #end
 
 

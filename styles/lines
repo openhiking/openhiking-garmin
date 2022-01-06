@@ -20,9 +20,6 @@ oneway=true | oneway=1 {set oneway=yes}
 tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
 bridge=true | bridge=1 | bridge=viaduct {set bridge=yes}
 
-access=no | access=private { add foot=no }
-access=customers { add foot=customers }
-foot=private { set foot=no }
 
 highway=path & via_ferrata_scale = * {set highway=via_ferrata}
 highway=* & abandoned=yes  { set highway=abandoned }
@@ -31,6 +28,74 @@ highway=* & proposed=yes  { set highway=proposed }
 railway=* & abandoned=yes { set abandoned='${railway}'; set railway=abandoned; }
 railway=* & disused=yes { set disused='${railway}'; set railway=disused; }
 railway=* & proposed=yes  { set railway=proposed }
+
+
+#######################################
+# Access permissions
+#
+
+highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { add foot=no; add bicycle=no; }
+
+if (mkgmap:option:hiking=true) then
+	access=* { add foot='${access}'; }
+	foot=private { set foot=no; }
+	foot=* { set visual_access='${foot}'; }
+end
+
+if (mkgmap:option:biking=true) then
+	access=* { add vehicle='${access}'; }
+	vehicle=* { add motor_vehicle='${access}'; add bicycle='${access}'; }
+	bicycle=private { set bicycle=no; }
+	bicycle!=* { add bicycle=yes; }
+
+	() { set visual_access='${bicycle}'; }
+end
+
+highway=* & foot=no { set mkgmap:foot=no }
+highway=* & bicycle=no { set mkgmap:bicycle=no }
+
+
+#######################################
+# Surface
+#
+
+highway=* &
+( surface=paved |surface=asphalt | surface=chipseal | surface~'^concrete.*'|
+ surface=paving_stones |surface=metal | surface=wood ) 
+ { set _pvmnt=paved; }
+
+
+highway=* &
+(surface=fine_gravel | surface=compacted )
+{ set _pvmnt=unpaved_hard; add mkgmap:unpaved=yes}
+
+highway=*
+& (surface=cobblestone |  surface=dirt |
+   surface=earth | surface=grass | surface=grass_paver |
+   surface=gravel | surface=grit | surface=ground | surface=mud |
+   surface=pebblestone | surface=sand | surface=unpaved )
+{ set _pvmnt=unpaved_soft; add mkgmap:unpaved=yes}
+
+highway=track & (tracktype ~ 'grade[3-6]' |  tracktype!=*)
+{ set _pvmnt=unpaved_soft; add mkgmap:unpaved=yes}
+
+
+#######################################
+# Highway preprocessing
+#
+if (mkgmap:option:hiking=true) then
+	include 'hiking/highway-pre';
+end
+
+if (mkgmap:option:biking=true) then
+	include 'biking/highway-pre';
+end
+
+
+#######################################
+# Highway highlighting
+#
+include 'highway-highlighting';
 
 
 #######################################
@@ -44,6 +109,11 @@ end
 if (mkgmap:option:biking=true) then
 	include 'biking/lines';
 end
+
+#######################################
+# Generic highways
+#
+include 'highways';
 
 
 #######################################
@@ -77,7 +147,7 @@ waterway=drain   [0x10a00 resolution 22 ]
 #######################################
 # Ferries
 #
-route=ferry { name '${name}'} [0x1b resolution 22 ]
+route=ferry { name '${name}'; set mkgmap:ferry=yes; } [0x1b resolution 22 ]
 
 #######################################
 # Aeroways
