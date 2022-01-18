@@ -3,8 +3,13 @@
 #
 # Generic highway rendering definitions
 #
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
 ########################################################
 
+
+highway=* & (motor_vehicle=no | motor_vehicle=forestry | motor_vehicle=agricultural | motor_vehicle=permit) &  (foot!=* | foot=yes | foot=designated) { set motor_vehicle_restricted=true; }
 
 highway=* & name=* { set mkgmap:street='${name}' }
 highway=* {set mkgmap:label:2='${alt_name}'}
@@ -32,35 +37,42 @@ highway=primary_link {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${
 
 if (highway=secondary | highway=secondary_link) then
 	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' } 
-	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
 	() [0x03 road_class=2 road_speed=4 resolution 18]
 end
 
 if (highway=tertiary | highway=tertiary_link) then
 	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }
-	unpaved_hard=1  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
 
+
 if (highway=unclassified) then
 	()  {name  '${name}'}
-	_pvmnt=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	_pvmnt=unpaved_soft  [0x0a road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 19 continue]
+	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
 end
 
 if (highway=residential) then
 	()  {name  '${name}'}
-	_pvmnt=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	_pvmnt=unpaved_soft  [0x0a road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
 	()  [0x06 road_class=0 road_speed=3 resolution 20]
 end
 
 
 if (highway=service) then
 	()  {name  '${name}'}
-	_pvmnt=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	_pvmnt=unpaved_soft  [0x0a road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=1 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x10E12 resolution 20]
 	()  [0x07 road_class=0 road_speed=1 resolution 20]
 end
 
@@ -68,25 +80,30 @@ end
 highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 20]
 
 if (highway=track) then
-	() { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
-	_pvmnt=paved  [0x05 road_class=0 road_speed=3 resolution 20]
+	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
+		motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
+		() { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
+		motor_vehicle_restricted=true  [0x10E11 resolution 20]
+		()  [0x05 road_class=0 road_speed=3 resolution 20]
+	end
 	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 21]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
-	tracktype=grade5    [0x0e road_class=0 road_speed=1 resolution 22]
+	tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
+	surface_type=unpaved_hard [0x0d road_class=0 road_speed=1 resolution 20]
 	()        	    [0x0a road_class=0 road_speed=1 resolution 21]
 end
 
-highway=pedestrian   [0x0f road_class=0 road_speed=1 resolution 21]
-highway=footway | (highway=path & surface=asphalt)  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
-highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x10 road_class=0 road_speed=1 resolution 22]
+highway=pedestrian   [0x10 road_class=0 road_speed=1 resolution 21]
+highway=footway | (highway=path & surface=asphalt)  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
+highway=platform  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
 highway=cycleway   [0x08 road_class=0 road_speed=1 resolution 21]
-highway=steps   [0x11 road_class=0 road_speed=1 resolution 22]
+highway=steps   [0x12 road_class=0 road_speed=1 resolution 22]
 
 highway=bridleway   [0x16 road_class=0 road_speed=1 resolution 22]
 
-highway=via_ferrata { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x13 resolution 22]
+#highway=via_ferrata { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x13 resolution 22]
 
 if (highway=path) then
 #	sac_scale=hiking {add sac_scale_level=1; add sac_scale_tag='T1'; }
@@ -100,7 +117,12 @@ if (highway=path) then
 
 	sac_scale_tag=*  { name '${name} ${trail_name} (${sac_scale_tag})'|'${name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
 	sac_scale_tag!=* { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}
-	sac_scale_level>2  [0x12 road_class=0 road_speed=1 resolution 22]
+	sac_scale_level>2  [0x13 road_class=0 road_speed=1 resolution 22]
 	() [0x16 road_class=0 road_speed=1 resolution 22]
 end
 
+
+if (highway=via_ferrata) then
+	()  [0x0b road_class=0 road_speed=0 resolution 22 continue]
+	()  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x10E10 resolution 22]
+end

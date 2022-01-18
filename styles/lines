@@ -3,14 +3,11 @@
 #
 # Line rendering style definitions
 #
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
 ########################################################
 
-
-#######################################
-# General settings
-#
-natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 
 #######################################
 # Simplifications
@@ -31,201 +28,40 @@ railway=* & proposed=yes  { set railway=proposed }
 
 
 #######################################
-# Access permissions
-#
-
-highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { add foot=no; add bicycle=no; }
-
-if (mkgmap:option:hiking=true) then
-	access=* { add foot='${access}'; }
-	foot=private { set foot=no; }
-	foot=* { set visual_access='${foot}'; }
-end
-
-if (mkgmap:option:biking=true) then
-	access=* { add vehicle='${access}'; }
-	vehicle=* { add motor_vehicle='${access}'; add bicycle='${access}'; }
-	bicycle=private { set bicycle=no; }
-	bicycle!=* { add bicycle=yes; }
-
-	() { set visual_access='${bicycle}'; }
-end
-
-highway=* & foot=no { set mkgmap:foot=no }
-highway=* & bicycle=no { set mkgmap:bicycle=no }
-
-
-#######################################
-# Surface
-#
-
-highway=* &
-( surface=paved |surface=asphalt | surface=chipseal | surface~'^concrete.*'|
- surface=paving_stones |surface=metal | surface=wood ) 
- { set _pvmnt=paved; }
-
-
-highway=* &
-(surface=fine_gravel | surface=compacted )
-{ set _pvmnt=unpaved_hard; add mkgmap:unpaved=yes}
-
-highway=*
-& (surface=cobblestone |  surface=dirt |
-   surface=earth | surface=grass | surface=grass_paver |
-   surface=gravel | surface=grit | surface=ground | surface=mud |
-   surface=pebblestone | surface=sand | surface=unpaved )
-{ set _pvmnt=unpaved_soft; add mkgmap:unpaved=yes}
-
-highway=track & (tracktype ~ 'grade[3-6]' |  tracktype!=*)
-{ set _pvmnt=unpaved_soft; add mkgmap:unpaved=yes}
-
-
-#######################################
-# Highway preprocessing
-#
-if (mkgmap:option:hiking=true) then
-	include 'hiking/highway-pre';
-end
-
-if (mkgmap:option:biking=true) then
-	include 'biking/highway-pre';
-end
-
-
-#######################################
-# Highway highlighting
-#
-include 'highway-highlighting';
-
-
-#######################################
-# Tematic rendering rules
+# Preprocessing includes
 #
 
 if (mkgmap:option:hiking=true) then
-	include 'hiking/lines';
+	include "access-propagation.mkg";
+	include "surface-groups.mkg";
 end
+
 
 if (mkgmap:option:biking=true) then
-	include 'biking/lines';
+	include 'biking/lines.mkg';
+end
+
+
+#######################################
+# Highways & highlightings
+#
+
+if (mkgmap:option:hiking=true) then
+	include 'highlighting.mkg';
+	include 'hiking-trails.mkg'
+	include 'highways.mkg';
+end
+
+
+if (mkgmap:option:biking=true) then
+	include 'biking/highway-pre.mkg';
 end
 
 #######################################
-# Generic highways
+# Other lines
 #
-include 'highways';
 
-
-#######################################
-# Railways
-#
-railway=* & bridge=yes & railway!=proposed & railway!=construction &  railway!=abandoned  [0x10107 resolution 22 continue]
-railway=* & tunnel=yes & railway!=proposed & railway!=construction & railway!=abandoned & railway!=subway  [0x10E00 resolution 22 continue]
-
-railway=rail  { name '${name}'} [0x14  resolution 18 ]
-railway=disused	& disused!=narrow_gauge [0x10F02 resolution 22]
-disused:railway=rail [0x10F02  resolution 22]
-
-railway=light_rail  { name '${name}'} [0x10F00 resolution 20 ]
-railway=tram [0x10F01 resolution 20 ]
-
-railway=narrow_gauge { name '${name}'} [0x10F03 resolution 20 ]
-railway=disused	& disused=narrow_gauge [0x10F04 resolution 22]
-disused:railway=narrow_gauge [0x10F04  resolution 22]
-
-railway=funicular  { name '${name}'} [0x10F03 resolution 21 ]
-railway=disused	& disused=funicular [0x10F04 resolution 22]
-
-#######################################
-# Waterways
-#
-(waterway=river | waterway=stream | waterway=canal) & intermittent=yes  [0x26 resolution 22 ]
-waterway=river | waterway=stream | waterway=canal  [0x18 resolution 18 ]
-waterway=ditch & name=*  [0x10a00 resolution 22 ]
-waterway=drain   [0x10a00 resolution 22 ]
-
-#######################################
-# Ferries
-#
-route=ferry { name '${name}'; set mkgmap:ferry=yes; } [0x1b resolution 22 ]
-
-#######################################
-# Aeroways
-#
-#aeroway=taxiway [0x27 resolution 24 ]
-aeroway=runway [0x27 resolution 22]
-
-#######################################
-# Ski & lift
-#
-aerialway=gondola | aerialway=cable_car [0x10F18 resolution 22]
-aerialway=chair_lift  | aerialway=mixed_lift { name '${name}'} [0x10F19 resolution 24]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=platter  { name '${name}'} [0x10F1A resolution 24]
-aerialway=rope_tow | aerialway=magic_carpet { name '${name}'} [0x10F1B resolution 24]
-aerialway=goods  { name '${name}'} [0x10F1C resolution 24]
-
-piste:type = downhill & piste:difficulty = novice       [0x10F1D resolution 24]
-piste:type = downhill & piste:difficulty = easy         [0x10F1D resolution 24]
-piste:type = downhill & piste:difficulty = intermediate [0x10F1E resolution 24]
-piste:type = downhill & piste:difficulty = advanced     [0x10F1F resolution 24]
-piste:type = downhill & piste:difficulty = expert       [0x10F1E resolution 24]
-piste:type = downhill & piste:difficulty = freeride     [0x10F1E resolution 24]
-piste:type = downhill & piste:difficulty = extreme      [0x10F1E resolution 24]
-
-
-#######################################
-# Walls
-#
-barrier=wall & wall=castle_wall [0x10F10 resolution 24 ]
-barrier=city_wall [0x10F10 resolution 24]
-barrier=wall & wall!=castle_wall [0x10F11 resolution 24 ]
-
-
-#######################################
-# Natural
-#
-natural=cliff   [0x10F0B resolution 24 continue]
-natural=cliff   { deletealltags }
-
-natural=valley & name=*  [0x10F0C resolution 24]
-natural=ridge & name=*  [0x10F0D resolution 24]
-natural=arete & name=*  [0x10F0D resolution 24]
-#natural=tree_row & name=*  [0x10F0E resolution 24]
-
-#######################################
-# Nature reserve boundaries
-#
-boundary=protected_area & protect_class=1  {name '${name}'} [0x10F0A resolution 20 ]
-boundary=protected_area & protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
-boundary=protected_area  {name '${name}'} [0x10F08 resolution 20 ]
-
-boundary=protected_landscape_area {name '${name}'} [0x10F08 resolution 20 ]
-leisure=nature_reserve  {name '${name}'} [0x10F08 resolution 20 ]
-boundary=national_park 	{name '${name}'} [0x10F09 resolution 18 ]
+include 'lines.mkg';
 
 
 
-#######################################
-# Administrative boundaries
-#
-admin_level=2 & boundary=administrative [0x1e resolution 15]
-
-
-#######################################
-# Pipes
-#
-man_made=pipeline & location=overground [0x028 resolution 24]
-power=line | power=minor_line [0x029  resolution 23]
-
-#######################################
-# Contours
-#
-contour=elevation & contour_ext=elevation_minor		{ name '${ele|conv:m=>ft}'; }	[0x20 resolution 23]
-contour=elevation & contour_ext=elevation_medium	{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 22]
-contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[0x22 resolution 21]
-contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
-
-#######################################
-# Other
-#
-leisure=track [0x10F13 resolution 24]

@@ -7,9 +7,9 @@
 
 overview-mapname:openhiking
 description:openhiking
-drive-on=right
-draw-priority=10
-show-profiles=1
+drive-on:right
+draw-priority:16
+show-profiles:1
 dem-interpolation=auto
 dem-dists=9942,9942,9942,13248,44176
 overview-dem-dist=88368
@@ -25,3 +25,6 @@ order-by-decreasing-area
 add-pois-to-areas
 add-pois-to-lines
 lower-case
+remove-ovm-work-files
+line-types-with-direction:0x10F0B
+min-size-polygon:12

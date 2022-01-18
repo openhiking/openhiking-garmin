@@ -1,0 +1,30 @@
+#######################################################
+# OpenHikingMap
+#
+# Surface group definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+highway=* &
+ surface~'paved|asphalt|chipseal|concrete.*|paving_stones|metal|wood'
+ { set surface_type=paved_smooth; }
+
+highway=* & surface~'paving_stones'  { set surface_type=paved_pstone ; }
+
+highway=* &
+ surface~'sett|cobblestone'  { set surface_type=paved_cstone  ; }
+
+highway=* &
+ surface~'fine_gravel|compacted|pebblestone|rock|grass_paver'
+{ set surface_type=unpaved_hard; }
+
+highway=*
+& surface~'unpaved|ground|earth|dirt' 
+{ set surface_type=unpaved_normal; }
+
+highway=*
+& surface~'grass|mud|sand'
+{ set surface_type=unpaved_soft; }

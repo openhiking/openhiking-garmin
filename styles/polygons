@@ -3,7 +3,11 @@
 #
 # Polygon rendering style definitions
 #
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
 ########################################################
+
 
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }

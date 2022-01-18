@@ -1,0 +1,24 @@
+#######################################################
+# OpenHikingMap
+#
+# Access permission propagation
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+
+highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { add foot=no; add bicycle=no; }
+
+access=* { add foot='${access}'; add vehicle='${access}'; }
+vehicle=* { add motor_vehicle='${vehicle}'; }
+
+foot=private { set foot=no; }
+motor_vehicle=private { set motor_vehicle=no; }
+
+foot=* { set visual_access='${foot}'; }
+
+highway=* & foot=no { set mkgmap:foot=no }
+highway=* & bicycle=no { set mkgmap:bicycle=no }
+highway=* & motor_vehicle=no { set mkgmap:car=no }

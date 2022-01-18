@@ -1,18 +1,17 @@
 #######################################################
 # OpenHikingMap
 #
-# Master makefile
+# Map building automation
 #
-# Call syntax: make MAP=<mapcode> <target>
-# 
-# Example: make MAP=hu map
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
 
-
 ##############################################
 # Tools
+DEMMGR=tools\demmgr.py
 PHYGHTMAP=phyghtmap
 OSMCONVERT=osmconvert64.exe
 SPLITTER=c:\Apps\splitter\splitter.jar
@@ -21,7 +20,7 @@ MKNSIS="c:\Program Files (x86)\NSIS\Bin\makensis.exe"
 WGET=wget
 COPY=copy /b
 MOVE=move
-DEL=del
+DEL=del /f /q
 
 ##############################################
 # External data sources
@@ -37,11 +36,12 @@ ifeq ($(MAP), ce)
 	FAMILY_ID=3691
 	FAMILY_NAME="OpenHiking CE"
 	SERIES_NAME="OpenHiking CE"
-#	OSM_COUNTRY_LIST=hungary slovakia czech-republic poland austria italy slovenia croatia bosnia-herzegovina montenegro serbia romania ukraine
 	OSM_COUNTRY_LIST=hungary romania slovenia slovakia czech-republic poland austria italy croatia bosnia-herzegovina montenegro serbia ukraine
 	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-	CONTOUR_LINE_STEP=20
-	CONTOUR_LINES=contour-ce-20-v4.o5m
+	DEM_SOURCES=dtm-sk alos
+	HILL_SHADING=alos
+	CONTOUR_LINE_STEP=10
+	CONTOUR_LINES=contour-ce-alos-10.o5m
 	BOUNDARY_POLYGON=central-europe-v4.poly
 	MAP_THEME=hiking
 	TYP_BASE=ohm
@@ -52,18 +52,20 @@ else ifeq ($(MAP), hu)
 	SERIES_NAME="OpenHiking HU"
 	OSM_COUNTRY_LIST=hungary
 	SUPPLEMENTARY_DATA=$(TJEL_NAME)
+	DEM_SOURCES=alos
+	HILL_SHADING=alos
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-hungary-10.o5m
+	CONTOUR_LINES=contour-hungary-alos-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
 	MAP_THEME=hiking
-	TYP_BASE=ohm
-	GENERATE_SEA=no
 else ifeq ($(MAP), bike)
 	FAMILY_ID=63
 	FAMILY_NAME="Bike Map"
 	SERIES_NAME="Bike Map"
 	OSM_COUNTRY_LIST=hungary
 	SUPPLEMENTARY_DATA=
+	DEM_SOURCES=VIEW3
+	HILL_SHADING=VIEW3
 	CONTOUR_LINE_STEP=10
 	CONTOUR_LINES=contour-hungary-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
@@ -72,36 +74,53 @@ else ifeq ($(MAP), bike)
 #	TYP_BASE=ohm
 	TYP_FILE=bikemap.typ
 	ICON_FILE=icon.ico
+	MAPSOURCE_DIR:="c:\Garmin\Bike Map"
 else ifeq ($(MAP), exp)
-	FAMILY_ID=3692
+	FAMILY_ID=3698
 	FAMILY_NAME="OpenHiking EXP"
 	SERIES_NAME="OpenHiking EXP"
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-#	SUPPLEMENTARY_DATA=
+	OSM_COUNTRY_LIST=slovenia
+	SUPPLEMENTARY_DATA=
+	DEM_SOURCES=alos
+	HILL_SHADING=SRTM1v3.0
 	CONTOUR_LINE_STEP=10
-#	CONTOUR_LINES=contour-romania-20.o5m
-	CONTOUR_LINES=contour-hungary-10.o5m
-	BOUNDARY_POLYGON=hungary.poly
+	CONTOUR_LINES=contour-triglav-alos.o5m
+	BOUNDARY_POLYGON=triglav.poly
 	MAP_THEME=hiking
-	TYP_BASE=ohm
-	GENERATE_SEA=no
+	MAPSOURCE_DIR="c:\Garmin\OpenHiking EXP"
+else ifeq ($(MAP), exp2)
+	FAMILY_ID=3699
+	FAMILY_NAME="OpenHiking EXP2"
+	SERIES_NAME="OpenHiking EXP2"
+	OSM_COUNTRY_LIST=hungary
+	SUPPLEMENTARY_DATA=
+	DEM_SOURCES=test
+#	HILL_SHADING=SRTM1v3.0
+	HILL_SHADING=VIEW3
+	CONTOUR_LINE_STEP=10
+#	CONTOUR_LINES=contour-hungary-alos-10.o5m
+#	CONTOUR_LINES=contour-hungary-srtm3-20.o5m
+	CONTOUR_LINES=contour-borzsony-alos-10.o5m
+	BOUNDARY_POLYGON=borzsony.poly
+	MAP_THEME=hiking
+	MAPSOURCE_DIR="c:\Garmin\OpenHiking EXP2"	
 endif
+
+
 
 
 
 ##############################################
 # Data cache locations
 DATASET_DIR=c:\Dataset\map
-HGT_DIR=$(DATASET_DIR)\hgt
-DEM_DIR=$(HGT_DIR)\VIEW3
-OSM_CACHE_DIR=$(DATASET_DIR)\osm
+WORKING_DIR=r:
+DEM_DIR=$(DATASET_DIR)\hgt
+#DEM_DIR=$(HGT_DIR)\SRTM1v3.0
+ALOS_DIR=$(DEM_DIR)\alos
 CONTOUR_DIR=$(DATASET_DIR)\contour
+OSM_CACHE_DIR=$(DATASET_DIR)\osm
 
 TJEL_CACHED=$(OSM_CACHE_DIR)\$(TJEL_NAME)
-
-EXP_MAPSOURCE_DIR:="c:\Garmin\OpenHiking EXP"
-BIKE_MAPSOURCE_DIR:="c:\Garmin\Bike Map"
 
 ##############################################
 # Builder configuration
@@ -117,6 +136,12 @@ BOUNDARY_DIR=boundaries
 CONTOUR_START_ID=100000000000
 CONTOUR_FILE_FP=$(CONTOUR_DIR)\$(CONTOUR_LINES)
 
+ifeq ($(DEM_SOURCES),)
+	DEM_SOURCES=dtm-sk alos SRTM1v3.0
+endif
+
+DEM_SOURCE_TILES=$(shell python $(DEMMGR) -s -i -p $(BOUNDARY_POLYGON_FP) -d $(DEM_DIR) $(DEM_SOURCES))
+
 ifeq ($(CONTOUR_LINE_STEP),10)
 	CONTOUR_LINE_MEDIUM=20
 	CONTOUR_LINE_MAJOR=100
@@ -124,6 +149,9 @@ else ifeq ($(CONTOUR_LINE_STEP),20)
 	CONTOUR_LINE_MEDIUM=40
 	CONTOUR_LINE_MAJOR=200
 endif
+
+#CONTOUR_RDP=--simplifyContoursEpsilon=0.00001
+
 
 
 ##############################################
@@ -141,15 +169,19 @@ BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)\$(BOUNDARY_POLYGON)
 ##############################################
 # Tile Splitting
 
-TILES_DIR=$(DATASET_DIR)\tiles-$(MAP)
+TILES_DIR=$(WORKING_DIR)\tiles-$(MAP)
 TILE_ARGS=$(TILES_DIR)\template.args
 
 ##############################################
 # Garmin map generation
 
-GMAP_DIR=$(DATASET_DIR)\gmap-$(MAP)
+GMAP_DIR=$(WORKING_DIR)\gmap-$(MAP)
 
 OHM_ARGS_TEMPLATE=$(CONFIG_DIR)\mkgmap.args
+
+ifeq ($(TYP_BASE),)
+	TYP_BASE=ohm
+endif
 
 ifeq ($(TYP_FILE),)
 	TYP_FILE=$(TYP_BASE)$(MAP).typ
@@ -162,6 +194,8 @@ STYLES=info lines options points polygons relations version
 
 MERGED_ARGS=$(TILES_DIR)\openhiking.args
 STYLES_RP := $(foreach wrd,$(STYLES),$(STYLES_DIR)\$(wrd))
+
+HILL_SHADING_DIR=$(DEM_DIR)\$(HILL_SHADING)
 
 ifeq ($(GENERATE_SEA),yes)
 	GEN_SEA_OPTIONS=--generate-sea=extend-sea-sectors,close-gaps=500,land-tag=natural=land
@@ -178,10 +212,20 @@ ifeq ($(CODE_PAGE),)
 endif
 
 
+alos:
+	python $(DEMMGR) -r -p $(BOUNDARY_POLYGON_FP) $(ALOS_DIR)
 
-contour:
-	$(PHYGHTMAP) --jobs=2 --viewfinder-mask=3 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM) --polygon=$(BOUNDARY_POLYGON_FP) \
-	 --start-node-id=$(CONTOUR_START_ID) --start-way-id=$(CONTOUR_START_ID) --hgtdir=$(HGT_DIR) --max-nodes-per-tile=0 --o5m -o $(CONTOUR_FILE_FP)
+contour-srtm:
+	$(PHYGHTMAP) --jobs=2 --viewfinder-mask=3 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM) -0 \
+	 --polygon=$(BOUNDARY_POLYGON_FP) --hgtdir=$(DEM_DIR) $(CONTOUR_RDP) \
+	 --start-node-id=$(CONTOUR_START_ID) --start-way-id=$(CONTOUR_START_ID) --max-nodes-per-tile=0 \
+	  --o5m -o $(CONTOUR_FILE_FP)
+
+contour-hr:
+	cd $(DEM_DIR) &&  $(PHYGHTMAP) --jobs=2 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM)  \
+	 --start-node-id=$(CONTOUR_START_ID) --start-way-id=$(CONTOUR_START_ID) $(CONTOUR_RDP) \
+	 --max-nodes-per-tile=0 --o5m -o $(CONTOUR_FILE_FP) $(DEM_SOURCE_TILES)
+
 
 $(OSM_CACHE_DIR)\\%-latest.osm.pbf:
 	$(WGET) $(GEOFABRIK_URL)$*-latest.osm.pbf -P $(OSM_CACHE_DIR)
@@ -217,25 +261,27 @@ typ: $(TYP_FILE_FP)
 
 map:  $(STYLES_RP) $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
-	--series-name=$(SERIES_NAME) $(TYP_FILE_FP) --dem=$(DEM_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
+	--series-name=$(SERIES_NAME) $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
 	--style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
+
+
+check: $(STYLES_RP)
+	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --check-styles
+
 
 install:
 	$(COPY) $(CONFIG_DIR)\$(ICON_FILE) $(GMAP_DIR)
 	$(COPY) $(TYP_FILE_FP) $(GMAP_DIR)
 	$(MKNSIS) $(GMAP_DIR)\openhiking.nsi
 
-expcopy:
-	$(COPY) $(GMAP_DIR)\7*.img $(EXP_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\openhiking.img $(EXP_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\*.mdx $(EXP_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\*.tdb $(EXP_MAPSOURCE_DIR)
+push:
+	$(COPY) $(GMAP_DIR)\7*.img $(MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\openhiking.img $(MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\*.mdx $(MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)\*.tdb $(MAPSOURCE_DIR)
 
-bikecopy:
-	$(COPY) $(GMAP_DIR)\7*.img $(BIKE_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\openhiking.img $(BIKE_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\*.mdx $(BIKE_MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)\*.tdb $(BIKE_MAPSOURCE_DIR)
+pushall: push
+	$(COPY) $(GMAP_DIR)\*.typ $(MAPSOURCE_DIR)
 
 clean:
 	$(DEL) $(GMAP_DIR)\*
@@ -250,6 +296,6 @@ cleancache:
 	$(DEL) $(OSM_CACHE_DIR)\*.o5m
 	$(DEL) $(OSM_CACHE_DIR)\*.pbf
 
-test: $(TYP_FILE_FP)
-	@echo $(TYP_FILE_FP)
+test:
+	@echo $(HILL_SHADING_DIR)
 

@@ -3,7 +3,11 @@
 #
 # Point rendering rule definitions
 #
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
 ########################################################
+
 
 #######################################
 # General settings
@@ -37,11 +41,12 @@ place=*   {name '${name} (${name:hu|not-equal:name})' |'${name}' }
 #
 
 if (mkgmap:option:hiking=true) then
-	include 'hiking/points';
+	include 'hiking-symbols.mkg';
+	include 'obstacles.mkg';
 end
 
 if (mkgmap:option:biking=true) then
-	include 'biking/points';
+	include 'biking/points.mkg';
 end
 
 
