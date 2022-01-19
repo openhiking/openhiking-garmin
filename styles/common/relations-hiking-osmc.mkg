@@ -1,9 +1,12 @@
 #######################################################
 # OpenHikingMap
 #
-# Generic hiking relations
+# Hiking relations - OSMC
 #
-#######################################################
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
 
 #######################################################
 # Primary OSMC Symbols
@@ -245,7 +248,7 @@ apply {
 	}
 }
 
-type=route & route=hiking & osmc:symbol~'^yellow.+'  {
+type=route & route=hiking & osmc:symbol~'^yellow.+' & jel!='sgy'  {
 apply {
 	add trail_p10_color=yellow;
 	add trail_p10_symbol='${osmc:symbol}';

@@ -19,6 +19,3 @@ trail_p8_color=*  & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_s
 trail_p9_color=*  & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_symbol='${trail_p9_symbol}' }
 trail_p10_color=* & mkgmap:line2poitype=mid & mkgmap:way-length>60 { add trail_symbol='${trail_p10_symbol}' }
 
-include 'hiking/hiking-symbols-hu';
-include 'hiking/hiking-symbols-czsk';
-include 'hiking/hiking-symbols-osmc';

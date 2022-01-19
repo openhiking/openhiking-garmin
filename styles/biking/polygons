@@ -1,0 +1,11 @@
+#######################################################
+# Open Bike Map
+#
+# Polygon rendering style definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+include "../common/polygons.mkg"

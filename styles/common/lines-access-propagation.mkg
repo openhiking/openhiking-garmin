@@ -9,12 +9,11 @@
 ########################################################
 
 
-highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { add foot=no; add bicycle=no; }
-
 access=* { add foot='${access}'; add vehicle='${access}'; }
-vehicle=* { add motor_vehicle='${vehicle}'; }
+vehicle=* { add motor_vehicle='${vehicle}'; add bicycle='${vehicle}'; }
 
 foot=private { set foot=no; }
+bicycle=private {set bicycle=no; }
 motor_vehicle=private { set motor_vehicle=no; }
 
 foot=* { set visual_access='${foot}'; }

@@ -3,7 +3,11 @@
 #
 # Hiking symbols rendering for Hungary
 #
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
 ########################################################
+
 
 mkgmap:line2poi!=* & jel='k'  [0x12900 resolution 22]
 mkgmap:line2poi!=* &  jel='k+' [0x12901 resolution 22]

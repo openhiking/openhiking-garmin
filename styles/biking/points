@@ -1,15 +1,12 @@
 #######################################################
-# OpenHikingMap
+# Open Bike Map
 #
-# Hiking trail relation processing
+# Point rendering rule definitions
 #
 # Copyright (c) 2021-2022 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-include 'hiking/hiking-relations-hu';
-include 'hiking/hiking-relations-sk';
-include 'hiking/hiking-relations-cz';
-include 'hiking/hiking-relations-osmc';
+include "../common/points.mkg"
 

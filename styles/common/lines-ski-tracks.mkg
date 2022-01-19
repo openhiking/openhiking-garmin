@@ -8,12 +8,6 @@
 #
 ########################################################
 
-aerialway=gondola | aerialway=cable_car [0x10F18 resolution 22]
-aerialway=chair_lift  | aerialway=mixed_lift { name '${name}'} [0x10F19 resolution 24]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=platter  { name '${name}'} [0x10F1A resolution 24]
-aerialway=rope_tow | aerialway=magic_carpet { name '${name}'} [0x10F1B resolution 24]
-aerialway=goods  { name '${name}'} [0x10F1C resolution 24]
-
 piste:type = downhill & piste:difficulty = novice       [0x10F1D resolution 24]
 piste:type = downhill & piste:difficulty = easy         [0x10F1D resolution 24]
 piste:type = downhill & piste:difficulty = intermediate [0x10F1E resolution 24]

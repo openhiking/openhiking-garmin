@@ -36,19 +36,6 @@ shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 historic=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 place=*   {name '${name} (${name:hu|not-equal:name})' |'${name}' }
 
-#######################################
-# Tematic rendering rules
-#
-
-if (mkgmap:option:hiking=true) then
-	include 'hiking-symbols.mkg';
-	include 'obstacles.mkg';
-end
-
-if (mkgmap:option:biking=true) then
-	include 'biking/points.mkg';
-end
-
 
 
 

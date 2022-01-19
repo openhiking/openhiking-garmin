@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Fence rendering definitions
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+
+barrier=fence & is_in(landuse,residential,all_in_or_on)=false & is_in(landuse,allotments,all_in_or_on)=false [0x10F11 resolution 24 ]

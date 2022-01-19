@@ -43,9 +43,10 @@ ifeq ($(MAP), ce)
 	CONTOUR_LINE_STEP=10
 	CONTOUR_LINES=contour-ce-alos-10.o5m
 	BOUNDARY_POLYGON=central-europe-v4.poly
-	MAP_THEME=hiking
+	MAP_STYLE=hiking
 	TYP_BASE=ohm
 	GENERATE_SEA=yes
+	GMAPSUPP=yes
 else ifeq ($(MAP), hu)
 	FAMILY_ID=3690
 	FAMILY_NAME="OpenHiking HU"
@@ -57,7 +58,8 @@ else ifeq ($(MAP), hu)
 	CONTOUR_LINE_STEP=10
 	CONTOUR_LINES=contour-hungary-alos-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
-	MAP_THEME=hiking
+	MAP_STYLE=hiking
+	GMAPSUPP=yes
 else ifeq ($(MAP), bike)
 	FAMILY_ID=63
 	FAMILY_NAME="Bike Map"
@@ -69,24 +71,25 @@ else ifeq ($(MAP), bike)
 	CONTOUR_LINE_STEP=10
 	CONTOUR_LINES=contour-hungary-10.o5m
 	BOUNDARY_POLYGON=hungary.poly
-	MAP_THEME=biking
+	MAP_STYLE=biking
 	GENERATE_SEA=no
 #	TYP_BASE=ohm
 	TYP_FILE=bikemap.typ
 	ICON_FILE=icon.ico
 	MAPSOURCE_DIR:="c:\Garmin\Bike Map"
+	GMAPSUPP=no
 else ifeq ($(MAP), exp)
 	FAMILY_ID=3698
 	FAMILY_NAME="OpenHiking EXP"
 	SERIES_NAME="OpenHiking EXP"
-	OSM_COUNTRY_LIST=slovenia
+	OSM_COUNTRY_LIST=slovakia
 	SUPPLEMENTARY_DATA=
-	DEM_SOURCES=alos
-	HILL_SHADING=SRTM1v3.0
+	DEM_SOURCES=dtm-sk
+	HILL_SHADING=alos
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-triglav-alos.o5m
-	BOUNDARY_POLYGON=triglav.poly
-	MAP_THEME=hiking
+	CONTOUR_LINES=contour-slovakia-dtm-10.o5m
+	BOUNDARY_POLYGON=slovakia.poly
+	MAP_STYLE=hiking
 	MAPSOURCE_DIR="c:\Garmin\OpenHiking EXP"
 else ifeq ($(MAP), exp2)
 	FAMILY_ID=3699
@@ -95,14 +98,12 @@ else ifeq ($(MAP), exp2)
 	OSM_COUNTRY_LIST=hungary
 	SUPPLEMENTARY_DATA=
 	DEM_SOURCES=test
-#	HILL_SHADING=SRTM1v3.0
 	HILL_SHADING=VIEW3
 	CONTOUR_LINE_STEP=10
 #	CONTOUR_LINES=contour-hungary-alos-10.o5m
-#	CONTOUR_LINES=contour-hungary-srtm3-20.o5m
 	CONTOUR_LINES=contour-borzsony-alos-10.o5m
 	BOUNDARY_POLYGON=borzsony.poly
-	MAP_THEME=hiking
+	MAP_STYLE=hiking
 	MAPSOURCE_DIR="c:\Garmin\OpenHiking EXP2"	
 endif
 
@@ -114,8 +115,8 @@ endif
 # Data cache locations
 DATASET_DIR=c:\Dataset\map
 WORKING_DIR=r:
+#WORKING_DIR=$(DATASET_DIR)
 DEM_DIR=$(DATASET_DIR)\hgt
-#DEM_DIR=$(HGT_DIR)\SRTM1v3.0
 ALOS_DIR=$(DEM_DIR)\alos
 CONTOUR_DIR=$(DATASET_DIR)\contour
 OSM_CACHE_DIR=$(DATASET_DIR)\osm
@@ -149,9 +150,6 @@ else ifeq ($(CONTOUR_LINE_STEP),20)
 	CONTOUR_LINE_MEDIUM=40
 	CONTOUR_LINE_MAJOR=200
 endif
-
-#CONTOUR_RDP=--simplifyContoursEpsilon=0.00001
-
 
 
 ##############################################
@@ -203,6 +201,10 @@ else
 	GEN_SEA_OPTIONS=
 endif
 
+ifeq ($(GMAPSUPP),yes)
+	GMAPSUPP_OPTION=--gmapsupp
+endif
+
 ifeq ($(ICON_FILE),)
 	ICON_FILE=icon.ico
 endif
@@ -245,7 +247,7 @@ $(OHM_OUT_PBF_FP):  $(OHM_INP_OSM) $(OHM_INP_SUPP) $(OHM_INP_CONTOUR)
 
 
 tiles: $(OHM_OUT_PBF_FP)
-	java -Xmx4192M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
+	java -Xmx6144M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -259,14 +261,14 @@ $(CONFIG_DIR)\ohm%.typ: $(CONFIG_DIR)\ohm.txt
 typ: $(TYP_FILE_FP)
 	@echo "Completed"
 
-map:  $(STYLES_RP) $(MERGED_ARGS) $(TYP_FILE_FP)
+map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
 	--series-name=$(SERIES_NAME) $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) \
-	--style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
+	--style-file=$(STYLES_DIR)\ --style=$(MAP_STYLE) $(GMAPSUPP_OPTION) --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
 
 
-check: $(STYLES_RP)
-	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR)\ --style-option=$(MAP_THEME) --check-styles
+check:
+	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --check-styles
 
 
 install:
@@ -297,5 +299,6 @@ cleancache:
 	$(DEL) $(OSM_CACHE_DIR)\*.pbf
 
 test:
-	@echo $(HILL_SHADING_DIR)
+	@echo $(STYLES_DIR)
+	@echo $(MAP_STYLE)
 

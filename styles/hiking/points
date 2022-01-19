@@ -1,0 +1,18 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering rule definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+include "../common/points.mkg"
+
+include "../common/points-hiking-symbols.mkg"
+include "../common/points-hiking-symbols-hu.mkg"
+include "../common/points-hiking-symbols-czsk.mkg"
+include "../common/points-hiking-symbols-osmc.mkg"
+
+include "../common/points-obstacles.mkg"

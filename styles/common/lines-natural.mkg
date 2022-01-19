@@ -1,0 +1,25 @@
+#######################################################
+# OpenHikingMap
+#
+# Natural & waterways rendering definitions
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+
+natural=cliff   [0x10F0B resolution 24 continue]
+natural=cliff   { deletealltags }
+
+natural=valley & name=*  [0x10F0C resolution 24]
+natural=ridge & name=*  [0x10F0D resolution 24]
+natural=arete & name=*  [0x10F0D resolution 24]
+#natural=tree_row & name=*  [0x10F0E resolution 24]
+
+(waterway=river | waterway=stream | waterway=canal) & intermittent=yes  [0x26 resolution 22 ]
+waterway=river | waterway=stream | waterway=canal  [0x18 resolution 18 ]
+waterway=ditch & name=*  [0x10a00 resolution 22 ]
+waterway=drain   [0x10a00 resolution 22 ]

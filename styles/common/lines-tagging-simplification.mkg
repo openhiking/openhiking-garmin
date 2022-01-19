@@ -1,17 +1,12 @@
 #######################################################
 # OpenHikingMap
 #
-# Line rendering style definitions
+# Line tagging simplifications
 #
 # Copyright (c) 2021-2022 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
-
-
-#######################################
-# Simplifications
-#
 
 oneway=true | oneway=1 {set oneway=yes}
 tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
@@ -25,43 +20,3 @@ highway=* & proposed=yes  { set highway=proposed }
 railway=* & abandoned=yes { set abandoned='${railway}'; set railway=abandoned; }
 railway=* & disused=yes { set disused='${railway}'; set railway=disused; }
 railway=* & proposed=yes  { set railway=proposed }
-
-
-#######################################
-# Preprocessing includes
-#
-
-if (mkgmap:option:hiking=true) then
-	include "access-propagation.mkg";
-	include "surface-groups.mkg";
-end
-
-
-if (mkgmap:option:biking=true) then
-	include 'biking/lines.mkg';
-end
-
-
-#######################################
-# Highways & highlightings
-#
-
-if (mkgmap:option:hiking=true) then
-	include 'highlighting.mkg';
-	include 'hiking-trails.mkg'
-	include 'highways.mkg';
-end
-
-
-if (mkgmap:option:biking=true) then
-	include 'biking/highway-pre.mkg';
-end
-
-#######################################
-# Other lines
-#
-
-include 'lines.mkg';
-
-
-

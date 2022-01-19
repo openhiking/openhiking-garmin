@@ -10,24 +10,6 @@
 
 
 #######################################
-# Generic highway widths
-#
-
-highway=path { add highway_width=2 }
-highway=footway | highway=platform  { add highway_width=1 }
-route=ferry { add highway_width= 2 }
-highway = track | surface_type=unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft | highway=pedestrian  { add highway_width=2 }
-highway = service | highway=cycleway { add highway_width=3 }
-highway=residential | highway=living_street | highway = unclassified | highway=tertiary | surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { add highway_width=4 }
-highway=steps  { add highway_width=5 }
-highway=primary | highway=secondary  { add highway_width=5 }
-highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link { add highway_width=6 }
-
-if (mkgmap:option:hiking=true) then
-	highway=via_ferrata { add highway_width=5 }
-end
-
-#######################################
 # Structures
 #
 
@@ -49,10 +31,4 @@ highway=* & cutting=yes & highway!=proposed & highway!=construction & highway_wi
 
 highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E06 resolution 24 continue]
 highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E07 resolution 24 continue]
-
-#######################################
-# Access restrictions
-#
-
-highway=* & (visual_access=no | visual_access=customers) & highway!=proposed & highway!=construction & highway!=motorway & highway != trunk [0x10E08 resolution 22 continue]
 

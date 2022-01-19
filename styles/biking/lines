@@ -1,0 +1,20 @@
+#######################################################
+# Open Bike Map
+#
+# Line rendering style definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+include "../common/lines-tagging-simplification.mkg"
+include "../common/lines-access-propagation.mkg"
+
+
+include "../common/lines-administrative.mkg"
+include "../common/lines-contours.mkg"
+include "../common/lines-natural.mkg"
+include "../common/lines-railways.mkg"
+include "../common/lines-aerialways.mkg"
+include "../common/lines-other.mkg"

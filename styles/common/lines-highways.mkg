@@ -8,6 +8,7 @@
 #
 ########################################################
 
+highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { add foot=no; add bicycle=no; }
 
 highway=* & (motor_vehicle=no | motor_vehicle=forestry | motor_vehicle=agricultural | motor_vehicle=permit) &  (foot!=* | foot=yes | foot=designated) { set motor_vehicle_restricted=true; }
 
