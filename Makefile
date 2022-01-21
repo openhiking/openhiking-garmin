@@ -116,23 +116,23 @@ $(warning MKG_MAPSOURCE_DIR env variable is not set!)
 endif
 
 # Conditional assignments
-ifneq (${$MKG_OSMCONVERT},)
+ifneq (${MKG_OSMCONVERT},)
 OSMCONVERT=${MKG_OSMCONVERT}
 endif
 
-ifneq (${$MKG_SPLITTER},)
+ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
 endif
 
-ifneq (${$MKG_MKGMAP},)
+ifneq (${MKG_MKGMAP},)
 MKGMAP=${MKG_MKGMAP}
 endif
 
-ifneq (${$MKG_MKNSIS},)
+ifneq (${MKG_MKNSIS},)
 MKNSIS=${MKG_MKNSIS}
 endif
 
-ifneq (${$MKG_ZIP},)
+ifneq (${MKG_ZIP},)
 ZIP=${MKG_ZIP}
 endif
 
