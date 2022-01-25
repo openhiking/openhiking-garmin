@@ -38,23 +38,23 @@ highway=primary_link {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${
 
 if (highway=secondary | highway=secondary_link) then
 	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' } 
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	() [0x03 road_class=2 road_speed=4 resolution 18]
 end
 
 if (highway=tertiary | highway=tertiary_link) then
 	() {name '${ref} ${name}' | '${ref}' | '${name}'; addlabel '${name} (${ref})' }
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
 
 
 if (highway=unclassified) then
 	()  {name  '${name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 19 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
@@ -62,23 +62,33 @@ end
 
 if (highway=residential) then
 	()  {name  '${name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x10E11 resolution 20]
 	()  [0x06 road_class=0 road_speed=3 resolution 20]
 end
 
 
 if (highway=service) then
 	()  {name  '${name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=3 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=3 resolution 20]
-	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=1 resolution 20 continue]
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=2 resolution 20 continue]
 	motor_vehicle_restricted=true  [0x10E12 resolution 20]
-	()  [0x07 road_class=0 road_speed=1 resolution 20]
+	()  [0x07 road_class=0 road_speed=2 resolution 20]
 end
 
 
-highway=living_street  { name '${name}'}   [0x06 road_class=0 road_speed=1 resolution 20]
+if (highway=living_street) then
+	()  {name  '${name}'}
+	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=1 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x10E11 resolution 20]
+	()  [0x06 road_class=0 road_speed=1 resolution 20]
+end
+
 
 if (highway=track) then
 	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then

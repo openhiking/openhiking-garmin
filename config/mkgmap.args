@@ -5,8 +5,6 @@
 #
 ########################################################
 
-overview-mapname:openhiking
-description:openhiking
 drive-on:right
 draw-priority:16
 show-profiles:1
