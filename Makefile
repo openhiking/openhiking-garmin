@@ -418,7 +418,7 @@ ifeq ($(MAPSOURCE_DIR),)
 	$(warning MKG_MAPSOURCE_DIR env variable is not set!!)
 endif
 	$(COPY) $(GMAP_DIR)$(PSEP)7*.img $(MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)$(PSEP)openhiking.img $(MAPSOURCE_DIR)
+	$(COPY) $(GMAP_DIR)$(PSEP)$(MAPNAME).img $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.mdx $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.tdb $(MAPSOURCE_DIR)
 
