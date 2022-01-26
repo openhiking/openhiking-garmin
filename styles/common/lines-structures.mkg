@@ -13,22 +13,49 @@
 # Structures
 #
 
-highway=* & bridge=yes & highway!=proposed & highway!=construction [0x10107 resolution 22 continue]
+if (bridge=yes) then
+	highway=* & highway!=proposed & highway!=construction & highway_width<3 [0x10107 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color!=* [0x10107 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color=* [0x10E0E resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>6  [0x10E0E resolution 22 continue]
+end
 
-highway=* & tunnel=yes & highway!=proposed & highway!=construction & highway_width<5	[0x10E00 resolution 22 continue]
-highway=* & tunnel=yes & highway!=proposed & highway!=construction & highway_width>4	[0x10E01 resolution 22 continue]
 
-highway=* & embankment=yes & highway!=proposed & highway!=construction & highway_width<5  [0x10E02 resolution 24 continue]
-highway=* & embankment=yes & highway!=proposed & highway!=construction & highway_width>4  [0x10E03 resolution 24 continue]
+if (tunnel=yes) then
+	highway=* & highway!=proposed & highway!=construction & highway_width<5 & trail_color!=*  [0x10E00 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & (trail_color=* | highway_width>4) [0x10E01 resolution 22 continue]
+end
 
-highway=* & cutting=yes & highway!=proposed & highway!=construction & highway_width<5 	[0x10E04 resolution 24 continue]
-highway=* & cutting=yes & highway!=proposed & highway!=construction & highway_width>4 	[0x10E05 resolution 24 continue]
+if (embankment=yes) then
+	highway=* & highway!=proposed & highway!=construction & highway_width<3 [0x10E02 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color!=* [0x10E02 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color=* [0x10E03 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>6 [0x10E03 resolution 22 continue]
+end
+
+if (cutting=yes) then
+	highway=* & highway!=proposed & highway!=construction & highway_width<3 [0x10E04 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color!=* [0x10E04 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color=* [0x10E05 resolution 22 continue]
+	highway=* & highway!=proposed & highway!=construction & highway_width>6 [0x10E05 resolution 22 continue]
+end
+
+#highway=* & bridge=yes & highway!=proposed & highway!=construction [0x10107 resolution 22 continue]
+#highway=* & tunnel=yes & highway!=proposed & highway!=construction & highway_width<5	[0x10E00 resolution 22 continue]
+#highway=* & tunnel=yes & highway!=proposed & highway!=construction & highway_width>4	[0x10E01 resolution 22 continue]
+#highway=* & embankment=yes & highway!=proposed & highway!=construction & highway_width<5  [0x10E02 resolution 24 continue]
+#highway=* & embankment=yes & highway!=proposed & highway!=construction & highway_width>4  [0x10E03 resolution 24 continue]
+#highway=* & cutting=yes & highway!=proposed & highway!=construction & highway_width<5 	[0x10E04 resolution 24 continue]
+#highway=* & cutting=yes & highway!=proposed & highway!=construction & highway_width>4 	[0x10E05 resolution 24 continue]
 
 
 #######################################
 # Direction
 #
 
-highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary [0x10E06 resolution 24 continue]
-highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary  [0x10E07 resolution 24 continue]
+highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary & highway_width<5 [0x10E06 resolution 24 continue]
+highway=* & oneway=yes & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary & highway_width>4 [0x10E0C resolution 24 continue]
+
+highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary & highway_width<5 [0x10E07 resolution 24 continue]
+highway=* & oneway=-1 & highway!=proposed & highway!=construction & highway!=motorway & highway!=trunk & highway!=primary & highway_width>4 [0x10E0D resolution 24 continue]
 

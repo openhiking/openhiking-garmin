@@ -1,7 +1,7 @@
-; ohm2.typ
-; Longueur: 50277 octets
-; Fichier TYP compilé     16/01/2022     23:10:51
-; Décompilé le 1/16/2022 à 11:10:54 PM
+; ohm.typ
+; Longueur: 50772 octets
+; Fichier TYP compilé     25/01/2022     22:02:43
+; Décompilé le 1/25/2022 à 10:02:47 PM
 
 [_id]
 ProductCode=1
@@ -1624,11 +1624,48 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x1100a
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_43/Customizable area/Non NT, NT
-String1=0x04,Zoo
-String2=0x14,Állatkert
-ExtendedLabels=N
-Xpm="0 0 1 0"
-"1 c #EEF9D8"
+String1=0x14,Park
+String2=0x04,Park
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="32 32 2 1"
+"! c #CFFF9E"
+"# c #006500"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!###!!!!!!!!!!!!!###!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!###!!!!!!!!!!!###!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!###!!!!!!!!!###!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!###!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!###!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!###!!!!!!!!!!!!!!"
+"!###!!!!!!!!!!!!!!!!!!!!!!!!###!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!###!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
 [end]
 
 
@@ -1805,7 +1842,7 @@ ExtendedLabels=N
 [_line]
 Type=0x05
 ;GRMN_TYPE: Roads/COLLECTOR/Secondary city thoroughfare/Non NT, NT
-UseOrientation=Y
+UseOrientation=N
 LineWidth=2
 BorderWidth=1
 Xpm="0 0 2 0"
@@ -1869,7 +1906,7 @@ ContourColor=No
 [_line]
 Type=0x0a
 ;GRMN_TYPE: Roads/UNPAVED_ROAD/Gravel or dirt road/Non NT, NT
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 2 2  1"
 "! c #7B3000"
 "  c none"
@@ -1888,7 +1925,7 @@ ContourColor=No
 [_line]
 Type=0x0b
 ;GRMN_TYPE: Roads/MAJOR_CONNECTOR/Major highway connector/Non NT, NT
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 1 2  1"
 "! c #A87800"
 "  c none"
@@ -1920,7 +1957,7 @@ ContourColor=No
 [_line]
 Type=0x0f
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_ROUTE_LINE_3/Routable customizable line/Non NT, NT
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 2 2  1"
 "! c #7B3000"
 "  c none"
@@ -2085,7 +2122,7 @@ Xpm="32 6 2  1"
 "  c none"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"   !   !   !   !   !   !   !   !"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "  !   !   !   !   !   !   !   ! "
 " !   !   !   !   !   !   !   !  "
 "!   !   !   !   !   !   !   !   "
@@ -2100,9 +2137,11 @@ ExtendedLabels=N
 Type=0x20
 ;GRMN_TYPE: Contour Lines/MINOR_CONTOUR/Minor land-based contour line/Non NT
 UseOrientation=Y
-LineWidth=1
-Xpm="0 0 1 0"
-"1 c #BD956A"
+Xpm="32 1 2  1"
+"! c #BD956A"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
 String1=0x04,Contour line
 String2=0x14,Szintvonal
 ExtendedLabels=Y
@@ -2116,9 +2155,11 @@ ContourColor=No
 Type=0x21
 ;GRMN_TYPE: Contour Lines/INT_CONTOUR/Intermediate contour (should be used for about every 5th contour line)/Non NT
 UseOrientation=Y
-LineWidth=1
-Xpm="0 0 1 0"
-"1 c #BD956A"
+Xpm="32 1 2  1"
+"! c #BD956A"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
 String1=0x04,Contour line
 String2=0x14,Szintvonal
 ExtendedLabels=Y
@@ -2132,9 +2173,11 @@ ContourColor=No
 Type=0x22
 ;GRMN_TYPE: Contour Lines/MAJOR_CONTOUR/Major contour (should be used for about every 10th contour line)/Non NT
 UseOrientation=Y
-LineWidth=1
-Xpm="0 0 1 0"
-"1 c #7B6520"
+Xpm="32 1 2  1"
+"! c #7B6520"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
 String1=0x01,Major contour line
 String2=0x14,Fő szintvonal
 ExtendedLabels=Y
@@ -2215,7 +2258,7 @@ ExtendedLabels=N
 [_line]
 Type=0x29
 ;GRMN_TYPE: Misc. Line Types/POWERLINE/Powerline/Non NT
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 3 2  1"
 "! c #949494"
 "  c none"
@@ -3267,7 +3310,7 @@ ExtendedLabels=N
 [_line]
 Type=0x10e0a
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_11/Non-routable customizable line/Non NT, NT
-UseOrientation=Y
+UseOrientation=N
 Xpm="32 12 4  1"
 "! c #FF0000"
 "  c none"
@@ -3293,17 +3336,99 @@ ExtendedLabels=N
 [_line]
 Type=0x10e0c
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_13/Non-routable customizable line/Non NT, NT
-UseOrientation=N
-Xpm="32 2 2  1"
-"! c #B4B4B4"
-"# c #FFFFFF"
-"!!!!!!!!!!!!####!!!!!!!!!!!!####"
-"!!!!!!!!!!!!####!!!!!!!!!!!!####"
+UseOrientation=Y
+Xpm="32 22 2  1"
+"! c #0065D5"
+"  c none"
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"             !!                 "
+"              !!                "
+"        !!!!!!!!!               "
+"              !!                "
+"             !!                 "
 ;12345678901234567890123456789012
-ExtendedLabels=Y
-FontStyle=NoLabel (invisible)
-CustomColor=No
-ContourColor=No
+String1=0x04,Oneway
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10e0d
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_14/Non-routable customizable line/Non NT, NT
+UseOrientation=Y
+Xpm="32 22 2  1"
+"! c #0065D5"
+"  c none"
+"                 !!             "
+"                !!              "
+"               !!!!!!!!!        "
+"                !!              "
+"                 !!             "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10e0e
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_15/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 14 4  1"
+"! c #000000"
+"  c none"
+"3 c #000000"
+"4 c #FFFFFF"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+String1=0x14,Híd
+String2=0x04,Bridge
+ExtendedLabels=N
 [end]
 
 
@@ -3459,10 +3584,9 @@ ExtendedLabels=N
 Type=0x10f08
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_41/Non-routable customizable line/Non NT, NT
 UseOrientation=N
-Xpm="32 4 2  1"
+Xpm="32 3 2  1"
 "! c #39CA20"
 "  c none"
-"!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "
@@ -3480,10 +3604,9 @@ ContourColor=No
 Type=0x10f09
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_42/Non-routable customizable line/Non NT, NT
 UseOrientation=N
-Xpm="32 4 2  1"
+Xpm="32 3 2  1"
 "! c #39CA20"
 "  c none"
-"!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "
 "!!!!!!!!!!!!    !!!!!!!!!!!!    "

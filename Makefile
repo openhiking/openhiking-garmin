@@ -83,7 +83,7 @@ else ifeq ($(MAP), exp)
 	DEM_SOURCES=alos
 	HILL_SHADING=alos
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-borzsony-alos-10.pbf
+	CONTOUR_LINES=contour-borzsony-alos-10.o5m
 	BOUNDARY_POLYGON=borzsony.poly
 	MAP_STYLE=hiking
 else ifeq ($(MAP), exp2)
@@ -96,8 +96,8 @@ else ifeq ($(MAP), exp2)
 	DEM_SOURCES=test
 	HILL_SHADING=VIEW3
 	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-borzsony-alos-10.pbf
-	BOUNDARY_POLYGON=borzsony.poly
+	CONTOUR_LINES=contour-hungary-alos-10.o5m
+	BOUNDARY_POLYGON=vemend.poly
 	MAP_STYLE=hiking
 endif
 
@@ -275,6 +275,8 @@ ifeq ($(TYP_FILE),)
 endif
 
 TYP_FILE_FP=$(TYP_DIR)$(PSEP)$(TYP_FILE)
+TYP_FILE_GMAP=$(GMAP_DIR)$(PSEP)$(TYP_FILE)
+
 LICENSE_FILE=$(CONFIG_DIR)$(PSEP)license.txt
 
 STYLES=info lines options points polygons relations version
@@ -301,6 +303,11 @@ endif
 ifeq ($(CODE_PAGE),)
 	CODE_PAGE=1250
 endif
+
+##############################################
+# ZIP
+
+ZIPNAME=$(MAPNAME).zip
 
 
 alos:
@@ -371,6 +378,8 @@ $(TYP_DIR)$(PSEP)ohm%.typ: $(TYP_DIR)$(PSEP)ohm.txt
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
 	  --code-page=$(CODE_PAGE) $< --output-dir=$(GMAP_DIR)
 	$(MOVE) ohm.typ $(TYP_DIR)$(PSEP)ohm$(MAP).typ
+	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.img
+	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.tdb
 
 typ: $(TYP_FILE_FP)
 	@echo "Completed"
@@ -386,38 +395,43 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 check:
 	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --check-styles
 
+$(TYP_FILE_GMAP): $(TYP_FILE_FP)
+	$(COPY) $< $(GMAP_DIR)
 
-install:
+
+install: $(TYP_FILE_GMAP)
 	$(COPY) $(CONFIG_DIR)$(PSEP)$(ICON_FILE) $(GMAP_DIR)
-	$(COPY) $(TYP_FILE_FP) $(GMAP_DIR)
 	$(MKNSIS) $(GMAP_DIR)$(PSEP)$(MAPNAME).nsi
 
-zip:
+zip: $(TYP_FILE_GMAP)
 ifeq ($(OUTPUT_DIR),)
 $(error MKG_OUTPUT_DIR env variable is not set!)
 endif
-	$(ZIP) $(ZIPARGS) $(OUTPUT_DIR)$(PSEP)$(MAP)_map.zip $(GMAP_DIR)$(PSEP)7*.img $(GMAP_DIR)$(PSEP)openhiking.img $(GMAP_DIR)$(PSEP)*.mdx $(GMAP_DIR)$(PSEP)*.tdb $(GMAP_DIR)$(PSEP)*.typ
+	$(DEL) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)"
+	$(ZIP) $(ZIPARGS) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)" "$(GMAP_DIR)$(PSEP)*.img" "$(GMAP_DIR)$(PSEP)*.mdx" "$(GMAP_DIR)$(PSEP)*.tdb" "$(GMAP_DIR)$(PSEP)*.typ"
 
 all: refresh tiles map install
 	echo Map making completed successfully
 
 push:
-	ifeq ($(MAPSOURCE_DIR),)
+ifeq ($(MAPSOURCE_DIR),)
 	$(warning MKG_MAPSOURCE_DIR env variable is not set!!)
-	endif
+endif
 	$(COPY) $(GMAP_DIR)$(PSEP)7*.img $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)openhiking.img $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.mdx $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.tdb $(MAPSOURCE_DIR)
 
 pushall: push
+ifeq ($(MAPSOURCE_DIR),)
+	$(warning MKG_MAPSOURCE_DIR env variable is not set!!)
+endif
 	$(COPY) $(GMAP_DIR)$(PSEP)*.typ $(MAPSOURCE_DIR)
 
 clean:
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleanall:
-	$(DEL) $(OHM_MERGED_PBF_FP)
 	$(DEL) $(TILES_DIR)$(PSEP)*
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
@@ -431,6 +445,6 @@ cleanoutput:
 
 
 test:
-	@echo $(OHM_OSM_LATEST_PBF)
+	@echo $(TYP_FILE_GMAP)
 
 
