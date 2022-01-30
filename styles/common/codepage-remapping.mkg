@@ -1,11 +1,11 @@
 #######################################################
 # OpenHikingMap
 #
-# Access restriction decoration
+# Code page remapping
 #
 # Copyright (c) 2021-2022 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-highway=* & (visual_access=no | visual_access=customers) & highway!=proposed & highway!=construction & highway!=motorway & highway != trunk [0x10E0A resolution 22 continue]
+name=* { set name='${name|subst:"ő=>õ"}'; set name='${name|subst:"ű=>û"}'; } 

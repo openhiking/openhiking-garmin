@@ -22,7 +22,7 @@ tdbfile
 order-by-decreasing-area
 add-pois-to-areas
 add-pois-to-lines
-lower-case
+#lower-case
 remove-ovm-work-files
 line-types-with-direction:0x10F0B
 min-size-polygon:12

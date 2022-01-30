@@ -8,7 +8,6 @@
 #
 ########################################################
 
-
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 landuse=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }

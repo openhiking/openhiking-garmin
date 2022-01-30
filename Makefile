@@ -15,6 +15,13 @@ GEOFABRIK_URL=http://download.geofabrik.de/europe/
 TJEL_URL=https://data2.openstreetmap.hu/
 TJEL_NAME=vjel.osm
 
+##############################################
+# Builder configuratios
+
+CONFIG_DIR=config
+BOUNDARY_DIR=boundaries
+STYLES_DIR=styles
+TYP_DIR=typ
 
 
 ##############################################
@@ -24,83 +31,13 @@ ifeq ($(MAP),)
 $(error MAP variable must be set)
 endif
 
+include $(CONFIG_DIR)/$(MAP).cfg
 
-ifeq ($(MAP), ce)
-	FAMILY_ID=3691
-	FAMILY_NAME="OpenHiking CE"
-	SERIES_NAME="OpenHiking CE"
-	MAPNAME=openhiking
-	OSM_COUNTRY_LIST=hungary romania slovenia slovakia czech-republic poland austria italy croatia bosnia-herzegovina montenegro serbia ukraine
-	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-	DEM_SOURCES=dtm-sk alos
-	HILL_SHADING=alos
-	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-ce-alos-10.pbf
-	BOUNDARY_POLYGON=central-europe-v4.poly
-	MAP_STYLE=hiking
-	TYP_BASE=ohm
-	GENERATE_SEA=yes
-	GMAPSUPP=yes
-else ifeq ($(MAP), hu)
-	FAMILY_ID=3690
-	FAMILY_NAME="OpenHiking HU"
-	SERIES_NAME="OpenHiking HU"
-	MAPNAME=openhiking
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=$(TJEL_NAME)
-	DEM_SOURCES=alos
-	HILL_SHADING=alos
-	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-hungary-alos-10.o5m
-	BOUNDARY_POLYGON=hungary.poly
-	MAP_STYLE=hiking
-	GMAPSUPP=yes
-else ifeq ($(MAP), bike)
-	FAMILY_ID=63
-	FAMILY_NAME="Bike Map"
-	SERIES_NAME="Bike Map"
-	MAPNAME=bikemap
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=
-	DEM_SOURCES=VIEW3
-	HILL_SHADING=VIEW3
-	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-hungary-10.o5m
-	BOUNDARY_POLYGON=hungary.poly
-	MAP_STYLE=biking
-	GENERATE_SEA=no
-#	TYP_BASE=ohm
-	TYP_FILE=bikemap.typ
-	ICON_FILE=icon.ico
-	GMAPSUPP=no
-else ifeq ($(MAP), exp)
-	FAMILY_ID=3698
-	FAMILY_NAME="OpenHiking EXP"
-	SERIES_NAME="OpenHiking EXP"
-	MAPNAME=openhiking
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=
-	DEM_SOURCES=alos
-	HILL_SHADING=alos
-	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-borzsony-alos-10.o5m
-	BOUNDARY_POLYGON=borzsony.poly
-	MAP_STYLE=hiking
-else ifeq ($(MAP), exp2)
-	FAMILY_ID=3699
-	FAMILY_NAME="OpenHiking EXP2"
-	SERIES_NAME="OpenHiking EXP2"
-	MAPNAME=openhiking
-	OSM_COUNTRY_LIST=hungary
-	SUPPLEMENTARY_DATA=
-	DEM_SOURCES=test
-	HILL_SHADING=VIEW3
-	CONTOUR_LINE_STEP=10
-	CONTOUR_LINES=contour-hungary-alos-10.o5m
-	BOUNDARY_POLYGON=vemend.poly
-	MAP_STYLE=hiking
-endif
-
+# Default values
+TILES_SOURCE?=$(MAP)
+HILL_SHADING?=alos
+CODE_PAGE?=1250
+TYP_BASE?=ohm
 
 ##############################################
 # Directory configurations
@@ -153,10 +90,6 @@ ifneq (${MKG_ZIP},)
 ZIP=${MKG_ZIP}
 endif
 
-ifneq (${MKG_MERGE_METHOD},)
-MERGE_METHOD=${MKG_MERGE_METHOD}
-endif
-
 
 ##############################################
 # Operating System Dependent Tools
@@ -173,11 +106,13 @@ ifeq (${ComSpec},)
 	ZIPARGS=
 	PSEP=$(subst /,/,/)
 	PSEP2=$(PSEP)
+	CMDLIST=&&
 	COPY=cp
 	MOVE=mv
 	DEL=rm
 	CAT=cat
 else
+	LINUX=0
 	OSMCONVERT?=osmconvert64.exe
 	OSMOSIS?=c:\Apps\osmosis-0-48\bin\osmosis
 	SPLITTER?=c:\Apps\splitter\splitter.jar
@@ -187,6 +122,7 @@ else
 	ZIPARGS=a -tzip
 	PSEP=$(subst /,\,/)
 	PSEP2=$(PSEP)$(PSEP)
+	CMDLIST=&
 	COPY=copy /b
 	MOVE=move
 	DEL=del /f /q
@@ -201,14 +137,6 @@ WGET?=wget
 # Data cache locations
 ALOS_DIR=$(DEM_DIR)$(PSEP)alos
 TJEL_CACHED=$(OSM_CACHE_DIR)$(PSEP)$(TJEL_NAME)
-
-##############################################
-# Builder configuration
-
-CONFIG_DIR=config
-BOUNDARY_DIR=boundaries
-STYLES_DIR=styles
-TYP_DIR=typ
 
 ##############################################
 # Contour Lines
@@ -234,10 +162,12 @@ endif
 ##############################################
 # Dataset Preparation
 
+TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
+
 OHM_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
-OHM_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds).o5m)
-OHM_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-clipped.pbf)
+OHM_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds).o5m)
+OHM_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
 OHM_INP_OSM_PBF_ARGS=$(foreach wrd,$(OHM_INP_OSM_PBF),--read-pbf file=$(wrd))
 
 OHM_INP_SUPP := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
@@ -254,8 +184,6 @@ BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 ##############################################
 # Tile Splitting
 
-MERGE_METHOD?=0
-TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(MAP)
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
 OHM_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(OHM_MERGED_PBF)
 
@@ -264,19 +192,20 @@ OHM_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(OHM_MERGED_PBF)
 
 GMAP_DIR=$(WORKING_DIR)$(PSEP)gmap-$(MAP)
 
+ifeq ($(LINUX),0)
+GMAP_DRIVE=$(word 1,$(subst :, ,$(GMAP_DIR))):
+endif
+
+
 OHM_ARGS_TEMPLATE=$(CONFIG_DIR)$(PSEP)mkgmap.args
 
-ifeq ($(TYP_BASE),)
-	TYP_BASE=ohm
-endif
 
 ifeq ($(TYP_FILE),)
-	TYP_FILE=$(TYP_BASE)$(MAP).typ
+	TYPE_BASENAME=$(TYP_BASE)$(MAP)
+	TYP_FILE=$(TYPE_BASENAME).typ
 endif
 
-TYP_FILE_FP=$(TYP_DIR)$(PSEP)$(TYP_FILE)
-TYP_FILE_GMAP=$(GMAP_DIR)$(PSEP)$(TYP_FILE)
-
+TYP_FILE_FP=$(GMAP_DIR)$(PSEP)$(TYP_FILE)
 LICENSE_FILE=$(CONFIG_DIR)$(PSEP)license.txt
 
 STYLES=info lines options points polygons relations version
@@ -292,23 +221,34 @@ else
 	GEN_SEA_OPTIONS=
 endif
 
+ifeq ($(USE_LOWERCASE),yes)
+	LOWER_CASE=--lower-case
+else:
+	LOWER_CASE=
+endif
+
+
 ifeq ($(GMAPSUPP),yes)
 	GMAPSUPP_OPTION=--gmapsupp
 endif
+
+
+##############################################
+# Installer & ZIP
+
+empty:=
+space:= $(empty) $(empty)
+INSTALLER_NAME:=$(subst $(space),$(empty),$(FAMILY_NAME))
 
 ifeq ($(ICON_FILE),)
 	ICON_FILE=OpenHiking.ico
 endif
 
-ifeq ($(CODE_PAGE),)
-	CODE_PAGE=1250
-endif
-
-##############################################
-# ZIP
-
 ZIPNAME=$(MAPNAME).zip
 
+
+##############################################
+# Recipes
 
 alos:
 	python $(DEMMGR) -r -p $(BOUNDARY_POLYGON_FP) $(ALOS_DIR)
@@ -332,38 +272,31 @@ $(TJEL_CACHED):
 	$(WGET) --no-check-certificate $(TJEL_URL)$(TJEL_NAME) -P $(OSM_CACHE_DIR)
 
 
-$(OSM_CACHE_DIR)$(PSEP2)%.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
+refresh:  $(OHM_OSM_LATEST_PBF) $(TJEL_CACHED)
+	@echo "Completed"
+
+
+$(TILES_DIR)$(PSEP2)%.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
-$(OSM_CACHE_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
+$(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
-
-download: $(OHM_OSM_LATEST_PBF)
-	@echo "Completed"
-
-
-ifeq ($(MERGE_METHOD),0)
-refresh:  $(OHM_INP_OSM_O5M) $(TJEL_CACHED)
-	@echo "Completed"
-else
-refresh:  $(OHM_INP_OSM_PBF) $(TJEL_CACHED)
-	@echo "Completed"
-endif
-
-ifeq ($(MERGE_METHOD),0)
+	
 $(OHM_MERGED_PBF_FP):  $(OHM_INP_OSM_O5M) $(OHM_INP_SUPP) $(OHM_INP_CONTOUR)
-	$(OSMCONVERT) --hash-memory=240-30-2 $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
-else
-$(OHM_MERGED_PBF_FP):  $(OHM_INP_OSM_PBF) $(OHM_INP_SUPP_PBF) $(OHM_INP_CONTOUR)
-	$(OSMOSIS) $(OHM_INP_OSM_PBF_ARGS) $(OHM_INP_SUPP_PBF_ARGS) $(OHM_INP_CONTOUR_ARGS) --merge --bp file=$(BOUNDARY_POLYGON_FP) --wb file=$@
-endif
+	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 
 merge: $(OHM_MERGED_PBF_FP)
-	echo "Merge completed"
+	@echo "Merge completed"
+
+
+merge-osmosis:  $(OHM_INP_OSM_PBF) $(OHM_INP_SUPP_PBF) $(OHM_INP_CONTOUR)
+	$(OSMOSIS) $(OHM_INP_OSM_PBF_ARGS) $(OHM_INP_SUPP_PBF_ARGS) $(OHM_INP_CONTOUR_ARGS) --merge --bp file=$(BOUNDARY_POLYGON_FP) --wb file=$@
+	@echo "Merge completed"
+
 
 tiles: $(OHM_MERGED_PBF_FP)
-	java -Xmx6144M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
+	java -Xmx5000M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -374,12 +307,21 @@ else
 	$(COPY) $(OHM_ARGS_TEMPLATE) + $(TILE_ARGS) $(MERGED_ARGS)
 endif
 
-$(TYP_DIR)$(PSEP)ohm%.typ: $(TYP_DIR)$(PSEP)ohm.txt
-	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 \
-	  --code-page=$(CODE_PAGE) $< --output-dir=$(GMAP_DIR)
-	$(MOVE) ohm.typ $(TYP_DIR)$(PSEP)ohm$(MAP).typ
+$(GMAP_DIR)$(PSEP)bikemap.typ: $(TYP_DIR)$(PSEP)bikemap.typ
+	$(COPY) $< $(GMAP_DIR)
+
+$(GMAP_DIR)$(PSEP)$(TYP_BASE)%.typ: $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
+	$(COPY) $< $(GMAP_DIR)$(PSEP)$(TYPE_BASENAME).txt
+ifeq ($(LINUX),1)
+	cd $(GMAP_DIR) && java -Xmx1024M -ea -jar $(MKGMAP) --mapname=74221559 \
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
+else
+	$(GMAP_DRIVE) & cd $(GMAP_DIR) & java -Xmx1024M -ea -jar $(MKGMAP) --mapname=74221559 \
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
+endif
 	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.img
 	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.tdb
+
 
 typ: $(TYP_FILE_FP)
 	@echo "Completed"
@@ -388,22 +330,25 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
-	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) $(GMAPSUPP_OPTION) \
+	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) \
+	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) $(GMAPSUPP_OPTION) \
 	 --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
 
 
 check:
 	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --check-styles
 
-$(TYP_FILE_GMAP): $(TYP_FILE_FP)
-	$(COPY) $< $(GMAP_DIR)
 
-
-install: $(TYP_FILE_GMAP)
+nsi-script:
 	$(COPY) $(CONFIG_DIR)$(PSEP)$(ICON_FILE) $(GMAP_DIR)
+	python tools\nsigen.py --family-name=$(FAMILY_NAME) --family-id=$(FAMILY_ID) --mapname=$(MAPNAME) --product-id=1 \
+	--typ-name=$(TYP_FILE) --icon-name=$(ICON_FILE) --installer-name=$(INSTALLER_NAME) \
+	config\installer_template.txt $(GMAP_DIR)
+
+install:
 	$(MKNSIS) $(GMAP_DIR)$(PSEP)$(MAPNAME).nsi
 
-zip: $(TYP_FILE_GMAP)
+zip:
 ifeq ($(OUTPUT_DIR),)
 $(error MKG_OUTPUT_DIR env variable is not set!)
 endif
@@ -424,7 +369,7 @@ endif
 
 pushall: push
 ifeq ($(MAPSOURCE_DIR),)
-	$(warning MKG_MAPSOURCE_DIR env variable is not set!!)
+	$(error MKG_MAPSOURCE_DIR env variable is not set!!)
 endif
 	$(COPY) $(GMAP_DIR)$(PSEP)*.typ $(MAPSOURCE_DIR)
 
@@ -445,6 +390,6 @@ cleanoutput:
 
 
 test:
-	@echo $(TYP_FILE_GMAP)
+	@echo $(OHM_OSM_LATEST_PBF)
 
 

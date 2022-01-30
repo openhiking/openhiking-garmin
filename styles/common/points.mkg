@@ -175,7 +175,7 @@ historic=castle & ruins!=*  [0x2C17 resolution 22]
 historic=fort  & ruins!=* [0x2C19 resolution 22]
 man_made=tower & tower:type=defensive & ruins!=* {name '${short_name}'|'${name}'} [0x2C1A resolution 22]
 
-man_made=cross {name '${short_name}'|'${name}'} [0x2C1B resolution 24]
+man_made=cross {name '${short_name}'|'${name}'} [0x1160D resolution 24]
 tourism=artwork  [0x2C1C resolution 24]
 man_made=obelisk {name '${short_name}'|'${name}'} [0x2C1D resolution 24]
 amenity=fountain  [0x2C1E resolution 24]

@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 50772 octets
-; Fichier TYP compilé     25/01/2022     22:02:43
-; Décompilé le 1/25/2022 à 10:02:47 PM
+; Longueur: 50858 octets
+; Fichier TYP compilé     30/01/2022     11:00:29
+; Décompilé le 1/30/2022 à 11:00:33 AM
 
 [_id]
 ProductCode=1
@@ -3037,6 +3037,36 @@ ExtendedLabels=N
 
 
 [_line]
+Type=0x10108
+;GRMN_TYPE: //
+UseOrientation=N
+Xpm="32 14 4  1"
+"! c #000000"
+"  c none"
+"3 c #000000"
+"4 c #FFFFFF"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+String1=0x14,Híd
+String2=0x04,Bridge
+ExtendedLabels=N
+[end]
+
+
+[_line]
 Type=0x10a00
 ;GRMN_TYPE: Water Features/STREAM(NT)/Small stream or creek/NT
 UseOrientation=N
@@ -3260,83 +3290,6 @@ ExtendedLabels=N
 Type=0x10e07
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_8/Non-routable customizable line/Non NT, NT
 UseOrientation=Y
-Xpm="32 20 2  1"
-"! c #0065D5"
-"  c none"
-"                                "
-"                 !!             "
-"                !!              "
-"               !!!!!!!!!        "
-"                !!              "
-"                 !!             "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-;12345678901234567890123456789012
-ExtendedLabels=N
-[end]
-
-
-[_line]
-Type=0x10e08
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_9/Non-routable customizable line/Non NT, NT
-UseOrientation=N
-Xpm="32 7 2  1"
-"! c #FF0000"
-"  c none"
-"      !     !                   "
-"       !   !                    "
-"        ! !                     "
-"         !                      "
-"        ! !                     "
-"       !   !                    "
-"      !     !                   "
-;12345678901234567890123456789012
-ExtendedLabels=N
-[end]
-
-
-[_line]
-Type=0x10e0a
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_11/Non-routable customizable line/Non NT, NT
-UseOrientation=N
-Xpm="32 12 4  1"
-"! c #FF0000"
-"  c none"
-"3 c #F8FCF8"
-"4 c none"
-"  !               !             "
-" !!!             !!!            "
-"!!!!!           !!!!!           "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"        !!!!!           !!!!!   "
-"         !!!             !!!    "
-"          !               !     "
-;12345678901234567890123456789012
-ExtendedLabels=N
-[end]
-
-
-[_line]
-Type=0x10e0c
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_13/Non-routable customizable line/Non NT, NT
-UseOrientation=Y
 Xpm="32 22 2  1"
 "! c #0065D5"
 "  c none"
@@ -3369,8 +3322,40 @@ ExtendedLabels=N
 
 
 [_line]
-Type=0x10e0d
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_14/Non-routable customizable line/Non NT, NT
+Type=0x10e08
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_9/Non-routable customizable line/Non NT, NT
+UseOrientation=Y
+Xpm="32 20 2  1"
+"! c #0065D5"
+"  c none"
+"                                "
+"                 !!             "
+"                !!              "
+"               !!!!!!!!!        "
+"                !!              "
+"                 !!             "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10e09
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_10/Non-routable customizable line/Non NT, NT
 UseOrientation=Y
 Xpm="32 22 2  1"
 "! c #0065D5"
@@ -3403,31 +3388,46 @@ ExtendedLabels=N
 
 
 [_line]
-Type=0x10e0e
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_15/Non-routable customizable line/Non NT, NT
+Type=0x10e0a
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_11/Non-routable customizable line/Non NT, NT
 UseOrientation=N
-Xpm="32 14 4  1"
-"! c #000000"
+Xpm="32 7 2  1"
+"! c #FF0000"
 "  c none"
-"3 c #000000"
-"4 c #FFFFFF"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"                                "
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"      !     !                   "
+"       !   !                    "
+"        ! !                     "
+"         !                      "
+"        ! !                     "
+"       !   !                    "
+"      !     !                   "
 ;12345678901234567890123456789012
-String1=0x14,Híd
-String2=0x04,Bridge
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10e0c
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_13/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 12 4  1"
+"! c #FF0000"
+"  c none"
+"3 c #F8FCF8"
+"4 c none"
+"  !               !             "
+" !!!             !!!            "
+"!!!!!           !!!!!           "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"        !!!!!           !!!!!   "
+"         !!!             !!!    "
+"          !               !     "
+;12345678901234567890123456789012
 ExtendedLabels=N
 [end]
 
@@ -10322,6 +10322,38 @@ DayXpm="16 9 3 1"   Colormode=16
 " #!##########!# "
 " #!!!!!!!!!!!!# "
 " ############## "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1160d
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_46/User customizable point type/Non NT, NT
+String1=0x04,Cross
+String2=0x14,Kereszt
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 2 1"   Colormode=16
+"!	c #414141"
+"  	c none"
+"                "
+"                "
+"      !!        "
+"      !!        "
+"   !!!!!!!!     "
+"   !!!!!!!!     "
+"      !!        "
+"      !!        "
+"      !!        "
+"      !!        "
+"      !!        "
+"      !!        "
+"      !!        "
+"      !!        "
+"                "
+"                "
 ;1234567890123456
 [end]
 

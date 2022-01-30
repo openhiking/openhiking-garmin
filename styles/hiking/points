@@ -8,6 +8,7 @@
 #
 ########################################################
 
+#include "../common/codepage-remapping.mkg"
 include "../common/points.mkg"
 
 include "../common/points-hiking-symbols.mkg"
