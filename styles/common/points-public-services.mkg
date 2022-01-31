@@ -1,0 +1,32 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Public Services
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+office=government {name '${short_name}'|'${name}'} [0x03000 resolution 24]
+amenity=townhall  [0x03003 resolution 24]
+amenity=courthouse  [0x03004 resolution 24]
+amenity=police  [0x03001 resolution 24]
+amenity=fire_station [0x03008 resolution 24]
+
+amenity=post_office [0x02F05 resolution 24]
+amenity=post_box & access!=private [0x640F resolution 24]
+
+amenity=community_centre [0x03005 resolution 24]
+
+tourism=information & information=office [0x4C05 resolution 24]
+
+amenity=toilets & foot!=no [0x02F0C resolution 24]
+amenity=recycling & foot!=no [0x11616 resolution 24]
+
+# Keep after spring as some springs are dual-tagged
+amenity=drinking_water & foot!=no [0x5000 resolution 23]
+
+
+#amenity=taxi [0x1151E resolution 24]
+amenity=marketplace {name '${short_name}'|'${name}'} [0x300A resolution 24]

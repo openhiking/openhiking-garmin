@@ -1,0 +1,29 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Transportation
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+amenity=parking [0x02F0B resolution 24]
+amenity=fuel [0x02F01 resolution 24]
+
+amenity=bus_station  [0x02F08 resolution 22]
+highway=bus_stop {name '${short_name}'|'${name}'} [0x02F18 resolution 22]
+highway=tram_stop {name '${short_name}'|'${name}'} [0x02F18 resolution 24]
+
+railway=station {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
+railway=halt {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
+
+amenity=ferry_terminal [0x02F09 resolution 24]
+aeroway=aerodrome {name '${short_name}'|'${name}'} [0x02F04 resolution 24]
+aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 resolution 24]
+
+highway=milestone {name '${distance}'} [0x5A00 resolution 24]
+railway=crossing | railway=level_crossing [0x6406 resolution 24]
+
+aerialway=station {name '${short_name}'|'${name}'} [0x11617 resolution 24]
+

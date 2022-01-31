@@ -8,12 +8,33 @@
 #
 ########################################################
 
+include "../common/points-line2poi-removal.mkg"
 #include "../common/codepage-remapping.mkg"
-include "../common/points.mkg"
-
+include "../common/points-access-propagation.mkg"
+include "../common/points-naming.mkg"
+include "../common/points-natural.mkg"
+include "../common/points-public-services.mkg"
+include "../common/points-shops.mkg"
+include "../common/points-food.mkg"
+include "../common/points-accomodation.mkg"
+include "../common/points-culture.mkg"
+include "../common/points-religious-facilities.mkg"
+include "../common/points-education.mkg"
+include "../common/points-healthcare.mkg"
+include "../common/points-financial.mkg"
+include "../common/points-transportation.mkg"
+include "../common/points-barriers.mkg"
+include "../common/points-leisure.mkg"
+include "../common/points-wilderness.mkg"
+include "../common/points-industrial.mkg"
+include "../common/points-military.mkg"
+include "../common/points-historical.mkg"
+include "../common/points-places.mkg"
+include "../common/points-fixme.mkg"
+include "../common/points-obstacles.mkg"
 include "../common/points-hiking-symbols.mkg"
 include "../common/points-hiking-symbols-hu.mkg"
 include "../common/points-hiking-symbols-czsk.mkg"
 include "../common/points-hiking-symbols-osmc.mkg"
 
-include "../common/points-obstacles.mkg"
+

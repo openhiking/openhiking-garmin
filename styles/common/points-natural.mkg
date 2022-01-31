@@ -1,0 +1,34 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Natural
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x6508 resolution 24]
+natural=peak & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' } [0x06616 resolution 22]
+
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+
+
+natural=peak [0x06616 resolution 22]
+natural=bay   [0x6503 resolution 22]
+natural=spring & water_characteristic=mineral  [0x6517 resolution 22]
+natural=spring & (drinking_water=yes | drinking_water:legal=yes) [0x6514 resolution 22]
+natural=spring & drinking_water=no [0x6515 resolution 24]
+natural=hot_spring | spring:type=hot [0x6516 resolution 24]
+natural=spring  [0x6511 resolution 24]
+natural=cliff  [0x6607 resolution 22]
+natural=rock [0x06614 resolution 23]
+natural=arch  [0x06601 resolution 24]
+natural=stone  [0x06615 resolution 24]
+
+natural=sinkhole   [0x0660C resolution 24]
+natural=cave_entrance  [0x06608 resolution 24]
+natural=saddle & name=*  [0x06613 resolution 24]
+natural=geyser  [0x06509 resolution 24]
+
+natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]

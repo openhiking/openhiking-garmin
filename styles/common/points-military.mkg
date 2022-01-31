@@ -1,0 +1,13 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Military
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+military=bunker [0x640B resolution 24]
+
+

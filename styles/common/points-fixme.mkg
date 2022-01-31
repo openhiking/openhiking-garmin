@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Fixme
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+#fixme='resurvey' & mkgmap:line2poi=true & mkgmap:line2poitype=mid  [0x12416 resolution 24 continue ]
+fixme='continue' & mkgmap:line2poi!=true [0x12416 resolution 24 continue]

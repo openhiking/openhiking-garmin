@@ -1,0 +1,16 @@
+#######################################################
+# OpenHikingMap
+#
+# Point naming rule definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+tourism=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+amenity=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+historic=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+place=*   {name '${name} (${name:hu|not-equal:name})' |'${name}' }

@@ -1,0 +1,13 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Education
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+amenity=kindergarten  [0x02C14 resolution 24]
+amenity=school  [0x02C05 resolution 24]
+amenity=college | amenity=university [0x02C15 resolution 24]

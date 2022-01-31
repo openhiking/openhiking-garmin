@@ -1,0 +1,20 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Places
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+place=city & population>1000000 [0x00200 resolution 14  ]
+place=city  [0x00700 resolution 18-19 continue ]
+place=city  [0x00800 resolution 20-24  ]
+place=town  [0x00900 resolution 18-19 continue ]
+place=town  [0x00A00 resolution 20-24  ]
+place=village  [0x00C00 resolution 20 ]
+place=suburb  [0x00d00 resolution 20  ]
+place=hamlet | place=farm  [0x00C00 resolution 22 ]
+place=islet [0x00d00 resolution 24 ]
+place=locality [0x00d00 resolution 24 ]

@@ -1,0 +1,23 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Religious facilities
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+man_made=stupa {name '${short_name}'|'${name}'} [0x2C0B resolution 24]
+man_made=tower & tower:type=stupa {name '${short_name}'|'${name}'} [0x2C0B resolution 24]
+
+amenity=place_of_worship & religion=muslim  { add mkgmap:label:2='(${denomination})'} [0x2C0D resolution 24]
+amenity=place_of_worship & religion=jewish { add mkgmap:label:2='(${denomination})'} [0x2C10 resolution 24]
+amenity=place_of_worship &(building=chapel | name~'.*k.polna') {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0F resolution 24]
+amenity=place_of_worship { add mkgmap:label:2='(${denomination})'} [0x2C0E resolution 24]
+amenity=grave_yard  [0x06403 resolution 24]
+
+man_made=campanile  [0x2C0C resolution 24]
+man_made=tower & tower:type=bell_tower  [0x2C0C resolution 24]
+
+historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x2C13 resolution 24]

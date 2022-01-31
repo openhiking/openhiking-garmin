@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Financial
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+amenity=bank { name '${short_name}'|'${name}'| '${operator}' }	[0x2F06 resolution 24]
+amenity=atm  { name '${short_name}'|'${name}'| '${operator}' }[0x02F06 resolution 24]

@@ -78,8 +78,17 @@ ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
 endif
 
+ifneq (${MKG_SPLITTER_MEMORY},)
+SPLITTER_MEMORY=${MKG_SPLITTER_MEMORY}
+endif
+
+
 ifneq (${MKG_MKGMAP},)
 MKGMAP=${MKG_MKGMAP}
+endif
+
+ifneq (${MKG_NSIGEN},)
+NSIGEN=${MKG_NSIGEN}
 endif
 
 ifneq (${MKG_MKNSIS},)
@@ -131,7 +140,7 @@ endif
 DEMMGR=tools$(PSEP)demmgr.py
 PHYGHTMAP=phyghtmap
 WGET?=wget
-
+NSIGEN?=python tools\nsigen.py
 
 ##############################################
 # Data cache locations
@@ -186,6 +195,7 @@ BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
 OHM_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(OHM_MERGED_PBF)
+SPLITTER_MEMORY?=5000M
 
 ##############################################
 # Garmin map generation
@@ -296,7 +306,7 @@ merge-osmosis:  $(OHM_INP_OSM_PBF) $(OHM_INP_SUPP_PBF) $(OHM_INP_CONTOUR)
 
 
 tiles: $(OHM_MERGED_PBF_FP)
-	java -Xmx5000M -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
+	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -341,7 +351,7 @@ check:
 
 nsi-script:
 	$(COPY) $(CONFIG_DIR)$(PSEP)$(ICON_FILE) $(GMAP_DIR)
-	python tools\nsigen.py --family-name=$(FAMILY_NAME) --family-id=$(FAMILY_ID) --mapname=$(MAPNAME) --product-id=1 \
+	$(NSIGEN) --family-name=$(FAMILY_NAME) --family-id=$(FAMILY_ID) --mapname=$(MAPNAME) --product-id=1 \
 	--typ-name=$(TYP_FILE) --icon-name=$(ICON_FILE) --installer-name=$(INSTALLER_NAME) \
 	config\installer_template.txt $(GMAP_DIR)
 

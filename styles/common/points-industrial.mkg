@@ -1,0 +1,33 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Industrial Facilities
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+man_made=adit & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [0x0640C resolution 24]
+man_made=mineshaft  & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [0x11510 resolution 24]
+
+man_made=petroleum_well [0x11511 resolution 24]
+
+man_made=works & building!=* {name '${short_name}'|'${name}'} [0x11512 resolution 24]
+man_made=chimney [0x11513 resolution 24]
+
+power=plant {name '${short_name}'|'${name}'} [0x11514 resolution 24]
+power=generator & generator:source=wind {name '${short_name}'|'${name}'} [0x11515 resolution 24]
+
+man_made=water_works { name '${short_name}'|'${name}'} [0x11516 resolution 24]
+man_made=water_tower { name '${short_name}'|'${name}'} [0x11518 resolution 24]
+man_made=wastewater_plant [0x11519 resolution 24]
+
+man_made=communications_tower  {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=mast {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=tower & tower:type=communication {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=tower & tower:type=observation {name '${short_name}'|'${name}'} [0x1151C resolution 24]
+
+man_made=tower {name '${short_name}'|'${name}'} [0x06411 resolution 24]
+
+waterway=weir & name=* {name '${short_name}'|'${name}'} [0x06407 resolution 24]
