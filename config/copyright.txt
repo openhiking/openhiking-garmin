@@ -1,0 +1,1 @@
+Copyright https://OpenHiking.eu *** Production date: $LONGDATE$

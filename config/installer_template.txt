@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 ; Includes
 !include "MUI2.nsh"
 ; INSERT_ICON_HERE
-
+; INSERT_LOGO_HERE
 
 ; Installer pages
 !define MUI_CUSTOMFUNCTION_GUIINIT myGuiInit
@@ -25,7 +25,7 @@ SetCompressor /SOLID lzma
 !insertmacro MUI_LANGUAGE "German"
 
 
-LangString AlreadyInstalled ${LANG_HUNGARIAN} "${INSTALLER_NAME} már telepítették erre a gépre. $\n$\nKattintson az OK gombra a korábbi változat eltávolításához és a telepítés folytatásához, vagy a `Mégse` gombra a telepítés megszakításához."
+LangString AlreadyInstalled ${LANG_HUNGARIAN} "Az ${INSTALLER_NAME}-t már telepítették erre a gépre. $\n$\nKattintson az OK gombra a korábbi változat eltávolításához és a telepítés folytatásához, vagy a `Mégse` gombra a telepítés megszakításához."
 LangString AlreadyInstalled ${LANG_ENGLISH} "${INSTALLER_NAME} is already installed. $\n$\nClick `OK` to remove the previous version and continue installation or `Cancel` to cancel this upgrade."
 LangString AlreadyInstalled ${LANG_GERMAN} "${INSTALLER_NAME} ist bereits installiert. $\n$\nKlick `OK` um die alte Version zu deinstallieren oder `Abbrechen` um die Installation abzubrechen."
 
@@ -33,7 +33,6 @@ LangString AlreadyInstalled ${LANG_GERMAN} "${INSTALLER_NAME} ist bereits instal
 
 ; Reservefiles
 !insertmacro MUI_RESERVEFILE_LANGDLL ;Language selection dialog
-
 
 Name "${INSTALLER_DESCRIPTION}"
 OutFile "${INSTALLER_NAME}.exe"

@@ -216,7 +216,6 @@ ifeq ($(TYP_FILE),)
 endif
 
 TYP_FILE_FP=$(GMAP_DIR)$(PSEP)$(TYP_FILE)
-LICENSE_FILE=$(CONFIG_DIR)$(PSEP)license.txt
 
 STYLES=info lines options points polygons relations version
 
@@ -233,7 +232,7 @@ endif
 
 ifeq ($(USE_LOWERCASE),yes)
 	LOWER_CASE=--lower-case
-else:
+else
 	LOWER_CASE=
 endif
 
@@ -243,6 +242,17 @@ ifeq ($(GMAPSUPP),yes)
 endif
 
 
+ifneq ($(LICENSE_FILE),)
+	LICENSE_OPTION=--license-file=$(CONFIG_DIR)$(PSEP)$(LICENSE_FILE)
+endif
+
+ifneq ($(COPYRIGHT_FILE),)
+	COPYRIGHT_OPTION=--copyright-file=$(CONFIG_DIR)$(PSEP)$(COPYRIGHT_FILE)
+endif
+
+
+
+
 ##############################################
 # Installer & ZIP
 
@@ -250,11 +260,20 @@ empty:=
 space:= $(empty) $(empty)
 INSTALLER_NAME:=$(subst $(space),$(empty),$(FAMILY_NAME))
 
-ifeq ($(ICON_FILE),)
-	ICON_FILE=OpenHiking.ico
+INSTALLER_DEPS=
+ifneq ($(ICON_FILE),)
+	NSIGEN_ICON=--icon-name=$(ICON_FILE)
+	INSTALLER_DEPS+=$(GMAP_DIR)$(PSEP)$(ICON_FILE)
 endif
 
+ifneq ($(LOGO_FILE),)
+	NSIGEN_LOGO=--logo-name=$(LOGO_FILE)
+	INSTALLER_DEPS+=$(GMAP_DIR)$(PSEP)$(LOGO_FILE)
+endif
+
+
 ZIPNAME=$(MAPNAME).zip
+
 
 
 ##############################################
@@ -341,8 +360,9 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
 	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) \
-	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) $(GMAPSUPP_OPTION) \
-	 --license-file=$(LICENSE_FILE) --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
+	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE)  \
+	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) \
+	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
 
 
 check:
@@ -352,10 +372,16 @@ check:
 nsi-script:
 	$(COPY) $(CONFIG_DIR)$(PSEP)$(ICON_FILE) $(GMAP_DIR)
 	$(NSIGEN) --family-name=$(FAMILY_NAME) --family-id=$(FAMILY_ID) --mapname=$(MAPNAME) --product-id=1 \
-	--typ-name=$(TYP_FILE) --icon-name=$(ICON_FILE) --installer-name=$(INSTALLER_NAME) \
+	--typ-name=$(TYP_FILE) $(NSIGEN_ICON) $(NSIGEN_LOGO) --installer-name=$(INSTALLER_NAME) \
 	config\installer_template.txt $(GMAP_DIR)
 
-install:
+$(GMAP_DIR)$(PSEP2)%.ico: config$(PSEP)%.ico
+	$(COPY) $< $@
+
+$(GMAP_DIR)$(PSEP2)%.bmp: config$(PSEP)%.bmp
+	$(COPY) $< $@
+
+install: $(INSTALLER_DEPS)
 	$(MKNSIS) $(GMAP_DIR)$(PSEP)$(MAPNAME).nsi
 
 zip:
@@ -400,6 +426,9 @@ cleanoutput:
 
 
 test:
-	@echo $(OHM_OSM_LATEST_PBF)
+	@echo $(LICENSE_FILE)
+	@echo $(HAHO)
+	@echo $(LICENSE_OPTION)
+	@echo $(COPYRIGHT_OPTION)
 
 

@@ -24,7 +24,14 @@ def write_defines(outputFile, varlist):
 
 def write_icon(outputFile, iconName):
     if iconName is not None:
-        nl = "!define MUI_ICON \"%s\"" % (iconName)
+        nl = "!define MUI_ICON \"%s\"\n" % (iconName)
+        outputFile.write(nl)
+
+def write_logo(outputFile, logoName):
+    if logoName is not None:
+        nl = "!define MUI_HEADERIMAGE\n"
+        outputFile.write(nl)
+        nl = "!define MUI_HEADERIMAGE_BITMAP \"%s\"\n" % (logoName)
         outputFile.write(nl)
 
 def write_images(outputFile, imageList):
@@ -43,7 +50,7 @@ def write_regbin(outputFile, family_id):
     nl = "  WriteRegBin HKLM \"SOFTWARE\Garmin\MapSource\Families\${REG_KEY}\" \"ID\" %s\n" % hval
     outputFile.write(nl)
 
-def process_template(inputFile, outputFile, family_id, varlist, iconName, imageList):
+def process_template(inputFile, outputFile, family_id, varlist, iconName, logoName, imageList):
     with open(inputFile, "rt") as inf:
         with open(outputFile,"wt") as outf:
             for line in inf:
@@ -53,6 +60,9 @@ def process_template(inputFile, outputFile, family_id, varlist, iconName, imageL
                         continue
                     if line.find('INSERT_ICON_HERE') > 0:
                         write_icon(outf, iconName)
+                        continue
+                    if line.find('INSERT_LOGO_HERE') > 0:
+                        write_logo(outf, logoName)
                         continue
                     if line.find('INSERT_ADDED_FILES_HERE') > 0:
                         write_images(outf, imageList)
@@ -92,6 +102,9 @@ def parse_commandline():
                       help="Set TYP name")
     parser.add_option("-i", "--icon-name",
                       dest="icon", action="store",
+                      help="Set icon name")
+    parser.add_option("-l", "--logo-name",
+                      dest="logo", action="store",
                       help="Set icon name")
     parser.add_option("-x", "--installer-name",
                       dest="installer", action="store",
@@ -152,7 +165,7 @@ def main():
 
     pl = "Writing {:} with {:} img files, typ={:} icon={:}".format(outputFile, len(imageList), opts.typname, opts.icon)
     print(pl)
-    process_template(nsiTemplate, outputFile, int(opts.family_id), varList, opts.icon, imageList)
+    process_template(nsiTemplate, outputFile, int(opts.family_id), varList, opts.icon, opts.logo, imageList)
     print("Done")
 
 

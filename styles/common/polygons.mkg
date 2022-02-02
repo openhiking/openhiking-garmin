@@ -101,7 +101,7 @@ natural=beach & natural!=bay [0x1b resolution 20]
 leisure=playground  [0x0300 resolution 22]
 landuse=recreation_ground  [0x17 resolution 20]
 
-leisure=common | leisure = village_green  [0x17 resolution 22]
+leisure=common | landuse = village_green  [0x17 resolution 22]
 leisure=park   [0x17 resolution 22]
 leisure=garden  [0x17 resolution 22]
 tourism=zoo [0x1100a resolution 22]
