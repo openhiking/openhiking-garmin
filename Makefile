@@ -373,7 +373,7 @@ nsi-script:
 	$(COPY) $(CONFIG_DIR)$(PSEP)$(ICON_FILE) $(GMAP_DIR)
 	$(NSIGEN) --family-name=$(FAMILY_NAME) --family-id=$(FAMILY_ID) --mapname=$(MAPNAME) --product-id=1 \
 	--typ-name=$(TYP_FILE) $(NSIGEN_ICON) $(NSIGEN_LOGO) --installer-name=$(INSTALLER_NAME) \
-	config\installer_template.txt $(GMAP_DIR)
+	config$(PSEP)installer_template.txt $(GMAP_DIR)
 
 $(GMAP_DIR)$(PSEP2)%.ico: config$(PSEP)%.ico
 	$(COPY) $< $@

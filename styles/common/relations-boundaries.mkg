@@ -1,0 +1,14 @@
+#######################################################
+# OpenHikingMap
+#
+# Boundary relations
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+boundary=national_park {
+apply {
+	set is_np_member=true;
+	}
+}
