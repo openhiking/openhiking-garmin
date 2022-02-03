@@ -42,4 +42,5 @@ power=line | power=minor_line [0x029  resolution 23]
 #
 leisure=track [0x10F13 resolution 24]
 
-landuse=military [0x10F06 resolution 22 ]
+# Landuse boundary - keep continue
+landuse=military [0x10F06 resolution 22 continue]
