@@ -123,7 +123,7 @@ def download_alos_tiles(tileList, targetDir):
         if tdir != cdir:
             ftp.cwd(tdir)
             cdir = tdir
-        print('Downloading %s from %s' % (tileName, tdir))
+        print('Downloading %s from %s into %s' % (tileName, tdir, targetDir))
         with open(join(targetDir, tileName), 'wb') as fp:
             try:
                 ftp.retrbinary('RETR '+tileName, fp.write)
@@ -184,7 +184,7 @@ def refresh_alos_tiles(demDir, tileList ):
 
         st = os.stat(zipFullPath)
         if st.st_size < 100:
-            print("Invalid ZIP size {:} for {:}".format(st.st_size, zipName))
+            print("Invalid ZIP size {:} for {:}".format(st.st_size, zipFullPath))
             continue
 
         tileName = get_tile_name(lon, lat) + '.tif'
@@ -282,7 +282,7 @@ def parse_commandline():
         sys.exit(1)
 
 
-    if len(args) < 1:
+    if (opts.select or opts.missing or opts.stats) and  len(args) < 1:
         print("Missing DEM directories")
         sys.exit(1)
 

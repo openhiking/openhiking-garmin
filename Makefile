@@ -280,7 +280,7 @@ ZIPNAME=$(MAPNAME).zip
 # Recipes
 
 alos:
-	python $(DEMMGR) -r -p $(BOUNDARY_POLYGON_FP) $(ALOS_DIR)
+	python $(DEMMGR) -r --poly=$(BOUNDARY_POLYGON_FP) --dem=$(DEM_DIR)
 
 contour-srtm:
 	$(PHYGHTMAP) --jobs=2 --viewfinder-mask=3 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM) -0 \
@@ -342,10 +342,10 @@ $(GMAP_DIR)$(PSEP)bikemap.typ: $(TYP_DIR)$(PSEP)bikemap.typ
 $(GMAP_DIR)$(PSEP)$(TYP_BASE)%.typ: $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
 	$(COPY) $< $(GMAP_DIR)$(PSEP)$(TYPE_BASENAME).txt
 ifeq ($(LINUX),1)
-	cd $(GMAP_DIR) && java -Xmx1024M -ea -jar $(MKGMAP) --mapname=74221559 \
+	cd $(GMAP_DIR) && java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
 	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
 else
-	$(GMAP_DRIVE) & cd $(GMAP_DIR) & java -Xmx1024M -ea -jar $(MKGMAP) --mapname=74221559 \
+	$(GMAP_DRIVE) & cd $(GMAP_DIR) & java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
 	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
 endif
 	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.img
@@ -356,7 +356,7 @@ typ: $(TYP_FILE_FP)
 	@echo "Completed"
 
 map:  $(MERGED_ARGS) $(TYP_FILE_FP)
-	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=74221559 --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
+	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
 	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) \
@@ -391,8 +391,15 @@ endif
 	$(DEL) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)"
 	$(ZIP) $(ZIPARGS) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)" "$(GMAP_DIR)$(PSEP)*.img" "$(GMAP_DIR)$(PSEP)*.mdx" "$(GMAP_DIR)$(PSEP)*.tdb" "$(GMAP_DIR)$(PSEP)*.typ"
 
-all: refresh tiles map install
-	echo Map making completed successfully
+
+stage1: refresh merge tiles
+	@echo Stage-1 completed successfully
+
+stage2: map nsi-scrpt install
+	@echo Stage-2 completed successfully
+
+all: refresh merge tiles map nsi-scrpt install
+	@echo Map making completed successfully
 
 push:
 ifeq ($(MAPSOURCE_DIR),)
@@ -427,7 +434,7 @@ cleanoutput:
 
 test:
 	@echo $(LICENSE_FILE)
-	@echo $(HAHO)
+	@echo $(ALOS_DIR)
 	@echo $(LICENSE_OPTION)
 	@echo $(COPYRIGHT_OPTION)
 
