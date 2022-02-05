@@ -82,6 +82,9 @@ ifneq (${MKG_OSMFILTER},)
 OSMFILTER=${MKG_OSMFILTER}
 endif
 
+ifneq (${MKG_PHYGHTMAP},)
+PHYGHTMAP=${MKG_PHYGHTMAP}
+endif
 
 ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
@@ -149,7 +152,7 @@ else
 endif
 
 DEMMGR=tools$(PSEP)demmgr.py
-PHYGHTMAP=phyghtmap
+PHYGHTMAP?=phyghtmap
 WGET?=wget
 NSIGEN?=python tools\nsigen.py
 
@@ -467,7 +470,5 @@ cleanoutput:
 
 
 test:
-	@echo $(BOUNDS_DIR)
-	@echo $(BOUNDS_OPTS)
-	@echo $(OSMFILTER)	
+	@echo $(PHYGHTMAP)
 
