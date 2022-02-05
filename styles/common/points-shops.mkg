@@ -8,6 +8,7 @@
 #
 ########################################################
 
+
 shop=department_store | shop=mall [0x2e01 resolution 24]
 shop=general | shop=supermarket [0x02E04 resolution 24]
 shop=convenience [0x02E06 resolution 24]

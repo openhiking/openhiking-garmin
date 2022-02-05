@@ -63,9 +63,13 @@ $(error MKG_WORKING_DIR env variable must be set)
 endif
 
 OUTPUT_DIR=${MKG_OUTPUT_DIR}
-MAPSOURCE_DIR=${MKG_MAPSOURCE_DIR}  
+MAPSOURCE_DIR=${MKG_MAPSOURCE_DIR}
 
 # Conditional assignments
+ifneq (${MKG_BOUNDS_DIR},)
+BOUNDS_DIR=${MKG_BOUNDS_DIR}
+endif
+
 ifneq (${MKG_WGET},)
 WGET=${MKG_WGET}
 endif
@@ -73,6 +77,11 @@ endif
 ifneq (${MKG_OSMCONVERT},)
 OSMCONVERT=${MKG_OSMCONVERT}
 endif
+
+ifneq (${MKG_OSMFILTER},)
+OSMFILTER=${MKG_OSMFILTER}
+endif
+
 
 ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
@@ -107,6 +116,7 @@ endif
 ifeq (${ComSpec},)
 	LINUX=1
 	OSMCONVERT?=${HOME}/tools/osmconvert64
+	OSMFILTER?=${HOME}/tools/osmfilter
 	OSMOSIS?=${HOME}/tools/osmosis-0.48.3/bin/osmosis
 	SPLITTER?=$(HOME)/tools/splitter-r645/splitter.jar
 	MKGMAP?=$(HOME)/tools/mkgmap-r4855/mkgmap.jar
@@ -123,6 +133,7 @@ ifeq (${ComSpec},)
 else
 	LINUX=0
 	OSMCONVERT?=osmconvert64.exe
+	OSMFILTER?=osmfilter.exe
 	OSMOSIS?=c:\Apps\osmosis-0-48\bin\osmosis
 	SPLITTER?=c:\Apps\splitter\splitter.jar
 	MKGMAP?=c:\Apps\mkgmap-4819\mkgmap.jar
@@ -172,6 +183,7 @@ endif
 # Dataset Preparation
 
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
+BOUNDS_DIR?=$(OSM_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
 
 OHM_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
@@ -186,7 +198,9 @@ OHM_INP_SUPP_PBF_ARGS=$(foreach wrd,$(OHM_INP_SUPP_PBF),--read-pbf file=$(wrd))
 OHM_INP_CONTOUR=$(CONTOUR_DIR)$(PSEP)$(CONTOUR_LINES)
 OHM_INP_CONTOUR_ARGS=--read-pbf file=$(OHM_INP_CONTOUR)
 
-OHM_MERGED_PBF=master$(MAP).pbf
+MAP_MERGED_PBF=master$(MAP).pbf
+MAP_MERGED_O5M=master$(MAP).o5m
+MAP_BOUNDS_O5M=bounds.o5m
 
 BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
@@ -194,7 +208,9 @@ BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 # Tile Splitting
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
-OHM_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(OHM_MERGED_PBF)
+MAP_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_PBF)
+MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
+MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
 SPLITTER_MEMORY?=5000M
 
 ##############################################
@@ -228,6 +244,12 @@ ifeq ($(GENERATE_SEA),yes)
 	GEN_SEA_OPTIONS=--generate-sea=extend-sea-sectors,close-gaps=500,land-tag=natural=land
 else
 	GEN_SEA_OPTIONS=
+endif
+
+ifeq ($(USE_BOUNDS),yes)
+	BOUNDS_OPTS=--bounds=$(BOUNDS_DIR)
+else
+	BOUNDS_OPTS=
 endif
 
 ifeq ($(USE_LOWERCASE),yes)
@@ -305,17 +327,24 @@ refresh:  $(OHM_OSM_LATEST_PBF) $(TJEL_CACHED)
 	@echo "Completed"
 
 
+
 $(TILES_DIR)$(PSEP2)%.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
-	
-$(OHM_MERGED_PBF_FP):  $(OHM_INP_OSM_O5M) $(OHM_INP_SUPP) $(OHM_INP_CONTOUR)
+
+$(MAP_MERGED_PBF_FP):  $(OHM_INP_OSM_O5M) $(OHM_INP_SUPP) $(OHM_INP_CONTOUR)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
+$(MAP_MERGED_O5M_FP): $(MAP_MERGED_PBF_FP)
+	$(OSMCONVERT) $^ -o=$@
 
-merge: $(OHM_MERGED_PBF_FP)
+$(MAP_BOUNDS_O5M_FP): $(MAP_MERGED_O5M_FP)
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations="boundary=administrative and admin_level=8" -o=$@
+
+
+merge: $(MAP_MERGED_PBF_FP)
 	@echo "Merge completed"
 
 
@@ -324,7 +353,12 @@ merge-osmosis:  $(OHM_INP_OSM_PBF) $(OHM_INP_SUPP_PBF) $(OHM_INP_CONTOUR)
 	@echo "Merge completed"
 
 
-tiles: $(OHM_MERGED_PBF_FP)
+bounds: $(MAP_BOUNDS_O5M_FP)
+	java -cp $(MKGMAP) uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor $< $(BOUNDS_DIR)
+	@echo "Bounds created"
+
+
+tiles: $(MAP_MERGED_PBF_FP)
 	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
 
 
@@ -359,7 +393,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
-	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) \
+	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE)  \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
@@ -395,7 +429,7 @@ endif
 stage1: refresh merge tiles
 	@echo Stage-1 completed successfully
 
-stage2: map nsi-scrpt install
+stage2: map nsi-script install
 	@echo Stage-2 completed successfully
 
 all: refresh merge tiles map nsi-scrpt install
@@ -433,9 +467,7 @@ cleanoutput:
 
 
 test:
-	@echo $(LICENSE_FILE)
-	@echo $(ALOS_DIR)
-	@echo $(LICENSE_OPTION)
-	@echo $(COPYRIGHT_OPTION)
-
+	@echo $(BOUNDS_DIR)
+	@echo $(BOUNDS_OPTS)
+	@echo $(OSMFILTER)	
 
