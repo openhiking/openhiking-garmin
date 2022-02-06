@@ -155,7 +155,7 @@ def refresh_alos_tiles(demDir, tileList ):
 
     for tile in tileList:
         lon, lat = tile
-        if get_cached_tile(lon, lat, demDir, ['alos'], ['tif']) is not None:
+        if get_cached_tile(lon, lat, demDir, ['alos'], ['hgt','tif']) is not None:
             continue
 
         missingTiles.append(tile)
@@ -301,8 +301,8 @@ def main():
 
     if opts.select is True:
         sourceNames = select_dem_sources(opts.demdir, opts.tiles, args, opts.ignore)
-
         print(' '.join(sourceNames))
+        return
 
     if opts.missing is True:
         source = args[0]

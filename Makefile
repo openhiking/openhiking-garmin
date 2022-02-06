@@ -57,6 +57,11 @@ ifeq ($(CONTOUR_DIR),)
 $(error MKG_CONTOUR_DIR env variable must be set)
 endif
 
+BOUNDS_CACHE_DIR=${MKG_BOUNDS_CACHE_DIR}
+ifeq ($(BOUNDS_CACHE_DIR),)
+$(warning MKG_BOUNDS_CACHE_DIR env variable must be set)
+endif
+
 WORKING_DIR=${MKG_WORKING_DIR}
 ifeq ($(WORKING_DIR),)
 $(error MKG_WORKING_DIR env variable must be set)
@@ -183,37 +188,49 @@ endif
 
 
 ##############################################
-# Dataset Preparation
+# Preprocessing & Merging
 
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
-BOUNDS_DIR?=$(OSM_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
+BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
-OHM_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
+PF_EXCLUDE_ELEMENTS?="building=residential building=apartments"
 
-OHM_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds).o5m)
-OHM_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
-OHM_INP_OSM_PBF_ARGS=$(foreach wrd,$(OHM_INP_OSM_PBF),--read-pbf file=$(wrd))
+MAP_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
-OHM_INP_SUPP := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
-OHM_INP_SUPP_PBF := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
-OHM_INP_SUPP_PBF_ARGS=$(foreach wrd,$(OHM_INP_SUPP_PBF),--read-pbf file=$(wrd))
+ifeq ($(PREFILTERING),yes)
+	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
+else
+	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+endif
 
-OHM_INP_CONTOUR=$(CONTOUR_DIR)$(PSEP)$(CONTOUR_LINES)
-OHM_INP_CONTOUR_ARGS=--read-pbf file=$(OHM_INP_CONTOUR)
+MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
+MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
+
+MAP_INP_SUPP := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
+MAP_INP_SUPP_PBF := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
+MAP_INP_SUPP_PBF_ARGS=$(foreach wrd,$(OHM_INP_SUPP_PBF),--read-pbf file=$(wrd))
+
+MAP_INP_CONTOUR=$(CONTOUR_DIR)$(PSEP)$(CONTOUR_LINES)
+MAP_INP_CONTOUR_ARGS=--read-pbf file=$(MAP_INP_CONTOUR)
 
 MAP_MERGED_PBF=master$(MAP).pbf
 MAP_MERGED_O5M=master$(MAP).o5m
-MAP_BOUNDS_O5M=bounds.o5m
+MAP_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_PBF)
+MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
 
-BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
+
+##############################################
+# Bounds Generation
+
+BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
+MAP_BOUNDS_O5M=bounds.o5m
+MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
+
 
 ##############################################
 # Tile Splitting
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
-MAP_MERGED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_PBF)
-MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
-MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
 SPLITTER_MEMORY?=5000M
 
 ##############################################
@@ -250,7 +267,7 @@ else
 endif
 
 ifeq ($(USE_BOUNDS),yes)
-	BOUNDS_OPTS=--bounds=$(BOUNDS_DIR)
+	BOUNDS_OPTS=--bounds="$(BOUNDS_DIR)"
 else
 	BOUNDS_OPTS=
 endif
@@ -326,19 +343,29 @@ $(TJEL_CACHED):
 	$(WGET) --no-check-certificate $(TJEL_URL)$(TJEL_NAME) -P $(OSM_CACHE_DIR)
 
 
-refresh:  $(OHM_OSM_LATEST_PBF) $(TJEL_CACHED)
+refresh:  $(MAP_OSM_LATEST_PBF) $(TJEL_CACHED)
 	@echo "Completed"
 
-
-
-$(TILES_DIR)$(PSEP2)%.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
+$(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
+
+$(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+	$(OSMFILTER) $< --drop=$(PF_EXCLUDE_ELEMENTS) --drop-author --drop-version -o=$@
 
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
-$(MAP_MERGED_PBF_FP):  $(OHM_INP_OSM_O5M) $(OHM_INP_SUPP) $(OHM_INP_CONTOUR)
+$(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
+
+
+merge: $(MAP_MERGED_PBF_FP)
+	@echo "Merge completed"
+
+
+merge-osmosis:  $(MAP_INP_OSM_PBF) $(MAP_INP_SUPP_PBF) $(MAP_INP_CONTOUR)
+	$(OSMOSIS) $(MAP_INP_OSM_PBF_ARGS) $(MAP_INP_SUPP_PBF_ARGS) $(MAP_INP_CONTOUR_ARGS) --merge --bp file=$(BOUNDARY_POLYGON_FP) --wb file=$@
+	@echo "Merge completed"
 
 $(MAP_MERGED_O5M_FP): $(MAP_MERGED_PBF_FP)
 	$(OSMCONVERT) $^ -o=$@
@@ -346,20 +373,9 @@ $(MAP_MERGED_O5M_FP): $(MAP_MERGED_PBF_FP)
 $(MAP_BOUNDS_O5M_FP): $(MAP_MERGED_O5M_FP)
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations="boundary=administrative and admin_level=8" -o=$@
 
-
-merge: $(MAP_MERGED_PBF_FP)
-	@echo "Merge completed"
-
-
-merge-osmosis:  $(OHM_INP_OSM_PBF) $(OHM_INP_SUPP_PBF) $(OHM_INP_CONTOUR)
-	$(OSMOSIS) $(OHM_INP_OSM_PBF_ARGS) $(OHM_INP_SUPP_PBF_ARGS) $(OHM_INP_CONTOUR_ARGS) --merge --bp file=$(BOUNDARY_POLYGON_FP) --wb file=$@
-	@echo "Merge completed"
-
-
 bounds: $(MAP_BOUNDS_O5M_FP)
-	java -cp $(MKGMAP) uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor $< $(BOUNDS_DIR)
+	java -cp $(MKGMAP) uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor "$<" "$(BOUNDS_DIR)"
 	@echo "Bounds created"
-
 
 tiles: $(MAP_MERGED_PBF_FP)
 	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
@@ -470,5 +486,5 @@ cleanoutput:
 
 
 test:
-	@echo $(PHYGHTMAP)
+	@echo $(BOUNDS_OPTS)
 

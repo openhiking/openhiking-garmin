@@ -107,9 +107,9 @@ end
 
 
 if (highway=track) then
+	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
 		motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
-		() { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 		motor_vehicle_restricted=true  [0x10E11 resolution 20]
 		()  [0x05 road_class=0 road_speed=3 resolution 20]
 	end
@@ -121,6 +121,8 @@ if (highway=track) then
 	surface_type=unpaved_hard [0x0d road_class=0 road_speed=1 resolution 20]
 	()        	    [0x0a road_class=0 road_speed=1 resolution 21]
 end
+
+highway=road {name  '${bilingual_name}'} [0x0a road_class=0 road_speed=1 resolution 21]
 
 highway=pedestrian   [0x10 road_class=0 road_speed=1 resolution 21]
 highway=footway | (highway=path & surface=asphalt)  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
