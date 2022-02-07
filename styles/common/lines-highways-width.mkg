@@ -12,7 +12,7 @@
 highway=path { set highway_width=2 }
 highway=footway | highway=platform  { set highway_width=1 }
 route=ferry { set highway_width= 2 }
-highway = track | highway=road | surface_type=unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft | highway=pedestrian  { set highway_width=2 }
+highway = track |  surface_type=unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft | highway=pedestrian  { set highway_width=2 }
 highway = service | highway=cycleway { set highway_width=3 }
 highway=residential | highway=living_street | highway = unclassified | highway=tertiary | surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { set highway_width=4 }
 highway=steps  { set highway_width=5 }

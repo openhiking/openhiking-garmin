@@ -225,7 +225,7 @@ MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
 BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
 MAP_BOUNDS_O5M=bounds.o5m
 MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
-BOUNDS_CONDITION?="boundary=administrative and (admin_level=8 or admin_level=9)"
+BOUNDS_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 )"
 
 ##############################################
 # Tile Splitting
