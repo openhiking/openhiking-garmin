@@ -1,0 +1,41 @@
+#######################################################
+# OpenHikingMap
+#
+# Polygon - leisure rendering definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+leisure=playground  [0x0300 resolution 22]
+landuse=recreation_ground  [0x17 resolution 20]
+
+leisure=common | landuse = village_green  [0x17 resolution 22]
+leisure=park   [0x17 resolution 22]
+leisure=garden  [0x17 resolution 22]
+tourism=zoo [0x1100a resolution 22]
+leisure=beach_resort [0x0900 resolution 20]
+
+leisure=sports_centre  [0x11000 resolution 20]
+leisure=stadium  [0x11001 resolution 20]
+
+if (leisure=pitch) then
+	sport=soccer | sport=baseball | sport=equestrian  { add surface=grass; }
+	sport=croquet | sport=shooting | sport=model_aerodrome { add surface=grass; }
+	sport=rugby_league { add surface=grass; }
+	sport=tennis { add surface=clay; }
+	sport=basketball | sport=skateboard { add surface=asphalt; }
+	sport=beach_handball | sport=beachvolleyball | sport=ultimate | sport=volleyball { add surface=sand; }
+
+	surface=grass | surface=artificial_turf [0x11003 resolution 20]
+	surface=clay | surface=tartan | surface=carpet [0x11004 resolution 20]
+	surface=sand [0x11005 resolution 20]
+	() [0x11002 resolution 20]
+
+end
+
+(leisure=swimming | leisure=swimming_pool | leisure=pool) & (location!=indoor)  [0x3f00 resolution 22]
+tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
+
+higway=pedestrian & area=yes [0x11008 resolution 20]

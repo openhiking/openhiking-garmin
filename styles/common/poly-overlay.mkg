@@ -1,0 +1,15 @@
+#######################################################
+# OpenHikingMap
+#
+# Overlay polygon definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+
+#######################################
+# Overlays
+# (put to head due to double taggings)
+landuse=military | military=airfield | military=danger_area | military=range [0x04 resolution 20 continue]

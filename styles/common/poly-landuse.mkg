@@ -1,0 +1,36 @@
+#######################################################
+# OpenHikingMap
+#
+# Polygon - general landuse rendering definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+place=ocean {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x32 resolution 11]
+place=sea {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x32 resolution 11]
+
+natural=land [0x27 resolution 14]
+natural=background [0x27 resolution 14]
+
+landuse=residential {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${mkgmap:admin_level9}' | '${mkgmap:admin_level8}'; } [0x02 resolution 16]
+landuse=garages  [0x02 resolution 16]
+landuse=allotments [0x10F06 resolution 16]
+landuse=farmland    [0x10F03 resolution 16]
+landuse=farmyard   [0x10F04 resolution 20]
+landuse=vineyard [0x10F05 resolution 16]
+landuse=orchard   [0x4E resolution 16]
+landuse=quarry  [0x10f10 resolution 20]
+landuse=industrial & plant:source!=solar & generator:source!=solar [0x0c resolution 20]
+landuse=railway    [0x11009 resolution 20]
+landuse=landfill   [0x10F14 resolution 20]
+landuse=brownfield   [0x13 resolution 20]
+landuse=construction   [0x13 resolution 20]
+landuse=logging | man_made=clearcut [0x10F01 resolution 20]
+
+#religion=jewish & (landuse=cemetery | amenity=grave_yard) {name '${name}'} [0x1a resolution 22]
+landuse=cemetery | amenity=grave_yard  [0x1a resolution 22]
+
+landuse=plant_nursery   [0x10F11 resolution 20]
+landuse=greenhouse_horticulture   [0x10F12 resolution 20]

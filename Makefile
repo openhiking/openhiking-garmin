@@ -193,7 +193,7 @@ endif
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
 BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
-PF_EXCLUDE_ELEMENTS?="building=residential building=apartments"
+PREFILTER_CONDITION?="building=residential building=apartments"
 
 MAP_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
@@ -225,7 +225,7 @@ MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
 BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
 MAP_BOUNDS_O5M=bounds.o5m
 MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
-
+BOUNDS_CONDITION?="boundary=administrative and (admin_level=8 or admin_level=9)"
 
 ##############################################
 # Tile Splitting
@@ -350,7 +350,7 @@ $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
-	$(OSMFILTER) $< --drop=$(PF_EXCLUDE_ELEMENTS) --drop-author --drop-version -o=$@
+	$(OSMFILTER) $< --drop=$(PREFILTER_CONDITION) --drop-author --drop-version -o=$@
 
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
@@ -371,7 +371,8 @@ $(MAP_MERGED_O5M_FP): $(MAP_MERGED_PBF_FP)
 	$(OSMCONVERT) $^ -o=$@
 
 $(MAP_BOUNDS_O5M_FP): $(MAP_MERGED_O5M_FP)
-	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations="boundary=administrative and admin_level=8" -o=$@
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(BOUNDS_CONDITION)  -o=$@
+
 
 bounds: $(MAP_BOUNDS_O5M_FP)
 	java -cp $(MKGMAP) uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor "$<" "$(BOUNDS_DIR)"
@@ -480,11 +481,15 @@ cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.osm
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.o5m
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
+	
+cleanbounds:
+	$(DEL) $(BOUNDS_DIR)$(PSEP)*
+
 
 cleanoutput:
 	$(DEL) $(OUTPUT_DIR)$(PSEP)$(MAP)_map.zip
 
 
 test:
-	@echo $(BOUNDS_OPTS)
+	@echo $(BOUNDS_DIR)
 

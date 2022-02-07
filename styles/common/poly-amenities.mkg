@@ -1,0 +1,36 @@
+#######################################################
+# OpenHikingMap
+#
+# Polygons: Amenities, industrial & airport rendering definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+
+#######################################
+# Amenities & Industrial
+#
+
+(amenity=school | amenity=childcare) & building!=* [0x0a resolution 24]
+(amenity=hospital | amenity=clinic) & building!=*  [0x0b resolution 22]
+amenity=prison & building!=*  [0x1100b resolution 22]
+
+amenity=parking & (access!=no | access!=private ) [0x05 resolution 16]
+
+power=plant & plant:source=solar {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x1100c resolution 20]
+power=generator & generator:source=solar {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' } [0x1100c resolution 20]
+man_made=wastewater_plant [0x13 resolution 22]
+man_made=pier [0x1100D resolution 20]
+
+
+#######################################
+# Airport
+#
+aeroway=airport [0x07 resolution 20]
+aeroway=aerodrome [0x07 resolution 20]
+aeroway=apron [0x07 resolution 20]
+aeroway=helipad  [0x07 resolution 22]
+aeroway=terminal [0x07 resolution 23]
+

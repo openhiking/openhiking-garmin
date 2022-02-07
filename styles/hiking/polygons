@@ -9,4 +9,11 @@
 ########################################################
 
 #include "../common/codepage-remapping.mkg"
-include "../common/polygons.mkg"
+
+include "../common/poly-naming.mkg"
+include "../common/poly-overlay.mkg"
+include "../common/poly-landuse.mkg"
+include "../common/poly-natural.mkg"
+include "../common/poly-leisure.mkg"
+include "../common/poly-amenities.mkg"
+include "../common/poly-buildings.mkg"
