@@ -11,7 +11,6 @@
 
 if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
 
-	trail_symbol~'^[^:]+:white:red_triangle_line.*'  [0x12B1B resolution 22]
 
 	trail_symbol~'^.+:white:blue_bar.*'       [0x12900 resolution 22]
 	trail_symbol~'^.+:white:blue_rectangle.*' [0x12903 resolution 22]
@@ -94,7 +93,7 @@ if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
 	trail_symbol~'^[^:]+:red:white_stripe.*'         [0x12B19 resolution 22]
 
 	trail_symbol~'^[^:]+:white:black_bar.*'          [0x12B1C resolution 22]
-	trail_symbol~'^[^:]+:white:orange_corner.*'      [0x12B1D resolution 22]
+	trail_symbol~'^[^:]+:green:white_bar.*'          [0x12B1D resolution 22]
 
 	trail_symbol~'^[^:]+:red::.*'       	[0x12D00 resolution 22]
 	trail_symbol~'^[^:]+:blue::.*'       	[0x12D01 resolution 22]
@@ -120,6 +119,7 @@ if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
 	trail_symbol~'^[^:]+:green:red_lower.*'     [0x12D14 resolution 22]
 	trail_symbol~'^[^:]+:green:yellow_lower.*'  [0x12D15 resolution 22]
 	trail_symbol~'^[^:]+:green:white_lower.*'   [0x12D16 resolution 22]
+	trail_symbol~'^[^:]+:orange:blue_lower.*'   [0x12D17 resolution 22]
 
         trail_symbol~'^[^:]+:red_round::.*'  	 [0x12E00 resolution 22]
         trail_symbol~'^[^:]+:red_round:none.*'  	 [0x12E00 resolution 22]
@@ -139,4 +139,26 @@ if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
 	trail_symbol~'^[^:]+:blue:green_circle.*'  [0x12E0B resolution 22]
 	trail_symbol~'^[^:]+:blue_round:yellow_dot.*'  [0x12E0C resolution 22]
 	trail_symbol~'^[^:]+:green_circle:red_circle.*'  [0x12E0F resolution 22]
+	
+	trail_symbol~'^[^:]+:white:orange_corner.*'      [0x12E16 resolution 22]
+	
+	trail_symbol~'^[^:]+::red_diamond.*'      	[0x12E18 resolution 22]
+	trail_symbol~'^[^:]+::blue_diamond.*'      	[0x12E19 resolution 22]
+	trail_symbol~'^[^:]+::green_diamond.*'      	[0x12E1A resolution 22]
+	trail_symbol~'^[^:]+::yellow_diamond.*'      	[0x12E1B resolution 22]
+	trail_symbol~'^[^:]+::black_diamond.*'      	[0x12E1C resolution 22]
+	trail_symbol~'^[^:]+::grey_diamond.*'      	[0x12E1D resolution 22]
+	trail_symbol~'^[^:]+::brown_diamond.*'      	[0x12E1E resolution 22]
+
+	trail_symbol~'^[^:]+::red_triangle_line.*'  	[0x12F00 resolution 22]
+	trail_symbol~'^[^:]+::blue_triangle_line.*'  	[0x12F01 resolution 22]
+	trail_symbol~'^[^:]+::yellow_triangle_line.*'  	[0x12F02 resolution 22]
+	trail_symbol~'^[^:]+::black_triangle_line.*'  	[0x12F03 resolution 22]
+	trail_symbol~'^[^:]+:white:red_triangle_line.*'  [0x12F04 resolution 22]
+	trail_symbol~'^[^:]+:white:blue_triangle_line.*'  [0x12F05 resolution 22]
+	trail_symbol~'^[^:]+:white:green_triangle_line.*' [0x12F06 resolution 22]
+	trail_symbol~'^[^:]+:white:yellow_triangle_line.*' [0x12F07 resolution 22]
+	trail_symbol~'^[^:]+:white:black_triangle_line.*'  [0x12F08 resolution 22]
+	trail_symbol~'^[^:]+:yellow:black_triangle_line.*'  [0x12F09 resolution 22]
+
 end

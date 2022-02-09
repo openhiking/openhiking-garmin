@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 51163 octets
-; Fichier TYP compilé     02/06/2022     20:09:27
-; Décompilé le 2/6/2022 à 10:11:03 PM
+; Fichier TYP compilé     02/09/2022     20:41:06
+; Décompilé le 2/9/2022 à 8:43:18 PM
 
 [_id]
 ProductCode=1
@@ -177,7 +177,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="0 0 1 0"
-"1 c #FFCAFF"
+"1 c #FFCAD5"
 [end]
 
 
@@ -3914,7 +3914,7 @@ Type=0x10f1d
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_62/Non-routable customizable line/Non NT, NT
 UseOrientation=N
 Xpm="32 4 2  1"
-"! c #0000FF"
+"! c #7B95FF"
 "  c none"
 "  !!!!            !!!!          "
 "!!!!!!!!!!    !!!!!!!!!!!!    !!"
@@ -3935,7 +3935,7 @@ Type=0x10f1e
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_63/Non-routable customizable line/Non NT, NT
 UseOrientation=N
 Xpm="32 4 2  1"
-"! c #FF0000"
+"! c #FF958B"
 "  c none"
 "  !!!!            !!!!          "
 "!!!!!!!!!!    !!!!!!!!!!!!    !!"
@@ -3956,7 +3956,7 @@ Type=0x10f1f
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_64/Non-routable customizable line/Non NT, NT
 UseOrientation=N
 Xpm="32 4 2  1"
-"! c #000000"
+"! c #737373"
 "  c none"
 "  !!!!            !!!!          "
 "!!!!!!!!!!    !!!!!!!!!!!!    !!"
@@ -12689,31 +12689,6 @@ DayXpm="9 10 3 1"   Colormode=0
 
 
 [_point]
-Type=0x12b1b
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_732/User customizable point type/Non NT, NT
-ExtendedLabels=Y
-FontStyle=NoLabel (invisible)
-CustomColor=No
-ContourColor=No
-DayXpm="11 9 4 1"   Colormode=16
-"!	c #808080"
-"#	c #F8FCF8"
-"%	c #F80000"
-"?	c #F87C78"
-"!!!!!!!!!!!"
-"!####?####!"
-"!###?%?###!"
-"!##?%#%?##!"
-"!##?%#%?##!"
-"!#?%###%?#!"
-"!?%%%%%%%?!"
-"!#########!"
-"!!!!!!!!!!!"
-;12345678901
-[end]
-
-
-[_point]
 Type=0x12b1c
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_733/User customizable point type/Non NT, NT
 ExtendedLabels=N
@@ -12737,25 +12712,21 @@ DayXpm="11 9 3 1"   Colormode=16
 [_point]
 Type=0x12b1d
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_734/User customizable point type/Non NT, NT
-ExtendedLabels=Y
-FontStyle=NoLabel (invisible)
-CustomColor=No
-ContourColor=No
-DayXpm="10 10 3 1"   Colormode=0
+ExtendedLabels=N
+DayXpm="11 9 3 1"   Colormode=16
 "!	c #808080"
-"#	c #FF9520"
-"%	c #F8FCF8"
-"!!!!!!!!!!"
-"!########!"
-"!%#######!"
-"!%%######!"
-"!%%%#####!"
-"!%%%%####!"
-"!%%%%%###!"
-"!%%%%%%##!"
-"!%%%%%%%#!"
-"!!!!!!!!!!"
-;1234567890
+"#	c #009400"
+"%	c #FFFFFF"
+"!!!!!!!!!!!"
+"!#########!"
+"!#########!"
+"!%%%%%%%%%!"
+"!%%%%%%%%%!"
+"!%%%%%%%%%!"
+"!#########!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
 [end]
 
 
@@ -14055,6 +14026,29 @@ DayXpm="11 8 3 1"   Colormode=0
 
 
 [_point]
+Type=0x12d17
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_792/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 8 3 1"   Colormode=0
+"!	c #808080"
+"#	c #FF9520"
+"%	c #0000F8"
+"!!!!!!!!!!!"
+"!#########!"
+"!#########!"
+"!#########!"
+"!%%%%%%%%%!"
+"!%%%%%%%%%!"
+"!%%%%%%%%%!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
 Type=0x12e00
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_801/User customizable point type/Non NT, NT
 ExtendedLabels=Y
@@ -14382,4 +14376,433 @@ DayXpm="10 10 4 1"   Colormode=16
 "   #%%#   "
 "          "
 ;1234567890
+[end]
+
+
+[_point]
+Type=0x12e16
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_823/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="10 10 3 1"   Colormode=0
+"!	c #808080"
+"#	c #FF9520"
+"%	c #F8FCF8"
+"!!!!!!!!!!"
+"!########!"
+"!%#######!"
+"!%%######!"
+"!%%%#####!"
+"!%%%%####!"
+"!%%%%%###!"
+"!%%%%%%##!"
+"!%%%%%%%#!"
+"!!!!!!!!!!"
+;1234567890
+[end]
+
+
+[_point]
+Type=0x12e18
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_825/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #F80000"
+"?	c #F87C78"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e19
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_826/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #0000F8"
+"?	c #787CF8"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e1a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_827/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #009400"
+"?	c #789478"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e1b
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_828/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #F8C800"
+"?	c #F8E478"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e1c
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_829/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #000000"
+"?	c #838383"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e1d
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_830/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #414141"
+"?	c #A4A4A4"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12e1e
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_831/User customizable point type/Non NT, NT
+ExtendedLabels=N
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #BD6500"
+"?	c #FF9500"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!#?%%%%%?#!"
+"!??%%%%%??!"
+"!#?%%%%%?#!"
+"!###?%?###!"
+"!####?####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f00
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_833/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #F80000"
+"%	c #F87C78"
+"  	c none"
+"           "
+"     %     "
+"    %#%    "
+"   %#!#%   "
+"   %#!#%   "
+"  %#!!!#%  "
+" %#######% "
+" %%%%%%%%% "
+"           "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f01
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_834/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #0000F8"
+"%	c #787CF8"
+"  	c none"
+"           "
+"     %     "
+"    %#%    "
+"   %#!#%   "
+"   %#!#%   "
+"  %#!!!#%  "
+" %#######% "
+" %%%%%%%%% "
+"           "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f02
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_835/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #F8C800"
+"%	c #F8E478"
+"  	c none"
+"           "
+"     %     "
+"    %#%    "
+"   %#!#%   "
+"   %#!#%   "
+"  %#!!!#%  "
+" %#######% "
+" %%%%%%%%% "
+"           "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f03
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_836/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #000000"
+"%	c #838383"
+"  	c none"
+"           "
+"     %     "
+"    %#%    "
+"   %#!#%   "
+"   %#!#%   "
+"  %#!!!#%  "
+" %#######% "
+" %%%%%%%%% "
+"           "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f04
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_837/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #F80000"
+"?	c #F87C78"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f05
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_838/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #0000F8"
+"?	c #787CF8"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f06
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_839/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #009400"
+"?	c #789478"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f07
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_840/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #F8C800"
+"?	c #F8E478"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f08
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_841/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #000000"
+"?	c #838383"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f09
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_842/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 4 1"   Colormode=16
+"!	c #808080"
+"#	c #F8C800"
+"%	c #000000"
+"?	c #838383"
+"!!!!!!!!!!!"
+"!####?####!"
+"!###?%?###!"
+"!##?%#%?##!"
+"!##?%#%?##!"
+"!#?%###%?#!"
+"!?%%%%%%%?!"
+"!#########!"
+"!!!!!!!!!!!"
+;12345678901
 [end]

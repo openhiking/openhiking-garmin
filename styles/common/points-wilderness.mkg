@@ -14,7 +14,7 @@ tourism=picnic_site [0x4A00 resolution 24]
 amenity=bench  [0x4A02 resolution 24]
 leisure=firepit [0x4A03 resolution 24]
 amenity=shelter & shelter_type=picnic_shelter  [0x4A05 resolution 22]
-amenity=shelter  [0x4A04 resolution 22]
+amenity=shelter & shelter_type!=public_transport [0x4A04 resolution 22]
 
 information=map  { add mkgmap:label:2='${description}'} 	[0x4C01 resolution 24]
 information=guidepost  { add mkgmap:label:2='${description}'} [0x4C02 resolution 24]

@@ -8,6 +8,8 @@
 #
 ########################################################
 
+leisure=* & (access=no | access=private | ownership=private) { delete leisure; }
+
 leisure=playground  [0x0300 resolution 22]
 landuse=recreation_ground  [0x17 resolution 20]
 
@@ -35,7 +37,12 @@ if (leisure=pitch) then
 
 end
 
-(leisure=swimming | leisure=swimming_pool | leisure=pool) & (location!=indoor)  [0x3f00 resolution 22]
+if (leisure=swimming_pool ) then
+	swimming_pool=personal { deletealltags; }
+        access=yes & (location!=indoor)  [0x3f00 resolution 22]
+        area_size()>150 & (location!=indoor)  [0x3f00 resolution 22]
+end
+
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
 
 higway=pedestrian & area=yes [0x11008 resolution 20]

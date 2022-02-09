@@ -166,6 +166,10 @@ NSIGEN?=python tools\nsigen.py
 ALOS_DIR=$(DEM_DIR)$(PSEP)alos
 TJEL_CACHED=$(OSM_CACHE_DIR)$(PSEP)$(TJEL_NAME)
 
+ifneq ($(SUPPLEMENTARY_DATA),)
+	SUPPLEMENTARY_CACHED=$(OSM_CACHE_DIR)$(PSEP)$(SUPPLEMENTARY_DATA)
+endif
+
 ##############################################
 # Contour Lines
 
@@ -193,7 +197,7 @@ endif
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
 BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
-PREFILTER_CONDITION?="building=residential building=apartments"
+PREFILTER_CONDITION?="building=residential building=apartments building=detached building=house building=garage building=garages natural=tree_row"
 
 MAP_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
@@ -343,7 +347,7 @@ $(TJEL_CACHED):
 	$(WGET) --no-check-certificate $(TJEL_URL)$(TJEL_NAME) -P $(OSM_CACHE_DIR)
 
 
-refresh:  $(MAP_OSM_LATEST_PBF) $(TJEL_CACHED)
+refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
 	@echo "Completed"
 
 $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
@@ -491,5 +495,5 @@ cleanoutput:
 
 
 test:
-	@echo $(BOUNDS_DIR)
+	@echo $(SUPPLEMENTARY_CACHED)
 
