@@ -16,6 +16,6 @@ leisure=* & sport=soccer [0x02D0A resolution 24]
 leisure=* & sport=tennis [0x02D0B resolution 24]
 leisure=horse_riding  [0x02D0D resolution 24]
 
-leisure=stadium | leisure=sports_centre  [0x02C08 resolution 24]
+(leisure=stadium | leisure=sports_centre) & mkgmap:area2poi!=true  [0x02C08 resolution 24]
 leisure=beach_resort  [0x06604 resolution 24]
 amenity=spa  [0x05400 resolution 24]

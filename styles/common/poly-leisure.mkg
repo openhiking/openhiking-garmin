@@ -29,12 +29,12 @@ if (leisure=pitch) then
 	sport=tennis { add surface=clay; }
 	sport=basketball | sport=skateboard { add surface=asphalt; }
 	sport=beach_handball | sport=beachvolleyball | sport=ultimate | sport=volleyball { add surface=sand; }
+	sport=karting | sport=motor { add surface=asphalt; }
 
 	surface=grass | surface=artificial_turf [0x11003 resolution 20]
 	surface=clay | surface=tartan | surface=carpet [0x11004 resolution 20]
 	surface=sand [0x11005 resolution 20]
 	() [0x11002 resolution 20]
-
 end
 
 if (leisure=swimming_pool ) then

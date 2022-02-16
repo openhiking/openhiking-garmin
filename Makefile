@@ -482,9 +482,9 @@ cleanall:
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleancache:
-	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.osm
-	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.o5m
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
+	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.osm
+
 	
 cleanbounds:
 	$(DEL) $(BOUNDS_DIR)$(PSEP)*

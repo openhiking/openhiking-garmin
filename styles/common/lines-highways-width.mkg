@@ -8,15 +8,37 @@
 #
 ########################################################
 
-
-highway=path { set highway_width=2 }
-highway=footway | highway=platform  { set highway_width=1 }
-route=ferry { set highway_width= 2 }
-highway = track |  surface_type=unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft | highway=pedestrian  { set highway_width=2 }
-highway = service | highway=cycleway { set highway_width=3 }
-highway=residential | highway=living_street | highway = unclassified | highway=tertiary | surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { set highway_width=4 }
-highway=steps  { set highway_width=5 }
-highway=primary | highway=secondary  { set highway_width=5 }
 highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link { set highway_width=6; }
+highway=primary | highway=secondary  { set highway_width=5 }
+
+if (highway=tertiary | highway = unclassified | highway=residential |  highway=living_street) then
+	if (surface = unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft) then
+		() { set highway_width=2 }
+	else
+		() { set highway_width=4 }
+	end
+end
+
+if (highway=service ) then
+	if (surface = unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft) then
+		() { set highway_width=2 }
+	else
+		() { set highway_width=3 }
+	end
+end
+
+if (highway=track ) then
+	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
+		() { set highway_width=4 }
+	else
+		() { set highway_width=2 }
+	end
+end
+
+highway=steps  { set highway_width=5 }
 highway=via_ferrata { set highway_width=5 }
+highway=cycleway { set highway_width=3 }
+highway=pedestrian | highway=path { set highway_width=2 }
+route=ferry { set highway_width= 2 }
+highway=footway | highway=platform  { set highway_width=1 }
 

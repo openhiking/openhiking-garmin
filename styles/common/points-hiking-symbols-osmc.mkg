@@ -88,11 +88,11 @@ if (mkgmap:line2poi=true & mkgmap:line2poitype=mid & mkgmap:way-length>70) then
 	trail_symbol='green:white:::M:green'        [0x12B13 resolution 22]
 	trail_symbol='purple:white:::M:purple'      [0x12B14 resolution 22]
 	
-	trail_symbol='blue:blue::M.*:white'         [0x12B10 resolution 22]
-	trail_symbol='red:red::M.*:white'           [0x12B11 resolution 22]
-	trail_symbol='yellow:yellow::M.*:white'     [0x12B12 resolution 22]
-	trail_symbol='green:green::M.*:white'        [0x12B13 resolution 22]
-	trail_symbol='purple:purple::M.*:white'      [0x12B14 resolution 22]
+	trail_symbol~'blue:blue::M.*:white'         [0x12B10 resolution 22]
+	trail_symbol~'red:red::M.*:white'           [0x12B11 resolution 22]
+	trail_symbol~'yellow:yellow::M.*:white'     [0x12B12 resolution 22]
+	trail_symbol~'green:green::M.*:white'        [0x12B13 resolution 22]
+	trail_symbol~'purple:purple::M.*:white'      [0x12B14 resolution 22]
 
 	trail_symbol~'^[^:]+:red:white_bar.*'            [0x12B18 resolution 22]
 	trail_symbol~'^[^:]+:red:white_stripe.*'         [0x12B19 resolution 22]
