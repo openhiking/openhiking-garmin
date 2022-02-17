@@ -19,7 +19,7 @@ leisure=garden  [0x17 resolution 22]
 tourism=zoo [0x1100a resolution 22]
 leisure=beach_resort [0x0900 resolution 20]
 
-leisure=sports_centre  [0x11000 resolution 20]
+leisure=sports_centre  [0x19 resolution 20]
 leisure=stadium  [0x11001 resolution 20]
 
 if (leisure=pitch) then

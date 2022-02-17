@@ -1,12 +1,12 @@
 ; ohm.typ
-; Longueur: 52062 octets
-; Fichier TYP compilé     16/02/2022     19:43:39
-; Décompilé le 2/16/2022 à 7:45:24 PM
+; Longueur: 52312 octets
+; Fichier TYP compilé     17/02/2022     10:57:38
+; Décompilé le 2/17/2022 à 10:57:42 AM
 
 [_id]
 ProductCode=1
 FID=1
-CodePage=1252
+CodePage=65001
  [End]
 
 ;=========== COMMENTAIRES ======
@@ -23,9 +23,9 @@ Type=0x032,1
 Type=0x027,2
 Type=0x10f03,3
 Type=0x002,4
+Type=0x016,4
 Type=0x050,4
 Type=0x1100a,4
-Type=0x016,5
 Type=0x01b,5
 Type=0x04d,5
 Type=0x04e,5
@@ -66,9 +66,9 @@ Type=0x003,8
 Type=0x004,8
 Type=0x005,8
 Type=0x009,8
+Type=0x019,8
 Type=0x01a,8
 Type=0x040,8
-Type=0x11000,8
 Type=0x11001,8
 Type=0x1100d,8
 Type=0x00d,9
@@ -172,7 +172,7 @@ Xpm="0 0 1 0"
 [_polygon]
 Type=0x07
 ;GRMN_TYPE: Large Manmade Areas/AIRPORT/Airport area/Non NT
-String1=0x14,Repülotér
+String1=0x14,Repülőtér
 String2=0x04,Airport
 ExtendedLabels=N
 Xpm="0 0 1 0"
@@ -258,8 +258,42 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-Xpm="0 0 1 0"
-"1 c #BD9541"
+Xpm="32 32 2 1"
+"! c #BD9500"
+"# c #D5D5D5"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+;12345678901234567890123456789012
 [end]
 
 
@@ -355,6 +389,50 @@ Xpm="32 32 2 1"
 "!!#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "!!#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+[end]
+
+
+[_polygon]
+Type=0x19
+;GRMN_TYPE: Large Manmade Areas/SPORTS_COMPLEX/Sports arena or stadium/Non NT
+String1=0x04,Sports centre
+ExtendedLabels=N
+Xpm="32 32 2 1"
+"! c #BDFFD5"
+"# c #00CC00"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ;12345678901234567890123456789012
 [end]
 
@@ -626,7 +704,7 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x50
 ;GRMN_TYPE: Surface Cover Areas/WOODS/Wooded or forested area/Non NT
-String1=0x14,Erdo
+String1=0x14,Erdő
 String2=0x04,Forest
 ExtendedLabels=N
 Xpm="0 0 1 0"
@@ -637,7 +715,7 @@ Xpm="0 0 1 0"
 [_polygon]
 Type=0x51
 ;GRMN_TYPE: Surface Cover Areas/WETLAND/Wetland or swamp area/Non NT
-String1=0x14,Vizenyos
+String1=0x14,Vizenyős
 String2=0x04,Wetland
 ExtendedLabels=N
 Xpm="32 32 2 1"
@@ -726,7 +804,7 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x10f00
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_1/Customizable area/Non NT, NT
-String1=0x14,Tulevelu erdo
+String1=0x14,Tűlevelű erdő
 String2=0x04,Coniferous forest
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -807,7 +885,7 @@ Xpm="0 0 1 0"
 [_polygon]
 Type=0x10f05
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_6/Customizable area/Non NT, NT
-String1=0x14,Szolo
+String1=0x14,Szőlő
 String2=0x04,Vineyard
 ExtendedLabels=N
 Xpm="32 32 2 1"
@@ -907,7 +985,7 @@ Xpm="32 32 2 1"
 Type=0x10f08
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_9/Customizable area/Non NT, NT
 String1=0x04,Scree
-String2=0x14,Koomladék
+String2=0x14,Kőomladék
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -1100,7 +1178,7 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x10f0d
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_14/Customizable area/Non NT, NT
-String1=0x14,Ártéri erdo
+String1=0x14,Ártéri erdő
 String2=0x04,Swamp
 ExtendedLabels=N
 Xpm="32 32 2 1"
@@ -1262,50 +1340,6 @@ String2=0x14,Szeméttelep
 ExtendedLabels=N
 Xpm="0 0 1 0"
 "1 c #D3D39A"
-[end]
-
-
-[_polygon]
-Type=0x11000
-;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_33/Customizable area/Non NT, NT
-String1=0x04,Sports centre
-ExtendedLabels=N
-Xpm="32 32 2 1"
-"! c #5CE35C"
-"# c #00CC00"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#!!!#!!!#!!!#!!!#!!!#!!!#!!!#!!!"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-;12345678901234567890123456789012
 [end]
 
 
@@ -1744,7 +1778,7 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FB9C39"
 "2 c #808080"
-String1=0x14,Elsorendu foút
+String1=0x14,Elsőrendű főút
 String2=0x04,Primary
 ExtendedLabels=N
 [end]
@@ -1759,7 +1793,7 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FEF458"
 "2 c #808080"
-String1=0x14,Másodrendu foút
+String1=0x14,Másodrendű főút
 String2=0x04,Secondary
 ExtendedLabels=N
 [end]
@@ -1774,7 +1808,7 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FEF458"
 "2 c #808080"
-String1=0x14,Alsórendu út
+String1=0x14,Alsórendű út
 String2=0x04,Teritary
 ExtendedLabels=N
 [end]
@@ -1960,7 +1994,7 @@ Xpm="32 5 2  1"
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 ;12345678901234567890123456789012
 String1=0x04,Steps
-String2=0x14,Lépcso
+String2=0x14,Lépcső
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -2131,7 +2165,7 @@ Xpm="32 1 2  1"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ;12345678901234567890123456789012
 String1=0x01,Major contour line
-String2=0x14,Fo szintvonal
+String2=0x14,Fő szintvonal
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -2149,7 +2183,7 @@ Xpm="32 1 2  1"
 "!!!!    !!!!    !!!!    !!!!    "
 ;12345678901234567890123456789012
 String1=0x04,Intermittent stream
-String2=0x14,Idoszakos vízfolyás
+String2=0x14,Időszakos vízfolyás
 ExtendedLabels=N
 [end]
 
@@ -3414,7 +3448,7 @@ Xpm="32 4 2  1"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ;12345678901234567890123456789012
 String1=0x04,Unclassified (restricted)
-String2=0x14,Egyéb út (gépjármuforgalom tilos)
+String2=0x14,Egyéb út (gépjárműforgalom tilos)
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -3434,7 +3468,7 @@ Xpm="32 3 2  1"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ;12345678901234567890123456789012
 String1=0x04,Service (restricted)
-String2=0x14,Bekötoút (gépjármuforgalom tilos)
+String2=0x14,Bekötőút (gépjárműforgalom tilos)
 ExtendedLabels=N
 [end]
 
@@ -3463,7 +3497,7 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FB9C39"
 "2 c #808080"
-String1=0x14,Elsorendu foút
+String1=0x14,Elsőrendű főút
 String2=0x04,Primary
 ExtendedLabels=N
 [end]
@@ -3478,7 +3512,7 @@ BorderWidth=1
 Xpm="0 0 2 0"
 "1 c #FEF458"
 "2 c #808080"
-String1=0x14,Másodrendu foút
+String1=0x14,Másodrendű főút
 String2=0x04,Secondary
 ExtendedLabels=N
 [end]
@@ -3533,7 +3567,7 @@ Xpm="32 4 2  1"
 "!!!!########!!!!!!!!########!!!!"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ;12345678901234567890123456789012
-String1=0x14,Megszunt vasút
+String1=0x14,Megszűnt vasút
 String2=0x04,Disused railway
 ExtendedLabels=N
 [end]
@@ -3751,20 +3785,6 @@ ContourColor=No
 
 
 [_line]
-Type=0x10f14
-;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_53/Non-routable customizable line/Non NT, NT
-UseOrientation=Y
-LineWidth=3
-Xpm="0 0 2 0"
-"1 c #737373"
-"2 c #F8FCF8"
-String1=0x04,Raceway
-String2=0x14,Versenypálya
-ExtendedLabels=N
-[end]
-
-
-[_line]
 Type=0x10f18
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_57/Non-routable customizable line/Non NT, NT
 UseOrientation=N
@@ -3797,7 +3817,7 @@ Xpm="32 5 4  1"
 "!   !   !   !   !   !   !   !   "
 " !!!     !!!     !!!     !!!    "
 ;12345678901234567890123456789012
-String1=0x14,Ülolift
+String1=0x14,Ülőlift
 String2=0x04,Chairlift
 ExtendedLabels=N
 [end]
@@ -5423,7 +5443,7 @@ DayXpm="11 16 5 1"   Colormode=16
 Type=0x02c1e
 ;GRMN_TYPE: //
 String1=0x04,Fountain
-String2=0x14,Szökokút
+String2=0x14,Szökőkút
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -5551,7 +5571,7 @@ DayXpm="16 15 38 2"   Colormode=16
 [_point]
 Type=0x02d02
 ;GRMN_TYPE: Business - Entertainment/BAR/Bar or club/Non NT
-String1=0x14,Sörözo
+String1=0x14,Söröző
 String2=0x04,Pub
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -6859,7 +6879,7 @@ DayXpm="16 16 7 1"   Colormode=16
 Type=0x02f09
 ;GRMN_TYPE: Business - Services/MARINA/Marina/Non NT
 String1=0x04,Ferry terminal
-String2=0x14,Kompkiköto
+String2=0x14,Kompkikötő
 ExtendedLabels=N
 DayXpm="16 16 25 2"   Colormode=16
 "!!	c #F8AC08"
@@ -7179,7 +7199,7 @@ DayXpm="16 16 4 1"   Colormode=16
 Type=0x03001
 ;GRMN_TYPE: Business - Emergency and Government/POLICE_STATION/Police station/Non NT
 String1=0x04,Police
-String2=0x14,Rendorség
+String2=0x14,Rendőrség
 ExtendedLabels=N
 DayXpm="16 16 6 1"   Colormode=16
 "!	c #040204"
@@ -7406,7 +7426,7 @@ DayXpm="10 14 32 2"   Colormode=0
 [_point]
 Type=0x03006
 ;GRMN_TYPE: Business - Emergency and Government/BORDER_CROSSING/Border crossing/Non NT
-String1=0x14,Határátkelo
+String1=0x14,Határátkelő
 String2=0x04,Border crossing
 ExtendedLabels=N
 DayXpm="16 16 4 1"   Colormode=16
@@ -7437,7 +7457,7 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x03008
 ;GRMN_TYPE: Business - Emergency and Government/FIRE_DEPT/Fire department/Non NT
-String1=0x14,Tuzoltóság
+String1=0x14,Tűzoltóság
 String2=0x04,Fire station
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -7706,7 +7726,7 @@ DayXpm="16 16 3 1"   Colormode=16
 Type=0x04a03
 ;GRMN_TYPE: //
 String1=0x04,Firepit
-String2=0x14,Tuzrakó
+String2=0x14,Tűzrakó
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -7741,7 +7761,7 @@ DayXpm="16 16 5 1"   Colormode=16
 Type=0x04a04
 ;GRMN_TYPE: //
 String1=0x04,Weather shelter
-String2=0x14,Esoház
+String2=0x14,Esőház
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -8110,7 +8130,7 @@ DayXpm="16 16 3 1"   Colormode=16
 [_point]
 Type=0x04c06
 ;GRMN_TYPE: //
-String1=0x14,Bélyegzohely
+String1=0x14,Bélyegzőhely
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -8251,7 +8271,7 @@ DayXpm="16 16 2 1"   Colormode=16
 [_point]
 Type=0x05400
 ;GRMN_TYPE: Misc. Points of Interest/SWIMMING_AREA/Swimming area/Non NT, NT
-String1=0x14,Fürdo
+String1=0x14,Fürdő
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -9073,7 +9093,7 @@ DayXpm="16 16 3 1"   Colormode=16
 Type=0x06615
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/SLOPE/Slope/Non NT, NT
 String1=0x04,Stone
-String2=0x14,Ko
+String2=0x14,Kő
 ExtendedLabels=N
 DayXpm="10 10 3 1"   Colormode=16
 "!	c #000000"
@@ -9372,7 +9392,7 @@ DayXpm="16 16 3 1"   Colormode=16
 Type=0x11509
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_10/User customizable point type/Non NT, NT
 String1=0x04,Game feeding
-String2=0x14,Vadeteto
+String2=0x14,Vadetető
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -9542,7 +9562,7 @@ DayXpm="16 16 5 1"   Colormode=16
 Type=0x1150f
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_16/User customizable point type/Non NT, NT
 String1=0x04,Geodetic measurement point
-String2=0x14,Geodéziai méropont
+String2=0x14,Geodéziai mérőpont
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -9572,7 +9592,7 @@ DayXpm="15 11 3 1"   Colormode=16
 Type=0x11510
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_17/User customizable point type/Non NT, NT
 String1=0x04,Mineshaft
-String2=0x14,Függoakna
+String2=0x14,Függőakna
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -9709,7 +9729,7 @@ DayXpm="16 16 4 1"   Colormode=16
 Type=0x11514
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_21/User customizable point type/Non NT, NT
 String1=0x04,Power plant
-String2=0x14,Eromu
+String2=0x14,Erőmű
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -9780,7 +9800,7 @@ DayXpm="16 16 5 1"   Colormode=16
 Type=0x11516
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_23/User customizable point type/Non NT, NT
 String1=0x04,Water works
-String2=0x14,Vízmu
+String2=0x14,Vízmű
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -9924,7 +9944,7 @@ DayXpm="17 19 4 1"   Colormode=16
 Type=0x1151c
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_29/User customizable point type/Non NT, NT
 String1=0x04,Observation tower
-String2=0x14,Megfigyelotorony
+String2=0x14,Megfigyelőtorony
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -10418,7 +10438,7 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x11611
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_50/User customizable point type/Non NT, NT
-String1=0x14,Kidolt fák
+String1=0x14,Kidőlt fák
 String2=0x04,Fallen tree
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -10452,7 +10472,7 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x11612
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_51/User customizable point type/Non NT, NT
-String1=0x14,Benott
+String1=0x14,Benőtt
 String2=0x04,Overgrown
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -10487,7 +10507,7 @@ DayXpm="16 16 4 1"   Colormode=16
 Type=0x11616
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_55/User customizable point type/Non NT, NT
 String1=0x04,Recycle bin
-String2=0x14,Szelektív hulladékgyujto
+String2=0x14,Szelektív hulladékgyűjtő
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
