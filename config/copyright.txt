@@ -1,1 +1,1 @@
-Copyright https://OpenHiking.eu *** Production date: $LONGDATE$
+© OpenHiking https://OpenHiking.eu *** Production date: $LONGDATE$
