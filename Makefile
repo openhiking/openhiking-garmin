@@ -91,6 +91,10 @@ ifneq (${MKG_PHYGHTMAP},)
 PHYGHTMAP=${MKG_PHYGHTMAP}
 endif
 
+ifneq (${MKG_MAKESYMBOLS},)
+MAKESYMBOLS=${MKG_MAKESYMBOLS}
+endif
+
 ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
 endif
@@ -192,7 +196,7 @@ endif
 
 
 ##############################################
-# Preprocessing & Merging
+# Preprocessing
 
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
 BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
@@ -207,8 +211,31 @@ else
 	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
 endif
 
+
+
+##############################################
+# Hiking Symbol Generation
+
+MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
+MAP_ROUTES_FILE=routes
+MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
+ROUTE_CONDITION?="route=hiking or ( route=piste and ( jel=px or jel=kx ) )"
+
+MAP_HIKING_SYMBOLS_OSM_FP=$(TILES_DIR)$(PSEP)symbols.osm
+
+ifeq ($(GENERATE_HIKING_SYMBOLS),yes)
+	MAP_INP_SYMBOLS_OSM=$(MAP_HIKING_SYMBOLS_OSM_FP)
+endif
+
+SYMBOLS_START_ID=120000000000
+
+
+##############################################
+# Merging
+
 MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
 MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
+
 
 MAP_INP_SUPP := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
 MAP_INP_SUPP_PBF := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
@@ -356,10 +383,24 @@ $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --drop=$(PREFILTER_CONDITION) --drop-author --drop-version -o=$@
 
+$(TILES_DIR)$(PSEP2)%-routes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
+
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
-$(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
+$(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
+	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^  -o=$@
+
+
+$(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
+	$(MAKESYMBOLS) -p --exclude=$(SYMBOLS_EXCLUDE) --start-node-id=$(SYMBOLS_START_ID) --target-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
+
+symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
+	@echo "Done"
+
+
+$(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 
@@ -383,7 +424,7 @@ bounds: $(MAP_BOUNDS_O5M_FP)
 	@echo "Bounds created"
 
 tiles: $(MAP_MERGED_PBF_FP)
-	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=71221559  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
+	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -495,5 +536,6 @@ cleanoutput:
 
 
 test:
-	@echo $(SUPPLEMENTARY_CACHED)
+	@echo $(MAP_INP_SYMBOLS_OSM)
+	@echo $(MAP_ROUTES_O5M_FP)
 
