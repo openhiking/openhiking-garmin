@@ -26,6 +26,7 @@ amenity=recycling & foot!=no [0x11616 resolution 24]
 
 # Keep after spring as some springs are dual-tagged
 amenity=drinking_water & foot!=no [0x5000 resolution 23]
+(man_made=water_tap | man_made=drinking_fountain) & foot!=no & drinking_water=yes [0x5000 resolution 23]
 
 
 #amenity=taxi [0x1151E resolution 24]

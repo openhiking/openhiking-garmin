@@ -51,7 +51,7 @@ def write_regbin(outputFile, family_id):
     outputFile.write(nl)
 
 def process_template(inputFile, outputFile, family_id, varlist, iconName, logoName, imageList):
-    with open(inputFile, "rt") as inf:
+    with open(inputFile, "rt", encoding='latin-1') as inf:
         with open(outputFile,"wt") as outf:
             for line in inf:
                 if line[0] == ';':
