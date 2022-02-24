@@ -19,7 +19,7 @@ if (highway=tertiary | highway = unclassified | highway=residential |  highway=l
 	end
 end
 
-if (highway=service ) then
+if (highway=service & area!=yes ) then
 	if (surface = unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft) then
 		() { set highway_width=2 }
 	else
@@ -35,10 +35,10 @@ if (highway=track ) then
 	end
 end
 
-highway=steps  { set highway_width=5 }
+highway=steps & area!=yes { set highway_width=5 }
 highway=via_ferrata { set highway_width=5 }
 highway=cycleway { set highway_width=3 }
-highway=pedestrian | highway=path { set highway_width=2 }
+(highway=pedestrian | highway=path) & area!=yes { set highway_width=2 }
 route=ferry { set highway_width= 2 }
-highway=footway | highway=platform  { set highway_width=1 }
+(highway=footway | highway=platform) & area!=yes { set highway_width=1 }
 

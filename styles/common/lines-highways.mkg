@@ -74,7 +74,7 @@ if (highway=unclassified) then
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
 end
 
-if (highway=residential) then
+if (highway=residential  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
@@ -84,7 +84,7 @@ if (highway=residential) then
 	()  [0x06 road_class=0 road_speed=3 resolution 24]
 end
 
-if (highway=living_street) then
+if (highway=living_street  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
@@ -95,7 +95,7 @@ if (highway=living_street) then
 end
 
 
-if (highway=service) then
+if (highway=service  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
@@ -106,7 +106,7 @@ end
 
 
 
-if (highway=track) then
+if (highway=track  & area!=yes ) then
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
 		motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
@@ -122,16 +122,16 @@ if (highway=track) then
 	()        	    [0x0a road_class=0 road_speed=1 resolution 21]
 end
 
-highway=pedestrian   [0x10 road_class=0 road_speed=1 resolution 21]
-highway=footway | (highway=path & surface=asphalt)  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
-highway=platform  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
-highway=cycleway   [0x08 road_class=0 road_speed=1 resolution 21]
-highway=steps   [0x12 road_class=0 road_speed=1 resolution 22]
+highway=pedestrian  & area!=yes   [0x10 road_class=0 road_speed=1 resolution 21]
+(highway=footway  | (highway=path & surface=asphalt))  & area!=yes   { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
+highway=platform  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
+highway=cycleway & area!=yes    [0x08 road_class=0 road_speed=1 resolution 21]
+highway=steps  & area!=yes   [0x12 road_class=0 road_speed=1 resolution 22]
 
-highway=bridleway   [0x16 road_class=0 road_speed=1 resolution 22]
+highway=bridleway   & area!=yes   [0x16 road_class=0 road_speed=1 resolution 22]
 
 
-if (highway=path) then
+if (highway=path  & area!=yes ) then
 #	sac_scale=hiking {add sac_scale_level=1; add sac_scale_tag='T1'; }
 	sac_scale='mountain_hiking' {add sac_scale_level=2; add sac_scale_tag='T2'; }
 	sac_scale='demanding_mountain_hiking' {add sac_scale_level=3; add sac_scale_tag='T3'; }
@@ -153,7 +153,7 @@ if (highway=via_ferrata) then
 	()  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x10E10 resolution 22]
 end
 
-if (highway=raceway) then
+if (highway=raceway  & area!=yes ) then
 	()  [0x0b road_class=0 road_speed=0 resolution 22 continue]
 	() {name '${name}'} [0x10F14 resolution 22]
 end

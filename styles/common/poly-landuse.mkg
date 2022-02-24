@@ -34,3 +34,5 @@ landuse=cemetery | amenity=grave_yard  [0x1a resolution 22]
 
 landuse=plant_nursery   [0x10F11 resolution 20]
 landuse=greenhouse_horticulture   [0x10F12 resolution 20]
+
+highway=* & area=yes [0x11008 resolution 20]
