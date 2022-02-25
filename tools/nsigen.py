@@ -52,7 +52,7 @@ def write_regbin(outputFile, family_id):
 
 def process_template(inputFile, outputFile, family_id, varlist, iconName, logoName, imageList):
     with open(inputFile, "rt", encoding='latin-1') as inf:
-        with open(outputFile,"wt") as outf:
+        with open(outputFile,"wt", encoding='latin-1') as outf:
             for line in inf:
                 if line[0] == ';':
                     if line.find('INSERT_DEFINES_HERE') > 0:
