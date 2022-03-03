@@ -108,6 +108,11 @@ ifneq (${MKG_MKGMAP},)
 MKGMAP=${MKG_MKGMAP}
 endif
 
+ifneq (${MKG_MKGMAP_JOBS},)
+MKGMAP_JOBS=${MKG_MKGMAP_JOBS}
+endif
+
+
 ifneq (${MKG_NSIGEN},)
 NSIGEN=${MKG_NSIGEN}
 endif
@@ -127,8 +132,8 @@ endif
 
 ifeq (${ComSpec},)
 	LINUX=1
-	OSMCONVERT?=${HOME}/tools/osmconvert64
-	OSMFILTER?=${HOME}/tools/osmfilter
+	OSMCONVERT?=osmconvert64
+	OSMFILTER?=osmfilter
 	OSMOSIS?=${HOME}/tools/osmosis-0.48.3/bin/osmosis
 	SPLITTER?=$(HOME)/tools/splitter-r645/splitter.jar
 	MKGMAP?=$(HOME)/tools/mkgmap-r4855/mkgmap.jar
@@ -268,6 +273,7 @@ SPLITTER_MEMORY?=5000M
 # Garmin map generation
 
 GMAP_DIR=$(WORKING_DIR)$(PSEP)gmap-$(MAP)
+MKGMAP_JOBS?=2
 
 ifeq ($(LINUX),0)
 GMAP_DRIVE=$(word 1,$(subst :, ,$(GMAP_DIR))):
@@ -461,7 +467,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE)  \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) \
-	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=2
+	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
 
 
 check:
