@@ -27,5 +27,5 @@ man_made=cross {name '${short_name}'|'${name}'} [0x1160D resolution 24]
 tourism=artwork  [0x2C1C resolution 24]
 man_made=obelisk {name '${short_name}'|'${name}'} [0x2C1D resolution 24]
 amenity=fountain  [0x2C1E resolution 24]
-#man_made=water_well {name '${short_name}'|'${name}'} [0x06415 resolution 24]
+
 leisure=playground & foot!=no [0x02C06 resolution 24]

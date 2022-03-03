@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 52596 octets
-; Fichier TYP compilé     24/02/2022     20:45:17
-; Décompilé le 2/24/2022 à 8:45:24 PM
+; Longueur: 52893 octets
+; Fichier TYP compilé     03/02/2022     20:05:04
+; Décompilé le 3/2/2022 à 8:05:09 PM
 
 [_id]
 ProductCode=1
@@ -5560,33 +5560,6 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
-Type=0x02c1f
-;GRMN_TYPE: //
-String1=0x01,
-ExtendedLabels=N
-DayXpm="16 16 1 1"   Colormode=16
-"!	c #FFFFFF"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!!"
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x02d01
 ;GRMN_TYPE: Business - Entertainment/LIVE_THEATER/Live theater/Non NT
 String1=0x04,Theatre
@@ -8612,35 +8585,6 @@ DayXpm="16 16 5 1"   Colormode=16
 
 
 [_point]
-Type=0x06415
-;GRMN_TYPE: Geographical Named Points of Interest/HISTORICAL_TOWN/Historical (ghost) town/Non NT, NT
-String1=0x14,kut asott
-ExtendedLabels=N
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000FF"
-"#	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"                "
-"      ###       "
-"     #!!!#      "
-"    #!###!#     "
-"   #!#####!#    "
-"   #!##!##!#    "
-"   #!#####!#    "
-"    #!###!#     "
-"     #!!!#      "
-"      ###       "
-"                "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x06503
 ;GRMN_TYPE: Geographical Named Points of Interest - Water Related/BAY/Bay/Non NT, NT
 String1=0x01,
@@ -9577,6 +9521,69 @@ DayXpm="16 16 5 1"   Colormode=16
 "#!!!?!!?!?!!!?!#"
 " ############## "
 ;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1150c
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_13/User customizable point type/Non NT, NT
+String1=0x04,Water well
+String2=0x14,Kút
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="13 16 33 2"   Colormode=16
+"!!	c #954A1D"
+"!#	c #984D20"
+"!%	c #9A4F22"
+"!?	c #E69F42"
+"!$	c #4C4C53"
+"!*	c #505057"
+"!=	c #55555C"
+"!1	c #57575E"
+"!2	c #606067"
+"!3	c #626269"
+"!4	c #66666D"
+"!5	c #75757B"
+"!6	c #79797F"
+"!7	c #838388"
+"!8	c #86868B"
+"!9	c #8B8B91"
+"#!	c #8E8E94"
+"##	c #909096"
+"#%	c #9D9DA2"
+"#?	c #A5A5AA"
+"#$	c #B2B2B5"
+"#*	c #B5B5B8"
+"#=	c #BABBBD"
+"#1	c #2F94C1"
+"#2	c #3196C3"
+"#3	c #369BC8"
+"#4	c #5FA4CB"
+"#5	c #61A6CD"
+"#6	c #94AECE"
+"#7	c #65AAD1"
+"#8	c #98B2D2"
+"#9	c #FFFFFF"
+"  	c none"
+"    #9#9#9#9#9#9#9#9#9    "
+"  #9!%!!!!!#!%!!!!!#!!#9  "
+"  #9!!#9#9#9!?#9#9#9!!#9  "
+"  #9!!#9#9#9!?#9#9#9!!#9  "
+"  #9!!#9#3#4#6#4#3#9!!#9  "
+"  #9!!#9#2#4#6#4#1#9!##9  "
+"  #9!!#9#9#5#6#4#9#9!!#9  "
+"  #9!!#9#9#7#8#5#9#9!%#9  "
+"  #9!!#9  #9#9#9  #9!!#9  "
+"#9!=!=!7#$#=#%#!!5!2!=!=#9"
+"#9!=!=!9#*#$#?!8!5!4!=!=#9"
+"#9!*!=!9#*#=#%!8!5!3!=!*#9"
+"#9!*!1!8#*#=#%!9!5!2!1!*#9"
+"#9!$!=!8#*#*#%##!6!4!=!$#9"
+"#9!*!=!9#*#=#%!8!5!3!=!*#9"
+"  #9#9#9#9#9#9#9#9#9#9#9  "
+;1234567890123
 [end]
 
 

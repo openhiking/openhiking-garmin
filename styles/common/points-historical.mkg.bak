@@ -33,10 +33,8 @@ historic=memorial & memorial=plaque  [0x1160C resolution 24]
 historic=memorial  [0x1160B resolution 24]
 historic=monument  [0x1160B resolution 24]
 
-if (man_made=water_well & foot!=no) then
-	name~'.*[gG]émeskút' {name '${short_name}'|'${name}'} [0x1150D resolution 24]
-	pump!=* | pump=no {name '${short_name}'|'${name}'} [0x1150C resolution 24]
-end
+man_made=water_well & foot!=no & name~'.*[gG]émeskút' {name '${short_name}'|'${name}'} [0x1150D resolution 24]
+man_made=water_well & foot!=no & (pump!=* | pump=no) {name '${short_name}'|'${name}'} [0x1150C resolution 24]
 
 
 
