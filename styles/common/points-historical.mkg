@@ -34,8 +34,10 @@ historic=memorial  [0x1160B resolution 24]
 historic=monument  [0x1160B resolution 24]
 
 if (man_made=water_well & foot!=no) then
-	name~'.*[gG]émeskút' {name '${short_name}'|'${name}'} [0x1150D resolution 24]
-	pump!=* | pump=no {name '${short_name}'|'${name}'} [0x1150C resolution 24]
+    name~'.*[mM]onitor.*' { deletealltags }
+    name~'.*[gG]émeskút' | description~'.*[gG]émeskút' | description:hu~'.*[gG]émeskút' { name '${short_name}' | '${name }' } [0x1150D resolution 24]
+    drinking_water=yes [0x5000 resolution 22]
+    pump!=* | pump=no { name '${short_name}' | '${name}'  } [0x1150C resolution 24]
 end
 
 
