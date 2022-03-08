@@ -91,6 +91,10 @@ ifneq (${MKG_PHYGHTMAP},)
 PHYGHTMAP=${MKG_PHYGHTMAP}
 endif
 
+ifneq (${MKG_PHYGHTMAP_JOBS},)
+PHYGHTMAP_JOBS=${MKG_PHYGHTMAP_JOBS}
+endif
+
 ifneq (${MKG_MAKESYMBOLS},)
 MAKESYMBOLS=${MKG_MAKESYMBOLS}
 endif
@@ -185,6 +189,8 @@ endif
 
 ##############################################
 # Contour Lines
+
+PHYGHTMAP_JOBS?=2
 
 CONTOUR_START_ID=100000000000
 CONTOUR_FILE_FP=$(CONTOUR_DIR)$(PSEP)$(CONTOUR_LINES)
@@ -372,7 +378,8 @@ contour-srtm:
 	  --o5m -o $(CONTOUR_FILE_FP)
 
 contour-hr:
-	cd $(DEM_DIR) &&  $(PHYGHTMAP) --jobs=2 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM)  \
+	cd $(DEM_DIR) &&  $(PHYGHTMAP) --jobs=$(PHYGHTMAP_JOBS) \
+	 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM)  \
 	 --start-node-id=$(CONTOUR_START_ID) --start-way-id=$(CONTOUR_START_ID) $(CONTOUR_RDP) \
 	 --max-nodes-per-tile=0 --o5m -o $(CONTOUR_FILE_FP) $(DEM_SOURCE_TILES)
 
@@ -549,6 +556,6 @@ cleanoutput:
 
 
 test:
-	@echo $(SPLITTER_THREADS)
+	@echo $(PHYGHTMAP_JOBS)
 
 
