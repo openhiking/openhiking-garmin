@@ -103,6 +103,10 @@ ifneq (${MKG_SPLITTER_MEMORY},)
 SPLITTER_MEMORY=${MKG_SPLITTER_MEMORY}
 endif
 
+ifneq (${MKG_SPLITTER_THREADS},)
+SPLITTER_THREADS=--max-threads=${MKG_SPLITTER_THREADS}
+endif
+
 
 ifneq (${MKG_MKGMAP},)
 MKGMAP=${MKG_MKGMAP}
@@ -430,7 +434,8 @@ bounds: $(MAP_BOUNDS_O5M_FP)
 	@echo "Bounds created"
 
 tiles: $(MAP_MERGED_PBF_FP)
-	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=255 $< --output-dir=$(TILES_DIR)
+	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=255 \
+	$(SPLITTER_THREADS) $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -544,6 +549,6 @@ cleanoutput:
 
 
 test:
-	@echo $(MAP_INP_SYMBOLS_OSM)
-	@echo $(MAP_ROUTES_O5M_FP)
+	@echo $(SPLITTER_THREADS)
+
 
