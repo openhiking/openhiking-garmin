@@ -69,7 +69,7 @@ if (highway=unclassified) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
-	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 19 continue]
+	motor_vehicle_restricted=true  [0x09 road_class=0 road_speed=3 resolution 19 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
 end
@@ -78,7 +78,7 @@ if (highway=residential  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
-	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x09 road_class=0 road_speed=3 resolution 20 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 20]
 	()  [0x07 road_class=0 road_speed=3 resolution 20-23 continue]
 	()  [0x06 road_class=0 road_speed=3 resolution 24]
@@ -88,7 +88,7 @@ if (highway=living_street  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
-	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=1 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x09 road_class=0 road_speed=1 resolution 20 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 20]
 	()  [0x07 resolution 20-23 continue]
 	()  [0x06 road_class=0 road_speed=1 resolution 24]
@@ -99,7 +99,7 @@ if (highway=service  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
 	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
 	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
-	motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=2 resolution 20 continue]
+	motor_vehicle_restricted=true  [0x09 road_class=0 road_speed=2 resolution 20 continue]
 	motor_vehicle_restricted=true  [0x10E12 resolution 20]
 	()  [0x07 road_class=0 road_speed=2 resolution 20]
 end
@@ -109,7 +109,7 @@ end
 if (highway=track  & area!=yes ) then
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
-		motor_vehicle_restricted=true  [0x0B road_class=0 road_speed=3 resolution 20 continue]
+		motor_vehicle_restricted=true  [0x09 road_class=0 road_speed=3 resolution 20 continue]
 		motor_vehicle_restricted=true  [0x10E11 resolution 20]
 		()  [0x05 road_class=0 road_speed=3 resolution 20]
 	end
@@ -149,11 +149,11 @@ end
 
 
 if (highway=via_ferrata) then
-	()  [0x0b road_class=0 road_speed=0 resolution 22 continue]
+	()  [0x09 road_class=0 road_speed=0 resolution 22 continue]
 	()  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x10E10 resolution 22]
 end
 
 if (highway=raceway  & area!=yes ) then
-	()  [0x0b road_class=0 road_speed=0 resolution 22 continue]
+	()  [0x09 road_class=0 road_speed=0 resolution 22 continue]
 	() {name '${name}'} [0x10F14 resolution 22]
 end

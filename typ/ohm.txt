@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 53220 octets
-; Fichier TYP compilé     03/07/2022     20:09:01
-; Décompilé le 3/7/2022 à 8:09:13 PM
+; Longueur: 53217 octets
+; Fichier TYP compilé     03/10/2022     23:09:59
+; Décompilé le 3/10/2022 à 11:10:03 PM
 
 [_id]
 ProductCode=1
@@ -1964,6 +1964,22 @@ ContourColor=No
 
 
 [_line]
+Type=0x09
+;GRMN_TYPE: Roads/HIGH_SPEED_RAMP, RAMP/Highway ramp which is to be driven at high speeds/Non NT, NT
+UseOrientation=N
+Xpm="32 1 2  1"
+"! c #A87800"
+"  c none"
+"                                "
+;12345678901234567890123456789012
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+[end]
+
+
+[_line]
 Type=0x0a
 ;GRMN_TYPE: Roads/UNPAVED_ROAD/Gravel or dirt road/Non NT, NT
 UseOrientation=N
@@ -1977,22 +1993,6 @@ String1=0x04,Track
 String2=0x14,Földút
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-[end]
-
-
-[_line]
-Type=0x0b
-;GRMN_TYPE: Roads/MAJOR_CONNECTOR/Major highway connector/Non NT, NT
-UseOrientation=N
-Xpm="32 1 2  1"
-"! c #A87800"
-"  c none"
-"                                "
-;12345678901234567890123456789012
-ExtendedLabels=Y
-FontStyle=NoLabel (invisible)
 CustomColor=No
 ContourColor=No
 [end]
