@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 53217 octets
-; Fichier TYP compilé     03/10/2022     23:09:59
-; Décompilé le 3/10/2022 à 11:10:03 PM
+; Longueur: 53441 octets
+; Fichier TYP compilé     14/03/2022     18:09:58
+; Décompilé le 3/14/2022 à 6:10:03 PM
 
 [_id]
 ProductCode=1
@@ -8787,6 +8787,40 @@ DayXpm="16 16 3 1"   Colormode=16
 [_point]
 Type=0x06516
 ;GRMN_TYPE: //
+String1=0x04,Spring (seasonal)
+String2=0x14,Időszakos forrás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #0000F8"
+"#	c #7BCAFF"
+"%	c #FFFFFF"
+"  	c none"
+"                "
+"                "
+"     !!!        "
+"    !#%#!       "
+"    !%%%!       "
+"    !#%#!       "
+"     !!!        "
+"       !        "
+"       !        "
+"     !!         "
+"     !          "
+"      !!        "
+"       !        "
+"      !         "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x06517
+;GRMN_TYPE: //
 String1=0x04,Hot spring
 String2=0x14,Termálforrás
 ExtendedLabels=N
@@ -8815,7 +8849,7 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
-Type=0x06517
+Type=0x06518
 ;GRMN_TYPE: //
 String1=0x04,Mineral water spring
 String2=0x14,Ásványvíz-forrás
@@ -9018,9 +9052,43 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
+Type=0x0660b
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/GAP/Gap/Non NT, NT
+String1=0x04,Sinkhole
+String2=0x14,Víznyelő
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 2 1"   Colormode=16
+"!	c #605820"
+"  	c none"
+"                "
+"                "
+"                "
+"    !!!         "
+"   !   !        "
+"  ! ! ! !       "
+" ! !! !! !      "
+" !       !      "
+" ! !! !! !      "
+"  ! ! ! !       "
+"   !   !        "
+"    !!!         "
+"                "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x0660c
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/GUT/Gut/Non NT, NT
-String1=0x04,Sinkhole
+String1=0x04,Doline
 String2=0x14,Töbör
 ExtendedLabels=Y
 FontStyle=SmallFont

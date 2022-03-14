@@ -123,13 +123,13 @@ if (highway=track  & area!=yes ) then
 end
 
 highway=pedestrian  & area!=yes   [0x10 road_class=0 road_speed=1 resolution 21]
-(highway=footway  | (highway=path & surface=asphalt))  & area!=yes   { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
-highway=platform  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
-highway=cycleway & area!=yes    [0x08 road_class=0 road_speed=1 resolution 21]
-highway=steps  & area!=yes   [0x12 road_class=0 road_speed=1 resolution 22]
 
-highway=bridleway   & area!=yes   [0x16 road_class=0 road_speed=1 resolution 22]
 
+if (highway=footway) then
+	() { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
+	surface=ground [0x16 road_class=0 road_speed=0 resolution 22]
+	() [0x11 road_class=0 road_speed=0 resolution 22]
+end
 
 if (highway=path  & area!=yes ) then
 #	sac_scale=hiking {add sac_scale_level=1; add sac_scale_tag='T1'; }
@@ -143,15 +143,21 @@ if (highway=path  & area!=yes ) then
 
 	sac_scale_tag=*  { name '${bilingual_name} ${trail_name} (${sac_scale_tag})'|'${bilingual_name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
-	sac_scale_level>2  [0x13 road_class=0 road_speed=1 resolution 22]
-	() [0x16 road_class=0 road_speed=1 resolution 22]
+	surface=asphalt [0x11 road_class=0 road_speed=0 resolution 22]
+	sac_scale_level>2  [0x13 road_class=0 road_speed=0 resolution 22]
+	() [0x16 road_class=0 road_speed=0 resolution 22]
 end
-
 
 if (highway=via_ferrata) then
 	()  [0x09 road_class=0 road_speed=0 resolution 22 continue]
 	()  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x10E10 resolution 22]
 end
+
+highway=platform  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
+highway=cycleway & area!=yes    [0x08 road_class=0 road_speed=1 resolution 21]
+highway=steps  & area!=yes   [0x12 road_class=0 road_speed=1 resolution 22]
+
+highway=bridleway   & area!=yes   [0x16 road_class=0 road_speed=1 resolution 22]
 
 if (highway=raceway  & area!=yes ) then
 	()  [0x09 road_class=0 road_speed=0 resolution 22 continue]

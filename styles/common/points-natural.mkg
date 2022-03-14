@@ -16,17 +16,28 @@ natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}
 
 natural=peak [0x06616 resolution 22]
 natural=bay   [0x6503 resolution 22]
-natural=spring & water_characteristic=mineral  [0x6517 resolution 22]
-natural=spring & (drinking_water=yes | drinking_water:legal=yes) [0x6514 resolution 22]
-natural=spring & drinking_water=no [0x6515 resolution 24]
-natural=hot_spring | spring:type=hot [0x6516 resolution 24]
-natural=spring  [0x6511 resolution 24]
+
+if (natural=spring) then
+	water_characteristic=mineral  [0x6518 resolution 22]
+	spring:type=hot [0x6517 resolution 24]
+	drinking_water=yes | drinking_water:legal=yes [0x6514 resolution 22]
+	drinking_water=no [0x6515 resolution 24]
+	seasonal=* & seasonal!=no  [0x6516 resolution 24]
+	() [0x6511 resolution 24]
+end
+
+natural=hot_spring | spring:type=hot [0x6517 resolution 24]
+
 natural=cliff  [0x6607 resolution 22]
 natural=rock [0x06614 resolution 23]
 natural=arch  [0x06601 resolution 24]
 natural=stone  [0x06615 resolution 24]
 
-natural=sinkhole   [0x0660C resolution 24]
+if (natural=sinkhole) then
+	sinkhole=estavelle | sinkhole=pit [0x0660B resolution 24]
+	() [0x0660C resolution 24]
+end
+
 natural=cave_entrance  [0x06608 resolution 24]
 natural=saddle & name=*  [0x06613 resolution 24]
 natural=geyser  [0x06509 resolution 24]
