@@ -19,10 +19,10 @@ amenity=post_box & access!=private [0x640F resolution 24]
 
 amenity=community_centre [0x03005 resolution 24]
 
-tourism=information & information=office [0x4C05 resolution 24]
+tourism=information & information=office [0x4C00 resolution 24]
 
 amenity=toilets & foot!=no [0x02F0C resolution 24]
-amenity=recycling & foot!=no [0x11616 resolution 24]
+amenity=recycling & foot!=no [0x11812 resolution 24]
 
 # Keep after spring as some springs are dual-tagged
 amenity=drinking_water & foot!=no [0x5000 resolution 23]
@@ -30,4 +30,4 @@ amenity=drinking_water & foot!=no [0x5000 resolution 23]
 
 
 #amenity=taxi [0x1151E resolution 24]
-amenity=marketplace {name '${short_name}'|'${name}'} [0x300A resolution 24]
+amenity=marketplace {name '${short_name}'|'${name}'} [0x11810 resolution 24]

@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 53441 octets
-; Fichier TYP compilé     14/03/2022     18:09:58
-; Décompilé le 3/14/2022 à 6:10:03 PM
+; Longueur: 53451 octets
+; Fichier TYP compilé     15/03/2022     13:26:22
+; Décompilé le 3/15/2022 à 1:30:38 PM
 
 [_id]
 ProductCode=1
@@ -4532,109 +4532,6 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
-Type=0x02b07
-;GRMN_TYPE: //
-String1=0x04,Wilderness hut
-String2=0x14,Kulcsosház
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #FFFFFF"
-"#	c #FF0000"
-"  	c none"
-"         !#!    "
-"       !!!#!    "
-"     !!##!#!    "
-"   !!######!!!  "
-"!!!##########!!!"
-"!#####!!!!#####!"
-"####!!!!!!#!####"
-" !##!!!!!!#!##! "
-" !##!!!!!!#!##! "
-" !##!!!####!##! "
-" !##!!!####!##! "
-" !##!!!#!!#!##! "
-" !##!!!#!!#!##! "
-"!!##!!!#!!#!##!!"
-"!##############!"
-"!!!!!!!!!!!!!!!!"
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02b08
-;GRMN_TYPE: //
-String1=0x04,Basic hut
-String2=0x14,Bivak
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #FFFFFF"
-"#	c #FF0000"
-"  	c none"
-"                "
-"       !!!      "
-"     !!##!!     "
-"   !!######!!   "
-" !!##########!! "
-"!#####!!!!!####!"
-"####!!!!!!!!####"
-" !##!!!!!!!!##! "
-" !##!!!!!!!!##! "
-" !##!!!!!!!!##! "
-" !##!!!!!!!!##! "
-" !##!######!##! "
-" !##!!#!!#!!##! "
-"!!##!!#!!#!!##!!"
-"!##############!"
-"!!!!!!!!!!!!!!!!"
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02b09
-;GRMN_TYPE: //
-String1=0x04,Alpine hut
-String2=0x14,Menedékház
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #FFFFFF"
-"#	c #FF0000"
-"  	c none"
-"         !#!    "
-"       !!!#!    "
-"     !!##!#!    "
-"   !!######!!!  "
-" !!##########!! "
-"!##############!"
-"################"
-" !##!!!##!!!##! "
-" !##!!!##!!!##! "
-" !############! "
-" !############! "
-" !############! "
-" !############! "
-"!!############!!"
-"!##############!"
-"!!!!!!!!!!!!!!!!"
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x02c01
 ;GRMN_TYPE: Business - Attractions/THEME_PARK/Amusement or theme park, i.e. Disneyland/Non NT
 String1=0x04,Theme park
@@ -5237,191 +5134,6 @@ DayXpm="16 15 6 1"   Colormode=0
 
 
 [_point]
-Type=0x02c16
-;GRMN_TYPE: //
-String1=0x04,City gate
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 7 1"   Colormode=16
-"!	c #B86400"
-"#	c #000000"
-"%	c #F8C800"
-"?	c #F8FCF8"
-"$	c #F89400"
-"*	c #B89400"
-"  	c none"
-"                "
-"                "
-"     ##         "
-"    #%%#        "
-"  ##%##%##      "
-"  #%#??#%#      "
-"  ##?#??##      "
-"  ##?##?##      "
-"  #%#??#$###    "
-"  #$%##$$#*#    "
-"  #%%%$$$#*###  "
-"  #$$$$$!#$#*#  "
-"  #$$$$!!#*$*#  "
-"  ############  "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02c17
-;GRMN_TYPE: //
-String1=0x04,Palace
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 7 1"   Colormode=16
-"!	c #B86400"
-"#	c #000000"
-"%	c #F8C800"
-"?	c #F8FCF8"
-"$	c #F89400"
-"*	c #B89400"
-"  	c none"
-"                "
-"                "
-"     ##         "
-"    #%%#        "
-"  ##%##%##      "
-"  #%#??#%#      "
-"  ##?#??##      "
-"  ##?##?##      "
-"  #%#??#$###    "
-"  #$%##$$#*#    "
-"  #%%%$$$#*###  "
-"  #$$$$$!#$#*#  "
-"  #$$$$!!#*$*#  "
-"  ############  "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02c18
-;GRMN_TYPE: //
-String1=0x01,Manor
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 7 1"   Colormode=16
-"!	c #B86400"
-"#	c #000000"
-"%	c #F8C800"
-"?	c #F8FCF8"
-"$	c #F89400"
-"*	c #B89400"
-"  	c none"
-"                "
-"                "
-"     ##         "
-"    #%%#        "
-"  ##%##%##      "
-"  #%#??#%#      "
-"  ##?#??##      "
-"  ##?##?##      "
-"  #%#??#$###    "
-"  #$%##$$#*#    "
-"  #%%%$$$#*###  "
-"  #$$$$$!#$#*#  "
-"  #$$$$!!#*$*#  "
-"  ############  "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02c19
-;GRMN_TYPE: //
-String1=0x04,Fortress
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="19 14 4 1"   Colormode=16
-"!	c #3D1F00"
-"#	c #66562E"
-"%	c #FFFFFF"
-"  	c none"
-"   !!         !!   "
-"  !!!!       !!!!  "
-" !!!!!!     !!!!!! "
-"!!!!!!!!   !!!!!!!!"
-" !!!!!!     !!!!!! "
-" !!%%!! ! ! !!%%!! "
-" !!%%!!!!!!!!!%%!! "
-" !!!!!!!!!!!!!!!!! "
-" !!!!!!!%#%!!!!!!! "
-" !!!!!!#%#%#!!!!!! "
-" !!!!!!#%#%#!!!!!! "
-" !!!!!!#%#%#!!!!!! "
-" !!!!!!#%#%#!!!!!! "
-" !!!!!!!!!!!!!!!!! "
-;1234567890123456789
-[end]
-
-
-[_point]
-Type=0x02c1a
-;GRMN_TYPE: //
-String1=0x04,Defensive tower
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 7 1"   Colormode=16
-"!	c #B86400"
-"#	c #000000"
-"%	c #F8C800"
-"?	c #F8FCF8"
-"$	c #F89400"
-"*	c #B89400"
-"  	c none"
-"                "
-"                "
-"     ##         "
-"    #%%#        "
-"  ##%##%##      "
-"  #%#??#%#      "
-"  ##?#??##      "
-"  ##?##?##      "
-"  #%#??#$###    "
-"  #$%##$$#*#    "
-"  #%%%$$$#*###  "
-"  #$$$$$!#$#*#  "
-"  #$$$$!!#*$*#  "
-"  ############  "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x02c1b
 ;GRMN_TYPE: //
 String1=0x04,Cross
@@ -5447,112 +5159,6 @@ DayXpm="16 16 2 1"   Colormode=16
 "      !!        "
 "      !!        "
 "      !!        "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02c1c
-;GRMN_TYPE: //
-String1=0x04,Artwork
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #040204"
-"#	c #6C6E6C"
-"%	c #C4C6C4"
-"?	c #FFFFFF"
-"  	c none"
-"     ?!!??!?    "
-"     ?!!??!?    "
-"     ??!??!?    "
-"    ?!!!!!?     "
-"    ?!!!!?      "
-"   ?!??!!?      "
-"    ?!?!!?      "
-"     ?!!!?      "
-"     ?!?!?      "
-"    ??!?!?      "
-"    ?#####?     "
-"    ?#####?     "
-"    ?#####?     "
-"    ?#####?     "
-"   ?%%%%%%%?    "
-"   ?#######?    "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02c1d
-;GRMN_TYPE: //
-String1=0x04,Obelisk
-String2=0x14,Obeliszk
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="11 16 5 1"   Colormode=16
-"!	c #000000"
-"#	c #737373"
-"%	c #C5C5C5"
-"?	c #E6E6E6"
-"  	c none"
-"           "
-"     !     "
-"   ?!!!?   "
-"   ?!!!?   "
-"    !!!    "
-"    !!!    "
-"    !!!    "
-"    !!!    "
-"    !!!    "
-"    !!!    "
-"    !!!    "
-"           "
-"   !!!!!   "
-" %#!!!!!#% "
-" !!!!!!!!! "
-"           "
-;12345678901
-[end]
-
-
-[_point]
-Type=0x02c1e
-;GRMN_TYPE: //
-String1=0x04,Fountain
-String2=0x14,Szökőkút
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000F8"
-"#	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"     #####      "
-"     #!#!#      "
-"   ####!####    "
-"  ##!##!##!##   "
-"  #!#!###!#!#   "
-"  #!##!#!##!#   "
-"  ####!#!####   "
-" ##!!##!##!!##  "
-" #!##!#!#!##!#  "
-" #!###!!!###!#  "
-" #####!!!#####  "
-"     #####      "
 "                "
 "                "
 ;1234567890123456
@@ -6561,145 +6167,6 @@ DayXpm="13 15 20 2"   Colormode=16
 
 
 [_point]
-Type=0x02e0c
-;GRMN_TYPE: //
-String1=0x04,Bakery
-String2=0x14,Pékség
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #986800"
-"  	c none"
-"                "
-"                "
-"                "
-"     ######     "
-"    ########    "
-"   ##!!!!!!##   "
-"  ####!!!!####  "
-" ##!!##!!##!!## "
-" ##!!!####!!!## "
-" ##!!!!##!!!!## "
-" ##!!!####!!!## "
-"  #####  #####  "
-"   ###    ###   "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02e0d
-;GRMN_TYPE: //
-String1=0x14,Cukrászda
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #000000"
-"#	c #7C2A04"
-"%	c #9C3204"
-"?	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"       !!!!     "
-"      !%%%%!!   "
-"     !%%%!!!!   "
-"    !%!!!???!   "
-"   !!!???###!   "
-"   !??###???!   "
-" !!!##???###!!! "
-"!??!??###???!??!"
-"!??!##???!!!???!"
-"!??!??!!!??????!"
-"!??!!!?????????!"
-" !!??????????!! "
-"   !!??????!!   "
-"     !!!!!!     "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02e0e
-;GRMN_TYPE: //
-String1=0x04,Ice cream
-String2=0x14,Fagyizó
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="13 16 6 1"   Colormode=16
-"!	c #FF9500"
-"#	c #FFFFFF"
-"%	c #BDCA20"
-"?	c #00CA1E"
-"$	c #FF306A"
-"  	c none"
-"    #####    "
-"  ###$$$###  "
-" ##$$$$$$$## "
-"##$$$$$$$$$##"
-"#?$$$?$?$$$?#"
-"#??$?????$??#"
-"##?!!%%!!!?##"
-" ##!%!!%%!## "
-"  ##!%!%!##  "
-"   #!%%!!#   "
-"   #!%%%!#   "
-"   ##!%!##   "
-"    #!%!#    "
-"    #!%!#    "
-"    ##!##    "
-"     ###     "
-;1234567890123
-[end]
-
-
-[_point]
-Type=0x02e0f
-;GRMN_TYPE: //
-String1=0x14,Trafik
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #B4B4B4"
-"#	c #F8FCF8"
-"%	c #000000"
-"?	c #FF3000"
-"  	c none"
-"      ?         "
-"     ??         "
-"     ??         "
-"    ?#??        "
-"    ?#??        "
-"     ??   !%!   "
-"    %%%% !%%%!  "
-"    %!!%!%%%%%! "
-"  %%%%%%%%%%%%! "
-"  %%%%%%%%%%%!  "
-"  %%%%%%!%%%!   "
-"  %%%%%% !%!    "
-"  %%%%%%        "
-"  %%%%%%        "
-"  %%%%%%        "
-"  %%%%%%        "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x02f01
 ;GRMN_TYPE: Business - Services/GAS_STATION/Gas, fuel station/Non NT
 String1=0x14,Benzinkút
@@ -7549,82 +7016,6 @@ DayXpm="16 16 6 1"   Colormode=16
 
 
 [_point]
-Type=0x03009
-;GRMN_TYPE: //
-String1=0x14,Mentok
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 6 1"   Colormode=16
-"!	c #FC0204"
-"#	c #048204"
-"%	c #FCB624"
-"?	c #0402FC"
-"$	c #FFFFFF"
-"  	c none"
-"     $$$$$$     "
-"   $$$????$$$   "
-"  $$??$$$$??$$  "
-" $$?$$$??$$$?$$ "
-" $?$??$%%$??$?$ "
-"$$?$??$%?$??$?$$"
-"$?$$$???%??$$$?$"
-"$?$$$$??%?$$$$?$"
-"$?$$$$?%??$$$$?$"
-"$?$$$??%???$$$?$"
-"$$?$??$?%$??$?$$"
-" $?$??$?%$??$?$ "
-" $$!!!!!!!!!!$$ "
-"  $$$$$$$$$$$$  "
-"  $##########$  "
-"  $$$$$$$$$$$$  "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x0300a
-;GRMN_TYPE: //
-String1=0x14,Piac
-String2=0x04,Marketplace
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 11 1"   Colormode=16
-"!	c #414141"
-"#	c #666666"
-"%	c #9F9F9F"
-"?	c #C5C5C5"
-"$	c #FFFFFF"
-"*	c #FF0000"
-"=	c #840204"
-"1	c #048204"
-"2	c #9F4000"
-"3	c #FF822F"
-"  	c none"
-"   %$!!!!!!?$   "
-"  $!#!######!$  "
-" $!!$$%#####!%$ "
-"$!##$$$%##!?$$  "
-"%##%$$$$!!$$    "
-"!##%$$$%%$   $$ "
-"!##%$%%33$  $11$"
-"!##%%$$332$$$11$"
-"!#!%3$3332$*111$"
-"%?$$333322$***$ "
-"$$  $3322$***=$ "
-"    $332****=$  "
-"     $$**==$$   "
-"     $**=$$     "
-"    $**=$       "
-"    $=$$        "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x04100
 ;GRMN_TYPE: Misc. Points of Interest/FISHING_SPOT/Fishing spot/Non NT, NT
 String1=0x14,horgaszhely
@@ -7654,272 +7045,6 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
-Type=0x04a00
-;GRMN_TYPE: Misc. Points of Interest/PICNIC_AREA/Picnic area/Non NT, NT
-String1=0x04,Picnic site
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 18 2"   Colormode=16
-"!!	c #008C00"
-"!#	c #F8FCF8"
-"!%	c #000000"
-"!?	c #00C000"
-"!$	c #00B800"
-"!*	c #00B400"
-"!=	c #00AC00"
-"!1	c #00A800"
-"!2	c #00A400"
-"!3	c #00A000"
-"!4	c #009C00"
-"!5	c #009800"
-"!6	c #00C800"
-"!7	c #00BC00"
-"!8	c #00B000"
-"!9	c #009400"
-"#!	c #009000"
-"  	c none"
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
-"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
-"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
-"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
-"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
-"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
-"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
-"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
-"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
-"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04a01
-;GRMN_TYPE: //
-String1=0x04,Picnic site with firepit
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 18 2"   Colormode=16
-"!!	c #008C00"
-"!#	c #F8FCF8"
-"!%	c #000000"
-"!?	c #00C000"
-"!$	c #00B800"
-"!*	c #00B400"
-"!=	c #00AC00"
-"!1	c #00A800"
-"!2	c #00A400"
-"!3	c #00A000"
-"!4	c #009C00"
-"!5	c #009800"
-"!6	c #00C800"
-"!7	c #00BC00"
-"!8	c #00B000"
-"!9	c #009400"
-"#!	c #009000"
-"  	c none"
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
-"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
-"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
-"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
-"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
-"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
-"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
-"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
-"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
-"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04a02
-;GRMN_TYPE: //
-String1=0x04,Bench
-String2=0x14,Pad
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #BD6500"
-"#	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"                "
-"                "
-"                "
-"                "
-"################"
-"#!!!!!!!!!!!!!!#"
-"#!!!!!!!!!!!!!!#"
-"###!!######!!###"
-"  #!!#    #!!#  "
-"  #!!#    #!!#  "
-"  ####    ####  "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04a03
-;GRMN_TYPE: //
-String1=0x04,Firepit
-String2=0x14,Tűzrakó
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #202020"
-"#	c #FC0204"
-"%	c #FCB624"
-"?	c #FCFEFC"
-"  	c none"
-"                "
-"                "
-"    ???????     "
-"    ?!???!?     "
-"  ???!!?!!???   "
-"  ?!!?!#!!?!??  "
-"  ?!!?###?!!!?  "
-"  ??!#%%%#!!??  "
-"   ??##%%#???   "
-"  ??!!### !???  "
-"  ?!!!??! !!!?  "
-"  ??!??!!!?!??  "
-"   ?????!!???   "
-"       ????     "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04a04
-;GRMN_TYPE: //
-String1=0x04,Weather shelter
-String2=0x14,Esőház
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="15 14 3 1"   Colormode=16
-"!	c #663300"
-"#	c #FFFFFF"
-"  	c none"
-"               "
-"     ##!##     "
-"   ##!!!!!##   "
-" ##!!!!!!!!!## "
-"#!!!!!###!!!!!#"
-"!!!!##     !!!!"
-" #!!#      !!##"
-" #!!#      !!# "
-" #!!#      !!# "
-" #!!#      !!# "
-" #!!#      !!# "
-" #!!#      !!# "
-" #!!#      !!# "
-"               "
-;123456789012345
-[end]
-
-
-[_point]
-Type=0x04a05
-;GRMN_TYPE: //
-String1=0x04,Picnic shelter
-String2=0x14,Fedett asztal
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="17 14 4 1"   Colormode=16
-"!	c #7B3020"
-"#	c #FFFFFF"
-"%	c #BD6541"
-"  	c none"
-"                 "
-"      #%%%#      "
-"    ##!!!!!##    "
-"   #%!!###!!%#   "
-"  #!!%#   #%!!## "
-" #!!##     ##!!# "
-" ############### "
-"   #!!!!!!!!!#   "
-" #####%!#!%##### "
-" #%%#%!###!%#%%# "
-" #!!!!!!!!!!!!!# "
-" ###%!#####!%### "
-"  #%!#     #!%#  "
-"  ####     ####  "
-;12345678901234567
-[end]
-
-
-[_point]
-Type=0x04a06
-;GRMN_TYPE: //
-String1=0x04,Lookout tower
-String2=0x14,Kilátótorony
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="15 20 3 1"   Colormode=16
-"!	c #7B3000"
-"#	c #FFFFFF"
-"  	c none"
-"      ###      "
-"    ##!!!##    "
-" ###!!!!!!!### "
-"#!!!!!!!!!!!!!#"
-"!!!!!!!!!!!!!!!"
-"###!!#####!!###"
-"  #!!#   #!!#  "
-"###!!#####!!###"
-"!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!"
-"!!!!!!!!!!!!!!!"
-"###!!#####!!###"
-"  #!!!###!!!#  "
-"  #!!#!#!#!!#  "
-"  #!!##!##!!#  "
-"  #!!#!#!#!!#  "
-"  #!!!###!!!#  "
-"  #!!#   #!!#  "
-"  #!!#   #!!#  "
-"  #!!#   #!!#  "
-;123456789012345
-[end]
-
-
-[_point]
 Type=0x04b01
 ;GRMN_TYPE: //
 String1=0x14,Orvos
@@ -7943,36 +7068,6 @@ DayXpm="16 16 3 1"   Colormode=16
 "   ##########   "
 "                "
 "                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04b02
-;GRMN_TYPE: //
-String1=0x14,Fogorvos
-ExtendedLabels=N
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F80000"
-"#	c #F8FCF8"
-"%	c #000000"
-"  	c none"
-"      ##        "
-"     #!!#       "
-"   ###!!###     "
-"   #!!!!!!####  "
-"   #!!!!!!#%%## "
-"   ##%!!%%%##%# "
-"    #%!!#####%# "
-"    #%#######%# "
-"    #%#######%# "
-"    ##%#####%## "
-"     #%##%##%#  "
-"     #%#%#%#%#  "
-"     #%#%#%#%#  "
-"     ##%###%##  "
-"     #### ###   "
 "                "
 ;1234567890123456
 [end]
@@ -8013,150 +7108,10 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
-Type=0x04c01
-;GRMN_TYPE: //
-String1=0x04,Information map
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #000000"
-"%	c #008000"
-"  	c none"
-"                "
-"      ####      "
-"    ##%%%%##    "
-"   #%%%%%%%%#   "
-"  #%%%%!!%%%%#  "
-"  #%%%%!!%%%%#  "
-" #%%%%%%%%%%%%# "
-" #%%%%!!!%%%%%# "
-" #%%%%%!!%%%%%# "
-" #%%%%%!!%%%%%# "
-"  #%%%%!!%%%%#  "
-"  #%%%!!!!%%%#  "
-"   #%%%%%%%%#   "
-"    ##%%%%##    "
-"      ####      "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04c02
-;GRMN_TYPE: //
-String1=0x04,Guidepost
-String2=0x14,Iránytábla
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=Day
-DaycustomColor:#000000
-ContourColor=No
-DayXpm="18 18 6 1"   Colormode=16
-"!	c #7B6500"
-"#	c #525252"
-"%	c #FFFF20"
-"?	c #FFFFFF"
-"$	c #0000FF"
-"  	c none"
-"  ????????????    "
-"  ?###########?   "
-"  ?#%%%%%%???%#?  "
-"  ?#%%%%%%$$$%%#? "
-"  ?#%%%%%%???%#?  "
-"  ?###########?   "
-"  ??????!!?????   "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ?!!?       "
-"       ????       "
-;123456789012345678
-[end]
-
-
-[_point]
-Type=0x04c03
-;GRMN_TYPE: //
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #040204"
-"#	c #FC0204"
-"%	c #C4C2C4"
-"?	c #FCFEFC"
-"  	c none"
-"   ???????????  "
-"   ?%%%%%%%%%?  "
-"   ?%!!!%###%?  "
-"   ?%%%%%###%?  "
-"   ?%!!!%###%?  "
-"   ?%%%%%%%%%?  "
-"   ?%!!!!!!!%?  "
-"   ?%%%%%%%%%?  "
-"   ?%%%%%%%%%?  "
-"   ??!?????!??  "
-"    ?!?   ?!?   "
-"    ?!?   ?!?   "
-"    ?!?   ?!?   "
-"    ?!?   ?!?   "
-"    ?!?   ?!?   "
-"    ???   ???   "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04c04
-;GRMN_TYPE: //
-String1=0x14,Figyelmezteto tábla
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="11 14 5 1"   Colormode=16
-"!	c #040204"
-"#	c #626262"
-"%	c #FFCA6A"
-"?	c #FCFEFC"
-"  	c none"
-"???????????"
-"?%%%%%%%%%?"
-"?%#######%?"
-"?%%%%%%%%%?"
-"?%#######%?"
-"?%%%%%%%%%?"
-"?%%%%%%%%%?"
-"?????!?????"
-"    ?!?    "
-"    ?!?    "
-"    ?!?    "
-"    ?!?    "
-"    ?!?    "
-"    ???    "
-;12345678901
-[end]
-
-
-[_point]
-Type=0x04c05
-;GRMN_TYPE: //
+Type=0x04c00
+;GRMN_TYPE: Misc. Points of Interest/INFORMATION/Information/Non NT, NT
 String1=0x14,Turinform
+String2=0x04,Information office
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -8181,38 +7136,6 @@ DayXpm="16 16 3 1"   Colormode=16
 "  ############  "
 "                "
 "                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x04c06
-;GRMN_TYPE: //
-String1=0x14,Bélyegzőhely
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000FF"
-"#	c #FFFFFF"
-"  	c none"
-"                "
-"       ###      "
-"      #!!#      "
-"     #!!!!      "
-"     #!!!#      "
-"     ##!!#      "
-"    #!!!!#      "
-"    #!!!!!#     "
-"    #!!!!!!#    "
-"     #!!!#!#    "
-"    #!!!!#!#    "
-"    #!!!!#!#    "
-"   #!!#!!#!#    "
-"   #!!#!!#!#    "
-"   #!!#!!!!#    "
-"    ########    "
 ;1234567890123456
 [end]
 
@@ -8714,167 +7637,6 @@ DayXpm="16 16 2 1"   Colormode=16
 "       !!       "
 "        !       "
 "       !        "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x06514
-;GRMN_TYPE: //
-String1=0x04,Spring (drinking water)
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000F8"
-"#	c #399500"
-"  	c none"
-"                "
-"           ###  "
-"     !!!  ##### "
-"    !!!!! ##### "
-"    !!!!! ##### "
-"    !!!!!  ###  "
-"     !!!        "
-"       !        "
-"       !        "
-"     !!         "
-"     !          "
-"      !!        "
-"       !        "
-"      !         "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x06515
-;GRMN_TYPE: //
-String1=0x04,Spring (non-drinking)
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000F8"
-"#	c #FF0000"
-"  	c none"
-"                "
-"           ###  "
-"     !!!  ##### "
-"    !!!!! ##### "
-"    !!!!! ##### "
-"    !!!!!  ###  "
-"     !!!        "
-"       !        "
-"       !        "
-"     !!         "
-"     !          "
-"      !!        "
-"       !        "
-"      !         "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x06516
-;GRMN_TYPE: //
-String1=0x04,Spring (seasonal)
-String2=0x14,Időszakos forrás
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #0000F8"
-"#	c #7BCAFF"
-"%	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"     !!!        "
-"    !#%#!       "
-"    !%%%!       "
-"    !#%#!       "
-"     !!!        "
-"       !        "
-"       !        "
-"     !!         "
-"     !          "
-"      !!        "
-"       !        "
-"      !         "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x06517
-;GRMN_TYPE: //
-String1=0x04,Hot spring
-String2=0x14,Termálforrás
-ExtendedLabels=N
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000F8"
-"#	c #FF6500"
-"  	c none"
-"       #        "
-"   #   #   #    "
-"    #     #     "
-"      !!!       "
-"  ## !!!!! ##   "
-"     !!!!!      "
-"   # !!!!! #    "
-"  #   !!!   #   "
-"        !       "
-"        !       "
-"      !!        "
-"      !         "
-"       !!       "
-"        !       "
-"       !        "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x06518
-;GRMN_TYPE: //
-String1=0x04,Mineral water spring
-String2=0x14,Ásványvíz-forrás
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #0000F8"
-"#	c #E6E6E6"
-"  	c none"
-"                "
-"           !!!  "
-"     !!!  !###! "
-"    !!!!! !###! "
-"    !!!!! !###! "
-"    !!!!!  !!!  "
-"     !!!        "
-"       !        "
-"       !        "
-"     !!         "
-"     !          "
-"      !!        "
-"       !        "
-"      !         "
 "                "
 "                "
 ;1234567890123456
@@ -9446,148 +8208,6 @@ DayXpm="16 16 3 1"   Colormode=16
 "    #!####!#    "
 "                "
 "                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x11508
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_9/User customizable point type/Non NT, NT
-String1=0x04,Hunting stand
-String2=0x14,Magasles
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #000000"
-"  	c none"
-"                "
-"                "
-"     #    #     "
-"     ######     "
-"     #!!!!#     "
-"     ######     "
-"     #!!!!#     "
-"     ######     "
-"     #    #     "
-"     #    #     "
-"    #      #    "
-"    #      #    "
-"   #        #   "
-"   #        #   "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x11509
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_10/User customizable point type/Non NT, NT
-String1=0x04,Game feeding
-String2=0x14,Vadetető
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F8CC00"
-"#	c #000000"
-"%	c #F8FCF8"
-"  	c none"
-"                "
-"                "
-"       ##       "
-"      ####      "
-"     ##%%##     "
-"    ##%%%%##    "
-"   ##########   "
-"  #  #%%!%#  #  "
-"      #!!#!!    "
-"    !!#!!#      "
-"       ## !     "
-"      #  #      "
-"     #    #     "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x1150a
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_11/User customizable point type/Non NT, NT
-String1=0x14,Gázló
-String2=0x00,Ford
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #0000F8"
-"#	c #F8FCF8"
-"%	c #000000"
-"  	c none"
-"                "
-"                "
-"                "
-"  ####   ####   "
-"  #%%## ##%%#   "
-"  ##%%###%%##   "
-"    #%%#%%##    "
-"!!!!!#%%%##!!!! "
-"!!!!!#%%%##!!!! "
-"    #%%#%%##    "
-"   #%%###%%##   "
-"  #%%## ##%%#   "
-"  ####   ####   "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x1150b
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_12/User customizable point type/Non NT, NT
-String1=0x04,Ant hill
-String2=0x14,Hangyaboly
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #BD9541"
-"#	c #F8FCF8"
-"%	c #FFCA6A"
-"?	c #000000"
-"  	c none"
-"                "
-"                "
-"                "
-"                "
-"                "
-"     ######     "
-"    ##!!!!#     "
-"   ##!?%!?!#    "
-"   #!!!!!%!!#   "
-"  ##!!%!?!?!##  "
-"  #!!?!%!%!!!#  "
-" ##!%!!!?!?%!## "
-" #!!?!!%!!!!!!# "
-"#!!%!%!!%!%?%!!#"
-"#!!!?!!?!?!!!?!#"
-" ############## "
 ;1234567890123456
 [end]
 
@@ -10594,32 +9214,105 @@ DayXpm="16 16 2 1"   Colormode=16
 
 
 [_point]
-Type=0x11610
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_49/User customizable point type/Non NT, NT
-String1=0x14,Útakadály
+Type=0x1160e
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_47/User customizable point type/Non NT, NT
+String1=0x04,Artwork
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #040204"
+"#	c #6C6E6C"
+"%	c #C4C6C4"
+"?	c #FFFFFF"
+"  	c none"
+"     ?!!??!?    "
+"     ?!!??!?    "
+"     ??!??!?    "
+"    ?!!!!!?     "
+"    ?!!!!?      "
+"   ?!??!!?      "
+"    ?!?!!?      "
+"     ?!!!?      "
+"     ?!?!?      "
+"    ??!?!?      "
+"    ?#####?     "
+"    ?#####?     "
+"    ?#####?     "
+"    ?#####?     "
+"   ?%%%%%%%?    "
+"   ?#######?    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1160f
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_48/User customizable point type/Non NT, NT
+String1=0x04,Obelisk
+String2=0x14,Obeliszk
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="11 16 5 1"   Colormode=16
 "!	c #000000"
-"#	c #F80000"
-"%	c #F8FCF8"
+"#	c #737373"
+"%	c #C5C5C5"
+"?	c #E6E6E6"
+"  	c none"
+"           "
+"     !     "
+"   ?!!!?   "
+"   ?!!!?   "
+"    !!!    "
+"    !!!    "
+"    !!!    "
+"    !!!    "
+"    !!!    "
+"    !!!    "
+"    !!!    "
+"           "
+"   !!!!!   "
+" %#!!!!!#% "
+" !!!!!!!!! "
+"           "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x11610
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_49/User customizable point type/Non NT, NT
+String1=0x04,Fountain
+String2=0x14,Szökőkút
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000F8"
+"#	c #FFFFFF"
 "  	c none"
 "                "
-"       ##       "
-"      ####      "
-"      #%%#      "
-"     ##%%##     "
-"    ##%!!%##    "
-"   ##%%!!%%##   "
-"   ##%%!!%%##   "
-"  ##%%%!!%%%##  "
-"  ##%%%%%%%%##  "
-" ##%%%%!!%%%%## "
-"##%%%%%%%%%%%%##"
-"################"
-" ############## "
+"                "
+"     #####      "
+"     #!#!#      "
+"   ####!####    "
+"  ##!##!##!##   "
+"  #!#!###!#!#   "
+"  #!##!#!##!#   "
+"  ####!#!####   "
+" ##!!##!##!!##  "
+" #!##!#!#!##!#  "
+" #!###!!!###!#  "
+" #####!!!#####  "
+"     #####      "
 "                "
 "                "
 ;1234567890123456
@@ -10629,31 +9322,35 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x11611
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_50/User customizable point type/Non NT, NT
-String1=0x14,Kidőlt fák
-String2=0x04,Fallen tree
+String1=0x04,City gate
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=No
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
 ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F80000"
-"#	c #F8FCF8"
-"%	c #000000"
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #B86400"
+"#	c #000000"
+"%	c #F8C800"
+"?	c #F8FCF8"
+"$	c #F89400"
+"*	c #B89400"
 "  	c none"
 "                "
-"       !!       "
-"      !!!!      "
-"      !##!      "
-"     !!##!!     "
-"    !!####!!    "
-"   !!######!!   "
-"   !!%%%###!!   "
-"  !!#%%%%###!!  "
-"  !!#%%#%%#%!!  "
-" !!##%%##%%##!! "
-"!!###%%#%#%%##!!"
-"!!!!!!!!!!!!!!!!"
-" !!!!!!!!!!!!!! "
+"                "
+"     ##         "
+"    #%%#        "
+"  ##%##%##      "
+"  #%#??#%#      "
+"  ##?#??##      "
+"  ##?##?##      "
+"  #%#??#$###    "
+"  #$%##$$#*#    "
+"  #%%%$$$#*###  "
+"  #$$$$$!#$#*#  "
+"  #$$$$!!#*$*#  "
+"  ############  "
 "                "
 "                "
 ;1234567890123456
@@ -10663,31 +9360,35 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x11612
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_51/User customizable point type/Non NT, NT
-String1=0x14,Benőtt
-String2=0x04,Overgrown
+String1=0x04,Palace
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=No
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
 ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F80000"
-"#	c #F8FCF8"
-"%	c #000000"
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #B86400"
+"#	c #000000"
+"%	c #F8C800"
+"?	c #F8FCF8"
+"$	c #F89400"
+"*	c #B89400"
 "  	c none"
 "                "
-"       !!       "
-"      !!!!      "
-"      !##!      "
-"     !!##!!     "
-"    !!####!!    "
-"   !!##%###!!   "
-"   !!%##%##!!   "
-"  !!##%##%##!!  "
-"  !!%##%##%#!!  "
-" !!##%##%##%#!! "
-"!!############!!"
-"!!!!!!!!!!!!!!!!"
-" !!!!!!!!!!!!!! "
+"                "
+"     ##         "
+"    #%%#        "
+"  ##%##%##      "
+"  #%#??#%#      "
+"  ##?#??##      "
+"  ##?##?##      "
+"  #%#??#$###    "
+"  #$%##$$#*#    "
+"  #%%%$$$#*###  "
+"  #$$$$$!#$#*#  "
+"  #$$$$!!#*$*#  "
+"  ############  "
 "                "
 "                "
 ;1234567890123456
@@ -10695,38 +9396,110 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
-Type=0x11616
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_55/User customizable point type/Non NT, NT
-String1=0x04,Recycle bin
-String2=0x14,Szelektív hulladékgyűjtő
+Type=0x11613
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_52/User customizable point type/Non NT, NT
+String1=0x01,Manor
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
 DaycustomColor:#000000
 NightcustomColor:#000000
 ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #1800F8"
-"#	c #F80000"
-"%	c #00E000"
-"?	c #F8F000"
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #B86400"
+"#	c #000000"
+"%	c #F8C800"
+"?	c #F8FCF8"
+"$	c #F89400"
+"*	c #B89400"
 "  	c none"
-"      #####     "
-"    ######## #  "
-"    ##########  "
-"   ####  #####  "
-"    ##   #####  "
-"        ######  "
-" %%             "
-"%%%%   ??     !!"
-"%%%%%  ??     !!"
-"%%%%%%        !!"
-"%%%      !!  !!!"
-" %%      !!  !!!"
-" %%%%%%  !!!!!! "
-" %%%%%% !!!!!!! "
-"  %%%%% !!!!!   "
-"   %%%%  !!!!!  "
+"                "
+"                "
+"     ##         "
+"    #%%#        "
+"  ##%##%##      "
+"  #%#??#%#      "
+"  ##?#??##      "
+"  ##?##?##      "
+"  #%#??#$###    "
+"  #$%##$$#*#    "
+"  #%%%$$$#*###  "
+"  #$$$$$!#$#*#  "
+"  #$$$$!!#*$*#  "
+"  ############  "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11614
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_53/User customizable point type/Non NT, NT
+String1=0x04,Fortress
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="19 14 4 1"   Colormode=16
+"!	c #3D1F00"
+"#	c #66562E"
+"%	c #FFFFFF"
+"  	c none"
+"   !!         !!   "
+"  !!!!       !!!!  "
+" !!!!!!     !!!!!! "
+"!!!!!!!!   !!!!!!!!"
+" !!!!!!     !!!!!! "
+" !!%%!! ! ! !!%%!! "
+" !!%%!!!!!!!!!%%!! "
+" !!!!!!!!!!!!!!!!! "
+" !!!!!!!%#%!!!!!!! "
+" !!!!!!#%#%#!!!!!! "
+" !!!!!!#%#%#!!!!!! "
+" !!!!!!#%#%#!!!!!! "
+" !!!!!!#%#%#!!!!!! "
+" !!!!!!!!!!!!!!!!! "
+;1234567890123456789
+[end]
+
+
+[_point]
+Type=0x11615
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_54/User customizable point type/Non NT, NT
+String1=0x04,Defensive tower
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #B86400"
+"#	c #000000"
+"%	c #F8C800"
+"?	c #F8FCF8"
+"$	c #F89400"
+"*	c #B89400"
+"  	c none"
+"                "
+"                "
+"     ##         "
+"    #%%#        "
+"  ##%##%##      "
+"  #%#??#%#      "
+"  ##?#??##      "
+"  ##?##?##      "
+"  #%#??#$###    "
+"  #$%##$$#*#    "
+"  #%%%$$$#*###  "
+"  #$$$$$!#$#*#  "
+"  #$$$$!!#*$*#  "
+"  ############  "
+"                "
+"                "
 ;1234567890123456
 [end]
 
@@ -10766,30 +9539,1230 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
-Type=0x11711
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_82/User customizable point type/Non NT, NT
-String1=0x14,zsinagoga
-ExtendedLabels=N
+Type=0x11700
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_65/User customizable point type/Non NT, NT
+String1=0x04,Alpine hut
+String2=0x14,Menedékház
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
 DayXpm="16 16 3 1"   Colormode=16
-"!	c #000000"
+"!	c #FFFFFF"
+"#	c #FF0000"
+"  	c none"
+"         !#!    "
+"       !!!#!    "
+"     !!##!#!    "
+"   !!######!!!  "
+" !!##########!! "
+"!##############!"
+"################"
+" !##!!!##!!!##! "
+" !##!!!##!!!##! "
+" !############! "
+" !############! "
+" !############! "
+" !############! "
+"!!############!!"
+"!##############!"
+"!!!!!!!!!!!!!!!!"
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11701
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_66/User customizable point type/Non NT, NT
+String1=0x04,Wilderness hut
+String2=0x14,Kulcsosház
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #FF0000"
+"  	c none"
+"         !#!    "
+"       !!!#!    "
+"     !!##!#!    "
+"   !!######!!!  "
+"!!!##########!!!"
+"!#####!!!!#####!"
+"####!!!!!!#!####"
+" !##!!!!!!#!##! "
+" !##!!!!!!#!##! "
+" !##!!!####!##! "
+" !##!!!####!##! "
+" !##!!!#!!#!##! "
+" !##!!!#!!#!##! "
+"!!##!!!#!!#!##!!"
+"!##############!"
+"!!!!!!!!!!!!!!!!"
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11702
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_67/User customizable point type/Non NT, NT
+String1=0x04,Basic hut
+String2=0x14,Bivak
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #FF0000"
+"  	c none"
+"                "
+"       !!!      "
+"     !!##!!     "
+"   !!######!!   "
+" !!##########!! "
+"!#####!!!!!####!"
+"####!!!!!!!!####"
+" !##!!!!!!!!##! "
+" !##!!!!!!!!##! "
+" !##!!!!!!!!##! "
+" !##!!!!!!!!##! "
+" !##!######!##! "
+" !##!!#!!#!!##! "
+"!!##!!#!!#!!##!!"
+"!##############!"
+"!!!!!!!!!!!!!!!!"
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11705
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_70/User customizable point type/Non NT, NT
+String1=0x04,Weather shelter
+String2=0x14,Esőház
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="15 14 3 1"   Colormode=16
+"!	c #663300"
+"#	c #FFFFFF"
+"  	c none"
+"               "
+"     ##!##     "
+"   ##!!!!!##   "
+" ##!!!!!!!!!## "
+"#!!!!!###!!!!!#"
+"!!!!##     !!!!"
+" #!!#      !!##"
+" #!!#      !!# "
+" #!!#      !!# "
+" #!!#      !!# "
+" #!!#      !!# "
+" #!!#      !!# "
+" #!!#      !!# "
+"               "
+;123456789012345
+[end]
+
+
+[_point]
+Type=0x11706
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_71/User customizable point type/Non NT, NT
+String1=0x04,Picnic shelter
+String2=0x14,Fedett asztal
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="17 14 4 1"   Colormode=16
+"!	c #7B3020"
+"#	c #FFFFFF"
+"%	c #BD6541"
+"  	c none"
+"                 "
+"      #%%%#      "
+"    ##!!!!!##    "
+"   #%!!###!!%#   "
+"  #!!%#   #%!!## "
+" #!!##     ##!!# "
+" ############### "
+"   #!!!!!!!!!#   "
+" #####%!#!%##### "
+" #%%#%!###!%#%%# "
+" #!!!!!!!!!!!!!# "
+" ###%!#####!%### "
+"  #%!#     #!%#  "
+"  ####     ####  "
+;12345678901234567
+[end]
+
+
+[_point]
+Type=0x11708
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_73/User customizable point type/Non NT, NT
+String1=0x04,Picnic site
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 18 2"   Colormode=16
+"!!	c #008C00"
+"!#	c #F8FCF8"
+"!%	c #000000"
+"!?	c #00C000"
+"!$	c #00B800"
+"!*	c #00B400"
+"!=	c #00AC00"
+"!1	c #00A800"
+"!2	c #00A400"
+"!3	c #00A000"
+"!4	c #009C00"
+"!5	c #009800"
+"!6	c #00C800"
+"!7	c #00BC00"
+"!8	c #00B000"
+"!9	c #009400"
+"#!	c #009000"
+"  	c none"
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
+"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
+"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
+"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
+"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
+"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
+"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
+"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
+"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
+"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11709
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_74/User customizable point type/Non NT, NT
+String1=0x04,Picnic site with firepit
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 18 2"   Colormode=16
+"!!	c #008C00"
+"!#	c #F8FCF8"
+"!%	c #000000"
+"!?	c #00C000"
+"!$	c #00B800"
+"!*	c #00B400"
+"!=	c #00AC00"
+"!1	c #00A800"
+"!2	c #00A400"
+"!3	c #00A000"
+"!4	c #009C00"
+"!5	c #009800"
+"!6	c #00C800"
+"!7	c #00BC00"
+"!8	c #00B000"
+"!9	c #009400"
+"#!	c #009000"
+"  	c none"
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
+"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
+"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
+"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
+"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
+"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
+"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
+"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
+"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
+"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1170a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_75/User customizable point type/Non NT, NT
+String1=0x04,Bench
+String2=0x14,Pad
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #BD6500"
 "#	c #FFFFFF"
 "  	c none"
 "                "
 "                "
-"       #        "
-"      #!#       "
-"  ####!#!####   "
-" #!!!!!!!!!!!#  "
-"  #!#!###!#!#   "
-"  #!#!###!#!#   "
-"   #!#####!#    "
-"  #!#!###!#!#   "
-"  #!#!###!#!#   "
-" #!!!!!!!!!!!#  "
-"  ####!#!####   "
-"      #!#       "
-"       #        "
 "                "
+"                "
+"                "
+"                "
+"################"
+"#!!!!!!!!!!!!!!#"
+"#!!!!!!!!!!!!!!#"
+"###!!######!!###"
+"  #!!#    #!!#  "
+"  #!!#    #!!#  "
+"  ####    ####  "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1170b
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_76/User customizable point type/Non NT, NT
+String1=0x04,Firepit
+String2=0x14,Tűzrakó
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #202020"
+"#	c #FC0204"
+"%	c #FCB624"
+"?	c #FCFEFC"
+"  	c none"
+"                "
+"                "
+"    ???????     "
+"    ?!???!?     "
+"  ???!!?!!???   "
+"  ?!!?!#!!?!??  "
+"  ?!!?###?!!!?  "
+"  ??!#%%%#!!??  "
+"   ??##%%#???   "
+"  ??!!### !???  "
+"  ?!!!??! !!!?  "
+"  ??!??!!!?!??  "
+"   ?????!!???   "
+"       ????     "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1170c
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_77/User customizable point type/Non NT, NT
+String1=0x04,Lookout tower
+String2=0x14,Kilátótorony
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 20 3 1"   Colormode=16
+"!	c #7B3000"
+"#	c #FFFFFF"
+"  	c none"
+"      ###      "
+"    ##!!!##    "
+" ###!!!!!!!### "
+"#!!!!!!!!!!!!!#"
+"!!!!!!!!!!!!!!!"
+"###!!#####!!###"
+"  #!!#   #!!#  "
+"###!!#####!!###"
+"!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!"
+"###!!#####!!###"
+"  #!!!###!!!#  "
+"  #!!#!#!#!!#  "
+"  #!!##!##!!#  "
+"  #!!#!#!#!!#  "
+"  #!!!###!!!#  "
+"  #!!#   #!!#  "
+"  #!!#   #!!#  "
+"  #!!#   #!!#  "
+;123456789012345
+[end]
+
+
+[_point]
+Type=0x1170d
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_78/User customizable point type/Non NT, NT
+String1=0x04,Information map
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #000000"
+"%	c #008000"
+"  	c none"
+"                "
+"      ####      "
+"    ##%%%%##    "
+"   #%%%%%%%%#   "
+"  #%%%%!!%%%%#  "
+"  #%%%%!!%%%%#  "
+" #%%%%%%%%%%%%# "
+" #%%%%!!!%%%%%# "
+" #%%%%%!!%%%%%# "
+" #%%%%%!!%%%%%# "
+"  #%%%%!!%%%%#  "
+"  #%%%!!!!%%%#  "
+"   #%%%%%%%%#   "
+"    ##%%%%##    "
+"      ####      "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1170e
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_79/User customizable point type/Non NT, NT
+String1=0x04,Guidepost
+String2=0x14,Iránytábla
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=Day
+DaycustomColor:#000000
+ContourColor=No
+DayXpm="18 18 6 1"   Colormode=16
+"!	c #7B6500"
+"#	c #525252"
+"%	c #FFFF20"
+"?	c #FFFFFF"
+"$	c #0000FF"
+"  	c none"
+"  ????????????    "
+"  ?###########?   "
+"  ?#%%%%%%???%#?  "
+"  ?#%%%%%%$$$%%#? "
+"  ?#%%%%%%???%#?  "
+"  ?###########?   "
+"  ??????!!?????   "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ?!!?       "
+"       ????       "
+;123456789012345678
+[end]
+
+
+[_point]
+Type=0x1170f
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_80/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #040204"
+"#	c #FC0204"
+"%	c #C4C2C4"
+"?	c #FCFEFC"
+"  	c none"
+"   ???????????  "
+"   ?%%%%%%%%%?  "
+"   ?%!!!%###%?  "
+"   ?%%%%%###%?  "
+"   ?%!!!%###%?  "
+"   ?%%%%%%%%%?  "
+"   ?%!!!!!!!%?  "
+"   ?%%%%%%%%%?  "
+"   ?%%%%%%%%%?  "
+"   ??!?????!??  "
+"    ?!?   ?!?   "
+"    ?!?   ?!?   "
+"    ?!?   ?!?   "
+"    ?!?   ?!?   "
+"    ?!?   ?!?   "
+"    ???   ???   "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11710
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_81/User customizable point type/Non NT, NT
+String1=0x14,Figyelmezteto tábla
+String2=0x05,Notice board
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="11 14 5 1"   Colormode=16
+"!	c #040204"
+"#	c #626262"
+"%	c #FFCA6A"
+"?	c #FCFEFC"
+"  	c none"
+"???????????"
+"?%%%%%%%%%?"
+"?%#######%?"
+"?%%%%%%%%%?"
+"?%#######%?"
+"?%%%%%%%%%?"
+"?%%%%%%%%%?"
+"?????!?????"
+"    ?!?    "
+"    ?!?    "
+"    ?!?    "
+"    ?!?    "
+"    ?!?    "
+"    ???    "
+;12345678901
+[end]
+
+
+[_point]
+Type=0x11712
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_83/User customizable point type/Non NT, NT
+String1=0x14,Bélyegzőhely
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000FF"
+"#	c #FFFFFF"
+"  	c none"
+"                "
+"       ###      "
+"      #!!#      "
+"     #!!!!      "
+"     #!!!#      "
+"     ##!!#      "
+"    #!!!!#      "
+"    #!!!!!#     "
+"    #!!!!!!#    "
+"     #!!!#!#    "
+"    #!!!!#!#    "
+"    #!!!!#!#    "
+"   #!!#!!#!#    "
+"   #!!#!!#!#    "
+"   #!!#!!!!#    "
+"    ########    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11713
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_84/User customizable point type/Non NT, NT
+String1=0x04,Hunting stand
+String2=0x14,Magasles
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #000000"
+"  	c none"
+"                "
+"                "
+"     #    #     "
+"     ######     "
+"     #!!!!#     "
+"     ######     "
+"     #!!!!#     "
+"     ######     "
+"     #    #     "
+"     #    #     "
+"    #      #    "
+"    #      #    "
+"   #        #   "
+"   #        #   "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11714
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_85/User customizable point type/Non NT, NT
+String1=0x04,Game feeding
+String2=0x14,Vadetető
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F8CC00"
+"#	c #000000"
+"%	c #F8FCF8"
+"  	c none"
+"                "
+"                "
+"       ##       "
+"      ####      "
+"     ##%%##     "
+"    ##%%%%##    "
+"   ##########   "
+"  #  #%%!%#  #  "
+"      #!!#!!    "
+"    !!#!!#      "
+"       ## !     "
+"      #  #      "
+"     #    #     "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11715
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_86/User customizable point type/Non NT, NT
+String1=0x14,Gázló
+String2=0x00,Ford
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #0000F8"
+"#	c #F8FCF8"
+"%	c #000000"
+"  	c none"
+"                "
+"                "
+"                "
+"  ####   ####   "
+"  #%%## ##%%#   "
+"  ##%%###%%##   "
+"    #%%#%%##    "
+"!!!!!#%%%##!!!! "
+"!!!!!#%%%##!!!! "
+"    #%%#%%##    "
+"   #%%###%%##   "
+"  #%%## ##%%#   "
+"  ####   ####   "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11716
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_87/User customizable point type/Non NT, NT
+String1=0x04,Ant hill
+String2=0x14,Hangyaboly
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #BD9541"
+"#	c #F8FCF8"
+"%	c #FFCA6A"
+"?	c #000000"
+"  	c none"
+"                "
+"                "
+"                "
+"                "
+"                "
+"     ######     "
+"    ##!!!!#     "
+"   ##!?%!?!#    "
+"   #!!!!!%!!#   "
+"  ##!!%!?!?!##  "
+"  #!!?!%!%!!!#  "
+" ##!%!!!?!?%!## "
+" #!!?!!%!!!!!!# "
+"#!!%!%!!%!%?%!!#"
+"#!!!?!!?!?!!!?!#"
+" ############## "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11719
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_90/User customizable point type/Non NT, NT
+String1=0x14,Útakadály
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #000000"
+"#	c #F80000"
+"%	c #F8FCF8"
+"  	c none"
+"                "
+"       ##       "
+"      ####      "
+"      #%%#      "
+"     ##%%##     "
+"    ##%!!%##    "
+"   ##%%!!%%##   "
+"   ##%%!!%%##   "
+"  ##%%%!!%%%##  "
+"  ##%%%%%%%%##  "
+" ##%%%%!!%%%%## "
+"##%%%%%%%%%%%%##"
+"################"
+" ############## "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1171a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_91/User customizable point type/Non NT, NT
+String1=0x14,Kidőlt fák
+String2=0x04,Fallen tree
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F80000"
+"#	c #F8FCF8"
+"%	c #000000"
+"  	c none"
+"                "
+"       !!       "
+"      !!!!      "
+"      !##!      "
+"     !!##!!     "
+"    !!####!!    "
+"   !!######!!   "
+"   !!%%%###!!   "
+"  !!#%%%%###!!  "
+"  !!#%%#%%#%!!  "
+" !!##%%##%%##!! "
+"!!###%%#%#%%##!!"
+"!!!!!!!!!!!!!!!!"
+" !!!!!!!!!!!!!! "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1171b
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_92/User customizable point type/Non NT, NT
+String1=0x14,Benőtt
+String2=0x04,Overgrown
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F80000"
+"#	c #F8FCF8"
+"%	c #000000"
+"  	c none"
+"                "
+"       !!       "
+"      !!!!      "
+"      !##!      "
+"     !!##!!     "
+"    !!####!!    "
+"   !!##%###!!   "
+"   !!%##%##!!   "
+"  !!##%##%##!!  "
+"  !!%##%##%#!!  "
+" !!##%##%##%#!! "
+"!!############!!"
+"!!!!!!!!!!!!!!!!"
+" !!!!!!!!!!!!!! "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11800
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_97/User customizable point type/Non NT, NT
+String1=0x04,Spring (drinking water)
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000F8"
+"#	c #399500"
+"  	c none"
+"                "
+"           ###  "
+"     !!!  ##### "
+"    !!!!! ##### "
+"    !!!!! ##### "
+"    !!!!!  ###  "
+"     !!!        "
+"       !        "
+"       !        "
+"     !!         "
+"     !          "
+"      !!        "
+"       !        "
+"      !         "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11801
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_98/User customizable point type/Non NT, NT
+String1=0x04,Spring (non-drinking)
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000F8"
+"#	c #FF0000"
+"  	c none"
+"                "
+"           ###  "
+"     !!!  ##### "
+"    !!!!! ##### "
+"    !!!!! ##### "
+"    !!!!!  ###  "
+"     !!!        "
+"       !        "
+"       !        "
+"     !!         "
+"     !          "
+"      !!        "
+"       !        "
+"      !         "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11802
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_99/User customizable point type/Non NT, NT
+String1=0x04,Spring (seasonal)
+String2=0x14,Időszakos forrás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #0000F8"
+"#	c #7BCAFF"
+"%	c #FFFFFF"
+"  	c none"
+"                "
+"                "
+"     !!!        "
+"    !#%#!       "
+"    !%%%!       "
+"    !#%#!       "
+"     !!!        "
+"       !        "
+"       !        "
+"     !!         "
+"     !          "
+"      !!        "
+"       !        "
+"      !         "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11803
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_100/User customizable point type/Non NT, NT
+String1=0x04,Hot spring
+String2=0x14,Termálforrás
+ExtendedLabels=N
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000F8"
+"#	c #FF6500"
+"  	c none"
+"       #        "
+"   #   #   #    "
+"    #     #     "
+"      !!!       "
+"  ## !!!!! ##   "
+"     !!!!!      "
+"   # !!!!! #    "
+"  #   !!!   #   "
+"        !       "
+"        !       "
+"      !!        "
+"      !         "
+"       !!       "
+"        !       "
+"       !        "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11804
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_101/User customizable point type/Non NT, NT
+String1=0x04,Mineral water spring
+String2=0x14,Ásványvíz-forrás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #0000F8"
+"#	c #E6E6E6"
+"  	c none"
+"                "
+"           !!!  "
+"     !!!  !###! "
+"    !!!!! !###! "
+"    !!!!! !###! "
+"    !!!!!  !!!  "
+"     !!!        "
+"       !        "
+"       !        "
+"     !!         "
+"     !          "
+"      !!        "
+"       !        "
+"      !         "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11810
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_113/User customizable point type/Non NT, NT
+String1=0x14,Piac
+String2=0x04,Marketplace
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 11 1"   Colormode=16
+"!	c #414141"
+"#	c #666666"
+"%	c #9F9F9F"
+"?	c #C5C5C5"
+"$	c #FFFFFF"
+"*	c #FF0000"
+"=	c #840204"
+"1	c #048204"
+"2	c #9F4000"
+"3	c #FF822F"
+"  	c none"
+"   %$!!!!!!?$   "
+"  $!#!######!$  "
+" $!!$$%#####!%$ "
+"$!##$$$%##!?$$  "
+"%##%$$$$!!$$    "
+"!##%$$$%%$   $$ "
+"!##%$%%33$  $11$"
+"!##%%$$332$$$11$"
+"!#!%3$3332$*111$"
+"%?$$333322$***$ "
+"$$  $3322$***=$ "
+"    $332****=$  "
+"     $$**==$$   "
+"     $**=$$     "
+"    $**=$       "
+"    $=$$        "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11811
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_114/User customizable point type/Non NT, NT
+String1=0x14,Mentok
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 6 1"   Colormode=16
+"!	c #FC0204"
+"#	c #048204"
+"%	c #FCB624"
+"?	c #0402FC"
+"$	c #FFFFFF"
+"  	c none"
+"     $$$$$$     "
+"   $$$????$$$   "
+"  $$??$$$$??$$  "
+" $$?$$$??$$$?$$ "
+" $?$??$%%$??$?$ "
+"$$?$??$%?$??$?$$"
+"$?$$$???%??$$$?$"
+"$?$$$$??%?$$$$?$"
+"$?$$$$?%??$$$$?$"
+"$?$$$??%???$$$?$"
+"$$?$??$?%$??$?$$"
+" $?$??$?%$??$?$ "
+" $$!!!!!!!!!!$$ "
+"  $$$$$$$$$$$$  "
+"  $##########$  "
+"  $$$$$$$$$$$$  "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11812
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_115/User customizable point type/Non NT, NT
+String1=0x04,Recycle bin
+String2=0x14,Szelektív hulladékgyűjtő
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #1800F8"
+"#	c #F80000"
+"%	c #00E000"
+"?	c #F8F000"
+"  	c none"
+"      #####     "
+"    ######## #  "
+"    ##########  "
+"   ####  #####  "
+"    ##   #####  "
+"        ######  "
+" %%             "
+"%%%%   ??     !!"
+"%%%%%  ??     !!"
+"%%%%%%        !!"
+"%%%      !!  !!!"
+" %%      !!  !!!"
+" %%%%%%  !!!!!! "
+" %%%%%% !!!!!!! "
+"  %%%%% !!!!!   "
+"   %%%%  !!!!!  "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11813
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_116/User customizable point type/Non NT, NT
+String1=0x14,Fogorvos
+ExtendedLabels=N
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F80000"
+"#	c #F8FCF8"
+"%	c #000000"
+"  	c none"
+"      ##        "
+"     #!!#       "
+"   ###!!###     "
+"   #!!!!!!####  "
+"   #!!!!!!#%%## "
+"   ##%!!%%%##%# "
+"    #%!!#####%# "
+"    #%#######%# "
+"    #%#######%# "
+"    ##%#####%## "
+"     #%##%##%#  "
+"     #%#%#%#%#  "
+"     #%#%#%#%#  "
+"     ##%###%##  "
+"     #### ###   "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11814
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_117/User customizable point type/Non NT, NT
+String1=0x04,Bakery
+String2=0x14,Pékség
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #986800"
+"  	c none"
+"                "
+"                "
+"                "
+"     ######     "
+"    ########    "
+"   ##!!!!!!##   "
+"  ####!!!!####  "
+" ##!!##!!##!!## "
+" ##!!!####!!!## "
+" ##!!!!##!!!!## "
+" ##!!!####!!!## "
+"  #####  #####  "
+"   ###    ###   "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11815
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_118/User customizable point type/Non NT, NT
+String1=0x14,Cukrászda
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #000000"
+"#	c #7C2A04"
+"%	c #9C3204"
+"?	c #FFFFFF"
+"  	c none"
+"                "
+"                "
+"       !!!!     "
+"      !%%%%!!   "
+"     !%%%!!!!   "
+"    !%!!!???!   "
+"   !!!???###!   "
+"   !??###???!   "
+" !!!##???###!!! "
+"!??!??###???!??!"
+"!??!##???!!!???!"
+"!??!??!!!??????!"
+"!??!!!?????????!"
+" !!??????????!! "
+"   !!??????!!   "
+"     !!!!!!     "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11816
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_119/User customizable point type/Non NT, NT
+String1=0x04,Ice cream
+String2=0x14,Fagyizó
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="13 16 6 1"   Colormode=16
+"!	c #FF9500"
+"#	c #FFFFFF"
+"%	c #BDCA20"
+"?	c #00CA1E"
+"$	c #FF306A"
+"  	c none"
+"    #####    "
+"  ###$$$###  "
+" ##$$$$$$$## "
+"##$$$$$$$$$##"
+"#?$$$?$?$$$?#"
+"#??$?????$??#"
+"##?!!%%!!!?##"
+" ##!%!!%%!## "
+"  ##!%!%!##  "
+"   #!%%!!#   "
+"   #!%%%!#   "
+"   ##!%!##   "
+"    #!%!#    "
+"    #!%!#    "
+"    ##!##    "
+"     ###     "
+;1234567890123
+[end]
+
+
+[_point]
+Type=0x11817
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_120/User customizable point type/Non NT, NT
+String1=0x14,Trafik
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #B4B4B4"
+"#	c #F8FCF8"
+"%	c #000000"
+"?	c #FF3000"
+"  	c none"
+"      ?         "
+"     ??         "
+"     ??         "
+"    ?#??        "
+"    ?#??        "
+"     ??   !%!   "
+"    %%%% !%%%!  "
+"    %!!%!%%%%%! "
+"  %%%%%%%%%%%%! "
+"  %%%%%%%%%%%!  "
+"  %%%%%%!%%%!   "
+"  %%%%%% !%!    "
+"  %%%%%%        "
+"  %%%%%%        "
+"  %%%%%%        "
+"  %%%%%%        "
 ;1234567890123456
 [end]
 

@@ -10,7 +10,7 @@
 
 amenity=restaurant [0x02A00 resolution 24]
 amenity=fast_food  [0x02A07 resolution 24]
-amenity=ice_cream  [0x02E0E resolution 24]
+amenity=ice_cream  [0x11816 resolution 24]
 amenity=cafe [0x02A0E resolution 24]
 
 amenity=pub | amenity=biergarten | amenity=bar  [0x2D02 resolution 24]

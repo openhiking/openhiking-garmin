@@ -10,6 +10,6 @@
 
 amenity=hospital | amenity=clinic [0x03002 resolution 24]
 amenity=doctors [0x4B01 resolution 24]
-amenity=dentist [0x4B02 resolution 24]
+amenity=dentist [0x11813 resolution 24]
 amenity=pharmacy [0x02E05 resolution 24]
-emergency=ambulance_station [0x3009 resolution 24]
+emergency=ambulance_station [0x11811 resolution 24]
