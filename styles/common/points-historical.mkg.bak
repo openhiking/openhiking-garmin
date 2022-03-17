@@ -37,7 +37,7 @@ if (man_made=water_well & foot!=no) then
     name~'.*[mM]onitor.*' { deletealltags }
     name~'.*[gG]émeskút' | description~'.*[gG]émeskút' | description:hu~'.*[gG]émeskút' { name '${short_name}' | '${name }' } [0x1161A resolution 24]
     drinking_water=yes [0x5000 resolution 22]
-    pump!=* | pump=no { name '${short_name}' | '${name}'  } [0x11619 resolution 24]
+    pump!=* | pump=no { name '${short_name}' | '${name}'  } [0x1150C resolution 24]
 end
 
 
