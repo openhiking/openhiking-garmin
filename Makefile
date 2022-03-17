@@ -111,6 +111,13 @@ ifneq (${MKG_SPLITTER_THREADS},)
 SPLITTER_THREADS=--max-threads=${MKG_SPLITTER_THREADS}
 endif
 
+ifneq (${MKG_SPLITTER_MAX_AREAS},)
+SPLITTER_MAX_AREAS=--max-threads=${MKG_SPLITTER_MAX_AREAS}
+endif
+
+ifneq (${MKG_SPLITTER_STATUS_FREQ},)
+SPLITTER_STATUS_FREQ=--max-threads=${MKG_SPLITTER_STATUS_FREQ}
+endif
 
 ifneq (${MKG_MKGMAP},)
 MKGMAP=${MKG_MKGMAP}
@@ -278,6 +285,8 @@ BOUNDS_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
 SPLITTER_MEMORY?=5000M
+SPLITTER_MAX_AREAS?=255
+SPLITTER_STATUS_FREQ?=120
 
 ##############################################
 # Garmin map generation
@@ -441,8 +450,8 @@ bounds: $(MAP_BOUNDS_O5M_FP)
 	@echo "Bounds created"
 
 tiles: $(MAP_MERGED_PBF_FP)
-	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=255 \
-	$(SPLITTER_THREADS) $< --output-dir=$(TILES_DIR)
+	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=$(SPLITTER_MAX_AREAS) \
+	--status-freq=$(SPLITTER_STATUS_FREQ) $(SPLITTER_THREADS) $< --output-dir=$(TILES_DIR)
 
 
 $(MERGED_ARGS): $(OHM_ARGS_TEMPLATE) $(TILE_ARGS)
@@ -556,6 +565,6 @@ cleanoutput:
 
 
 test:
-	@echo $(PHYGHTMAP_JOBS)
+	@echo $(SPLITTER_MAX_AREAS)
 
 

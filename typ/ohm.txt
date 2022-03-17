@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 53269 octets
-; Fichier TYP compilé     17/03/2022     19:34:36
-; Décompilé le 3/17/2022 à 7:34:39 PM
+; Fichier TYP compilé     17/03/2022     20:23:09
+; Décompilé le 3/17/2022 à 8:23:13 PM
 
 [_id]
 ProductCode=1
@@ -245,7 +245,11 @@ Xpm="0 0 1 0"
 Type=0x0d
 ;GRMN_TYPE: Large Manmade Areas/RESERVATION/Reservation/Non NT
 String1=0x04,Building
-ExtendedLabels=N
+String2=0x14,Épület
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
 Xpm="0 0 1 0"
 "1 c #BD956A"
 [end]
