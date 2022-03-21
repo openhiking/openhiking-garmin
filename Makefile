@@ -12,8 +12,6 @@
 ##############################################
 # External data sources
 GEOFABRIK_URL=http://download.geofabrik.de/europe/
-TJEL_URL=https://data2.openstreetmap.hu/
-TJEL_NAME=vjel.osm
 
 ##############################################
 # Builder configuratios
@@ -67,6 +65,7 @@ ifeq ($(WORKING_DIR),)
 $(error MKG_WORKING_DIR env variable must be set)
 endif
 
+SEA_AREA_DIR=$(MKG_SEA_AREA_DIR)
 OUTPUT_DIR=${MKG_OUTPUT_DIR}
 MAPSOURCE_DIR=${MKG_MAPSOURCE_DIR}
 
@@ -188,7 +187,6 @@ NSIGEN?=python tools\nsigen.py
 ##############################################
 # Data cache locations
 ALOS_DIR=$(DEM_DIR)$(PSEP)alos
-TJEL_CACHED=$(OSM_CACHE_DIR)$(PSEP)$(TJEL_NAME)
 
 ifneq ($(SUPPLEMENTARY_DATA),)
 	SUPPLEMENTARY_CACHED=$(OSM_CACHE_DIR)$(PSEP)$(SUPPLEMENTARY_DATA)
@@ -317,9 +315,10 @@ STYLES_RP := $(foreach wrd,$(STYLES),$(STYLES_DIR)$(PSEP)$(wrd))
 HILL_SHADING_DIR=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
 
 ifeq ($(GENERATE_SEA),yes)
-	GEN_SEA_OPTIONS=--generate-sea=extend-sea-sectors,close-gaps=500,land-tag=natural=land
+#	GEN_SEA_OPTIONS=--generate-sea=extend-sea-sectors,close-gaps=500,land-tag=natural=land
+	PRECOMP_SEA_OPTION=--precomp-sea=$(SEA_AREA_DIR)
 else
-	GEN_SEA_OPTIONS=
+#	GEN_SEA_OPTIONS=
 endif
 
 ifeq ($(USE_BOUNDS),yes)
@@ -395,9 +394,6 @@ contour-hr:
 
 $(OSM_CACHE_DIR)$(PSEP2)%-latest.osm.pbf:
 	$(WGET) $(GEOFABRIK_URL)$*-latest.osm.pbf -P $(OSM_CACHE_DIR)
-
-$(TJEL_CACHED):
-	$(WGET) --no-check-certificate $(TJEL_URL)$(TJEL_NAME) -P $(OSM_CACHE_DIR)
 
 
 refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
@@ -485,7 +481,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
-	 --code-page=$(CODE_PAGE) $(GEN_SEA_OPTIONS) $(LOWER_CASE) $(BOUNDS_OPTS) \
+	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE)  \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
@@ -565,6 +561,6 @@ cleanoutput:
 
 
 test:
-	@echo $(SPLITTER_MAX_AREAS)
+	@echo $(PRECOMP_SEA_OPTION)
 
 
