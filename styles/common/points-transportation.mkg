@@ -11,12 +11,18 @@
 amenity=parking [0x02F0B resolution 24]
 amenity=fuel [0x02F01 resolution 24]
 
-amenity=bus_station  [0x02F08 resolution 22]
-highway=bus_stop {name '${short_name}'|'${name}'} [0x02F18 resolution 22]
-highway=tram_stop {name '${short_name}'|'${name}'} [0x02F18 resolution 24]
+railway=station {name '${short_name}'|'${name}'} [0x11900 resolution 22]
+railway=halt {name '${short_name}'|'${name}'} [0x11901 resolution 22]
 
-railway=station {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
-railway=halt {name '${short_name}'|'${name}'} [0x2F17 resolution 22]
+amenity=bus_station  [0x11902 resolution 22]
+
+if (highway=bus_stop) then
+	() {name '${short_name}'|'${name}'}
+	is_in(landuse,residential,in)=false [0x11903 resolution 22]
+	() [0x11903 resolution 24]
+end
+highway=tram_stop {name '${short_name}'|'${name}'} [0x11903 resolution 24]
+
 
 amenity=ferry_terminal [0x02F09 resolution 24]
 aeroway=aerodrome {name '${short_name}'|'${name}'} [0x02F04 resolution 24]
@@ -25,5 +31,5 @@ aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 r
 highway=milestone {name '${distance}'} [0x5A00 resolution 24]
 railway=crossing | railway=level_crossing [0x6406 resolution 24]
 
-aerialway=station {name '${short_name}'|'${name}'} [0x1150E resolution 24]
+aerialway=station {name '${short_name}'|'${name}'} [0x11906 resolution 24]
 

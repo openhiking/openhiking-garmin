@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 54024 octets
-; Fichier TYP compilé     21/03/2022     21:15:11
-; Décompilé le 3/21/2022 à 9:15:14 PM
+; Longueur: 54382 octets
+; Fichier TYP compilé     22/03/2022     21:57:32
+; Décompilé le 3/22/2022 à 10:01:01 PM
 
 [_id]
 ProductCode=1
@@ -5652,6 +5652,7 @@ DayXpm="16 16 4 1"   Colormode=16
 Type=0x02e00
 ;GRMN_TYPE: //
 String1=0x04,Shop
+String2=0x14,Üzlet
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -5785,6 +5786,7 @@ DayXpm="16 16 7 1"   Colormode=16
 Type=0x02e03
 ;GRMN_TYPE: Business - Shopping/GENERAL_STORE/General store/Non NT
 String1=0x04,Convenience
+String2=0x14,Élelmiszerbolt
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -5836,6 +5838,7 @@ DayXpm="16 16 22 2"   Colormode=16
 Type=0x02e04
 ;GRMN_TYPE: Business - Shopping/SHOPPING_CENTER/Shopping center or mall/Non NT
 String1=0x04,Supermarket
+String2=0x14,Szupermarket
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -5870,6 +5873,7 @@ DayXpm="16 16 3 1"   Colormode=16
 Type=0x02e05
 ;GRMN_TYPE: Business - Shopping/PHARMACY/Pharmacy/Non NT
 String1=0x04,Pharmacy
+String2=0x14,Gyógyszertár
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
@@ -5952,6 +5956,7 @@ DayXpm="13 15 20 2"   Colormode=16
 Type=0x02e07
 ;GRMN_TYPE: Business - Shopping/CLOTHING_RETAIL/Clothing store/Non NT
 String1=0x04, Apparel
+String2=0x14,Ruházati bolt
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -6000,6 +6005,7 @@ DayXpm="13 15 20 2"   Colormode=16
 Type=0x02e08
 ;GRMN_TYPE: Business - Shopping/HOME_AND_GARDEN_STORE/House and garden store/Non NT
 String1=0x04,House-garden store
+String2=0x01,Barkácsbolt
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -6047,7 +6053,8 @@ DayXpm="13 15 20 2"   Colormode=16
 [_point]
 Type=0x02e09
 ;GRMN_TYPE: Business - Shopping/HOME_FURNISHINGS_STORE/Furniture store/Non NT
-String1=0x01,
+String1=0x04,Furniture shop
+String2=0x14,Bútorbolt
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -6618,81 +6625,6 @@ DayXpm="14 9 3 1"   Colormode=16
 
 
 [_point]
-Type=0x02f17
-;GRMN_TYPE: Business - Services/TRANSIT_SERVICES/Mass transit services/Non NT
-String1=0x04,Railway station
-String2=0x14,Vasútállomás
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 6 1"   Colormode=16
-"!	c #C0C0C0"
-"#	c #000000"
-"%	c #F8FCF8"
-"?	c #808080"
-"$	c #008000"
-"  	c none"
-"                "
-" ############## "
-"#%%%??%%%%%%%%%#"
-"#%%?%%?%%%%%%%%#"
-"#%%%??%%%%%%%%%#"
-"#%########%%%%%#"
-"#%$#!!!#!!?%%%%#"
-"#%#########%%%%#"
-"#%$$$$$$$$$#%%%#"
-"#%$$$$#$#$$?#%%#"
-"#%####!#!#?#?#%#"
-"#%%%%%#%#%?#!#%#"
-"#%%%%%%%%%%%%%%#"
-" ############## "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02f18
-;GRMN_TYPE: //
-String1=0x04,Bus stop
-String2=0x14,Buszmegálló
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 7 1"   Colormode=16
-"!	c #000080"
-"#	c #000000"
-"%	c #F8FC00"
-"?	c #0000F8"
-"$	c #808000"
-"*	c #808080"
-"  	c none"
-"                "
-"   ##########   "
-"  #%%%%%%%%%%#  "
-" #%##########%# "
-" #%#????????#%# "
-" #%#??????#?#%# "
-" #%#?????#?##%# "
-" #%##########%# "
-" #%%%%%%%%%%%%# "
-" #%$$%%%%%%$$%# "
-" #%*!%%!!%%!*%# "
-" #%%%%%%%%%%%%# "
-" ############## "
-"  ###      ###  "
-"  ###      ###  "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x03000
 ;GRMN_TYPE: //
 String1=0x04,Government
@@ -7056,7 +6988,10 @@ DayXpm="16 16 3 1"   Colormode=16
 Type=0x04b01
 ;GRMN_TYPE: //
 String1=0x14,Orvos
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
 DayXpm="16 16 3 1"   Colormode=16
 "!	c #F80000"
 "#	c #F8FCF8"
@@ -8180,40 +8115,6 @@ DayXpm="16 16 3 1"   Colormode=16
 "    #!####!#    "
 "    #!!!!!!#    "
 "    #!####!#    "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x1150e
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_15/User customizable point type/Non NT, NT
-String1=0x14,Felvonóállomás
-String2=0x04,Cable car station
-ExtendedLabels=Y
-FontStyle=NoLabel (invisible)
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #000000"
-"#	c #C4C2C4"
-"%	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"          %%%   "
-"      %%%%!!%   "
-"    %%#!!!#%    "
-"  %%#!!!#%%     "
-"  %!!%%!%%%     "
-"  %%%%%!%%%     "
-"   %!!!!!!!%    "
-"   %!%%%%%!%    "
-"   %!%%%%%!%    "
-"   %!!!!!!!%    "
-"    %%%%%%%     "
-"                "
 "                "
 "                "
 ;1234567890123456
@@ -9764,6 +9665,7 @@ DayXpm="17 14 4 1"   Colormode=16
 Type=0x11708
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_73/User customizable point type/Non NT, NT
 String1=0x04,Picnic site
+String2=0x14,Pihenőhely
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -9811,6 +9713,7 @@ DayXpm="16 16 18 2"   Colormode=16
 Type=0x11709
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_74/User customizable point type/Non NT, NT
 String1=0x04,Picnic site with firepit
+String2=0x14,Pihenőhely tűzrakóhellyel
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -10071,7 +9974,7 @@ DayXpm="16 16 5 1"   Colormode=16
 [_point]
 Type=0x11710
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_81/User customizable point type/Non NT, NT
-String1=0x14,Figyelmezteto tábla
+String1=0x14,Figyelmeztető tábla
 String2=0x05,Notice board
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -10815,6 +10718,186 @@ DayXpm="16 16 5 1"   Colormode=16
 "  %%%%%%        "
 "  %%%%%%        "
 "  %%%%%%        "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11900
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_129/User customizable point type/Non NT, NT
+String1=0x04,Railway station
+String2=0x14,Vasútállomás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 6 1"   Colormode=16
+"!	c #C0C0C0"
+"#	c #000000"
+"%	c #F8FCF8"
+"?	c #808080"
+"$	c #008000"
+"  	c none"
+"                "
+" ############## "
+"#%%%??%%%%%%%%%#"
+"#%%?%%?%%%%%%%%#"
+"#%%%??%%%%%%%%%#"
+"#%########%%%%%#"
+"#%$#!!!#!!?%%%%#"
+"#%#########%%%%#"
+"#%$$$$$$$$$#%%%#"
+"#%$$$$#$#$$?#%%#"
+"#%####!#!#?#?#%#"
+"#%%%%%#%#%?#!#%#"
+"#%%%%%%%%%%%%%%#"
+" ############## "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11901
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_130/User customizable point type/Non NT, NT
+String1=0x04,Railway halt
+String2=0x14,Vasúti megálló
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 6 1"   Colormode=16
+"!	c #C0C0C0"
+"#	c #000000"
+"%	c #F8FCF8"
+"?	c #808080"
+"$	c #008000"
+"  	c none"
+"                "
+" ############## "
+"#%%%??%%%%%%%%%#"
+"#%%?%%?%%%%%%%%#"
+"#%%%??%%%%%%%%%#"
+"#%########%%%%%#"
+"#%$#!!!#!!?%%%%#"
+"#%#########%%%%#"
+"#%$$$$$$$$$#%%%#"
+"#%$$$$#$#$$?#%%#"
+"#%####!#!#?#?#%#"
+"#%%%%%#%#%?#!#%#"
+"#%%%%%%%%%%%%%%#"
+" ############## "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11902
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_131/User customizable point type/Non NT, NT
+String1=0x04,Bus station
+String2=0x14,Autóbuszállomás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #000080"
+"#	c #000000"
+"%	c #F8FC00"
+"?	c #0000F8"
+"$	c #808000"
+"*	c #808080"
+"  	c none"
+"                "
+"   ##########   "
+"  #%%%%%%%%%%#  "
+" #%##########%# "
+" #%#????????#%# "
+" #%#??????#?#%# "
+" #%#?????#?##%# "
+" #%##########%# "
+" #%%%%%%%%%%%%# "
+" #%$$%%%%%%$$%# "
+" #%*!%%!!%%!*%# "
+" #%%%%%%%%%%%%# "
+" ############## "
+"  ###      ###  "
+"  ###      ###  "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11903
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_132/User customizable point type/Non NT, NT
+String1=0x04,Bus stop
+String2=0x14,Buszmegálló
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #000080"
+"#	c #000000"
+"%	c #F8FC00"
+"?	c #0000F8"
+"$	c #808000"
+"*	c #808080"
+"  	c none"
+"                "
+"   ##########   "
+"  #%%%%%%%%%%#  "
+" #%##########%# "
+" #%#????????#%# "
+" #%#??????#?#%# "
+" #%#?????#?##%# "
+" #%##########%# "
+" #%%%%%%%%%%%%# "
+" #%$$%%%%%%$$%# "
+" #%*!%%!!%%!*%# "
+" #%%%%%%%%%%%%# "
+" ############## "
+"  ###      ###  "
+"  ###      ###  "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11906
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_135/User customizable point type/Non NT, NT
+String1=0x14,Felvonóállomás
+String2=0x04,Cable car station
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #000000"
+"#	c #C4C2C4"
+"%	c #FFFFFF"
+"  	c none"
+"                "
+"                "
+"          %%%   "
+"      %%%%!!%   "
+"    %%#!!!#%    "
+"  %%#!!!#%%     "
+"  %!!%%!%%%     "
+"  %%%%%!%%%     "
+"   %!!!!!!!%    "
+"   %!%%%%%!%    "
+"   %!%%%%%!%    "
+"   %!!!!!!!%    "
+"    %%%%%%%     "
+"                "
+"                "
+"                "
 ;1234567890123456
 [end]
 
