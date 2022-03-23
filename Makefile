@@ -521,7 +521,7 @@ stage1: refresh merge tiles
 stage2: map nsi-script install
 	@echo Stage-2 completed successfully
 
-all: refresh merge tiles map nsi-scrpt install
+all: refresh merge tiles map nsi-script install
 	@echo Map making completed successfully
 
 push:
@@ -549,8 +549,6 @@ cleanall:
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
-	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.osm
-
 	
 cleanbounds:
 	$(DEL) $(BOUNDS_DIR)$(PSEP)*
