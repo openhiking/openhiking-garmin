@@ -127,7 +127,7 @@ highway=pedestrian  & area!=yes   [0x10 road_class=0 road_speed=1 resolution 21]
 
 if (highway=footway) then
 	() { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
-	surface=ground [0x16 road_class=0 road_speed=0 resolution 22]
+	surface=ground | surface=earth [0x16 road_class=0 road_speed=0 resolution 22]
 	() [0x11 road_class=0 road_speed=0 resolution 22]
 end
 
