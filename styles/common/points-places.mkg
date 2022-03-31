@@ -32,5 +32,5 @@ end
 place=suburb  [0x00C00 resolution 22  ]
 place=hamlet | place=farm  [0x00D00 resolution 22 ]
 place=islet [0x00D00 resolution 24 ]
-place=locality [0x00D00 resolution 24 ]
+place=locality [0x06602 resolution 24 ]
 

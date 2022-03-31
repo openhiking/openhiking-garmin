@@ -8,14 +8,14 @@
 #
 ########################################################
 
-tourism=hotel | tourism=motel  [0x02B01 resolution 24]
+tourism=hotel | tourism=motel  [0x02B00 resolution 24]
+tourism=hostel   [0x02B01 resolution 24]
 tourism=bed_and_breakfast | tourism=guest_house	 [0x02B02 resolution 24]
-tourism=hostel   [0x02B06 resolution 24]
 tourism=chalet   [0x02B04 resolution 24]
 
 tourism=camp_site & (camp_site=basic | backcountry=yes )  [0x02B05 resolution 24]
 tourism=camp_site | tourism=caravan_site  [0x02B03 resolution 24]
 
-tourism=alpine_hut   [0x11700 resolution 22]
-tourism=wilderness_hut   [0x11701 resolution 22]
+tourism=alpine_hut   [0x02B06 resolution 22]
+tourism=wilderness_hut   [0x02B07 resolution 22]
 amenity=shelter & shelter_type=basic_hut  [0x11702 resolution 22]

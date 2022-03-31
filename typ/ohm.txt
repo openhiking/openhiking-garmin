@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 55132 octets
-; Fichier TYP compilé     29/03/2022     21:26:49
-; Décompilé le 3/29/2022 à 9:27:01 PM
+; Longueur: 55861 octets
+; Fichier TYP compilé     31/03/2022     09:23:01
+; Décompilé le 3/31/2022 à 9:23:04 AM
 
 [_id]
 ProductCode=1
@@ -2154,7 +2154,11 @@ UseOrientation=Y
 LineWidth=1
 Xpm="0 0 1 0"
 "1 c #69A7F5"
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#0000FF
+ContourColor=No
 [end]
 
 
@@ -2204,7 +2208,11 @@ UseOrientation=Y
 LineWidth=2
 Xpm="0 0 1 0"
 "1 c #69A7F5"
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#0000FF
+ContourColor=No
 [end]
 
 
@@ -2273,7 +2281,11 @@ Xpm="32 1 2  1"
 ;12345678901234567890123456789012
 String1=0x04,Intermittent stream
 String2=0x14,Időszakos vízfolyás
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#0000FF
+ContourColor=No
 [end]
 
 
@@ -4487,8 +4499,8 @@ DayXpm="16 16 2 1"   Colormode=16
 
 
 [_point]
-Type=0x02b01
-;GRMN_TYPE: Business - Lodging/HOTEL/Hotel/Non NT
+Type=0x02b00
+;GRMN_TYPE: //
 String1=0x04,Hotel
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -4530,6 +4542,39 @@ DayXpm="16 16 19 2"   Colormode=16
 "!#!%!5!5!5!5!5!5!5#!#!####!!!%!#"
 "  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
 "    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x02b01
+;GRMN_TYPE: Business - Lodging/HOTEL/Hotel/Non NT
+String1=0x04,Hostel
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #009400"
+"%	c #000000"
+"  	c none"
+"  %%%%%%%%%%%%  "
+" %############% "
+"%##############%"
+"%#!############%"
+"%#!#!!##!!!####%"
+"%#!#!!#!!!!!#!#%"
+"%#!##########!#%"
+"%#!!!!!!!!!!!!#%"
+"%#!##########!#%"
+"%#!#!!##!!!##!#%"
+"%#!#!!#!!!!!#!#%"
+"%#!##########!#%"
+"%#!!!!!!!!!!!!#%"
+"%#!##########!#%"
+" %############% "
+"  %%%%%%%%%%%%  "
 ;1234567890123456
 [end]
 
@@ -4691,32 +4736,67 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x02b06
 ;GRMN_TYPE: //
-String1=0x04,Hostel
+String1=0x04,Alpine hut
+String2=0x14,Menedékház
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #009400"
-"%	c #000000"
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #FF0000"
 "  	c none"
-"  %%%%%%%%%%%%  "
-" %############% "
-"%##############%"
-"%#!############%"
-"%#!#!!##!!!####%"
-"%#!#!!#!!!!!#!#%"
-"%#!##########!#%"
-"%#!!!!!!!!!!!!#%"
-"%#!##########!#%"
-"%#!#!!##!!!##!#%"
-"%#!#!!#!!!!!#!#%"
-"%#!##########!#%"
-"%#!!!!!!!!!!!!#%"
-"%#!##########!#%"
-" %############% "
-"  %%%%%%%%%%%%  "
+"         !#!    "
+"       !!!#!    "
+"     !!##!#!    "
+"   !!######!!!  "
+" !!##########!! "
+"!##############!"
+"################"
+" !##!!!##!!!##! "
+" !##!!!##!!!##! "
+" !############! "
+" !############! "
+" !############! "
+" !############! "
+"!!############!!"
+"!##############!"
+"!!!!!!!!!!!!!!!!"
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x02b07
+;GRMN_TYPE: //
+String1=0x04,Wilderness hut
+String2=0x14,Kulcsosház
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #FF0000"
+"  	c none"
+"         !#!    "
+"       !!!#!    "
+"     !!##!#!    "
+"   !!######!!!  "
+"!!!##########!!!"
+"!#####!!!!#####!"
+"####!!!!!!#!####"
+" !##!!!!!!#!##! "
+" !##!!!!!!#!##! "
+" !##!!!####!##! "
+" !##!!!####!##! "
+" !##!!!#!!#!##! "
+" !##!!!#!!#!##! "
+"!!##!!!#!!#!##!!"
+"!##############!"
+"!!!!!!!!!!!!!!!!"
 ;1234567890123456
 [end]
 
@@ -7798,6 +7878,28 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
+Type=0x06602
+;GRMN_TYPE: //
+String1=0x04,Locality
+String2=0x14,Földrajzni név
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#000000
+ContourColor=No
+DayXpm="4 4 3 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #000000"
+"  	c none"
+" ## "
+"#!!#"
+"#!!#"
+" ## "
+;1234
+[end]
+
+
+[_point]
 Type=0x06604
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/BEACH/Beach/Non NT, NT
 String1=0x04,Beach resort
@@ -9795,74 +9897,6 @@ DayXpm="16 16 5 1"   Colormode=16
 " #?!!!!!!!!!!?# "
 " #?!!!!!!!!!!?# "
 " ############## "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x11700
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_65/User customizable point type/Non NT, NT
-String1=0x04,Alpine hut
-String2=0x14,Menedékház
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #FFFFFF"
-"#	c #FF0000"
-"  	c none"
-"         !#!    "
-"       !!!#!    "
-"     !!##!#!    "
-"   !!######!!!  "
-" !!##########!! "
-"!##############!"
-"################"
-" !##!!!##!!!##! "
-" !##!!!##!!!##! "
-" !############! "
-" !############! "
-" !############! "
-" !############! "
-"!!############!!"
-"!##############!"
-"!!!!!!!!!!!!!!!!"
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x11701
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_66/User customizable point type/Non NT, NT
-String1=0x04,Wilderness hut
-String2=0x14,Kulcsosház
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #FFFFFF"
-"#	c #FF0000"
-"  	c none"
-"         !#!    "
-"       !!!#!    "
-"     !!##!#!    "
-"   !!######!!!  "
-"!!!##########!!!"
-"!#####!!!!#####!"
-"####!!!!!!#!####"
-" !##!!!!!!#!##! "
-" !##!!!!!!#!##! "
-" !##!!!####!##! "
-" !##!!!####!##! "
-" !##!!!#!!#!##! "
-" !##!!!#!!#!##! "
-"!!##!!!#!!#!##!!"
-"!##############!"
-"!!!!!!!!!!!!!!!!"
 ;1234567890123456
 [end]
 
