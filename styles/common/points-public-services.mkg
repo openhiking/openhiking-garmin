@@ -15,7 +15,7 @@ amenity=police  [0x03001 resolution 24]
 amenity=fire_station [0x03008 resolution 24]
 
 amenity=post_office [0x02F05 resolution 24]
-amenity=post_box & access!=private [0x640F resolution 24]
+amenity=post_box & access!=private [0x11818 resolution 24]
 
 amenity=community_centre [0x03005 resolution 24]
 
@@ -30,4 +30,5 @@ amenity=drinking_water & foot!=no [0x5000 resolution 23]
 
 
 #amenity=taxi [0x1151E resolution 24]
-amenity=marketplace {name '${short_name}'|'${name}'} [0x11810 resolution 24]
+#amenity=marketplace {name '${short_name}'|'${name}'} [0x11810 resolution 24]
+amenity=marketplace {name '${short_name}'|'${name}'} [0x2f15 resolution 24]

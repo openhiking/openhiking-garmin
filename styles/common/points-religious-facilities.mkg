@@ -17,7 +17,7 @@ amenity=place_of_worship &(building=chapel | name~'.*k.polna') {name '${short_na
 amenity=place_of_worship { add mkgmap:label:2='(${denomination})'} [0x2C0E resolution 24]
 amenity=grave_yard  [0x06403 resolution 24]
 
-man_made=campanile  [0x11616 resolution 24]
-man_made=tower & tower:type=bell_tower  [0x11616 resolution 24]
+man_made=campanile  [0x6419 resolution 24]
+man_made=tower & tower:type=bell_tower  [0x6419 resolution 24]
 
-historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x11617 resolution 24]
+historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x641a resolution 24]

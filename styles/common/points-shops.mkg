@@ -20,10 +20,10 @@ shop=furniture | shop=interior_decoration | shop=kitchen  [0x02E09 resolution 24
 shop=bicycle [0x02E0A resolution 24]
 shop=computer | shop=electronics | shop=mobile_phone  [0x02E0B resolution 24]
 
-shop=bakery   [0x11814 resolution 24]
-shop=confectionery | shop=pastry [0x11815 resolution 24]
-shop=kiosk [0x11817 resolution 24]
-shop=ticket [0x02F10 resolution 24]
+shop=bakery   [0x2a0d resolution 24]
+shop=confectionery | shop=pastry [0x2e0c resolution 24]
+shop=kiosk [0x2e0d resolution 24]
+shop=ticket [0x02F11 resolution 24]
 (shop=alcohol & drink:wine=retail) | craft=winery [0x02C0A resolution 24]
 
 shop=* [0x02E00 resolution 24]

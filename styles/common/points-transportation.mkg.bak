@@ -21,7 +21,7 @@ amenity=bus_station [0x2f17 resolution 22]
 
 if (highway=bus_stop) then
 	() {name '${short_name}'|'${name}'}
-	operator=BKV | operator='Miskolc VÃ¡rosi KÃ¶zlekedÃ©si Zrt.' [0x2f08 resolution 24]
+	operator=BKV | operator='Miskolc Városi Közlekedési Zrt.' [0x2f08 resolution 24]
 	is_in(landuse,residential,in)=false [0x2f17 resolution 22]
 	() [0x2f17 resolution 24 ]
 end

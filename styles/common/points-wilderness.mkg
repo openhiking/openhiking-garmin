@@ -8,15 +8,16 @@
 #
 ########################################################
 
+amenity=shelter & shelter_type=basic_hut  [0x6401 resolution 22]
 amenity=shelter & shelter_type=picnic_shelter  [0x11706 resolution 22]
-amenity=shelter & shelter_type!=public_transport [0x11705 resolution 22]
+amenity=shelter & shelter_type!=public_transport [0x6402 resolution 22]
 
 tourism=picnic_site [0x11708 resolution 24]
 leisure=picnic_table [0x11708 resolution 24]
 amenity=bench  [0x1170A resolution 24]
 leisure=firepit [0x1170B resolution 24]
 
-man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) {name '${short_name}'|'${name}'} [0x1170C resolution 22]
+man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) {name '${short_name}'|'${name}'} [0x6400 resolution 22]
 tourism=viewpoint [0x5200 resolution 22]
 
 information=map  { add mkgmap:label:2='${description}'} 	[0x1170D resolution 24]
@@ -24,7 +25,7 @@ information=guidepost  { add mkgmap:label:2='${description}'} [0x1170E resolutio
 information=board & board_type=notice {name '${short_name}'|'${name}'|'${board:title}'; add mkgmap:label:2='${description}'} [0x11710 resolution 24]
 information=board  {name '${short_name}'|'${name}'|'${board:title}'; add mkgmap:label:2='${description}'} [0x1170F resolution 24]
 
-checkpoint=hiking {name '${short_name}'|'${name}'; add mkgmap:label:2='${course}'} [0x11712 resolution 23]
+checkpoint=hiking {name '${short_name}'|'${name}'; add mkgmap:label:2='${course}'} [0x2f0f resolution 23]
 
 amenity=hunting_stand  [0x11713 resolution 24]
 amenity=feeding_place | amenity=game_feeding [0x11714 resolution 24]
