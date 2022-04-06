@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 55724 octets
-; Fichier TYP compilé     04/02/2022     21:48:35
-; Décompilé le 4/2/2022 à 9:48:39 PM
+; Longueur: 55475 octets
+; Fichier TYP compilé     04/05/2022     22:48:14
+; Décompilé le 4/5/2022 à 10:49:12 PM
 
 [_id]
 ProductCode=1
@@ -7723,6 +7723,42 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
+Type=0x04b00
+;GRMN_TYPE: Misc. Points of Interest/FIRST_AID/First aid station/Non NT, NT
+String1=0x14,Mentőállomás
+String2=0x04,Ambulance station
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 6 1"   Colormode=16
+"!	c #FC0204"
+"#	c #048204"
+"%	c #FCB624"
+"?	c #0402FC"
+"$	c #FFFFFF"
+"  	c none"
+"     $$$$$$     "
+"   $$$????$$$   "
+"  $$??$$$$??$$  "
+" $$?$$$??$$$?$$ "
+" $?$??$%%$??$?$ "
+"$$?$??$%?$??$?$$"
+"$?$$$???%??$$$?$"
+"$?$$$$??%?$$$$?$"
+"$?$$$$?%??$$$$?$"
+"$?$$$??%???$$$?$"
+"$$?$??$?%$??$?$$"
+" $?$??$?%$??$?$ "
+" $$!!!!!!!!!!$$ "
+"  $$$$$$$$$$$$  "
+"  $##########$  "
+"  $$$$$$$$$$$$  "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x04c00
 ;GRMN_TYPE: Misc. Points of Interest/INFORMATION/Information/Non NT, NT
 String1=0x14,Turinform
@@ -7833,33 +7869,36 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
-Type=0x05200
-;GRMN_TYPE: Misc. Points of Interest/SCENIC_AREA/Scenic area/Non NT, NT
-String1=0x14,Szép kilátás
-String2=0x04,Viewpoint
+Type=0x05300
+;GRMN_TYPE: //
+String1=0x04,Firepit
+String2=0x14,Tűzrakó
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 2 1"   Colormode=16
-"!	c #FF0000"
+DayXpm="16 16 5 1"   Colormode=16
+"!	c #202020"
+"#	c #FC0204"
+"%	c #FCB624"
+"?	c #FCFEFC"
 "  	c none"
 "                "
-"       !!!      "
-"       !!!      "
-"   !!   !   !!  "
-"   !!!  !   !!  "
-"     !!    !!   "
-"        !  !    "
-" !!    !!!    !!"
-" !!!! !!!!! !!!!"
-" !!    !!!    !!"
-"     !  !       "
-"    !!    !!    "
-"   !!   !  !!!  "
-"   !!   !   !!  "
-"       !!!      "
-"       !!!      "
+"                "
+"    ???????     "
+"    ?!???!?     "
+"  ???!!?!!???   "
+"  ?!!?!#!!?!??  "
+"  ?!!?###?!!!?  "
+"  ??!#%%%#!!??  "
+"   ??##%%#???   "
+"  ??!!### !???  "
+"  ?!!!??! !!!?  "
+"  ??!??!!!?!??  "
+"   ?????!!???   "
+"       ????     "
+"                "
+"                "
 ;1234567890123456
 [end]
 
@@ -8036,6 +8075,88 @@ DayXpm="15 14 3 1"   Colormode=16
 [_point]
 Type=0x06403
 ;GRMN_TYPE: Geographical Named Points of Interest/CEMETERY/Cemetery/Non NT, NT
+String1=0x04,Picnic shelter
+String2=0x14,Fedett asztal
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="17 14 4 1"   Colormode=16
+"!	c #7B3020"
+"#	c #FFFFFF"
+"%	c #BD6541"
+"  	c none"
+"                 "
+"      #%%%#      "
+"    ##!!!!!##    "
+"   #%!!###!!%#   "
+"  #!!%#   #%!!## "
+" #!!##     ##!!# "
+" ############### "
+"   #!!!!!!!!!#   "
+" #####%!#!%##### "
+" #%%#%!###!%#%%# "
+" #!!!!!!!!!!!!!# "
+" ###%!#####!%### "
+"  #%!#     #!%#  "
+"  ####     ####  "
+;12345678901234567
+[end]
+
+
+[_point]
+Type=0x06404
+;GRMN_TYPE: Geographical Named Points of Interest/CHURCH/Church, mosque, etc./Non NT, NT
+String1=0x04,Picnic site
+String2=0x14,Pihenőhely
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 18 2"   Colormode=16
+"!!	c #008C00"
+"!#	c #F8FCF8"
+"!%	c #000000"
+"!?	c #00C000"
+"!$	c #00B800"
+"!*	c #00B400"
+"!=	c #00AC00"
+"!1	c #00A800"
+"!2	c #00A400"
+"!3	c #00A000"
+"!4	c #009C00"
+"!5	c #009800"
+"!6	c #00C800"
+"!7	c #00BC00"
+"!8	c #00B000"
+"!9	c #009400"
+"#!	c #009000"
+"  	c none"
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
+"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
+"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
+"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
+"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
+"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
+"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
+"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
+"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
+"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x06405
+;GRMN_TYPE: Geographical Named Points of Interest/CIVIL_BUILDING/Civil building/Non NT, NT
 String1=0x04,Graveyard
 String2=0x14,Sír
 ExtendedLabels=Y
@@ -8069,8 +8190,8 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
-Type=0x06404
-;GRMN_TYPE: Geographical Named Points of Interest/CHURCH/Church, mosque, etc./Non NT, NT
+Type=0x06406
+;GRMN_TYPE: Geographical Named Points of Interest/CROSSING/Crossing/Non NT, NT
 String1=0x14,Halomsír
 String2=0x04,Tumulus
 ExtendedLabels=Y
@@ -8098,40 +8219,6 @@ DayXpm="17 14 5 1"   Colormode=16
 "                 "
 "                 "
 ;12345678901234567
-[end]
-
-
-[_point]
-Type=0x06406
-;GRMN_TYPE: Geographical Named Points of Interest/CROSSING/Crossing/Non NT, NT
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #000000"
-"#	c #F80000"
-"%	c #F8FCF8"
-"  	c none"
-"                "
-"       #        "
-"      ###       "
-"      ###       "
-"     ##%##      "
-"    ##%%%##     "
-"    #!%!%!#     "
-"   #!!!!!!!#    "
-"  ##%!%!%!%##   "
-"  ##%!%!%!%##   "
-" ##%!!!!!!!%##  "
-"##%%%!%!%!%%%## "
-"############### "
-" #############  "
-"                "
-"                "
-;1234567890123456
 [end]
 
 
@@ -9339,6 +9426,38 @@ DayXpm="16 16 2 1"   Colormode=16
 
 
 [_point]
+Type=0x06603
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/BASIN/Basin/Non NT, NT
+String1=0x14,Szép kilátás
+String2=0x04,Viewpoint
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 2 1"   Colormode=16
+"!	c #FF0000"
+"  	c none"
+"                "
+"       !!!      "
+"       !!!      "
+"   !!   !   !!  "
+"   !!!  !   !!  "
+"     !!    !!   "
+"        !  !    "
+" !!    !!!    !!"
+" !!!! !!!!! !!!!"
+" !!    !!!    !!"
+"     !  !       "
+"    !!    !!    "
+"   !!   !  !!!  "
+"   !!   !   !!  "
+"       !!!      "
+"       !!!      "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x06604
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/BEACH/Beach/Non NT, NT
 String1=0x04,Beach resort
@@ -10350,70 +10469,36 @@ DayXpm="15 17 3 1"   Colormode=16
 
 
 [_point]
-Type=0x11602
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_35/User customizable point type/Non NT, NT
-String1=0x04,Ruins
-String2=0x14,Templomrom
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #000000"
-"%	c #C0C0C0"
-"  	c none"
-"                "
-"                "
-"  ####          "
-"  #%%#####      "
-"  #%%%%%%#      "
-"  #%####%# #    "
-"  #%#!!#%# ###  "
-"  #%#!!#%# #%#  "
-"  #%####%###%#  "
-"  #%%%%%%%%%%#  "
-"  #%%%%%%%%%%#  "
-"  #%%%%%%%%%%#  "
-"  ############  "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x11606
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_39/User customizable point type/Non NT, NT
-String1=0x00,Tomb
+Type=0x11600
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_33/User customizable point type/Non NT, NT
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=DayAndNight
 DaycustomColor:#000000
 NightcustomColor:#000000
 ContourColor=No
-DayXpm="15 15 4 1"   Colormode=16
-"!	c #808000"
-"#	c #000000"
-"%	c #C0C0C0"
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #000000"
+"#	c #F80000"
+"%	c #F8FCF8"
 "  	c none"
-"               "
-"               "
-"     #####     "
-"    #%%%%%#    "
-"   #%%%%%%%#   "
-"   #%#####%#   "
-"   #%%%%%%%#   "
-"   #%%%%%%%#   "
-"   #%#%#%#%#   "
-"   #%%%%%%%#   "
-"   #%%%%%%%#   "
-"   #########   "
-"  #!!!!!!!!!#  "
-"  ###########  "
-"               "
-;123456789012345
+"                "
+"       #        "
+"      ###       "
+"      ###       "
+"     ##%##      "
+"    ##%%%##     "
+"    #!%!%!#     "
+"   #!!!!!!!#    "
+"  ##%!%!%!%##   "
+"  ##%!%!%!%##   "
+" ##%!!!!!!!%##  "
+"##%%%!%!%!%%%## "
+"############### "
+" #############  "
+"                "
+"                "
+;1234567890123456
 [end]
 
 
@@ -10494,88 +10579,6 @@ DayXpm="16 16 5 1"   Colormode=16
 
 
 [_point]
-Type=0x11706
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_71/User customizable point type/Non NT, NT
-String1=0x04,Picnic shelter
-String2=0x14,Fedett asztal
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
-ContourColor=No
-DayXpm="17 14 4 1"   Colormode=16
-"!	c #7B3020"
-"#	c #FFFFFF"
-"%	c #BD6541"
-"  	c none"
-"                 "
-"      #%%%#      "
-"    ##!!!!!##    "
-"   #%!!###!!%#   "
-"  #!!%#   #%!!## "
-" #!!##     ##!!# "
-" ############### "
-"   #!!!!!!!!!#   "
-" #####%!#!%##### "
-" #%%#%!###!%#%%# "
-" #!!!!!!!!!!!!!# "
-" ###%!#####!%### "
-"  #%!#     #!%#  "
-"  ####     ####  "
-;12345678901234567
-[end]
-
-
-[_point]
-Type=0x11708
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_73/User customizable point type/Non NT, NT
-String1=0x04,Picnic site
-String2=0x14,Pihenőhely
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 18 2"   Colormode=16
-"!!	c #008C00"
-"!#	c #F8FCF8"
-"!%	c #000000"
-"!?	c #00C000"
-"!$	c #00B800"
-"!*	c #00B400"
-"!=	c #00AC00"
-"!1	c #00A800"
-"!2	c #00A400"
-"!3	c #00A000"
-"!4	c #009C00"
-"!5	c #009800"
-"!6	c #00C800"
-"!7	c #00BC00"
-"!8	c #00B000"
-"!9	c #009400"
-"#!	c #009000"
-"  	c none"
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
-"!#!%!?!#!#!#!#!#!#!#!#!#!#!5!%!#"
-"!#!%!7!7!7!$!#!=!1!#!3!3!4!5!%!#"
-"!#!%!*!*!*!8!#!1!2!#!3!4!4!5!%!#"
-"!#!%!#!#!=!#!1!2!2!3!#!4!#!#!%!#"
-"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
-"!#!%!2!2!2!#!2!3!3!4!#!5!5!9!%!#"
-"!#!%!3!2!#!#!3!3!4!4!#!#!9!9!%!#"
-"!#!%!3!3!#!3!4!4!4!5!5!#!9#!!%!#"
-"!#!%!4!4!4!4!4!5!5!5!9!9#!#!!%!#"
-"!#!%!5!5!5!5!5!5!5!9!9#!#!!!!%!#"
-"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
-"    !#!#!#!#!#!#!#!#!#!#!#!#    "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x11709
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_74/User customizable point type/Non NT, NT
 String1=0x04,Picnic site with firepit
@@ -10650,41 +10653,6 @@ DayXpm="16 16 3 1"   Colormode=16
 "  #!!#    #!!#  "
 "  ####    ####  "
 "                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x1170b
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_76/User customizable point type/Non NT, NT
-String1=0x04,Firepit
-String2=0x14,Tűzrakó
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #202020"
-"#	c #FC0204"
-"%	c #FCB624"
-"?	c #FCFEFC"
-"  	c none"
-"                "
-"                "
-"    ???????     "
-"    ?!???!?     "
-"  ???!!?!!???   "
-"  ?!!?!#!!?!??  "
-"  ?!!?###?!!!?  "
-"  ??!#%%%#!!??  "
-"   ??##%%#???   "
-"  ??!!### !???  "
-"  ?!!!??! !!!?  "
-"  ??!??!!!?!??  "
-"   ?????!!???   "
-"       ????     "
 "                "
 "                "
 ;1234567890123456
@@ -11077,41 +11045,6 @@ DayXpm="16 16 4 1"   Colormode=16
 
 
 [_point]
-Type=0x11811
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_114/User customizable point type/Non NT, NT
-String1=0x14,Mentok
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 6 1"   Colormode=16
-"!	c #FC0204"
-"#	c #048204"
-"%	c #FCB624"
-"?	c #0402FC"
-"$	c #FFFFFF"
-"  	c none"
-"     $$$$$$     "
-"   $$$????$$$   "
-"  $$??$$$$??$$  "
-" $$?$$$??$$$?$$ "
-" $?$??$%%$??$?$ "
-"$$?$??$%?$??$?$$"
-"$?$$$???%??$$$?$"
-"$?$$$$??%?$$$$?$"
-"$?$$$$?%??$$$$?$"
-"$?$$$??%???$$$?$"
-"$$?$??$?%$??$?$$"
-" $?$??$?%$??$?$ "
-" $$!!!!!!!!!!$$ "
-"  $$$$$$$$$$$$  "
-"  $##########$  "
-"  $$$$$$$$$$$$  "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x11812
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_115/User customizable point type/Non NT, NT
 String1=0x04,Recycle bin
@@ -11180,8 +11113,8 @@ DayXpm="16 16 5 1"   Colormode=16
 
 
 [_point]
-Type=0x11906
-;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_135/User customizable point type/Non NT, NT
+Type=0x11819
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_122/User customizable point type/Non NT, NT
 String1=0x14,Felvonóállomás
 String2=0x04,Cable car station
 ExtendedLabels=Y

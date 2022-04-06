@@ -30,5 +30,4 @@ amenity=drinking_water & foot!=no [0x5000 resolution 23]
 
 
 #amenity=taxi [0x1151E resolution 24]
-#amenity=marketplace {name '${short_name}'|'${name}'} [0x11810 resolution 24]
 amenity=marketplace {name '${short_name}'|'${name}'} [0x2f15 resolution 24]

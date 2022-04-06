@@ -33,7 +33,7 @@ aeroway=aerodrome {name '${short_name}'|'${name}'} [0x02F04 resolution 24]
 aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 resolution 24]
 
 highway=milestone {name '${distance}'} [0x5A00 resolution 24]
-railway=crossing | railway=level_crossing [0x6406 resolution 24]
+railway=crossing | railway=level_crossing [0x11600 resolution 24]
 
-aerialway=station {name '${short_name}'|'${name}'} [0x11906 resolution 24]
+aerialway=station {name '${short_name}'|'${name}'} [0x11818 resolution 24]
 
