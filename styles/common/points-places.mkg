@@ -10,26 +10,26 @@
 
 if (place=city) then
 	mkgmap:area2poi=true { deletealltags; }
-	(capital=yes | capital=2) [0x00200 resolution 14  ]
-	population>1000000 [0x00400 resolution 14  ]
-	()  [0x00700 resolution 18-19 continue ]
-	()  [0x00600 resolution 20-24  ]
+	(capital=yes | capital=2) [0x00100 resolution 14  ]
+	population>1000000 [0x00200 resolution 14  ]
+	()  [0x00600 resolution 18-19 continue ]
+	()  [0x00500 resolution 20-24  ]
 end
 
 if (place=town ) then
 	mkgmap:area2poi=true { deletealltags; }
-	()  [0x00900 resolution 18-19 continue ]
-	()  [0x00800 resolution 20-24  ]
+	()  [0x00800 resolution 18-19 continue ]
+	()  [0x00700 resolution 20-24  ]
 end
 
 if (place=village ) then
 	mkgmap:area2poi=true { deletealltags; }
-	()  [0x00B00 resolution 20-21 continue]
-	()  [0x00A00 resolution 22-24 ]
+	()  [0x00A00 resolution 20-21 continue]
+	()  [0x00900 resolution 22-24 ]
 end
 
 
-place=suburb  [0x00C00 resolution 22  ]
+place=suburb  [0x00B00 resolution 22  ]
 place=hamlet | place=farm  [0x00D00 resolution 22 ]
 place=islet [0x00D00 resolution 24 ]
 place=locality [0x06602 resolution 24 ]

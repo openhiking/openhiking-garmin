@@ -98,6 +98,10 @@ ifneq (${MKG_MAKESYMBOLS},)
 MAKESYMBOLS=${MKG_MAKESYMBOLS}
 endif
 
+ifneq (${MKG_MAKENAMES},)
+MAKENAMES=${MKG_MAKENAMES}
+endif
+
 ifneq (${MKG_SPLITTER},)
 SPLITTER=${MKG_SPLITTER}
 endif
@@ -227,10 +231,11 @@ MAP_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(
 
 ifeq ($(PREFILTERING),yes)
 	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
+	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
 else
 	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
 endif
-
 
 
 ##############################################
@@ -249,6 +254,19 @@ endif
 
 SYMBOLS_START_ID=120000000000
 
+
+##############################################
+# Residential naming
+
+PLACE_CONDITION?="place= or landuse=residential"
+
+ifeq ($(PREFILTERING),yes)
+	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-flt.o5m
+else
+	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-clipped.o5m
+endif
+
+MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-named.o5m)
 
 ##############################################
 # Merging
@@ -408,6 +426,21 @@ $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 $(TILES_DIR)$(PSEP2)%-routes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
+$(TILES_DIR)$(PSEP2)%-places.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+	$(OSMFILTER) $< --keep=$(PLACE_CONDITION)  -o=$@
+
+$(TILES_DIR)$(PSEP2)%-places.pbf: $(TILES_DIR)$(PSEP)%-places.o5m
+	$(OSMCONVERT) $< -o=$@
+	
+	
+ifeq ($(PREFILTERING),yes)
+$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-flt.o5m $(TILES_DIR)$(PSEP)%-places.osc
+	$(OSMCONVERT) $^ -o=$@
+else
+$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m $(TILES_DIR)$(PSEP)%-places.osc
+	$(OSMCONVERT) $^ -o=$@
+endif
+
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
@@ -418,8 +451,16 @@ $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
 	$(MAKESYMBOLS) -p --exclude=$(SYMBOLS_EXCLUDE) --start-node-id=$(SYMBOLS_START_ID) --target-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
 
+$(TILES_DIR)$(PSEP2)%-places.osc: $(TILES_DIR)$(PSEP)%-places.pbf
+	$(MAKENAMES) $^ $@
+
+
 symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
 	@echo "Done"
+
+places: $(TILES_DIR)$(PSEP2)hungary-named.o5m $(TILES_DIR)$(PSEP2)hungary-clipped.o5m
+	@echo $<
+	@echo $^
 
 
 $(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
@@ -559,6 +600,7 @@ cleanoutput:
 
 
 test:
-	@echo $(PRECOMP_SEA_OPTION)
+	@echo $(MAP_NAMING_INP_O5M)
+	@echo $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
 
 

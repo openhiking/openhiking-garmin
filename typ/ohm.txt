@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 55503 octets
-; Fichier TYP compilé     04/06/2022     20:25:56
-; Décompilé le 4/6/2022 à 8:26:00 PM
+; Longueur: 55497 octets
+; Fichier TYP compilé     04/11/2022     22:20:24
+; Décompilé le 4/11/2022 à 10:22:18 PM
 
 [_id]
 ProductCode=1
@@ -4052,8 +4052,10 @@ ContourColor=No
 
 
 [_point]
-Type=0x00200
-;GRMN_TYPE: Political Entities/CITY_5M, LARGE_CITY/Large city center, typically 1M+ inhabitants/Non NT
+Type=0x00100
+;GRMN_TYPE: Political Entities/CITY_10M/Large city with >10 million inhabitants/Non NT
+String1=0x04,Capital
+String2=0x14,Főváros
 ExtendedLabels=Y
 FontStyle=LargeFont
 CustomColor=No
@@ -4074,18 +4076,54 @@ DayXpm="12 12 15 1"   Colormode=16
 "6	c #005EC8"
 "7	c #F8FCF8"
 "  	c none"
-"     77     "
-"  777!!777  "
+"    7777    "
+"  77!!!!77  "
 " 7!!!41!!!7 "
 " 7!6663**!7 "
-" 7!6663**!7 "
+"7!!6663**!!7"
 "7!46652$$%!7"
 "7!1332=??#!7"
-" 7!**$?%%!7 "
+"7!!**$?%%!!7"
 " 7!**$?%%!7 "
 " 7!!!%#!!!7 "
-"  777!!777  "
-"     77     "
+"  77!!!!77  "
+"    7777    "
+;123456789012
+[end]
+
+
+[_point]
+Type=0x00200
+;GRMN_TYPE: Political Entities/CITY_5M, LARGE_CITY/Large city center, typically 1M+ inhabitants/Non NT
+ExtendedLabels=N
+DayXpm="12 12 15 1"   Colormode=16
+"!	c #000000"
+"#	c #003978"
+"%	c #003C80"
+"?	c #00428C"
+"$	c #004490"
+"*	c #004694"
+"=	c #004898"
+"1	c #004BA0"
+"2	c #004DA4"
+"3	c #004FA8"
+"4	c #0051AC"
+"5	c #0055B4"
+"6	c #005EC8"
+"7	c #F8FCF8"
+"  	c none"
+"    7777    "
+"  77!!!!77  "
+" 7!!!41!!!7 "
+" 7!6663**!7 "
+"7!!6663**!!7"
+"7!46652$$%!7"
+"7!1332=??#!7"
+"7!!**$?%%!!7"
+" 7!**$?%%!7 "
+" 7!!!%#!!!7 "
+"  77!!!!77  "
+"    7777    "
 ;123456789012
 [end]
 
@@ -4093,35 +4131,44 @@ DayXpm="12 12 15 1"   Colormode=16
 [_point]
 Type=0x00300
 ;GRMN_TYPE: Political Entities/CITY_2M/Large city with a range of (2, 5] million inhabitants/Non NT
-String1=0x04,
-String2=0x14,
 ExtendedLabels=Y
 FontStyle=LargeFont
 CustomColor=No
 ContourColor=No
-DayXpm="8 8 3 1"   Colormode=16
+DayXpm="10 10 15 1"   Colormode=16
 "!	c #000000"
-"#	c #F8FCF8"
+"#	c #784F00"
+"%	c #805400"
+"?	c #8C5C00"
+"$	c #905F00"
+"*	c #946200"
+"=	c #986400"
+"1	c #A06900"
+"2	c #A46C00"
+"3	c #A86F00"
+"4	c #AC7100"
+"5	c #B47700"
+"6	c #C88400"
+"7	c #F8FCF8"
 "  	c none"
-"   ##   "
-"  #!!#  "
-" #!##!# "
-"#!#!!#!#"
-"#!#!!#!#"
-" #!##!# "
-"  #!!#  "
-"   ##   "
-;12345678
+"    77    "
+"  77!!77  "
+" 7!!41!!7 "
+" 7!663*!7 "
+"7!4652$%!7"
+"7!132=?#!7"
+" 7!*$?%!7 "
+" 7!!%#!!7 "
+"  77!!77  "
+"    77    "
+;1234567890
 [end]
 
 
 [_point]
 Type=0x00400
 ;GRMN_TYPE: Political Entities/CITY_1M/Large city with a range of (1, 2] million inhabitants/Non NT
-ExtendedLabels=Y
-FontStyle=LargeFont
-CustomColor=No
-ContourColor=No
+ExtendedLabels=N
 DayXpm="10 10 15 1"   Colormode=16
 "!	c #000000"
 "#	c #784F00"
@@ -4155,22 +4202,25 @@ DayXpm="10 10 15 1"   Colormode=16
 [_point]
 Type=0x00500
 ;GRMN_TYPE: Political Entities/CITY_500K/City with the range of (0.5, 1] million inhabitants/Non NT
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=LargeFont
+CustomColor=No
+ContourColor=No
 DayXpm="10 10 15 1"   Colormode=16
 "!	c #000000"
-"#	c #784F00"
-"%	c #805400"
-"?	c #8C5C00"
-"$	c #905F00"
-"*	c #946200"
-"=	c #986400"
-"1	c #A06900"
-"2	c #A46C00"
-"3	c #A86F00"
-"4	c #AC7100"
-"5	c #B47700"
-"6	c #C88400"
-"7	c #F8FCF8"
+"#	c #ADA800"
+"%	c #B3AD00"
+"?	c #BCB600"
+"$	c #BEB900"
+"*	c #C1BB00"
+"=	c #C4BD00"
+"1	c #C9C300"
+"2	c #CBC500"
+"3	c #CEC700"
+"4	c #D0CA00"
+"5	c #D5CF00"
+"6	c #E1DA00"
+"7	c #FAFDFA"
 "  	c none"
 "    77    "
 "  77!!77  "
@@ -4189,10 +4239,7 @@ DayXpm="10 10 15 1"   Colormode=16
 [_point]
 Type=0x00600
 ;GRMN_TYPE: Political Entities/CITY_200K/City with the range of (200, 500] thousand inhabitants/Non NT
-ExtendedLabels=Y
-FontStyle=LargeFont
-CustomColor=No
-ContourColor=No
+ExtendedLabels=N
 DayXpm="10 10 15 1"   Colormode=16
 "!	c #000000"
 "#	c #ADA800"
@@ -4226,44 +4273,35 @@ DayXpm="10 10 15 1"   Colormode=16
 [_point]
 Type=0x00700
 ;GRMN_TYPE: Political Entities/CITY_100K/City with the range of (100, 200] thousand inhabitants/Non NT
-ExtendedLabels=N
-DayXpm="10 10 15 1"   Colormode=16
+ExtendedLabels=Y
+FontStyle=LargeFont
+CustomColor=No
+ContourColor=No
+DayXpm="8 8 8 1"   Colormode=16
 "!	c #000000"
-"#	c #ADA800"
-"%	c #B3AD00"
-"?	c #BCB600"
-"$	c #BEB900"
-"*	c #C1BB00"
-"=	c #C4BD00"
-"1	c #C9C300"
-"2	c #CBC500"
-"3	c #CEC700"
-"4	c #D0CA00"
-"5	c #D5CF00"
-"6	c #E1DA00"
-"7	c #FAFDFA"
+"#	c #006D00"
+"%	c #009800"
+"?	c #00A300"
+"$	c #00A700"
+"*	c #00CC00"
+"=	c #F9FCF9"
 "  	c none"
-"    77    "
-"  77!!77  "
-" 7!!41!!7 "
-" 7!663*!7 "
-"7!4652$%!7"
-"7!132=?#!7"
-" 7!*$?%!7 "
-" 7!!%#!!7 "
-"  77!!77  "
-"    77    "
-;1234567890
+"   ==   "
+"  =!!=  "
+" =!*?!= "
+"=!**$#!="
+"=!?$%#!="
+" =!##!= "
+"  =!!=  "
+"   ==   "
+;12345678
 [end]
 
 
 [_point]
 Type=0x00800
 ;GRMN_TYPE: Political Entities/CITY_50K, MEDIUM_CITY/Medium city center, typically 50K-1M inhabitants/Non NT
-ExtendedLabels=Y
-FontStyle=LargeFont
-CustomColor=No
-ContourColor=No
+ExtendedLabels=N
 DayXpm="8 8 8 1"   Colormode=16
 "!	c #000000"
 "#	c #006D00"
@@ -4288,15 +4326,18 @@ DayXpm="8 8 8 1"   Colormode=16
 [_point]
 Type=0x00900
 ;GRMN_TYPE: Political Entities/CITY_20K/City with the range of (20, 50] thousand inhabitants/Non NT
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=LargeFont
+CustomColor=No
+ContourColor=No
 DayXpm="8 8 8 1"   Colormode=16
 "!	c #000000"
-"#	c #006D00"
-"%	c #009800"
-"?	c #00A300"
-"$	c #00A700"
-"*	c #00CC00"
-"=	c #F9FCF9"
+"#	c #FFED60"
+"%	c #FFF482"
+"?	c #FFF68A"
+"$	c #FFF78B"
+"*	c #FFFDA7"
+"=	c #FFFFFF"
 "  	c none"
 "   ==   "
 "  =!!=  "
@@ -4313,10 +4354,7 @@ DayXpm="8 8 8 1"   Colormode=16
 [_point]
 Type=0x00a00
 ;GRMN_TYPE: Political Entities/CITY_10K/City with the range of (10, 20] thousand inhabitants/Non NT
-ExtendedLabels=Y
-FontStyle=LargeFont
-CustomColor=No
-ContourColor=No
+ExtendedLabels=N
 DayXpm="8 8 8 1"   Colormode=16
 "!	c #000000"
 "#	c #FFED60"
@@ -4342,30 +4380,23 @@ DayXpm="8 8 8 1"   Colormode=16
 Type=0x00b00
 ;GRMN_TYPE: Political Entities/CITY_5K/City with the range of (5, 10] thousand inhabitants/Non NT
 ExtendedLabels=N
-DayXpm="8 8 8 1"   Colormode=16
-"!	c #000000"
-"#	c #FFED60"
-"%	c #FFF482"
-"?	c #FFF68A"
-"$	c #FFF78B"
-"*	c #FFFDA7"
-"=	c #FFFFFF"
+DayXpm="4 4 3 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #000000"
 "  	c none"
-"   ==   "
-"  =!!=  "
-" =!*?!= "
-"=!**$#!="
-"=!?$%#!="
-" =!##!= "
-"  =!!=  "
-"   ==   "
-;12345678
+" ## "
+"#!!#"
+"#!!#"
+" ## "
+;1234
 [end]
 
 
 [_point]
 Type=0x00c00
 ;GRMN_TYPE: Political Entities/CITY_LT5K, SMALL_CITY/Small city or town center, typically less than 50K inhabitants/Non NT
+String1=0x04,
+String2=0x14,
 ExtendedLabels=N
 DayXpm="4 4 3 1"   Colormode=16
 "!	c #F8FCF8"
@@ -4404,26 +4435,89 @@ CustomColor=DayAndNight
 DaycustomColor:#000000
 NightcustomColor:#000000
 ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #00F0F0"
-"#	c #000000"
+DayXpm="16 16 26 2"   Colormode=16
+"!!	c #38D8D0"
+"!#	c #F8FCF8"
+"!%	c #000000"
+"!?	c #B0F0E8"
+"!$	c #B8F0F0"
+"!*	c #A8ECE8"
+"!=	c #98E8E8"
+"!1	c #88E8E0"
+"!2	c #78E4E0"
+"!3	c #70E4E0"
+"!4	c #68E0D8"
+"!5	c #60E0D8"
+"!6	c #58DCD8"
+"!7	c #98ECE8"
+"!8	c #B8F0E8"
+"!9	c #90E8E8"
+"#!	c #58E0D8"
+"##	c #90E8E0"
+"#%	c #50DCD8"
+"#?	c #80E4E0"
+"#$	c #68E0E0"
+"#*	c #70E0E0"
+"#=	c #48DCD8"
+"#1	c #48D8D0"
+"#2	c #40D8D0"
 "  	c none"
-"                "
-"  ############  "
-" #!!!!!!!!!!!!# "
-" #!#!#!#!!!#!!# "
-" #!#!#!#!!##!!# "
-" #!#!#!#!###!!# "
-" #!#####!###!!# "
-" #!!###!!###!!# "
-" #!!!#!!!!##!!# "
-" #!!!#!!!!##!!# "
-" #!!###!!!##!!# "
-" #!!###!!!##!!# "
-" #!!###!!!##!!# "
-" #!!!!!!!!!!!!# "
-"  ############  "
-"                "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"!#!%!?!$!?!*!=!1!2!3!4!4!5!6!%!#"
+"!#!%!$!%!$!%!7!%!2!3!4!%!5!6!%!#"
+"!#!%!8!%!8!%!7!%!2!3!%!%!5!6!%!#"
+"!#!%!*!%!*!%!9!%!2!%!%!%!5!6!%!#"
+"!#!%!7!%!%!%!%!%!2!%!%!%#!!6!%!#"
+"!#!%!1##!%!%!%!2!3!%!%!%!6#%!%!#"
+"!#!%!2#?!2!%!2!3#$!4!%!%!6#%!%!#"
+"!#!%!3!3!3!%#*!4!4!5!%!%#%#%!%!#"
+"!#!%#$#*!%!%!%!4!5!5!%!%#%#=!%!#"
+"!#!%!4!4!%!%!%!5#!!6!%!%#=#1!%!#"
+"!#!%!5!5!%!%!%!6!6#%!%!%#1#2!%!#"
+"!#!%!6!6!6!6!6#%#%#%#=#1#2!!!%!#"
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x02a05
+;GRMN_TYPE: Business - Food and Drink/RESTAURANT_DELI/Deli or sandwich shop/Non NT
+String1=0x04,Bakery
+String2=0x14,Pékség
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 12 12 1"   Colormode=16
+"!	c #5B0F00"
+"#	c #621900"
+"%	c #692200"
+"?	c #6E2B00"
+"$	c #743300"
+"*	c #793A00"
+"=	c #7D4100"
+"1	c #824800"
+"2	c #864E00"
+"3	c #8A5400"
+"4	c #F8FCF8"
+"  	c none"
+"     444444     "
+"    43333334    "
+"   4222222224   "
+"  411444444114  "
+" 4====4444====4 "
+"4**44**44**44**4"
+"4$$444$$$$444$$4"
+"4??4444??4444??4"
+"4%%444%%%%444%%4"
+" 4#####44#####4 "
+"  4!!!4  4!!!4  "
+"   444    444   "
 ;1234567890123456
 [end]
 
@@ -4439,28 +4533,29 @@ CustomColor=DayAndNight
 DaycustomColor:#000000
 NightcustomColor:#000000
 ContourColor=No
-DayXpm="16 16 6 1"   Colormode=16
+DayXpm="16 16 7 1"   Colormode=16
 "!	c #F80000"
 "#	c #000000"
 "%	c #F8FC00"
 "?	c #F8C800"
 "$	c #389400"
+"*	c #FFFFFF"
 "  	c none"
 "                "
-"                "
-"       ###      "
-"     ##%??##    "
-"    #%%??$?$#   "
-"   #%%!$%?!!$#  "
-"   #%$!!??!!?#  "
-"  #%?%$?######  "
-"  #?$!?%#       "
-"   #$!???#      "
-"   #?$?!$#      "
-"    #??!$?#     "
-"     ##???#     "
-"       ###      "
-"                "
+"       ***      "
+"     **###**    "
+"    *##%??##*   "
+"   *#%%??$?$#*  "
+"  *#%%!$%?!!$#* "
+"  *#%$!!??!!?#* "
+" *#%?%$?######* "
+" *#?$!?%#*****  "
+"  *#$!???#*     "
+"  *#?$?!$#*     "
+"   *#??!$?#*    "
+"    *##???#*    "
+"     **###*     "
+"       ***      "
 "                "
 ;1234567890123456
 [end]
@@ -4469,34 +4564,36 @@ DayXpm="16 16 6 1"   Colormode=16
 [_point]
 Type=0x02a0d
 ;GRMN_TYPE: Business - Food and Drink/RESTAURANT_DONUTS/Donut shop/Non NT
-String1=0x04,Bakery
-String2=0x14,Pékség
+String1=0x14,Cukrászda
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
+CustomColor=No
 ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #F8FCF8"
-"#	c #986800"
+DayXpm="16 16 8 1"   Colormode=16
+"!	c #000000"
+"#	c #7C2A04"
+"%	c #9C3204"
+"?	c #FFFFFF"
+"$	c #FFDEFF"
+"*	c #FFFF00"
+"=	c #FFFFB4"
 "  	c none"
-"                "
-"                "
-"                "
-"     ######     "
-"    ########    "
-"   ##!!!!!!##   "
-"  ####!!!!####  "
-" ##!!##!!##!!## "
-" ##!!!####!!!## "
-" ##!!!!##!!!!## "
-" ##!!!####!!!## "
-"  #####  #####  "
-"   ###    ###   "
-"                "
-"                "
-"                "
+"       ????     "
+"      ?!!!!??   "
+"     ?!%%%%!!?  "
+"    ?!%%%!!!!?  "
+"   ?!%!!!$$$!?  "
+"  ?!!!$$$###!?  "
+"  ?!$$###$$$!?  "
+" ?!!##$$$###!!? "
+"?!*!$$###$$$!=!?"
+"?!*!##$$$!!!=*!?"
+"?!*!$$!!!===**!?"
+"?!*!!!=====***!?"
+" ?!*=====****!? "
+"  ?!!******!!?  "
+"   ??!!!!!!??   "
+"     ??????     "
 ;1234567890123456
 [end]
 
@@ -4510,26 +4607,36 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 2 1"   Colormode=16
+DayXpm="14 13 15 1"   Colormode=16
 "!	c #000000"
+"#	c #560000"
+"%	c #85450D"
+"?	c #1E1E1E"
+"$	c #262626"
+"*	c #000045"
+"=	c #00005E"
+"1	c #000078"
+"2	c #000091"
+"3	c #0000AB"
+"4	c #0000C4"
+"5	c #0000DE"
+"6	c #0000F7"
+"7	c #FFFFFF"
 "  	c none"
-"                "
-"                "
-"    !  !  !     "
-"     !  !  !    "
-"     !  !  !    "
-"    !  !  !     "
-"  !!!!!!!!!!!   "
-"  !!!!!!!!!! !  "
-"  !!!!!!!!!! !  "
-"  !!!!!!!!!! !  "
-"  !!!!!!!!!!!   "
-"   !!!!!!!!     "
-"    !!!!!!      "
-"                "
-"                "
-"                "
-;1234567890123456
+"   7  7  7    "
+"  7%77%77%7   "
+"   7#77#77#7  "
+"   7#77#77#7  "
+" 77#77#77#77  "
+"7$$?!!!!!!!!7 "
+"7$654321=*!7!7"
+"7$654321=*!7!7"
+"7$654321=*!7!7"
+"7$$54321=*!!7 "
+" 7$54321=!77  "
+"  7?!!!!!7    "
+"   777777     "
+;12345678901234
 [end]
 
 
@@ -4542,29 +4649,59 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="13 16 6 1"   Colormode=16
-"!	c #FF9500"
-"#	c #FFFFFF"
-"%	c #BDCA20"
-"?	c #00CA1E"
-"$	c #FF306A"
+DayXpm="13 16 36 2"   Colormode=16
+"!!	c #550000"
+"!#	c #770000"
+"!%	c #910000"
+"!?	c #001E00"
+"!$	c #2F2200"
+"!*	c #3C2C00"
+"!=	c #433100"
+"!1	c #493700"
+"!2	c #523F00"
+"!3	c #5E4A00"
+"!4	c #004E00"
+"!5	c #A50F0F"
+"!6	c #007A12"
+"!7	c #008F15"
+"!8	c #00A418"
+"!9	c #98461A"
+"#!	c #00B91B"
+"##	c #03CD20"
+"#%	c #A55327"
+"#?	c #13DD31"
+"#$	c #B26034"
+"#*	c #1CE63A"
+"#=	c #D1023C"
+"#1	c #B81341"
+"#2	c #BF6D41"
+"#3	c #DE0F49"
+"#4	c #EB1C56"
+"#5	c #C72A56"
+"#6	c #D8865A"
+"#7	c #F82963"
+"#8	c #C7486B"
+"#9	c #FF3970"
+"%!	c #FF4F80"
+"%#	c #FF5F8B"
+"%%	c #FFFFFF"
 "  	c none"
-"    #####    "
-"  ###$$$###  "
-" ##$$$$$$$## "
-"##$$$$$$$$$##"
-"#?$$$?$?$$$?#"
-"#??$?????$??#"
-"##?!!%%!!!?##"
-" ##!%!!%%!## "
-"  ##!%!%!##  "
-"   #!%%!!#   "
-"   #!%%%!#   "
-"   ##!%!##   "
-"    #!%!#    "
-"    #!%!#    "
-"    ##!##    "
-"     ###     "
+"          %%%%%%          "
+"      %%%%!5#5!%%%%%      "
+"    %%!%#8%!#9#7#1!#%%    "
+"  %%!5%!%#%!#9#7#4#3!!%%  "
+"%%!4%#%!#*#?#9#!!8#3#=!?%%"
+"%%!4#*#?#*#?###!!8!7!6!?%%"
+"  %%!4#6#6#2#2#$#%!9!?%%  "
+"    %%!2#6#2#2#$#%!$%%    "
+"      %%!3#2#2#$!*%%      "
+"      %%!3#2#2#$!*%%      "
+"      %%!3#2#2#$!*%%      "
+"        %%!2#2!1%%        "
+"        %%!2#2!1%%        "
+"        %%!2#2!1%%        "
+"          %%!=%%          "
+"            %%            "
 ;1234567890123
 [end]
 
@@ -5098,31 +5235,34 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 14 10 1"   Colormode=16
-"!	c #181818"
-"#	c #872026"
-"%	c #AB723F"
-"?	c #D7A880"
-"$	c #919191"
-"*	c #FF5A9A"
-"=	c #EFEFEF"
-"1	c #FFFFFF"
-"2	c #414141"
+DayXpm="16 16 11 1"   Colormode=16
+"!	c #101010"
+"#	c #5C0000"
+"%	c #FFFFFF"
+"?	c #8F4D00"
+"$	c #0065FF"
+"*	c #BD00FF"
+"=	c #B60000"
+"1	c #3930FF"
+"2	c #7B00FF"
+"3	c #A4A4A4"
 "  	c none"
-"    11          "
-"   1221         "
-"  12112         "
-"  121121        "
-"  12112#1       "
-"  1!!!!*#1      "
-"  1%?1#**#1     "
-" 1!!$11#**#1    "
-" 1?%1= 1#**#1   "
-"1$!!1=  1#**#11 "
-" 1%1     1#**##1"
-"1!!$1     1#**#1"
-"1?%1       1###1"
-" 11         111 "
+" %%%            "
+"%3?3%           "
+"%???%           "
+"%3?3%       %%% "
+" %?%       %3?3%"
+"%1$$%      %???%"
+"%1$$$%     %3?3%"
+"%###=%%     %?% "
+" %%=##=%%% %**2%"
+"  %??%###=%***2%"
+" %??% %######=2%"
+"%!!%  %##%%%?##%"
+" %%  %####%%??% "
+"     %####% %!!%"
+"    %!!!!!!% %% "
+"     %%%%%%     "
 ;1234567890123456
 [end]
 
@@ -6647,40 +6787,6 @@ DayXpm="13 15 20 2"   Colormode=16
 "!#!%!%!%!%!%!%!%!%!%!%!#  "
 "    !#!#!#!#!#!#!#!#!#    "
 ;1234567890123
-[end]
-
-
-[_point]
-Type=0x02e0c
-;GRMN_TYPE: //
-String1=0x14,Cukrászda
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #000000"
-"#	c #7C2A04"
-"%	c #9C3204"
-"?	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"       !!!!     "
-"      !%%%%!!   "
-"     !%%%!!!!   "
-"    !%!!!???!   "
-"   !!!???###!   "
-"   !??###???!   "
-" !!!##???###!!! "
-"!??!??###???!??!"
-"!??!##???!!!???!"
-"!??!??!!!??????!"
-"!??!!!?????????!"
-" !!??????????!! "
-"   !!??????!!   "
-"     !!!!!!     "
-;1234567890123456
 [end]
 
 
