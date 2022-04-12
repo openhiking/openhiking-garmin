@@ -256,19 +256,6 @@ SYMBOLS_START_ID=120000000000
 
 
 ##############################################
-# Residential naming
-
-PLACE_CONDITION?="place= or landuse=residential"
-
-ifeq ($(PREFILTERING),yes)
-	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-flt.o5m
-else
-	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-clipped.o5m
-endif
-
-MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-named.o5m)
-
-##############################################
 # Merging
 
 MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
@@ -289,6 +276,23 @@ MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
 
 
 ##############################################
+# Residential naming
+
+PLACE_CONDITION?="place= or landuse=residential"
+
+ifeq ($(PREFILTERING),yes)
+	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-flt.o5m
+else
+	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-clipped.o5m
+endif
+
+MAP_INP_OSC := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-places.osc)
+
+MAP_MERGED_NAMED_PBF=master$(MAP)-named.pbf
+MAP_MERGED_NAMED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_NAMED_PBF)
+
+
+##############################################
 # Bounds Generation
 
 BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
@@ -298,6 +302,12 @@ BOUNDS_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 
 
 ##############################################
 # Tile Splitting
+
+ifeq ($(ADD_RESIDENTIAL_NAMES),yes)
+	MAP_SPLITTER_INP_PBF=$(MAP_MERGED_NAMED_PBF_FP)
+else
+	MAP_SPLITTER_INP_PBF=$(MAP_MERGED_PBF_FP)
+endif
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
 SPLITTER_MEMORY?=5000M
@@ -426,20 +436,14 @@ $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 $(TILES_DIR)$(PSEP2)%-routes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
-$(TILES_DIR)$(PSEP2)%-places.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
-	$(OSMFILTER) $< --keep=$(PLACE_CONDITION)  -o=$@
 
-$(TILES_DIR)$(PSEP2)%-places.pbf: $(TILES_DIR)$(PSEP)%-places.o5m
-	$(OSMCONVERT) $< -o=$@
-	
-	
-ifeq ($(PREFILTERING),yes)
-$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-flt.o5m $(TILES_DIR)$(PSEP)%-places.osc
-	$(OSMCONVERT) $^ -o=$@
-else
-$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m $(TILES_DIR)$(PSEP)%-places.osc
-	$(OSMCONVERT) $^ -o=$@
-endif
+#ifeq ($(PREFILTERING),yes)
+#$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-flt.o5m $(TILES_DIR)$(PSEP)%-places.osc
+#	$(OSMCONVERT) $^  --merge-versions -o=$@
+#else
+#$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m $(TILES_DIR)$(PSEP)%-places.osc
+#	$(OSMCONVERT) $^  --merge-versions -o=$@
+#endif
 
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
@@ -447,28 +451,36 @@ $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^  -o=$@
 
-
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
 	$(MAKESYMBOLS) -p --exclude=$(SYMBOLS_EXCLUDE) --start-node-id=$(SYMBOLS_START_ID) --target-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
-
-$(TILES_DIR)$(PSEP2)%-places.osc: $(TILES_DIR)$(PSEP)%-places.pbf
-	$(MAKENAMES) $^ $@
 
 
 symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
 	@echo "Done"
 
-places: $(TILES_DIR)$(PSEP2)hungary-named.o5m $(TILES_DIR)$(PSEP2)hungary-clipped.o5m
-	@echo $<
-	@echo $^
-
 
 $(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
-	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
+	$(OSMCONVERT) --hash-memory=240-30-2  $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 
 merge: $(MAP_MERGED_PBF_FP)
 	@echo "Merge completed"
+	
+$(TILES_DIR)$(PSEP2)%-places.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+	$(OSMFILTER) $< --keep=$(PLACE_CONDITION)  -o=$@
+
+$(TILES_DIR)$(PSEP2)%-places.pbf: $(TILES_DIR)$(PSEP)%-places.o5m
+	$(OSMCONVERT) $< -o=$@
+
+$(TILES_DIR)$(PSEP2)%-places.osc: $(TILES_DIR)$(PSEP)%-places.pbf
+	$(MAKENAMES) $^ $@
+
+
+$(MAP_MERGED_NAMED_PBF_FP): $(MAP_MERGED_PBF_FP) $(MAP_INP_OSC)
+	$(OSMCONVERT) --hash-memory=240-30-2   --drop-version $^ -o=$@
+
+places: $(MAP_MERGED_NAMED_PBF_FP)
+	@echo "DONE"
 
 
 merge-osmosis:  $(MAP_INP_OSM_PBF) $(MAP_INP_SUPP_PBF) $(MAP_INP_CONTOUR)
@@ -486,7 +498,7 @@ bounds: $(MAP_BOUNDS_O5M_FP)
 	java -cp $(MKGMAP) uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor "$<" "$(BOUNDS_DIR)"
 	@echo "Bounds created"
 
-tiles: $(MAP_MERGED_PBF_FP)
+tiles: $(MAP_SPLITTER_INP_PBF)
 	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=$(SPLITTER_MAX_AREAS) \
 	--status-freq=$(SPLITTER_STATUS_FREQ) $(SPLITTER_THREADS) $< --output-dir=$(TILES_DIR)
 
@@ -600,7 +612,7 @@ cleanoutput:
 
 
 test:
-	@echo $(MAP_NAMING_INP_O5M)
-	@echo $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
+	@echo $(MAP_SPLITTER_INP_PBF)
+
 
 
