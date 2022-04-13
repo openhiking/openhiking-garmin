@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 56231 octets
-; Fichier TYP compilé     04/12/2022     21:43:05
-; Décompilé le 4/12/2022 à 9:43:10 PM
+; Longueur: 56645 octets
+; Fichier TYP compilé     13/04/2022     19:19:30
+; Décompilé le 4/13/2022 à 7:20:55 PM
 
 [_id]
 ProductCode=1
@@ -4839,40 +4839,6 @@ DayXpm="16 16 19 2"   Colormode=16
 [_point]
 Type=0x02b03
 ;GRMN_TYPE: Business - Lodging/CAMPGROUND/Campground/Non NT
-String1=0x14,Kemping
-String2=0x04,Camp site
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #00FC00"
-"#	c #008000"
-"%	c #000000"
-"  	c none"
-"                "
-"          #     "
-"          #     "
-"      %# ###    "
-"      ####!#    "
-"      %!!!!##   "
-"     %##!!!!#   "
-"     %#%!!!!!#  "
-"    %!##%!!!!#  "
-"    ###!%!!!!!# "
-"    %!####!!!!##"
-"   %!##!#%!!!## "
-"  ###!##!%!!##  "
-" ##!!##!#!%##   "
-" %#%%#%%#%%#    "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02b04
-;GRMN_TYPE: Business - Lodging/RESORT/Resort/Non NT
 String1=0x04,Chalet
 String2=0x14,Nyaraló
 ExtendedLabels=Y
@@ -4904,17 +4870,63 @@ DayXpm="16 16 3 1"   Colormode=16
 
 
 [_point]
+Type=0x02b04
+;GRMN_TYPE: Business - Lodging/RESORT/Resort/Non NT
+String1=0x04,Motel
+String2=0x14,Motel
+ExtendedLabels=N
+DayXpm="16 16 19 2"   Colormode=16
+"!!	c #008C00"
+"!#	c #F8FCF8"
+"!%	c #000000"
+"!?	c #00C000"
+"!$	c #00B800"
+"!*	c #00B400"
+"!=	c #00AC00"
+"!1	c #00A800"
+"!2	c #00A400"
+"!3	c #00A000"
+"!4	c #009C00"
+"!5	c #009800"
+"!6	c #00C800"
+"!7	c #00BC00"
+"!8	c #00C400"
+"!9	c #00B000"
+"#!	c #009400"
+"##	c #009000"
+"  	c none"
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"!#!%!?!?!?!$!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!6!?!7!*!=!1!2!3!3!4!5!%!#"
+"!#!%!?!8!?!7!*!=!1!2!3!3!4!5!%!#"
+"!#!%!#!7!7!$!9!=!1!2!3!3!4!5!%!#"
+"!#!%!#!*!#!#!=!1!#!#!#!4!4!5!%!#"
+"!#!%!#!9!#!#!1!#!#!#!#!#!5!#!%!#"
+"!#!%!#!1!1!1!2!2!3!3!4!4!5!#!%!#"
+"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
+"!#!%!#!#!#!#!#!#!#!#!#!#!#!#!%!#"
+"!#!%!#!3!3!3!4!4!4!5!5#!#!!#!%!#"
+"!#!%!#!4!4!4!4!5!5!5#!#!##!#!%!#"
+"!#!%!5!5!5!5!5!5!5#!#!####!!!%!#"
+"  !#!%!%!%!%!%!%!%!%!%!%!%!%!#  "
+"    !#!#!#!#!#!#!#!#!#!#!#!#    "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x02b05
 ;GRMN_TYPE: //
-String1=0x14,Vadkemping
-String2=0x04,Backcountry camp site
+String1=0x14,Kemping
+String2=0x04,Camp site
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 DayXpm="16 16 4 1"   Colormode=16
-"!	c #EB8F0A"
-"#	c #A35C00"
+"!	c #00FC00"
+"#	c #008000"
 "%	c #000000"
 "  	c none"
 "                "
@@ -5277,28 +5289,32 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
+DayXpm="16 16 9 1"   Colormode=16
 "!	c #505050"
 "#	c #000000"
 "%	c #B0B4B0"
 "?	c #707070"
+"$	c #313131"
+"*	c #FFFFFF"
+"=	c #949494"
+"1	c #626262"
 "  	c none"
-"                "
-"     #####      "
-"    #%%%?###### "
-"   #%%%%??!!##! "
-"  #%%##%??!!!#! "
-" #%%%%%%%?!!!#! "
-" #%%%%%%#?!!!#! "
-" #%%##%%#??!!#! "
-" #%#  ###??!!#! "
-" #%#     #!!!#! "
-" #%#  #  #####! "
-"  #%##%#  ##!!! "
-"   #%%#    #!!# "
-"    ##     #!!# "
-"                "
-"                "
+"     *****      "
+"    *$###$***** "
+"   *#%%%??$####*"
+"  *#%%%%??!!#$!*"
+" *#%%##%=?!!!#!*"
+"*$%%%!!%%?1!!#!*"
+"*#%%%%%%%?1!!#!*"
+"*#%?##?%$??!!#!*"
+"*#%#* $##??!!#!*"
+"*#%#*****#!!!#!*"
+"*$%#**#**####$!*"
+" *#%##%#**##!!!*"
+"  *#%%#*  *#!1#*"
+"   *##*   *#!1#*"
+"    **    *#!?#*"
+"           **** "
 ;1234567890123456
 [end]
 
@@ -5306,28 +5322,34 @@ DayXpm="16 16 5 1"   Colormode=16
 [_point]
 Type=0x02c08
 ;GRMN_TYPE: Business - Attractions/ARENA/Arena or track/Non NT
-String1=0x14,stadion
-ExtendedLabels=N
-DayXpm="16 16 3 1"   Colormode=16
+String1=0x14,Stadion
+String2=0x04,Stadium
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 14 7 1"   Colormode=16
 "!	c #000000"
-"#	c #FFFFFF"
+"#	c #00CA00"
+"%	c #FF6500"
+"?	c #FFFFFF"
+"$	c #525252"
+"*	c #7BFF8B"
 "  	c none"
-"                "
-"                "
-"                "
-"  ############  "
-" ##!!!!!!!!!!## "
-"##!##########!##"
-"#!##!!!!!!!!##!#"
-"#!#!########!#!#"
-"#!#!########!#!#"
-"#!##!!!!!!!!##!#"
-"##!##########!##"
-" ##!!!!!!!!!!## "
-"  ############  "
-"                "
-"                "
-"                "
+"   ??????????   "
+"  ?$!!!!!!!!$?  "
+" ?!%%%%%%%%%%!? "
+"?!%%$$$$$$$$%%!?"
+"$%%$????????$%%$"
+"!%$?########?$%!"
+"!%$?*##**##*?$%!"
+"!%$?*##**##*?$%!"
+"!%$?########?$%!"
+"$%%$????????$%%$"
+"?!%%$$$$$$$$%%!?"
+" ?!%%%%%%%%%%!? "
+"  ?$!!!!!!!!$?  "
+"   ??????????   "
 ;1234567890123456
 [end]
 
@@ -7815,39 +7837,6 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x03008
 ;GRMN_TYPE: Business - Emergency and Government/FIRE_DEPT/Fire department/Non NT
-String1=0x04,Railway station
-String2=0x14,Vasútállomás
-ExtendedLabels=N
-DayXpm="16 16 6 1"   Colormode=16
-"!	c #C0C0C0"
-"#	c #000000"
-"%	c #F8FCF8"
-"?	c #808080"
-"$	c #008000"
-"  	c none"
-"                "
-" ############## "
-"#%%%??%%%%%%%%%#"
-"#%%?%%?%%%%%%%%#"
-"#%%%??%%%%%%%%%#"
-"#%########%%%%%#"
-"#%$#!!!#!!?%%%%#"
-"#%#########%%%%#"
-"#%$$$$$$$$$#%%%#"
-"#%$$$$#$#$$?#%%#"
-"#%####!#!#?#?#%#"
-"#%%%%%#%#%?#!#%#"
-"#%%%%%%%%%%%%%%#"
-" ############## "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x03008
-;GRMN_TYPE: Business - Emergency and Government/FIRE_DEPT/Fire department/Non NT
 String1=0x14,Tűzoltóság
 String2=0x04,Fire station
 ExtendedLabels=Y
@@ -7905,6 +7894,40 @@ DayXpm="16 16 3 1"   Colormode=16
 "                "
 "                "
 "                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x04800
+;GRMN_TYPE: //
+String1=0x14,Vadkemping
+String2=0x04,Backcountry camp site
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #EB8F0A"
+"#	c #A35C00"
+"%	c #000000"
+"  	c none"
+"                "
+"          #     "
+"          #     "
+"      %# ###    "
+"      ####!#    "
+"      %!!!!##   "
+"     %##!!!!#   "
+"     %#%!!!!!#  "
+"    %!##%!!!!#  "
+"    ###!%!!!!!# "
+"    %!####!!!!##"
+"   %!##!#%!!!## "
+"  ###!##!%!!##  "
+" ##!!##!#!%##   "
+" %#%%#%%#%%#    "
 "                "
 ;1234567890123456
 [end]
