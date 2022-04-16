@@ -14,8 +14,8 @@ amenity=shelter & shelter_type!=public_transport [0x6402 resolution 22]
 
 tourism=picnic_site [0x6404 resolution 24]
 leisure=picnic_table [0x6404 resolution 24]
-amenity=bench  [0x1170a resolution 24]
-leisure=firepit [0x5300 resolution 24]
+amenity=bench & foot!=no  [0x1170a resolution 24]
+leisure=firepit & foot!=no [0x5300 resolution 24]
 
 man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) {name '${short_name}'|'${name}'} [0x6400 resolution 22]
 tourism=viewpoint [0x6603 resolution 22]

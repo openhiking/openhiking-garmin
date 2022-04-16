@@ -8,14 +8,23 @@
 #
 ########################################################
 
-historic=castle & ruins=* [0x2c12 resolution 22]
-historic=fort & ruins=*  [0x2c12 resolution 22]
-historic=ruins & (ruins=castle | ruins=fort | ruins=tower)  [0x2c12 resolution 22]
-historic=ruins  [0x2c04 resolution 24]
+# Historic building ruins
+historic~'castle|fort|tower' & ruins=* [0x2c12 resolution 22]
+historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
 
-historic=archaeological_site & site_type=fortification & fortification_type=hill_fort  [0x640a resolution 24]
-historic=archaeological_site & site_type=tumulus  [0x6406 resolution 24]
-historic=archaeological_site  [0x6409 resolution 24]
+# Other Ruins
+if (historic=ruins) then
+	ruins~'castle|fort|tower'  [0x2c12 resolution 22]
+	ruins~'chapel|church|monastery|temple'  [0x2c04 resolution 24]
+	() [0x2c13 resolution 24]
+end
+
+# Archeological sites
+if (historic=archaeological_site) then
+	site_type=fortification & fortification_type=hill_fort  [0x640a resolution 24]
+	site_type=tumulus  [0x6406 resolution 24]
+	() [0x6409 resolution 24]
+end
 
 historic=tomb & tomb=tumulus  [0x6406 resolution 24]
 historic=tomb   [0x6405 resolution 24]
@@ -40,5 +49,5 @@ if (man_made=water_well & foot!=no) then
     pump!=* | pump=no { name '${short_name}' | '${name}'  } [0x641c resolution 24]
 end
 
-
+building=ruins | ruins:building=* {name '${short_name}'|'${name}'} [0x2c13 resolution 24]
 
