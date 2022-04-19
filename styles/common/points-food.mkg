@@ -8,11 +8,9 @@
 #
 ########################################################
 
-#amenity=restaurant [0x02A00 resolution 24]
-amenity=restaurant [0x02c19 resolution 24]
+amenity=restaurant [0x02A00 resolution 24]
 amenity=fast_food  [0x02A07 resolution 24]
-#amenity=ice_cream  [0x2A12 resolution 24]
-amenity=ice_cream  [0x2c1a resolution 24]
+amenity=ice_cream  [0x2A12 resolution 24]
 amenity=cafe [0x02A0E resolution 24]
 
 
