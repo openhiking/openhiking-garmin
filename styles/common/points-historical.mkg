@@ -22,6 +22,7 @@ end
 # Archeological sites
 if (historic=archaeological_site) then
 	site_type=fortification & fortification_type=hill_fort  [0x640a resolution 24]
+	site_type=fortification & fortification_type=limes  [0x2c12 resolution 24]	
 	site_type=tumulus  [0x6406 resolution 24]
 	() [0x6409 resolution 24]
 end
