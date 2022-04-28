@@ -9,4 +9,4 @@
 ########################################################
 
 amenity=bank { name '${short_name}'|'${name}'| '${operator}' }	[0x2F06 resolution 24]
-amenity=atm  { name '${short_name}'|'${name}'| '${operator}' }[0x02F06 resolution 24]
+amenity=atm  { name '${short_name}'|'${name}'| '${operator}' }[0x2F1E resolution 24]
