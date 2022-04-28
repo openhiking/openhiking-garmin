@@ -9,22 +9,23 @@
 ########################################################
 
 
-shop=department_store | shop=mall [0x2e01 resolution 24]
-shop=general [0x02E03 resolution 24]
-shop=supermarket [0x02E04 resolution 24]
+shop=department_store [0x2e01 resolution 24]
+shop=greengrocer [0x02E02 resolution 24]
+shop=general | shop=supermarket [0x02E03 resolution 24]
+shop=mall [0x2e04 resolution 24]
 shop=convenience [0x02E06 resolution 24]
 
-shop=greengrocer [0x02E02 resolution 24]
 shop=clothes | shop=boutique | shop=shoes | shop=leather [0x02E07 resolution 24]
 shop=doityourself | shop=electrical | shop=florist | shop=garden_centre | shop=houseware [0x02E08 resolution 24]
 shop=furniture | shop=interior_decoration | shop=kitchen  [0x02E09 resolution 24]
 shop=bicycle [0x02E0A resolution 24]
 shop=computer | shop=electronics | shop=mobile_phone  [0x02E0B resolution 24]
+shop=sports   [0x2E0C resolution 24]
+shop~'butcher|cheese|chocolate|deli|farm|seafood'  [0x02A0D resolution 24]
+shop=kiosk [0x2E0E resolution 24]
 
 shop=bakery   [0x2a05 resolution 24]
 shop=confectionery | shop=pastry [0x2a0d resolution 24]
-
-shop=kiosk [0x2e0d resolution 24]
 shop=ticket [0x02F11 resolution 24]
 (shop=alcohol & drink:wine=retail) | craft=winery [0x02C0A resolution 24]
 
