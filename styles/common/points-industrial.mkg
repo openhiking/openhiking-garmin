@@ -31,3 +31,4 @@ man_made=tower & tower:type=observation {name '${short_name}'|'${name}'} [0x1151
 man_made=tower {name '${short_name}'|'${name}'} [0x06411 resolution 24]
 
 waterway=weir & name=* {name '${short_name}'|'${name}'} [0x06407 resolution 24]
+waterway=lock_gate {name '${short_name}'|'${name}'} [0x06407 resolution 24]

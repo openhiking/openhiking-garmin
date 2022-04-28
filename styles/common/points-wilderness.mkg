@@ -8,17 +8,17 @@
 #
 ########################################################
 
-amenity=shelter & shelter_type=basic_hut  [0x6401 resolution 22]
-amenity=shelter & shelter_type=picnic_shelter  [0x6403 resolution 22]
-amenity=shelter & shelter_type!=public_transport [0x6402 resolution 22]
+amenity=shelter & shelter_type=basic_hut & foot!=no  [0x6401 resolution 22]
+amenity=shelter & shelter_type=picnic_shelter & foot!=no [0x6403 resolution 22]
+amenity=shelter & shelter_type!=public_transport & foot!=no [0x6402 resolution 22]
 
-tourism=picnic_site [0x6404 resolution 24]
-leisure=picnic_table [0x6404 resolution 24]
+tourism=picnic_site & foot!=no [0x6404 resolution 24]
+leisure=picnic_table & foot!=no [0x6404 resolution 24]
 amenity=bench & foot!=no  [0x1170a resolution 24]
 leisure=firepit & foot!=no [0x5300 resolution 24]
 
-man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) {name '${short_name}'|'${name}'} [0x6400 resolution 22]
-tourism=viewpoint [0x6603 resolution 22]
+man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes) & foot!=no {name '${short_name}'|'${name}'} [0x6400 resolution 22]
+tourism=viewpoint & foot!=no [0x6603 resolution 22]
 
 information=map  { add mkgmap:label:2='${description}'} 	[0x1170D resolution 24]
 information=guidepost  { add mkgmap:label:2='${description}'} [0x1170E resolution 24]

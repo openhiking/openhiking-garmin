@@ -511,7 +511,10 @@ else
 	$(COPY) $(OHM_ARGS_TEMPLATE) + $(TILE_ARGS) $(MERGED_ARGS)
 endif
 
-$(GMAP_DIR)$(PSEP)bikemap.typ: $(TYP_DIR)$(PSEP)bikemap.typ
+
+$(GMAP_DIR)$(PSEP)openbike.typ: $(TYP_DIR)$(PSEP)openbike.typ
+	$(COPY) $< $(GMAP_DIR)
+$(GMAP_DIR)$(PSEP)openTEST.typ: $(TYP_DIR)$(PSEP)openTEST.typ
 	$(COPY) $< $(GMAP_DIR)
 
 $(GMAP_DIR)$(PSEP)$(TYP_BASE)%.typ: $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
@@ -612,7 +615,7 @@ cleanoutput:
 
 
 test:
-	@echo $(MAP_SPLITTER_INP_PBF)
+	@echo $(ADD_RESIDENTIAL_NAMES)
 
 
 

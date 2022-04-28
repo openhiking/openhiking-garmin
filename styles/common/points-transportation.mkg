@@ -8,8 +8,8 @@
 #
 ########################################################
 
-amenity=parking [0x02F0B resolution 24]
-amenity=fuel [0x02F01 resolution 24]
+amenity=parking & access!=no & access!=private [0x02F0B resolution 24]
+amenity=fuel & access!=no & access!=private [0x02F01 resolution 24]
 
 #railway=station {name '${short_name}'|'${name}'} [0x11900 resolution 22]
 #railway=halt {name '${short_name}'|'${name}'} [0x11901 resolution 22]
