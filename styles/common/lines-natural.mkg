@@ -11,12 +11,11 @@
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
 
-natural=cliff   [0x10F0B resolution 24 continue]
-natural=cliff   { deletealltags }
+natural=cliff   [0x10F0B resolution 24]
+natural=arete   [0x10F0F resolution 24]
 
 natural=valley & name=*  [0x10F0C resolution 24]
 natural=ridge & name=*  [0x10F0D resolution 24]
-natural=arete & name=*  [0x10F0D resolution 24]
 #natural=tree_row & name=*  [0x10F0E resolution 24]
 
 waterway=river & intermittent=yes  [0x26 resolution 22 ]

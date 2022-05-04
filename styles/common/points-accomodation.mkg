@@ -16,7 +16,7 @@ tourism=chalet & foot!=no  [0x02B03 resolution 24]
 tourism=motel  [0x02B04 resolution 24]
 
 tourism=camp_site & (camp_site=basic | backcountry=yes )  [0x04800 resolution 24]
-tourism=camp_site | tourism=caravan_site  [0x02B05 resolution 24]
+tourism=camp_site | tourism=caravan_site  [0x02B05 resolution 22]
 
 tourism=alpine_hut & foot!=no   [0x02B06 resolution 22]
 tourism=wilderness_hut & foot!=no  [0x02B07 resolution 22]
