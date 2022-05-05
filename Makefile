@@ -298,7 +298,21 @@ MAP_MERGED_NAMED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_NAMED_PBF)
 BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
 MAP_BOUNDS_O5M=bounds.o5m
 MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
-BOUNDS_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 )"
+
+BOUNDS_ADMIN_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 )"
+
+MAP_BOUNDS_TEMP1_O5M=bounds-temp1.o5m
+MAP_BOUNDS_TEMP1_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_TEMP1_O5M)
+MAP_BOUNDS_TEMP2_O5M=bounds-temp2.o5m
+MAP_BOUNDS_TEMP2_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_TEMP2_O5M)
+MAP_BOUNDS_TEMP3_O5M=bounds-temp3.o5m
+MAP_BOUNDS_TEMP3_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_TEMP3_O5M)
+POSTAL_CODES=2026 2099 2407 2453 2485 2508 2509 2660 2835 2879 2903 2921 3065 3078 3082 3147 3221 3232 3233 3234 3508 3517 3518 3519 3521 3558 3603 3604 3621 3625 3651 3661 3662 3902 3923 3944 3945 3988 4014 4063 4067 4074 4078 4079 4085 4086 4162 4224 4225 4246 4252 4253 4432 4433 4446 4447 4486 4551 4803 4804 5008 5152 5212 5349 5358 5359 5449 5461 5623 5664 5671 5711 5752 6008 6044 6062 6648 6710 6757 6771 6791 6806 7018 7019 7027 7187 7385 7386 7451 7557 7691 7693 7714 7715 8019 8054 8103 8184 8257 8297 8411 8412 8447 8448 8451 8511 8531 8591 8598 8691 8789 8795 8966 9011 9012 9019 9098 9183 9242 9339 9407 9408 9433 9434 9438 9494 9541 9608 9609 9740 9955 9981
+BOUNDS_POSTAL_CONDITION="( boundary=postal_code and ( first
+BOUNDS_POSTAL_CONDITION+=$(foreach POSTAL_CODE,$(POSTAL_CODES),or postal_code=$(POSTAL_CODE))
+BOUNDS_POSTAL_CONDITION:=$(subst first or ,,$(BOUNDS_POSTAL_CONDITION))
+BOUNDS_POSTAL_CONDITION+=) ) or ( boundary=administrative and ( admin_level=8 or admin_level=9 ) )"
+
 
 ##############################################
 # Tile Splitting
@@ -349,11 +363,12 @@ else
 #	GEN_SEA_OPTIONS=
 endif
 
-ifeq ($(USE_BOUNDS),yes)
+ifneq ($(BOUNDS_BASE),)
 	BOUNDS_OPTS=--bounds="$(BOUNDS_DIR)"
 else
 	BOUNDS_OPTS=
 endif
+
 
 ifeq ($(USE_LOWERCASE),yes)
 	LOWER_CASE=--lower-case
@@ -437,14 +452,6 @@ $(TILES_DIR)$(PSEP2)%-routes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
 
-#ifeq ($(PREFILTERING),yes)
-#$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-flt.o5m $(TILES_DIR)$(PSEP)%-places.osc
-#	$(OSMCONVERT) $^  --merge-versions -o=$@
-#else
-#$(TILES_DIR)$(PSEP2)%-named.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m $(TILES_DIR)$(PSEP)%-places.osc
-#	$(OSMCONVERT) $^  --merge-versions -o=$@
-#endif
-
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
@@ -490,8 +497,23 @@ merge-osmosis:  $(MAP_INP_OSM_PBF) $(MAP_INP_SUPP_PBF) $(MAP_INP_CONTOUR)
 $(MAP_MERGED_O5M_FP): $(MAP_MERGED_PBF_FP)
 	$(OSMCONVERT) $^ -o=$@
 
+$(MAP_BOUNDS_TEMP1_O5M_FP): $(MAP_MERGED_O5M_FP)
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(BOUNDS_POSTAL_CONDITION) -o=$@
+
+$(MAP_BOUNDS_TEMP2_O5M_FP): $(MAP_BOUNDS_TEMP1_O5M_FP)
+	$(OSMFILTER) $< --modify-relation-tags="boundary=postal_code add admin_level=10" -o=$@
+
+$(MAP_BOUNDS_TEMP3_O5M_FP): $(MAP_BOUNDS_TEMP2_O5M_FP)
+	$(OSMFILTER) $< --modify-relation-tags="boundary=postal_code to boundary=administrative" -o=$@
+
+
+ifeq ($(BOUNDS_BASE),admin)
 $(MAP_BOUNDS_O5M_FP): $(MAP_MERGED_O5M_FP)
-	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(BOUNDS_CONDITION)  -o=$@
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(BOUNDS_ADMIN_CONDITION)  -o=$@
+else
+$(MAP_BOUNDS_O5M_FP): $(MAP_BOUNDS_TEMP3_O5M_FP)
+	$(OSMFILTER) $< --modify-relation-tags="name:hu= to name=" -o=$@
+endif
 
 
 bounds: $(MAP_BOUNDS_O5M_FP)
@@ -615,7 +637,8 @@ cleanoutput:
 
 
 test:
-	@echo $(ADD_RESIDENTIAL_NAMES)
+	@echo $(BOUNDS_BASE)
+	@echo $(BOUNDS_POSTAL_CONDITION)
 
 
 
