@@ -11,271 +11,276 @@
 #######################################################
 # Primary OSMC Symbols
 
-type=route & route=hiking & osmc:symbol~'red:white:red_bar.*' & jel!=* & kct_red!=* & operator!=KST  {
-apply {
-	add trail_p1_color=red;
-	add trail_p1_symbol='${osmc:symbol}';
-	add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+
+if (type=route & route~'hiking|foot') then
+
+	osmc:symbol~'red:white:red_bar.*' & jel!=* & kct_red!=* & operator!=KST  {
+	apply {
+		add trail_p1_color=red;
+		add trail_p1_symbol='${osmc:symbol}';
+		add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^red:white:red_circle.*'  {
-apply {
-	add trail_p1_color=red;
-	add trail_p1_symbol='${osmc:symbol}';
-	add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^red:white:red_circle.*'  {
+	apply {
+		add trail_p1_color=red;
+		add trail_p1_symbol='${osmc:symbol}';
+		add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^red:white:red_stripe.*'  {
-apply {
-	add trail_p1_color=red;
-	add trail_p1_symbol='${osmc:symbol}';
-	add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^red:white:red_stripe.*'  {
+	apply {
+		add trail_p1_color=red;
+		add trail_p1_symbol='${osmc:symbol}';
+		add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol~'^red:red:white_bar.*'  {
-apply {
-	add trail_p1_color=red;
-	add trail_p1_symbol='red:red:white_bar';
-	add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol~'^red:red:white_bar.*'  {
+	apply {
+		add trail_p1_color=red;
+		add trail_p1_symbol='red:red:white_bar';
+		add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol~'^red:red:white_stripe.*'  {
-apply {
-	add trail_p1_color=red;
-	add trail_p1_symbol='red:red:white_stripe';
-	add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol~'^red:red:white_stripe.*'  {
+	apply {
+		add trail_p1_color=red;
+		add trail_p1_symbol='red:red:white_stripe';
+		add trail_p1_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-# Blue
-type=route & route=hiking & osmc:symbol~'blue:white:blue_bar.*' & jel!=* & kct_blue!=* & operator!=KST  {
-apply {
-	add trail_p2_color=blue;
-	add trail_p2_symbol='${osmc:symbol}';
-	add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+	
+	# Blue
+	osmc:symbol~'blue:white:blue_bar.*' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p2_color=blue;
+		add trail_p2_symbol='${osmc:symbol}';
+		add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^blue:white:blue_circle.*'  {
-apply {
-	add trail_p2_color=blue;
-	add trail_p2_symbol='blue:white:blue_circle';
-	add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^blue:white:blue_circle.*'  {
+	apply {
+		add trail_p2_color=blue;
+		add trail_p2_symbol='blue:white:blue_circle';
+		add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^blue:white:blue_stripe.*'  {
-apply {
-	add trail_p2_color=blue;
-	add trail_p2_symbol='${osmc:symbol}';
-	add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^blue:white:blue_stripe.*'  {
+	apply {
+		add trail_p2_color=blue;
+		add trail_p2_symbol='${osmc:symbol}';
+		add trail_p2_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-# Green
-type=route & route=hiking & osmc:symbol~'^green:white:green_bar.*' & jel!=* & kct_green!=* & operator!=KST {
-apply {
-	add trail_p3_color=green;
-	add trail_p3_symbol='${osmc:symbol}';
-	add trail_p3_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	# Green
+	osmc:symbol~'^green:white:green_bar.*' & jel!=* & kct_green!=* & operator!=KST {
+	apply {
+		add trail_p3_color=green;
+		add trail_p3_symbol='${osmc:symbol}';
+		add trail_p3_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^green:white:green_stripe.*'  {
-apply {
-	add trail_p3_color=green;
-	add trail_p3_symbol='${osmc:symbol}';
-	add trail_p3_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^green:white:green_stripe.*'  {
+	apply {
+		add trail_p3_color=green;
+		add trail_p3_symbol='${osmc:symbol}';
+		add trail_p3_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-# Yellow
-type=route & route=hiking & osmc:symbol~'^yellow:white:yellow_bar.+' & jel!=* & kct_yellow!=* & operator!=KST {
-apply {
-	add trail_p4_color=yellow;
-	add trail_p4_symbol='${osmc:symbol}';
-	add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	# Yellow
+	osmc:symbol~'^yellow:white:yellow_bar.+' & jel!=* & kct_yellow!=* & operator!=KST {
+	apply {
+		add trail_p4_color=yellow;
+		add trail_p4_symbol='${osmc:symbol}';
+		add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^yellow:white:yellow_circle.*'  {
-apply {
-	add trail_p4_color=yellow;
-	add trail_p4_symbol='${osmc:symbol}';
-	add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^yellow:white:yellow_circle.*'  {
+	apply {
+		add trail_p4_color=yellow;
+		add trail_p4_symbol='${osmc:symbol}';
+		add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^yellow:white:yellow_stripe.*'  {
-apply {
-	add trail_p4_color=yellow;
-	add trail_p4_symbol='${osmc:symbol}';
-	add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^yellow:white:yellow_stripe.*'  {
+	apply {
+		add trail_p4_color=yellow;
+		add trail_p4_symbol='${osmc:symbol}';
+		add trail_p4_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-# Black
-type=route & route=hiking & osmc:symbol~'^black:white:black_bar.*'  {
-apply {
-	add trail_p5_color=black;
-	add trail_p5_symbol='${osmc:symbol}';
-	add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	# Black
+	osmc:symbol~'^black:white:black_bar.*'  {
+	apply {
+		add trail_p5_color=black;
+		add trail_p5_symbol='${osmc:symbol}';
+		add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-#######################################################
-# Secondary OSMC Symbols
-
-
-type=route & route=hiking & osmc:symbol='red:white:red_cross' & jel!=* & kct_red!=* & operator!=KST  {
-apply {
-	add trail_p5_color=red;
-	add trail_p5_symbol='red:white:red_cross';
-	add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	#######################################################
+	# Secondary OSMC Symbols
+	
+	
+	osmc:symbol='red:white:red_cross' & jel!=* & kct_red!=* & operator!=KST  {
+	apply {
+		add trail_p5_color=red;
+		add trail_p5_symbol='red:white:red_cross';
+		add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='red:white:red_triangle' & jel!=* & kct_red!=* & operator!=KST  {
-apply {
-	add trail_p5_color=red;
-	add trail_p5_symbol='red:white:red_triangle';
-	add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='red:white:red_triangle' & jel!=* & kct_red!=* & operator!=KST  {
+	apply {
+		add trail_p5_color=red;
+		add trail_p5_symbol='red:white:red_triangle';
+		add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='red:white:red_dot' & jel!=* & kct_red!=* & operator!=KST  {
-apply {
-	add trail_p5_color=red;
-	add trail_p5_symbol='red:white:red_dot';
-	add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='red:white:red_dot' & jel!=* & kct_red!=* & operator!=KST  {
+	apply {
+		add trail_p5_color=red;
+		add trail_p5_symbol='red:white:red_dot';
+		add trail_p5_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol='blue:white:blue_cross' & jel!=* & kct_blue!=* & operator!=KST  {
-apply {
-	add trail_p6_color=blue;
-	add trail_p6_symbol='blue:white:blue_cross';
-	add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol='blue:white:blue_cross' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_cross';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='blue:white:blue_triangle' & jel!=* & kct_blue!=* & operator!=KST  {
-apply {
-	add trail_p6_color=blue;
-	add trail_p6_symbol='blue:white:blue_triangle';
-	add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='blue:white:blue_triangle' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_triangle';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='blue:white:blue_dot' & jel!=* & kct_blue!=* & operator!=KST  {
-apply {
-	add trail_p6_color=blue;
-	add trail_p6_symbol='blue:white:blue_dot';
-	add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='blue:white:blue_dot' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_dot';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
 
-
-
-type=route & route=hiking & osmc:symbol='yellow:white:yellow_cross' & jel!=* & kct_yellow!=* & operator!=KST  {
-apply {
-	add trail_p7_color=yellow;
-	add trail_p7_symbol='yellow:white:yellow_cross';
-	add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='yellow:white:yellow_cross' & jel!=* & kct_yellow!=* & operator!=KST  {
+	apply {
+		add trail_p7_color=yellow;
+		add trail_p7_symbol='yellow:white:yellow_cross';
+		add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='yellow:white:yellow_triangle' & jel!=* & kct_yellow!=* & operator!=KST  {
-apply {
-	add trail_p7_color=yellow;
-	add trail_p7_symbol='yellow:white:yellow_triangle';
-	add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='yellow:white:yellow_triangle' & jel!=* & kct_yellow!=* & operator!=KST  {
+	apply {
+		add trail_p7_color=yellow;
+		add trail_p7_symbol='yellow:white:yellow_triangle';
+		add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol='yellow:white:yellow_dot' & jel!=* & kct_yellow!=* & operator!=KST  {
-apply {
-	add trail_p7_color=yellow;
-	add trail_p7_symbol='yellow:white:yellow_dot';
-	add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol='yellow:white:yellow_dot' & jel!=* & kct_yellow!=* & operator!=KST  {
+	apply {
+		add trail_p7_color=yellow;
+		add trail_p7_symbol='yellow:white:yellow_dot';
+		add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-#######################################################
-# Other OSMC Symbols
-
-
-type=route & route=hiking & osmc:symbol~'^red.+'  {
-apply {
-	add trail_p9_color=red;
-	add trail_p9_symbol='${osmc:symbol}';
-	add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	#######################################################
+	# Other OSMC Symbols
+	
+	
+	osmc:symbol~'^red.+'  {
+	apply {
+		add trail_p9_color=red;
+		add trail_p9_symbol='${osmc:symbol}';
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol~'^blue.+'  {
-apply {
-	add trail_p10_color=blue;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol~'^blue.+'  {
+	apply {
+		add trail_p10_color=blue;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-
-type=route & route=hiking & osmc:symbol~'^green.+' & jel!=zut {
-apply {
-	add trail_p10_color=green;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	
+	osmc:symbol~'^green.+' & jel!=zut {
+	apply {
+		add trail_p10_color=green;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^yellow.+' & jel!='sgy'  {
-apply {
-	add trail_p10_color=yellow;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^yellow.+' & jel!='sgy'  {
+	apply {
+		add trail_p10_color=yellow;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^black.+'  {
-apply {
-	add trail_p10_color=black;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^black.+'  {
+	apply {
+		add trail_p10_color=black;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^orange.+'  {
-apply {
-	add trail_p10_color=orange;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^orange.+'  {
+	apply {
+		add trail_p10_color=orange;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
-
-type=route & route=hiking & osmc:symbol~'^purple.+'  {
-apply {
-	add trail_p10_color=purple;
-	add trail_p10_symbol='${osmc:symbol}';
-	add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	
+	osmc:symbol~'^purple.+'  {
+	apply {
+		add trail_p10_color=purple;
+		add trail_p10_symbol='${osmc:symbol}';
+		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
+		}
 	}
-}
+
+end

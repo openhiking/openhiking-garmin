@@ -244,7 +244,7 @@ endif
 MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
-ROUTE_CONDITION?="route=hiking or ( route=piste and ( jel=px or jel=kx ) )"
+ROUTE_CONDITION?="route=hiking or route=foot or ( route=piste and ( jel=px or jel=kx ) )"
 
 MAP_HIKING_SYMBOLS_OSM_FP=$(TILES_DIR)$(PSEP)symbols.osm
 
