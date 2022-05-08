@@ -40,8 +40,8 @@ man_made=windmill {name '${short_name}'|'${name}'} [0x641f resolution 24]
 #man_made=kiln & historic=yes  [0x1160A resolution 24]
 
 historic=memorial & memorial=plaque  [0x6410 resolution 24]
-historic=memorial  [0x10D12 resolution 24]
-historic=monument  [0x10D12 resolution 24]
+historic=memorial  [0x640f resolution 24]
+historic=monument  [0x640f resolution 24]
 
 if (man_made=water_well & foot!=no) then
     name~'.*[mM]onitor.*' { deletealltags }

@@ -14,11 +14,12 @@ amenity=library  [0x02C03 resolution 24]
 tourism=zoo  [0x02C07 resolution 24]
 amenity=theatre  [0x02D01 resolution 24]
 amenity=cinema  [0x02D03 resolution 24]
+tourism=gallery [0x10D04 resolution 24]
 
 historic=city_gate & ruins!=*  [0x6415 resolution 24]
 
 if (historic=castle) then
-	castle_type=palace & ruins!=*  [0x6416 resolution 22]
+	castle_type=palace & ruins!=*  [0x10D11 resolution 22]
 	(castle_type=stately | castle_type=manor) & ruins!=*  [0x6417 resolution 22]
 	ruins!=*  [0x2c11 resolution 22]
 end

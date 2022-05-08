@@ -15,9 +15,12 @@ amenity=place_of_worship & religion=muslim  { add mkgmap:label:2='(${denominatio
 amenity=place_of_worship & religion=jewish { add mkgmap:label:2='(${denomination})'} [0x2C10 resolution 24]
 amenity=place_of_worship &(building=chapel | name~'.*k.polna') {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0F resolution 24]
 amenity=place_of_worship { add mkgmap:label:2='(${denomination})'} [0x2C0E resolution 24]
+
+amenity=monastery [0x10D0E resolution 24]
+
+man_made=campanile  [0x10D0F resolution 24]
+man_made=tower & tower:type=bell_tower  [0x10D0F resolution 24]
+
 amenity=grave_yard  [0x06405 resolution 24]
 
-man_made=campanile  [0x6419 resolution 24]
-man_made=tower & tower:type=bell_tower  [0x6419 resolution 24]
-
-historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x641a resolution 24]
+historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x10D0B resolution 24]

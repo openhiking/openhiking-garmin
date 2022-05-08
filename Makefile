@@ -67,7 +67,7 @@ endif
 
 SEA_AREA_DIR=$(MKG_SEA_AREA_DIR)
 OUTPUT_DIR=${MKG_OUTPUT_DIR}
-MAPSOURCE_DIR=${MKG_MAPSOURCE_DIR}
+MAPSOURCE_DIR?=${MKG_MAPSOURCE_DIR}
 
 # Conditional assignments
 ifneq (${MKG_BOUNDS_DIR},)
@@ -608,7 +608,7 @@ ifeq ($(MAPSOURCE_DIR),)
 endif
 	$(COPY) $(GMAP_DIR)$(PSEP)7*.img $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)$(MAPNAME).img $(MAPSOURCE_DIR)
-	$(COPY) $(GMAP_DIR)$(PSEP)*_mdr.img $(MAPSOURCE_DIR)	
+	$(COPY) $(GMAP_DIR)$(PSEP)*_mdr.img $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.mdx $(MAPSOURCE_DIR)
 	$(COPY) $(GMAP_DIR)$(PSEP)*.tdb $(MAPSOURCE_DIR)
 
@@ -627,7 +627,7 @@ cleanall:
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
-	
+
 cleanbounds:
 	$(DEL) $(BOUNDS_DIR)$(PSEP)*
 
@@ -637,8 +637,8 @@ cleanoutput:
 
 
 test:
-	@echo $(BOUNDS_BASE)
-	@echo $(BOUNDS_POSTAL_CONDITION)
+	@echo $(MAPSOURCE_DIR)
+
 
 
 
