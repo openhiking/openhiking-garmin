@@ -1,0 +1,13 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Other
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+tourism=attraction {name '${short_name}'|'${name}'} [0x10D04 resolution 24]
+
+boundary=marker {name '${short_name}'|'${name}'} [0x05800 resolution 24]

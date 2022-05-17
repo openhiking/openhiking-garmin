@@ -27,8 +27,11 @@ man_made=communications_tower  {name '${short_name}'|'${name}'} [0x1151B resolut
 man_made=mast {name '${short_name}'|'${name}'} [0x1151B resolution 24]
 man_made=tower & tower:type=communication {name '${short_name}'|'${name}'} [0x1151B resolution 24]
 man_made=tower & tower:type=observation {name '${short_name}'|'${name}'} [0x1151C resolution 24]
+man_made=tower & tower:type=watchtower {name '${short_name}'|'${name}'} [0x1151D resolution 24]
 
 man_made=tower {name '${short_name}'|'${name}'} [0x06411 resolution 24]
 
-waterway=weir & name=* {name '${short_name}'|'${name}'} [0x06407 resolution 24]
-waterway=lock_gate {name '${short_name}'|'${name}'} [0x06407 resolution 24]
+man_made=telescope {name '${short_name}'|'${name}'} [0x1151E resolution 24]
+
+waterway=weir & name=* {name '${short_name}'|'${name}'} [0x05500 resolution 24]
+waterway=lock_gate {name '${short_name}'|'${name}'} [0x05600 resolution 24]

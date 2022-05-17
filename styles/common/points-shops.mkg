@@ -21,7 +21,7 @@ shop=furniture | shop=interior_decoration | shop=kitchen  [0x02E09 resolution 24
 shop=bicycle [0x02E0A resolution 24]
 shop=computer | shop=electronics | shop=mobile_phone  [0x02E0B resolution 24]
 shop=sports   [0x2E0C resolution 24]
-shop~'butcher|cheese|chocolate|deli|farm|seafood'  [0x02A0D resolution 24]
+shop~'butcher|cheese|chocolate|deli|farm|seafood'  [0x02E0D resolution 24]
 shop=kiosk [0x2E0E resolution 24]
 
 shop=bakery   [0x2a05 resolution 24]

@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 64411 octets
-; Fichier TYP compilé     05/10/2022     22:15:03
-; Décompilé le 5/10/2022 à 10:15:07 PM
+; Longueur: 64622 octets
+; Fichier TYP compilé     17/05/2022     21:58:49
+; Décompilé le 5/17/2022 à 10:00:08 PM
 
 [_id]
 ProductCode=1
@@ -8601,6 +8601,145 @@ DayXpm="16 16 25 2"   Colormode=16
 
 
 [_point]
+Type=0x05500
+;GRMN_TYPE: //
+String1=0x14,Duzzasztógát
+String2=0x04,Weir
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 22 2"   Colormode=16
+"!!	c #101010"
+"!#	c #257EBD"
+"!%	c #3188C5"
+"!?	c #3D94D1"
+"!$	c #449BD8"
+"!*	c #5CAAD8"
+"!=	c #4BA4E3"
+"!1	c #5BAEE3"
+"!2	c #68B6E4"
+"!3	c #6DBBE9"
+"!4	c #69BCF1"
+"!5	c #62B8F2"
+"!6	c #6EC3FA"
+"!7	c #7DCCFD"
+"!8	c #3F6BFF"
+"!9	c #4975FF"
+"#!	c #87D5FF"
+"##	c #FFFFFF"
+"#%	c #525252"
+"#?	c #414141"
+"#$	c #838383"
+"  	c none"
+"    ##  ######                  "
+"####!2##!8!=!3##                "
+"##!1##!1##!*!6!3##              "
+"##!9!#!*!$#?#?!*!3##            "
+"##!9!=!9!#!!!!!*!8##            "
+"##!?!#!=!8!!!!!3!*#!##          "
+"##!8!2!#!2!!!!!8!3!*##          "
+"##!#!%!=!?!!!!!*!*!8####        "
+"##!8!8!2!8!!!!!*!*!*#!####  ##  "
+"##!!!!!!!!!!!!!4!9!3!6##!7##!*##"
+"##!!!!!!!!!!!!!%!$!=!5!$##!*####"
+"###$#%#?#$!!!!!9!%!=!?!#!=!8!1##"
+"###%#$#%#%!!!!!2!8!2!8!2!#!2!###"
+"###%#%#?#$!!!!!!!!!!!!!!!!!!!!##"
+"###?#%#$#%!!!!!!!!!!!!!!!!!!!!##"
+"  ############################  "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x05600
+;GRMN_TYPE: Misc. Points of Interest/CONTROLLED_AREA/Controlled area/Non NT, NT
+String1=0x04,Lock gate
+String2=0x14,Zsilip
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 25 2"   Colormode=16
+"!!	c #101010"
+"!#	c #0052AC"
+"!%	c #0060B7"
+"!?	c #0076C1"
+"!$	c #0071C8"
+"!*	c #087ECA"
+"!=	c #007BD2"
+"!1	c #2291D2"
+"!2	c #0988E2"
+"!3	c #2097E2"
+"!4	c #33A2E3"
+"!5	c #3AA9EB"
+"!6	c #40AFF0"
+"!7	c #34AAF6"
+"!8	c #2AA5F7"
+"!9	c #0000FF"
+"#!	c #0037FF"
+"##	c #3F6BFF"
+"#%	c #3E70FF"
+"#?	c #7093FF"
+"#$	c #3BB4FF"
+"#*	c #51C1FF"
+"#=	c #5FCEFF"
+"#1	c #FFFFFF"
+"  	c none"
+"              #1#1              "
+"            #1!!!!#1            "
+"    #1  #1  #1!!!!#1            "
+"  #1#$#1!4#1#!!!!!#1    ##      "
+"#1#*#1#$#1#%!7!!!!#1  #?!9#?    "
+"#1!7#%#$#$#$#*!!!!#1  !9!9!9    "
+"#1!4!1!5#=!5!6!!!!#1    !9      "
+"#1!5!4#$#*#=#*!!!!#1    !9      "
+"#1!*#*!7!1!7#$!!!!#1    !9      "
+"#1!7!*!?!3!1!8!!!!#1  #1  #1    "
+"#1#$!2!8!2#$#$!!!!#!#1!4#1#$#1  "
+"#1!8!2!$!8!$!=!!!!!7#%#1#$#1#*#1"
+"#1!%!=!2#%!=!$!!!!!%!=!2!8!=!$#1"
+"#1!2!%!2!$!##%!!!!#%!%!2!$!#!2#1"
+"#1!!!!!!!!!!!!!!!!!!!!!!!!!!!!#1"
+"  #1#1#1#1#1#1#1#1#1#1#1#1#1#1  "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x05800
+;GRMN_TYPE: Misc. Points of Interest/RESTRICTED_AREA/Restricted area/Non NT, NT
+String1=0x04,Bundary marker
+String2=0x14,Határkő
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="8 13 5 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #000000"
+"%	c #FF0000"
+"?	c #7B0000"
+"  	c none"
+"  !!!!  "
+" !????! "
+" !?%%?! "
+" !#%%#! "
+" !#!!#! "
+" !##!#! "
+" !#!##! "
+" !#!!#! "
+" !#!!#! "
+" !####! "
+"  !!!!  "
+"!######!"
+" !!!!!! "
+;12345678
+[end]
+
+
+[_point]
 Type=0x05a00
 ;GRMN_TYPE: Misc. Points of Interest/MILE_MARKER/Mile marker/Non NT, NT
 String1=0x14,Km kő
@@ -8903,36 +9042,6 @@ DayXpm="17 14 7 1"   Colormode=16
 
 
 [_point]
-Type=0x06407
-;GRMN_TYPE: Geographical Named Points of Interest/DAM/Dam/Non NT, NT
-String1=0x14,Zsilip
-ExtendedLabels=N
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #040204"
-"#	c #0402FC"
-"%	c #FFFFFF"
-"  	c none"
-"                "
-"                "
-"                "
-"   % % %%       "
-"  %#%#%!!%      "
-"  %####!!%      "
-"   %#%#!!%%     "
-"   %%%%!!!%     "
-"   %%%%!!!%% %  "
-"  %#%#%!!!%#%#% "
-"  %####!!!####% "
-"   %#%#!!!#%#%  "
-"    % %%%%% %   "
-"                "
-"                "
-"                "
-;1234567890123456
-[end]
-
-
-[_point]
 Type=0x06408
 ;GRMN_TYPE: //
 String1=0x14,Orvos
@@ -9182,27 +9291,35 @@ DayXpm="16 14 6 1"   Colormode=16
 
 
 [_point]
-Type=0x06410
+Type=0x0640f
 ;GRMN_TYPE: //
-String1=0x14,Emléktábla
-String2=0x04,Plaque
+String1=0x04,Artwork
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 9 3 1"   Colormode=16
+DayXpm="16 16 5 1"   Colormode=16
 "!	c #040204"
-"#	c #FCFEFC"
+"#	c #6C6E6C"
+"%	c #C4C6C4"
+"?	c #FFFFFF"
 "  	c none"
-" ############## "
-" #!!!!!!!!!!!!# "
-" #!##########!# "
-" #!#!!!!!#!!#!# "
-" #!#######!!#!# "
-" #!#!!!!!#!!#!# "
-" #!##########!# "
-" #!!!!!!!!!!!!# "
-" ############## "
+"     ?!!??!?    "
+"     ?!!??!?    "
+"     ??!??!?    "
+"    ?!!!!!?     "
+"    ?!!!!?      "
+"   ?!??!!?      "
+"    ?!?!!?      "
+"     ?!!!?      "
+"     ?!?!?      "
+"    ??!?!?      "
+"    ?#####?     "
+"    ?#####?     "
+"    ?#####?     "
+"    ?#####?     "
+"   ?%%%%%%%?    "
+"   ?#######?    "
 ;1234567890123456
 [end]
 
@@ -9244,33 +9361,54 @@ DayXpm="16 16 5 1"   Colormode=16
 [_point]
 Type=0x06412
 ;GRMN_TYPE: Geographical Named Points of Interest/TRAIL/Trailhead/Non NT, NT
-String1=0x04,Artwork
+String1=0x04,Observatory
+String2=0x14,Csillagvizsgáló
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 5 1"   Colormode=16
-"!	c #040204"
-"#	c #6C6E6C"
-"%	c #C4C6C4"
-"?	c #FFFFFF"
+DayXpm="16 16 25 2"   Colormode=16
+"!!	c #000000"
+"!#	c #363636"
+"!%	c #414141"
+"!?	c #4B4B4B"
+"!$	c #565656"
+"!*	c #616161"
+"!=	c #949494"
+"!1	c #0000D5"
+"!2	c #0010EA"
+"!3	c #0022ED"
+"!4	c #002FF0"
+"!5	c #0039F3"
+"!6	c #004BF8"
+"!7	c #0164FF"
+"!8	c #087BFF"
+"!9	c #0983FF"
+"#!	c #0B88FF"
+"##	c #0F97FF"
+"#%	c #15AEFF"
+"#?	c #1BC8FF"
+"#$	c #1EDCFF"
+"#*	c #1EE6FF"
+"#=	c #FFFFFF"
+"#1	c #FFFF00"
 "  	c none"
-"     ?!!??!?    "
-"     ?!!??!?    "
-"     ??!??!?    "
-"    ?!!!!!?     "
-"    ?!!!!?      "
-"   ?!??!!?      "
-"    ?!?!!?      "
-"     ?!!!?      "
-"     ?!?!?      "
-"    ??!?!?      "
-"    ?#####?     "
-"    ?#####?     "
-"    ?#####?     "
-"    ?#####?     "
-"   ?%%%%%%%?    "
-"   ?#######?    "
+"                      #=!=#=    "
+"                    #=!=!!!!#=  "
+"                      #=!!!!!!#="
+"          #=#=#=#=  #=!!#=!!!!!="
+"        #=###=!2#!#=!!!!!!#=!=#="
+"      #=#?#%#=!2!5!7#=!!#=  #=  "
+"    #=#?#?#%#=!2!5!7!7#=        "
+"  #=#*#%#%###=!2!5!5!6#%#=      "
+"  #=!8!9#!!8#=!1!2!3!4!4#=      "
+"  #=#$#$#$#$#=#=#=#=#=#=#=      "
+"  #=!*!$!?!%!#!#!%!?!$!*#=      "
+"  #=!*!$#1#1!#!##1#1!$!*#=      "
+"  #=!*!$#1#1!#!##1#1!$!*#=      "
+"  #=!*!$!?!%!#!##1#1!$!*#=      "
+"#=!!!!!!!!!!!!!!!!!!!!!!!!#=    "
+"  #=#=#=#=#=#=#=#=#=#=#=#=      "
 ;1234567890123456
 [end]
 
@@ -9402,66 +9540,6 @@ DayXpm="17 16 10 1"   Colormode=16
 "#################"
 "?????????????????"
 ;12345678901234567
-[end]
-
-
-[_point]
-Type=0x06417
-;GRMN_TYPE: //
-String1=0x04,Manor
-String2=0x14,Kúria
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 13 33 2"   Colormode=16
-"!!	c #000000"
-"!#	c #E51F18"
-"!%	c #CE1A19"
-"!?	c #F7421B"
-"!$	c #E44B1C"
-"!*	c #472222"
-"!=	c #EA2A24"
-"!1	c #C13528"
-"!2	c #FA252B"
-"!3	c #C95331"
-"!4	c #E84833"
-"!5	c #CD3039"
-"!6	c #F03940"
-"!7	c #FF4840"
-"!8	c #D02847"
-"!9	c #DB3458"
-"#!	c #838383"
-"##	c #FF838D"
-"#%	c #949494"
-"#?	c #E4E4E4"
-"#$	c #E9E9E9"
-"#*	c #EBEBEB"
-"#=	c #EDEDED"
-"#1	c #EFEFEF"
-"#2	c #F1F1F1"
-"#3	c #F3F3F3"
-"#4	c #F5F5F5"
-"#5	c #F7F7F7"
-"#6	c #F9F9F9"
-"#7	c #FBFBFB"
-"#8	c #FDFDFD"
-"#9	c #FFFFFF"
-"  	c none"
-"          #6#6#6#6#6#6          "
-"    #6#6#6##!=!2!2!7###6#6#6    "
-"  #6##!?!4!3!9!7!%!?!2!3!%###6  "
-"#6##!?!=!8!#!6!!!!!5!2!2!1!?###6"
-"!$!1!%!%!3!!!!#!#!!!!!!6!%!#!5!9"
-"#6!!!!!!!!!!#9#9#9#9!!!!!!!!!!#6"
-"#6!!#9#8#7#!#5#%#!#2#!#=#*#$!!#6"
-"#6!!#8#%#6#!#4#%#!#1#!#*#!#$!!#6"
-"#6!!#7#9#5#!#3#2#1#=#!#$#$#?!!#6"
-"#6!!#6#%#4#!#2!*!*#*#!#$#!#?!!#6"
-"#6!!#5#4#3#!#1!*!*#$#!#?#?#?!!#6"
-"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-"#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6"
-;1234567890123456
 [end]
 
 
@@ -10526,8 +10604,111 @@ DayXpm="16 16 5 1"   Colormode=16
 
 
 [_point]
+Type=0x10d02
+;GRMN_TYPE: Business - Attractions/MUSEUM(NT)/Museum or historical society/NT
+String1=0x04,Memorial
+String2=0x14,Emlékhely
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=DayAndNight
+DaycustomColor:#000000
+NightcustomColor:#000000
+ContourColor=No
+DayXpm="16 16 2 1"   Colormode=16
+"!	c #000000"
+"  	c none"
+"                "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"      !!!!      "
+"                "
+"    !!!!!!!!    "
+"    !!!!!!!!    "
+"                "
+"  !!!!!!!!!!!!  "
+"  !!!!!!!!!!!!  "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x10d03
+;GRMN_TYPE: Business - Attractions/LIBRARY(NT)/Library/NT
+String1=0x14,Emléktábla
+String2=0x04,Plaque
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 9 3 1"   Colormode=16
+"!	c #040204"
+"#	c #FCFEFC"
+"  	c none"
+" ############## "
+" #!!!!!!!!!!!!# "
+" #!##########!# "
+" #!#!!!!!#!!#!# "
+" #!#######!!#!# "
+" #!#!!!!!#!!#!# "
+" #!##########!# "
+" #!!!!!!!!!!!!# "
+" ############## "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x10d04
 ;GRMN_TYPE: Business - Attractions/LANDMARK(NT)/Landmark/NT
+String1=0x04,Attraction
+String2=0x14,Látnivaló
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 13 1"   Colormode=16
+"!	c #101010"
+"#	c #6A6A6A"
+"%	c #8489DF"
+"?	c #9CA0E0"
+"$	c #5D63E1"
+"*	c #2730E2"
+"=	c #B0B2E3"
+"1	c #454CE8"
+"2	c #C7D2FF"
+"3	c #0000D5"
+"4	c #FFFFFF"
+"5	c #BDFFFF"
+"  	c none"
+"    42224       "
+"   4$*3*%4      "
+"  4133333$4     "
+" 4%33%=$33?4    "
+"42*3%444$3324   "
+"423324444$3244  "
+"42*3=4444444!!4 "
+" 4$33=4!!!!!44!4"
+" 4=3334!#5#!!!!4"
+"  4$334!5!5!!!!4"
+"  42$34!#5#!!!!4"
+"   42$4!!!!!!!!4"
+"    44444444444 "
+"     4*3*4      "
+"     4?3?4      "
+"      4?4       "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x10d05
+;GRMN_TYPE: Business - Attractions/SCHOOL(NT)/School/NT
 String1=0x04,Art gallery
 String2=0x14,Képtár
 ExtendedLabels=Y
@@ -10774,33 +10955,59 @@ DayXpm="17 16 31 2"   Colormode=16
 [_point]
 Type=0x10d12
 ;GRMN_TYPE: Business - Attractions/HISTORICAL_MONUMENT(NT)/Historical monument/NT
-String1=0x04,Memorial
-String2=0x14,Emlékhely
+String1=0x04,Manor
+String2=0x14,Kúria
 ExtendedLabels=Y
 FontStyle=SmallFont
-CustomColor=DayAndNight
-DaycustomColor:#000000
-NightcustomColor:#000000
+CustomColor=No
 ContourColor=No
-DayXpm="16 16 2 1"   Colormode=16
-"!	c #000000"
+DayXpm="16 13 33 2"   Colormode=16
+"!!	c #000000"
+"!#	c #E51F18"
+"!%	c #CE1A19"
+"!?	c #F7421B"
+"!$	c #E44B1C"
+"!*	c #472222"
+"!=	c #EA2A24"
+"!1	c #C13528"
+"!2	c #FA252B"
+"!3	c #C95331"
+"!4	c #E84833"
+"!5	c #CD3039"
+"!6	c #F03940"
+"!7	c #FF4840"
+"!8	c #D02847"
+"!9	c #DB3458"
+"#!	c #838383"
+"##	c #FF838D"
+"#%	c #949494"
+"#?	c #E4E4E4"
+"#$	c #E9E9E9"
+"#*	c #EBEBEB"
+"#=	c #EDEDED"
+"#1	c #EFEFEF"
+"#2	c #F1F1F1"
+"#3	c #F3F3F3"
+"#4	c #F5F5F5"
+"#5	c #F7F7F7"
+"#6	c #F9F9F9"
+"#7	c #FBFBFB"
+"#8	c #FDFDFD"
+"#9	c #FFFFFF"
 "  	c none"
-"                "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"      !!!!      "
-"                "
-"    !!!!!!!!    "
-"    !!!!!!!!    "
-"                "
-"  !!!!!!!!!!!!  "
-"  !!!!!!!!!!!!  "
-"                "
+"          #6#6#6#6#6#6          "
+"    #6#6#6##!=!2!2!7###6#6#6    "
+"  #6##!?!4!3!9!7!%!?!2!3!%###6  "
+"#6##!?!=!8!#!6!!!!!5!2!2!1!?###6"
+"!$!1!%!%!3!!!!#!#!!!!!!6!%!#!5!9"
+"#6!!!!!!!!!!#9#9#9#9!!!!!!!!!!#6"
+"#6!!#9#8#7#!#5#%#!#2#!#=#*#$!!#6"
+"#6!!#8#%#6#!#4#%#!#1#!#*#!#$!!#6"
+"#6!!#7#9#5#!#3#2#1#=#!#$#$#?!!#6"
+"#6!!#6#%#4#!#2!*!*#*#!#$#!#?!!#6"
+"#6!!#5#4#3#!#1!*!*#$#!#?#?#?!!#6"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6"
 ;1234567890123456
 [end]
 
@@ -11520,6 +11727,101 @@ DayXpm="9 16 6 1"   Colormode=16
 
 
 [_point]
+Type=0x1151d
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_30/User customizable point type/Non NT, NT
+String1=0x04,Watch tower
+String2=0x14,Őrtorony
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 10 1"   Colormode=16
+"!	c #FFFFFF"
+"#	c #000000"
+"%	c #C87800"
+"?	c #E09C38"
+"$	c #F8D490"
+"*	c #626262"
+"=	c #313131"
+"1	c #0000B4"
+"2	c #390000"
+"  	c none"
+"  !!22!!        "
+" !222222!   !!! "
+"!22222222!!!$?%!"
+" !111111!%%%%%%!"
+" !1!!!!1!%%%%%%!"
+" !111111!!!!$?%!"
+" !111111!   !!! "
+"  !*  *!        "
+"  !*  *!        "
+"  !**=*!        "
+"  !*= *!        "
+"  !* =*!        "
+"  !*=**!        "
+"  !*  *!        "
+" !######!       "
+"  !!!!!!        "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1151e
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_31/User customizable point type/Non NT, NT
+String1=0x04,Telescope
+String2=0x14,Rádióteleszkóp
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 25 2"   Colormode=16
+"!!	c #141414"
+"!#	c #323232"
+"!%	c #0C0C59"
+"!?	c #616161"
+"!$	c #878787"
+"!*	c #03039D"
+"!=	c #9D9D9D"
+"!1	c #5959A6"
+"!2	c #B0B0B0"
+"!3	c #B4B4B4"
+"!4	c #BDBDBD"
+"!5	c #C4C4C4"
+"!6	c #CBCBCB"
+"!7	c #CECECE"
+"!8	c #D1D1D1"
+"!9	c #DBDBDB"
+"#!	c #DFDFDF"
+"##	c #E2E2E2"
+"#%	c #E9E9E9"
+"#?	c #ECECEC"
+"#$	c #EFEFEF"
+"#*	c #F9F9F9"
+"#=	c #FDFDFD"
+"#1	c #FFFFFF"
+"  	c none"
+"  #1#1#1            #1          "
+"#1!3!#!3#1#1      #1!!#1        "
+"#1!#!!!#!?!?#1#1#1!!!!!!#1      "
+"#1!3!#!3#1#1!?!?!!!2#1!!#1      "
+"  #1!?#1#1#1#1!!!=#?#=!!#1      "
+"  #1!?#1#1#1!!!$!7#!#$!!#1      "
+"    #1!?#1!#!$!2!5!8##!!#1      "
+"    #1!?!!!=!7!4!3!5!!!$#1      "
+"    #1!!!2#?!9!6!4!!!1#1        "
+"  #1!!!!#1#*#%!3!!!1!*#1        "
+"    #1!!!!!!!!!$!1!*!*#1        "
+"      #1#1#1#1#1!1!*!*!1#1      "
+"            #1!?!%!*!*!%!?#1    "
+"          #1#1!%!%!*!*!%!%#1#1  "
+"        #1!!!!!!!!!!!!!!!!!!!!#1"
+"          #1#1#1#1#1#1#1#1#1#1  "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x11600
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_33/User customizable point type/Non NT, NT
 ExtendedLabels=Y
@@ -11971,6 +12273,105 @@ DayXpm="13 16 6 1"   Colormode=16
 "   ?!!!!!?   "
 "    ?????    "
 ;1234567890123
+[end]
+
+
+[_point]
+Type=0x11711
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_82/User customizable point type/Non NT, NT
+String1=0x04,Barbecue
+String2=0x14,Szabadtéri grill
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 14 1"   Colormode=16
+"!	c #000000"
+"#	c #636363"
+"%	c #8C8887"
+"?	c #0030B4"
+"$	c #0065FF"
+"*	c #FFFFFF"
+"=	c #FF0000"
+"1	c #BD0000"
+"2	c #FF9500"
+"3	c #7B3000"
+"4	c #FFCA00"
+"5	c #FFFF00"
+"6	c #0030FF"
+"  	c none"
+"     * ** *     "
+"    *4*42*2*    "
+"    *525=5=*    "
+"    *=4=11=*    "
+"   **1*3*3***   "
+"  *!!!!!!!!!!*  "
+"  *!$$$$$$6?!*  "
+"  *!$$$$666?!*  "
+"   *!6?????!*   "
+"    *!!!!!!*    "
+"    *!****!*    "
+"   **!****!*    "
+"  *%!!!!!!!!%   "
+" **!#******#!** "
+"*!!!!!!!!!!!!!!*"
+" ************** "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11712
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_83/User customizable point type/Non NT, NT
+String1=0x04,Bird hide
+String2=0x14,Madárles
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 25 2"   Colormode=16
+"!!	c #171C27"
+"!#	c #202636"
+"!%	c #283044"
+"!?	c #2C354C"
+"!$	c #303A54"
+"!*	c #37425F"
+"!=	c #3E4B6C"
+"!1	c #435175"
+"!2	c #4B5B83"
+"!3	c #50608A"
+"!4	c #546692"
+"!5	c #586B9A"
+"!6	c #5D71A3"
+"!7	c #7183AF"
+"!8	c #8594BB"
+"!9	c #919FC1"
+"#!	c #9AA6C6"
+"##	c #A1ADCB"
+"#%	c #BAC3D8"
+"#?	c #C6CDE0"
+"#$	c #D8DDEA"
+"#*	c #E6E9F2"
+"#=	c #F3F5F9"
+"#1	c #FFFFFF"
+"  	c none"
+"      #1#1#1#1    #1#1#1        "
+"    #1#*!8!8#*#1#1#*!7!8#1      "
+"    #1!8!!!!!8#1#1!6!!!!#!#1    "
+"    #1#1#1#1#1#1#1#1#1#1#1#1    "
+"  #1#*!4!?!=#%#=#=##!*!%!5#*#1  "
+"  #1!3!!!!!!!#!*!*!!!!!!!!!6#1  "
+"  #1!#!!!!!!!!!!!!!!!!!!!!!?#1  "
+"#1#%!!!!!!!!!!!!!!!!!!!!!!!!#$#1"
+"#1!7!!!!!!!!!!!!!!!!!!!!!!!!!8#1"
+"#1!=!!!!!!!!!!!!!!!!!!!!!!!!!2#1"
+"#1!#!8#1#1!1!!!!!!!!!4#1#1!7!%#1"
+"#1!1#1#1#1#1!##*#*!%#1#1#1#1!$#1"
+"#1!?#$#1#1#?!?#1#1!%#$#1#1#?!%#1"
+"#1!8!?!5!4!?###1#1!9!?!4!3!?###1"
+"  #1#$!9!9#$#1    #1#$#!###*#1  "
+"    #1#1#1#1        #1#1#1#1    "
+;1234567890123456
 [end]
 
 

@@ -32,3 +32,6 @@ amenity=feeding_place | amenity=game_feeding [0x11714 resolution 24]
 ford=yes & mkgmap:line2poi!=true [0x11715 resolution 24]
 man_made=insect_hotel | natural=anthill  [0x11716 resolution 24]
 man_made=survey_point [0x1150F resolution 24]
+
+amenity=bbq [0x11711 resolution 24]
+leisure=bird_hide [0x11712 resolution 24]
