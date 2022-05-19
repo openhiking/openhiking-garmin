@@ -10,4 +10,7 @@
 
 tourism=attraction {name '${short_name}'|'${name}'} [0x10D04 resolution 24]
 
+man_made=observatory & observatory:type=astronomical & access!=private {name '${short_name}'|'${name}'} [0x6412 resolution 24]
+man_made=telescope & telescope:type=radio & access!=private {name '${short_name}'|'${name}'} [0x1151E resolution 24]
+
 boundary=marker {name '${short_name}'|'${name}'} [0x05800 resolution 24]

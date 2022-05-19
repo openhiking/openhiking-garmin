@@ -9,7 +9,7 @@
 ########################################################
 
 
-building=residential { delete building; }
+building=residential & historic!=* { delete building; }
 
 building=* & (amenity=* | shop=* | tourism=* | leisure=*) { add has_amenity=true; }
 
@@ -28,6 +28,7 @@ building=train_station | building=transportation | building=parking [0x0d resolu
 building=kindergarten | building=school | building=college | building=university [0x0d resolution 24]
 building=riding_hall | building=sports_hall | building=stadium  [0x0d resolution 24]
 
+building=* & historic=* [0x0d resolution 24]
 building=* & name=* & man_made!=tower [0x0d resolution 24]
 
 (building=industrial | building=warehouse) & area_size()>160 [0x0d resolution 24]

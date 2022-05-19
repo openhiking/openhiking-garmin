@@ -11,5 +11,3 @@
 amenity=kindergarten  [0x02C14 resolution 24]
 amenity=school  [0x02C05 resolution 24]
 amenity=college | amenity=university [0x02C15 resolution 24]
-
-man_made=observatory  {name '${short_name}'|'${name}'} [0x6412 resolution 24]
