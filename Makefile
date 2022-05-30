@@ -157,7 +157,7 @@ ifeq (${ComSpec},)
 	MKGMAP?=$(HOME)/tools/mkgmap-r4855/mkgmap.jar
 	MKNSIS?=makensis
 	ZIP?=zip
-	ZIPARGS=
+	ZIPARGS=-r
 	PSEP=$(subst /,/,/)
 	PSEP2=$(PSEP)
 	CMDLIST=&&
