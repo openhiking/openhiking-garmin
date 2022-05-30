@@ -157,7 +157,7 @@ ifeq (${ComSpec},)
 	MKGMAP?=$(HOME)/tools/mkgmap-r4855/mkgmap.jar
 	MKNSIS?=makensis
 	ZIP?=zip
-	ZIPARGS=-r
+	ZIPARGS?=-r
 	PSEP=$(subst /,/,/)
 	PSEP2=$(PSEP)
 	CMDLIST=&&
@@ -174,7 +174,7 @@ else
 	MKGMAP?=c:\Apps\mkgmap-4819\mkgmap.jar
 	MKNSIS?="c:\Program Files (x86)\NSIS\Bin\makensis.exe"
 	ZIP?="c:\Program Files\7-Zip\7z.exe"
-	ZIPARGS=a -tzip
+	ZIPARGS?=a -tzip
 	PSEP=$(subst /,\,/)
 	PSEP2=$(PSEP)$(PSEP)
 	CMDLIST=&
@@ -603,7 +603,11 @@ endif
 
 
 gmapi:
-	$(ZIP) $(ZIPARGS) "$(GMAP_DIR)$(PSEP)$(GMAPI_ZIP_NAME)" '$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)'
+ifeq ($(LINUX),1)
+	cd $(GMAP_DIR) && $(ZIP) $(ZIPARGS) $(GMAPI_ZIP_NAME) '$(GMAPI_DIR_NAME)'
+else
+	$(GMAP_DRIVE) & cd $(GMAP_DIR) & $(ZIP) $(ZIPARGS) $(GMAPI_ZIP_NAME) "$(GMAPI_DIR_NAME)"
+endif
 
 
 stage1: refresh merge tiles
