@@ -381,6 +381,11 @@ ifeq ($(GMAPSUPP),yes)
 	GMAPSUPP_OPTION=--gmapsupp
 endif
 
+ifeq ($(GMAPI),yes)
+	GMAPI_OPTION=--gmapi
+endif
+
+
 
 ifneq ($(LICENSE_FILE),)
 	LICENSE_OPTION=--license-file=$(CONFIG_DIR)$(PSEP)$(LICENSE_FILE)
@@ -413,6 +418,10 @@ endif
 
 
 ZIPNAME=$(MAPNAME).zip
+
+FAMILY_NAME_STRIPPED:=$(subst ",$(empty),$(FAMILY_NAME))
+GMAPI_DIR_NAME=$(FAMILY_NAME_STRIPPED).gmap
+GMAPI_ZIP_NAME=$(subst $(space),$(empty),$(FAMILY_NAME_STRIPPED)).zip
 
 
 
@@ -561,7 +570,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
 	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE)  \
-	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) \
+	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
 
 
@@ -591,6 +600,10 @@ endif
 	$(DEL) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)"
 	$(ZIP) $(ZIPARGS) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)" "$(GMAP_DIR)$(PSEP)7*.img" "$(GMAP_DIR)$(PSEP)$(MAPNAME).img" \
 	"$(GMAP_DIR)$(PSEP)$(MAPNAME)_mdr.img" "$(GMAP_DIR)$(PSEP)*.mdx" "$(GMAP_DIR)$(PSEP)*.tdb" "$(GMAP_DIR)$(PSEP)*.typ"
+
+
+gmapi:
+	$(ZIP) $(ZIPARGS) "$(GMAP_DIR)$(PSEP)$(GMAPI_ZIP_NAME)" "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 
 
 stage1: refresh merge tiles
@@ -637,7 +650,8 @@ cleanoutput:
 
 
 test:
-	@echo $(MAPSOURCE_DIR)
+	@echo $(GMAPI_DIR_NAME)
+	@echo $(GMAPI_ZIP_NAME)
 
 
 
