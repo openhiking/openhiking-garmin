@@ -603,7 +603,7 @@ endif
 
 
 gmapi:
-	$(ZIP) $(ZIPARGS) "$(GMAP_DIR)$(PSEP)$(GMAPI_ZIP_NAME)" "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+	$(ZIP) $(ZIPARGS) "$(GMAP_DIR)$(PSEP)$(GMAPI_ZIP_NAME)" '$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)'
 
 
 stage1: refresh merge tiles
