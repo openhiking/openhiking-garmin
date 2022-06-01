@@ -163,7 +163,7 @@ ifeq (${ComSpec},)
 	CMDLIST=&&
 	COPY=cp
 	MOVE=mv
-	DEL=rm
+	DEL=rm -rf
 	CAT=cat
 else
 	LINUX=0
