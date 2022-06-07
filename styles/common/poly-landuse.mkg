@@ -14,7 +14,7 @@ place=sea {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}
 natural=land [0x27 resolution 14]
 natural=background [0x27 resolution 14]
 
-landuse=residential {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${mkgmap:admin_level9}' | '${mkgmap:admin_level8}'; } [0x02 resolution 16]
+landuse=residential {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${place_name} (${place_name:hu|not-equal:place_name})' | '${place_name}' | '${mkgmap:admin_level9}' | '${mkgmap:admin_level8}'; } [0x02 resolution 16]
 landuse=garages  [0x02 resolution 16]
 landuse=allotments [0x10F06 resolution 16]
 landuse=farmland    [0x10F03 resolution 16]

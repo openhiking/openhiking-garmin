@@ -28,6 +28,8 @@ historic=fort & ruins!=* [0x2c11 resolution 22]
 man_made=tower & tower:type=defensive & ruins!=* {name '${short_name}'|'${name}'} [0x6418 resolution 22]
 
 man_made=cross {name '${short_name}'|'${name}'} [0x641b resolution 24]
+
+tourism=artwork & artwork_type=painting [0x6410 resolution 24]
 tourism=artwork  [0x640f resolution 24]
 man_made=obelisk {name '${short_name}'|'${name}'} [0x6413 resolution 24]
 amenity=fountain  [0x6414 resolution 24]

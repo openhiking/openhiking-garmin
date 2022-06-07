@@ -8,13 +8,23 @@
 #
 ########################################################
 
-man_made=stupa {name '${short_name}'|'${name}'} [0x2C0B resolution 24]
-man_made=tower & tower:type=stupa {name '${short_name}'|'${name}'} [0x2C0B resolution 24]
+man_made=stupa {name '${short_name}'|'${name}'} [0x10D10 resolution 24]
+man_made=tower & tower:type=stupa {name '${short_name}'|'${name}'} [0x10D10 resolution 24]
 
-amenity=place_of_worship & religion=muslim  { add mkgmap:label:2='(${denomination})'} [0x2C0D resolution 24]
-amenity=place_of_worship & religion=jewish { add mkgmap:label:2='(${denomination})'} [0x2C10 resolution 24]
-amenity=place_of_worship &(building=chapel | name~'.*k.polna') {name '${short_name}'|'${name}'; add mkgmap:label:2='(${denomination})'} [0x2C0F resolution 24]
-amenity=place_of_worship { add mkgmap:label:2='(${denomination})'} [0x2C0E resolution 24]
+
+if (amenity=place_of_worship) then
+	() {name '${short_name}'|'${name}' }
+	religion=muslim |  building=mosque  [0x2C0D resolution 24]
+	religion=jewish | building=synagogue [0x2C10 resolution 24]
+
+        building=chapel | name~'.*k.polna' {add mkgmap:label:2='(${denomination})'} [0x10D0B resolution 24]
+	building=church   {add mkgmap:label:2='(${denomination})'} [0x02C0E resolution 24]
+	building=cathedral {add mkgmap:label:2='(${denomination})'} [0x02C0F resolution 24]
+
+	religion=christian [0x02C0E resolution 24]
+	() [0x2C0B resolution 24]
+end
+
 
 amenity=monastery [0x10D0E resolution 24]
 
@@ -23,4 +33,4 @@ man_made=tower & tower:type=bell_tower  [0x10D0F resolution 24]
 
 amenity=grave_yard  [0x06405 resolution 24]
 
-historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x10D0B resolution 24]
+historic=wayside_cross | historic=wayside_shrine | historic=tree_shrine [0x10D0C resolution 24]
