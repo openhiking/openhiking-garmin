@@ -15,7 +15,7 @@ landuse=* & mkgmap:line2poi=true {delete landuse}
 leisure=* & mkgmap:line2poi=true {delete leisure}
 man_made=* & mkgmap:line2poi=true {delete man_made}
 natural=* & mkgmap:line2poi=true {delete natural}
-natural=* & mkgmap:area2poi=true {delete natural}
+#natural=* & mkgmap:area2poi=true {delete natural}
 place=* & mkgmap:line2poi=true {delete place}
 shop=* & mkgmap:line2poi=true {delete shop}
 sport=* & mkgmap:line2poi=true {delete sport}

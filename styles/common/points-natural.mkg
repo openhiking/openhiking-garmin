@@ -28,7 +28,7 @@ end
 
 natural=hot_spring [0x2c0c resolution 24]
 
-natural=cliff  [0x6607 resolution 22]
+natural=cliff & mkgmap:area2poi!=true [0x6607 resolution 22]
 natural=rock [0x06614 resolution 23]
 natural=arch  [0x06601 resolution 24]
 natural=stone  [0x06615 resolution 24]
