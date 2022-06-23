@@ -13,18 +13,26 @@ amenity=fuel & access!=no & access!=private [0x02F01 resolution 24]
 
 #railway=station {name '${short_name}'|'${name}'} [0x11900 resolution 22]
 #railway=halt {name '${short_name}'|'${name}'} [0x11901 resolution 22]
-railway=station {name '${short_name}'|'${name}'} [0x2f1f resolution 22]
-railway=halt {name '${short_name}'|'${name}'} [0x2f1f resolution 22]
 
+if (railway=station | railway=halt) then
+	() [0x11703 resolution 22-24 continue]
+	() {name '${short_name}'|'${name}'} [0x2f1f resolution 22]
 
-amenity=bus_station [0x2f17 resolution 22]
+end
+
+if (amenity=bus_station) then
+	() [0x11704 resolution 22-24 continue]	
+	() {name '${short_name}'|'${name}'} [0x2f08 resolution 22]
+end
 
 if (highway=bus_stop) then
-	() {name '${short_name}'|'${name}'}
-	operator=BKV | operator='Miskolc Városi Közlekedési Zrt.' [0x2f08 resolution 24]
-	is_in(landuse,residential,in)=false [0x2f17 resolution 22]
-	() [0x2f17 resolution 24 ]
+	operator~'BKV|RATB|DKV|DKV Zrt\.' {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
+	network=VOR | operator='Miskolc Városi Közlekedési Zrt.' {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
+#	is_in(landuse,residential,in)=false [0x11704 resolution 22 continue]
+	() [0x11704 resolution 24 continue]	
+	() {name '${short_name}'|'${name}'} [0x2f08 resolution 24 ]
 end
+
 highway=tram_stop {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
 
 

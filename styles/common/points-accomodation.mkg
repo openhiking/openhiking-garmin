@@ -18,7 +18,7 @@ tourism=motel  [0x02B04 resolution 24]
 tourism=camp_site & (camp_site=basic | backcountry=yes ) & foot!=no [0x04800 resolution 24]
 tourism=caravan_site & foot!=no [0x02B05 resolution 22]
 if (tourism=camp_site & foot!=no) then
-	()  [0x11701 resolution 22-24]
+	()  [0x11702 resolution 22-24 continue]
 	()  [0x02B05 resolution 24]
 end
 
@@ -27,7 +27,10 @@ if (tourism=alpine_hut & foot!=no) then
 	() [0x02B06 resolution 24]
 end
 
-tourism=alpine_hut & foot!=no   [0x02B06 resolution 22]
-tourism=wilderness_hut & foot!=no  [0x02B07 resolution 22]
+if (tourism=wilderness_hut & foot!=no) then
+	() [0x11701 resolution 24 continue]
+	() [0x02B07 resolution 24]
+end
+
 
 

@@ -1,0 +1,14 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Waterway facilities
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+waterway=weir & name=* {name '${short_name}'|'${name}'} [0x05500 resolution 24]
+waterway=lock_gate {name '${short_name}'|'${name}'} [0x05600 resolution 24]
+
+waterway=dam & name=* & (mkgmap:line2poi!=* | mkgmap:line2poitype=mid ) {name '${short_name}'|'${name}'} [0x05700 resolution 24]
