@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 68772 octets
-; Fichier TYP compilé     22/06/2022     22:06:32
-; Décompilé le 6/22/2022 à 10:33:16 PM
+; Longueur: 69147 octets
+; Fichier TYP compilé     27/06/2022     21:50:47
+; Décompilé le 6/27/2022 à 9:50:50 PM
 
 [_id]
 ProductCode=1
@@ -8589,7 +8589,7 @@ DayXpm="16 16 25 2"   Colormode=16
 [_point]
 Type=0x05500
 ;GRMN_TYPE: //
-String1=0x14,Duzzasztógát
+String1=0x14,Bukógát
 String2=0x04,Weir
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -8697,7 +8697,7 @@ DayXpm="16 16 25 2"   Colormode=16
 Type=0x05700
 ;GRMN_TYPE: Misc. Points of Interest/DANGER_AREA/Danger area/Non NT, NT
 String1=0x04,Dam
-String2=0x14,Völgyzárógát
+String2=0x14,Duzzasztógát
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -11216,6 +11216,85 @@ DayXpm="16 13 33 2"   Colormode=16
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6#6"
 ;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11008
+;GRMN_TYPE: Business - Services/GND_TRANSPORT(NT)/Ground transportation status, i.e. a bus station/NT
+String1=0x04,Subway station
+String2=0x14,Metróállomás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="14 18 8 1"   Colormode=16
+"!	c #000000"
+"#	c #313131"
+"%	c #525252"
+"?	c #FFFF00"
+"$	c #FFFFFF"
+"*	c #D5D5D5"
+"=	c #0095FF"
+"  	c none"
+" $$$$$$$$$$$$ "
+"$$$$#!!!!#$$$$"
+"$*##======##*$"
+"$#==========#$"
+"$!=%%%%%%%%=!$"
+"$!=%***%**%=!$"
+"$!=%***%**%=!$"
+"$!=%***%**%=!$"
+"$!=%***%**%=!$"
+"$!=%%%%%%%%=!$"
+"$!==========!$"
+"$!=?======?=!$"
+"$#===%%%%===#$"
+"$*#!!!!!!!!#*$"
+"$$$!!$$$$!!$$$"
+"$$!!######!!$$"
+"$!!#$$$$$$#!!$"
+" $$$$$$$$$$$$ "
+;12345678901234
+[end]
+
+
+[_point]
+Type=0x1101f
+;GRMN_TYPE: Business - Services Extended/TRAIN_STATION(NT)/Train station/NT
+String1=0x04,Light rail station
+String2=0x14,HÉV állomás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="14 18 7 1"   Colormode=16
+"!	c #000000"
+"#	c #313131"
+"%	c #626262"
+"?	c #39956A"
+"$	c #FFFFFF"
+"*	c #D5D5D5"
+"  	c none"
+" $$$$$$$$$$$$ "
+"$$$$$%%%%$$$$$"
+"$$!!!!!!!!!!$$"
+"$!??????????!$"
+"$!%%%%%%%%%%!$"
+"$!**%****%**!$"
+"$!**%****%**!$"
+"$!%%%%%%%%%%!$"
+"$!??????????!$"
+"$!$$$$$$$$$$!$"
+"$!$!$$$$$$!$!$"
+"$!??????????!$"
+"$!??????????!$"
+"$%!!!!!!!!!!%$"
+"$$$!!$$$$!!$$$"
+"$$!!######!!$$"
+"$!!#$$$$$$#!!$"
+" $$$$$$$$$$$$ "
+;12345678901234
 [end]
 
 
