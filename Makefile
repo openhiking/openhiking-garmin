@@ -421,7 +421,7 @@ ZIPNAME=$(MAPNAME).zip
 
 FAMILY_NAME_STRIPPED:=$(subst ",$(empty),$(FAMILY_NAME))
 GMAPI_DIR_NAME=$(FAMILY_NAME_STRIPPED).gmap
-GMAPI_ZIP_NAME=$(subst $(space),$(empty),$(FAMILY_NAME_STRIPPED)).zip
+GMAPI_ZIP_NAME?=$(subst $(space),$(empty),$(FAMILY_NAME_STRIPPED)).zip
 
 
 
