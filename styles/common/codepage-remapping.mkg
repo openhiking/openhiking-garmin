@@ -10,3 +10,9 @@
 
 name=* { set name='${name|subst:"ő=>õ"}'; set name='${name|subst:"Ő=>Õ"}' }
 name=* { set name='${name|subst:"ű=>û"}'; set name='${name|subst:"Ű=>Û"}' }
+name:hu=* { set name:hu='${name:hu|subst:"ő=>õ"}'; set name:hu='${name:hu|subst:"Ő=>Õ"}' }
+name:hu=* { set name:hu='${name:hu|subst:"ű=>û"}'; set name:hu='${name:hu|subst:"Ű=>Û"}' }
+place_name=* { set place_name='${place_name|subst:"ő=>õ"}'; set place_name='${place_name|subst:"Ő=>Õ"}' }
+place_name=* { set place_name='${place_name|subst:"ű=>û"}'; set place_name='${place_name|subst:"Ű=>Û"}' }
+place_name:hu=* { set place_name:hu='${place_name:hu|subst:"ő=>õ"}'; set place_name:hu='${place_name:hu|subst:"Ő=>Õ"}' }
+place_name:hu=* { set place_name:hu='${place_name:hu|subst:"ű=>û"}'; set place_name:hu='${place_name:hu|subst:"Ű=>Û"}' }

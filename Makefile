@@ -495,9 +495,8 @@ $(TILES_DIR)$(PSEP2)%-places.osc: $(TILES_DIR)$(PSEP)%-places.pbf
 $(MAP_MERGED_NAMED_PBF_FP): $(MAP_MERGED_PBF_FP) $(MAP_INP_OSC)
 	$(OSMCONVERT) --hash-memory=240-30-2   --drop-version $^ -o=$@
 
-places: $(MAP_MERGED_NAMED_PBF_FP)
+places: $(MAP_INP_OSC)
 	@echo "DONE"
-
 
 merge-osmosis:  $(MAP_INP_OSM_PBF) $(MAP_INP_SUPP_PBF) $(MAP_INP_CONTOUR)
 	$(OSMOSIS) $(MAP_INP_OSM_PBF_ARGS) $(MAP_INP_SUPP_PBF_ARGS) $(MAP_INP_CONTOUR_ARGS) --merge --bp file=$(BOUNDARY_POLYGON_FP) --wb file=$@

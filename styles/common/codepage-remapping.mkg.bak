@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Code page remapping
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+name=* { set name='${name|subst:"ő=>õ"}'; set name='${name|subst:"Ő=>Õ"}' }
+name=* { set name='${name|subst:"ű=>û"}'; set name='${name|subst:"Ű=>Û"}' }
