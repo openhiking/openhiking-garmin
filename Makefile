@@ -416,6 +416,10 @@ ifneq ($(LOGO_FILE),)
 	INSTALLER_DEPS+=$(GMAP_DIR)$(PSEP)$(LOGO_FILE)
 endif
 
+ifeq ($(GMAPI),yes)
+	MAKE_GMAPI=gmapi
+endif
+
 
 ZIPNAME=$(MAPNAME).zip
 
@@ -611,10 +615,10 @@ endif
 stage1: refresh merge tiles
 	@echo Stage-1 completed successfully
 
-stage2: map nsi-script install
+stage2: map nsi-script install $(MAKE_GMAPI)
 	@echo Stage-2 completed successfully
 
-all: refresh merge tiles map nsi-script install
+all: refresh merge tiles map nsi-script install $(MAKE_GMAPI)
 	@echo Map making completed successfully
 
 push:
@@ -652,8 +656,8 @@ cleanoutput:
 
 
 test:
-	@echo $(GMAPI_DIR_NAME)
 	@echo $(GMAPI_ZIP_NAME)
+
 
 
 
