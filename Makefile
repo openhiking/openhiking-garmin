@@ -50,6 +50,8 @@ ifeq ($(DEM_DIR),)
 $(error MKG_DEM_DIR env variable must be set)
 endif
 
+ALOS_DOWNLOAD_SUBDIR=${MGK_ALOS_DOWNLOAD_SUBDIR}
+
 CONTOUR_DIR=${MKG_CONTOUR_DIR}
 ifeq ($(CONTOUR_DIR),)
 $(error MKG_CONTOUR_DIR env variable must be set)
@@ -100,6 +102,10 @@ endif
 
 ifneq (${MKG_MAKENAMES},)
 MAKENAMES=${MKG_MAKENAMES}
+endif
+
+ifneq (${MKG_DEMMGR},)
+DEMMGR=${MKG_DEMMGR}
 endif
 
 ifneq (${MKG_SPLITTER},)
@@ -183,7 +189,7 @@ else
 	DEL=del /f /q
 endif
 
-DEMMGR=tools$(PSEP)demmgr.py
+#DEMMGR=tools$(PSEP)demmgr.py
 PHYGHTMAP?=phyghtmap
 WGET?=wget
 NSIGEN?=python tools\nsigen.py
@@ -208,7 +214,7 @@ ifeq ($(DEM_SOURCES),)
 	DEM_SOURCES=dtm-sk alos SRTM1v3.0
 endif
 
-DEM_SOURCE_TILES=$(shell python $(DEMMGR) -s -i -p $(BOUNDARY_POLYGON_FP) -d $(DEM_DIR) $(DEM_SOURCES))
+DEM_SOURCE_TILES=$(shell $(DEMMGR) -s -i -p $(BOUNDARY_POLYGON_FP) -d $(DEM_DIR) $(DEM_SOURCES))
 
 ifeq ($(CONTOUR_LINE_STEP),10)
 	CONTOUR_LINE_MEDIUM=20
@@ -433,7 +439,7 @@ GMAPI_ZIP_NAME?=$(subst $(space),$(empty),$(FAMILY_NAME_STRIPPED)).zip
 # Recipes
 
 alos:
-	python $(DEMMGR) -r --poly=$(BOUNDARY_POLYGON_FP) --dem=$(DEM_DIR)
+	$(DEMMGR) -r --poly=$(BOUNDARY_POLYGON_FP) --dem=$(DEM_DIR) --alos=$(ALOS_DOWNLOAD_SUBDIR)
 
 contour-srtm:
 	$(PHYGHTMAP) --jobs=2 --viewfinder-mask=3 -s $(CONTOUR_LINE_STEP) -c $(CONTOUR_LINE_MAJOR),$(CONTOUR_LINE_MEDIUM) -0 \
