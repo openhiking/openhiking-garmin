@@ -12,14 +12,8 @@
 
 include "../common/relations-boundaries.mkg"
 
-if (mkgmap:option:REGION=ce) then
 include "../common/relations-hiking-hu.mkg"
 include "../common/relations-hiking-sk.mkg"
 include "../common/relations-hiking-cz.mkg"
-end
-
 include "../common/relations-hiking-osmc.mkg"
-
-if (mkgmap:option:REGION=nordic) then
 include "../common/relations-hiking-generic.mkg"
-end

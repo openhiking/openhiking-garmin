@@ -9,7 +9,7 @@
 ########################################################
 
 if (type=route & route~'hiking|foot') then
-	()  {
+	()  { 
 	apply {
 		add trail_p10_color=red;
 		add trail_p10_symbol='';
