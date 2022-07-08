@@ -8,8 +8,8 @@
 #
 ########################################################
 
-if (type=route & route~'hiking|foot') then
-	()  { 
+if (type=route & route='hiking') then
+	jel!=* & osmc:symbol!=* & operator!=KST  {
 	apply {
 		add trail_p10_color=red;
 		add trail_p10_symbol='';
