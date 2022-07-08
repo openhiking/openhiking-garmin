@@ -160,6 +160,7 @@ if (source=hksymgen) then
 
 
 	if (trail_symbol_level=major) then
+		trail_symbol='osmc:red_frame:red_cross' [0x12B17 resolution 22]	
 		trail_symbol='osmc:red:white_bar'       [0x12B18 resolution 22]
 		trail_symbol='osmc:red:white_stripe'    [0x12B19 resolution 22]
 		trail_symbol='osmc:white:black_bar'     [0x12B1C resolution 22]
@@ -233,6 +234,7 @@ if (source=hksymgen) then
 		trail_symbol='osmc:yellow:black_triangle_line'  [0x12F09 resolution 22]
 
 	else
+		trail_symbol='osmc:red_frame:red_cross' [0x12B17 resolution 24]		
 		trail_symbol='osmc:red:white_bar'       [0x12B18 resolution 24]
 		trail_symbol='osmc:red:white_stripe'    [0x12B19 resolution 24]
 		trail_symbol='osmc:white:black_bar'     [0x12B1C resolution 24]

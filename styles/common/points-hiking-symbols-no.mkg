@@ -1,0 +1,18 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking symbols rendering for Norway
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (source=hksymgen) then
+        if (trail_symbol_level=major) then
+		trail_symbol='no:t'         [0x1291b resolution 22]
+        else
+		trail_symbol='no:t'         [0x1291b resolution 24]
+        end
+
+end

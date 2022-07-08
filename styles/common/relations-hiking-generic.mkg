@@ -12,7 +12,7 @@ if (type=route & route~'hiking|foot') then
 	()  {
 	apply {
 		add trail_p10_color=red;
-		add trail_p10_symbol='hu:pt';
+		add trail_p10_symbol='';
 		add trail_p10_name='${name}'|'${from} - ${to} (${ref})'|'${from} - ${to}'|'${ref}';
 		}
 	}

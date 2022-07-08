@@ -38,8 +38,16 @@ include "../common/points-fixme.mkg"
 include "../common/points-obstacles.mkg"
 include "../common/points-other.mkg"
 include "../common/points-hiking-symbols.mkg"
+
+if (mkgmap:option:REGION=ce) then
 include "../common/points-hiking-symbols-hu.mkg"
 include "../common/points-hiking-symbols-czsk.mkg"
+end
+
 include "../common/points-hiking-symbols-osmc.mkg"
+
+if (mkgmap:option:REGION=nordic) then
+include "../common/points-hiking-symbols-no.mkg"
+end
 
 

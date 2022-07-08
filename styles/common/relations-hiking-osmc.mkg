@@ -166,6 +166,15 @@ if (type=route & route~'hiking|foot') then
 		}
 	}
 	
+	osmc:symbol='red:white: :T:red' & jel!=* & kct_red!=* & operator!=KST  {
+	apply {
+		add trail_p5_color=red;
+		add trail_p5_symbol='no:t';
+		add trail_p5_name='${name}'|'${from} - ${to} (${ref})'|'${from} - ${to}'|'${ref}';
+		}
+	}
+
+	
 	osmc:symbol='blue:white:blue_cross' & jel!=* & kct_blue!=* & operator!=KST  {
 	apply {
 		add trail_p6_color=blue;
