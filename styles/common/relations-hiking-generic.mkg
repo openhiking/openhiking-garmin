@@ -1,0 +1,19 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking relations - Generic
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (type=route & route~'hiking|foot') then
+	()  {
+	apply {
+		add trail_p10_color=red;
+		add trail_p10_symbol='hu:pt';
+		add trail_p10_name='${name}'|'${from} - ${to} (${ref})'|'${from} - ${to}'|'${ref}';
+		}
+	}
+end
