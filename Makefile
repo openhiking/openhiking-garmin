@@ -578,7 +578,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) \
 	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(BOUNDS_OPTS) \
-	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option=CODE_PAGE=$(CODE_PAGE);REGION=$(MAP_REGION) \
+	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);REGION=$(MAP_REGION)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
 
