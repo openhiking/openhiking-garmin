@@ -49,26 +49,37 @@ if (highway=primary_link) then
 	() [0x02 road_class=3 road_speed=5 resolution 20]
 end
 
+# Declassification
+if (mkgmap:option:REGION=ce) then
+if (surface_type~'unpaved_hard|unpaved_normal') then
+	if (highway~'secondary|secondary_link|tertiary|tertiary_link') then
+		() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+	end
+	if (highway~'unclassified|residential|living_street|service' & area!=yes) then
+		()  {name  '${bilingual_name}'}
+		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
+		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+	end
+end
+end
+
+
 if (highway=secondary | highway=secondary_link) then
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	() [0x10e15 resolution 18-19 continue]
 	() [0x03 road_class=2 road_speed=4 resolution 20]
 end
 
 if (highway=tertiary | highway=tertiary_link) then
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
 
 
 if (highway=unclassified) then
 	()  {name  '${bilingual_name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=3 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
@@ -76,8 +87,6 @@ end
 
 if (highway=residential  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=3 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 20]
 	()  [0x07 road_class=0 road_speed=3 resolution 20-23 continue]
@@ -86,8 +95,6 @@ end
 
 if (highway=living_street  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=1 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 20]
 	()  [0x07 resolution 20-23 continue]
@@ -97,8 +104,6 @@ end
 
 if (highway=service  & area!=yes ) then
 	()  {name  '${bilingual_name}'}
-	surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-	surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=2 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E12 resolution 20]
 	()  [0x07 road_class=0 road_speed=2 resolution 20]
