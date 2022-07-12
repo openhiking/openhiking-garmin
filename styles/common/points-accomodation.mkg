@@ -28,7 +28,7 @@ if (tourism=alpine_hut & foot!=no) then
 end
 
 if (tourism=wilderness_hut & foot!=no) then
-	() [0x11701 resolution 24 continue]
+	() [0x11701 resolution 22-24 continue]
 	() [0x02B07 resolution 24]
 end
 

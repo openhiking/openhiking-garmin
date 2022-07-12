@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 69147 octets
-; Fichier TYP compilé     07/08/2022     20:37:26
-; Décompilé le 7/8/2022 à 8:40:13 PM
+; Longueur: 69380 octets
+; Fichier TYP compilé     07/12/2022     22:28:32
+; Décompilé le 7/12/2022 à 10:31:55 PM
 
 [_id]
 ProductCode=1
@@ -3902,6 +3902,26 @@ Xpm="32 1 4  1"
 ;12345678901234567890123456789012
 String1=0x04,Leisure track
 String2=0x14,Sportpálya
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+[end]
+
+
+[_line]
+Type=0x10f15
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_54/Non-routable customizable line/Non NT, NT
+UseOrientation=Y
+Xpm="32 3 2  1"
+"! c #7B95B4"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+String1=0x04,Dam
+String2=0x14,Duzzasztógát
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -11507,6 +11527,43 @@ DayXpm="10 5 4 1"   Colormode=16
 
 
 [_point]
+Type=0x11507
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_8/User customizable point type/Non NT, NT
+String1=0x04,Toll booth
+String2=0x14,Fizetőkapu
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 7 1"   Colormode=16
+"!	c #313131"
+"#	c #FFFFFF"
+"%	c #000000"
+"?	c #BD0000"
+"$	c #7B0000"
+"*	c #626262"
+"  	c none"
+"#########       "
+"!!!!!!!!!#      "
+"!*******!#      "
+"!*##*!!!!#      "
+"!*##*!###       "
+"!*##*!#         "
+"!*##*!######### "
+"!*##*!$$$$$$$$$#"
+"!*##*!?#?#?#?#$#"
+"!****!$$$$$$$$$#"
+"!****!######### "
+"!****!#         "
+"!****!#         "
+"!****!#         "
+"%%%%%%#         "
+"#######         "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x1150f
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_16/User customizable point type/Non NT, NT
 String1=0x04,Geodetic measurement point
@@ -15157,20 +15214,19 @@ ExtendedLabels=Y
 FontStyle=NoLabel (invisible)
 CustomColor=No
 ContourColor=No
-DayXpm="10 10 3 1"   Colormode=16
-"!	c #808080"
-"#	c #F8FCF8"
-"%	c #F80000"
-"!!!!!!!!!!"
-"!%%%%%%%%!"
-"!%##%%##%!"
-"!%##%%##%!"
-"!%%%%%%%%!"
-"!%%%%%%%%!"
-"!%##%%##%!"
-"!%##%%##%!"
-"!%%%%%%%%!"
-"!!!!!!!!!!"
+DayXpm="10 10 2 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #F80000"
+"##########"
+"#!!!##!!!#"
+"#!!!##!!!#"
+"#!!!##!!!#"
+"##########"
+"##########"
+"#!!!##!!!#"
+"#!!!##!!!#"
+"#!!!##!!!#"
+"##########"
 ;1234567890
 [end]
 

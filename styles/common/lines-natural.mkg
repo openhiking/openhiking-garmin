@@ -26,3 +26,6 @@ waterway=stream | waterway=canal  [0x18 resolution 20 ]
 
 waterway=ditch & name=*  [0x10a00 resolution 22 ]
 waterway=drain   [0x10a00 resolution 22 ]
+
+waterway=dam   [0x10f15 resolution 22 ]
+

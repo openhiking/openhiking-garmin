@@ -18,3 +18,4 @@ end
 
 barrier=lift_gate | barrier=swing_gate {name '${short_name}'|'${name}'} [0x11503 resolution 24]
 barrier=stile [0x11504 resolution 24]
+barrier=toll_booth [0x11507 resolution 24]

@@ -38,7 +38,6 @@ highway=tram_stop {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
 
 
 amenity=ferry_terminal [0x02F09 resolution 24]
-aeroway=aerodrome {name '${short_name}'|'${name}'} [0x02F04 resolution 24]
 aeroway=aerodrome | aeroway=terminal {name '${short_name}'|'${name}'}  [0x2f04 resolution 24]
 
 highway=milestone {name '${distance}'} [0x5A00 resolution 24]
