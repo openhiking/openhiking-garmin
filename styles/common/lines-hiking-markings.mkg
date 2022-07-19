@@ -1,0 +1,13 @@
+#######################################################
+# OpenHikingMap
+#
+# Hiking trail markings
+
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (mkgmap:option:REGION=nordic) then
+marked_trail=T_beacon { add trail_p12_color=red ; }
+end

@@ -8,9 +8,10 @@
 #
 ########################################################
 
-if (mkgmap:option:CODE_PAGE=1252 & mkgmap:option:REGION=ce) then
+if (mkgmap:option:CODE_PAGE=1252) then
 include "../common/codepage-remapping.mkg"
 end
+
 
 include "../common/lines-tagging-simplification.mkg"
 include "../common/lines-access-propagation.mkg"
