@@ -8,8 +8,8 @@
 #
 ########################################################
 
-natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 
 natural=cliff   [0x10F0B resolution 24]
 natural=arete   [0x10F0F resolution 24]

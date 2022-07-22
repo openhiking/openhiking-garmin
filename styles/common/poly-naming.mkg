@@ -8,12 +8,12 @@
 #
 ########################################################
 
-natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-landuse=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+landuse=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 #amenity=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-man_made=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-military=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
-aeroway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name}'|'${name}' }
+leisure=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+man_made=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+military=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+aeroway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 
