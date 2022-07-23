@@ -8,12 +8,12 @@
 #
 ########################################################
 
-barrier=border_control {name '${short_name}'|'${name}'} [0x03006 resolution 24]
+barrier=border_control {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' } [0x03006 resolution 24]
 
 if (barrier=gate | barrier=sliding_gate) then
-	foot=yes & entrance!=home {name '${short_name}'|'${name}'} [0x11501 resolution 24]
-	foot=no & entrance!=home & is_in(landuse,residential,in)=false {name '${short_name}'|'${name}'} [0x11502 resolution 24]
-	entrance!=home & is_in(landuse,residential,in)=false {name '${short_name}'|'${name}'} [0x11500 resolution 24]
+	foot=yes & entrance!=home {name '${short_name}'|'${name}'| '${name:hu}' } [0x11501 resolution 24]
+	foot=no & entrance!=home & is_in(landuse,residential,in)=false {name '${short_name}'|'${name}'| '${name:hu}' } [0x11502 resolution 24]
+	entrance!=home & is_in(landuse,residential,in)=false {name '${short_name}'|'${name}'| '${name:hu}' } [0x11500 resolution 24]
 end
 
 barrier=lift_gate | barrier=swing_gate {name '${short_name}'|'${name}'} [0x11503 resolution 24]

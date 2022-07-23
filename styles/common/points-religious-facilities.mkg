@@ -13,11 +13,11 @@ man_made=tower & tower:type=stupa {name '${short_name}'|'${name}'} [0x10D10 reso
 
 
 if (amenity=place_of_worship) then
-	() {name '${short_name}'|'${name}' }
+	() {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'  }
 	religion=muslim |  building=mosque  [0x2C0D resolution 24]
 	religion=jewish | building=synagogue [0x2C10 resolution 24]
 
-        building=chapel | name~'.*k.polna' {add mkgmap:label:2='(${denomination})'} [0x10D0B resolution 24]
+    building=chapel | name~'.*k.polna' {add mkgmap:label:2='(${denomination})'} [0x10D0B resolution 24]
 	building=church   {add mkgmap:label:2='(${denomination})'} [0x02C0E resolution 24]
 	building=cathedral {add mkgmap:label:2='(${denomination})'} [0x02C0F resolution 24]
 

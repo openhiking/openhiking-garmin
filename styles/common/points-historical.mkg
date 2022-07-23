@@ -31,11 +31,11 @@ historic=tomb & tomb=tumulus  [0x6406 resolution 24]
 historic=tomb   [0x6405 resolution 24]
 
 historic=mine | historic=adit  [0x640d resolution 24]
-man_made=adit & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'} [0x640d resolution 24]
-man_made=mineshaft & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'} [0x640d resolution 24]
+man_made=adit & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
+man_made=mineshaft & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
 
-man_made=watermill {name '${short_name}'|'${name}'} [0x641e resolution 24]
-man_made=windmill {name '${short_name}'|'${name}'} [0x641f resolution 24]
+man_made=watermill {name '${short_name}'|'${name}'|'${name:hu}'} [0x641e resolution 24]
+man_made=windmill {name '${short_name}'|'${name}'|'${name:hu}'} [0x641f resolution 24]
 
 #man_made=kiln & historic=yes  [0x1160A resolution 24]
 
@@ -45,10 +45,10 @@ historic=monument  [0x10D02 resolution 24]
 
 if (man_made=water_well & foot!=no) then
     name~'.*[mM]onitor.*' { deletealltags }
-    name~'.*[gG]émeskút' | description~'.*[gG]émeskút' | description:hu~'.*[gG]émeskút' { name '${short_name}' | '${name }' } [0x641d resolution 24]
+    name~'.*[gG]émeskút' | description~'.*[gG]émeskút' | description:hu~'.*[gG]émeskút' {name '${short_name}'|'${name}'|'${name:hu}'} [0x641d resolution 24]
     drinking_water=yes [0x5000 resolution 22]
     pump!=* | pump=no { name '${short_name}' | '${name}'  } [0x641c resolution 24]
 end
 
-building=ruins | ruins:building=* {name '${short_name}'|'${name}'} [0x2c13 resolution 24]
+building=ruins | ruins:building=* {name '${short_name}'|'${name}'|'${name:hu}'} [0x2c13 resolution 24]
 
