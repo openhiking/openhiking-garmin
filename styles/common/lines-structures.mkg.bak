@@ -18,13 +18,13 @@ if (bridge=yes & highway!=proposed & highway!=construction) then
 if (bridge:structure=simple-suspension) then
 	highway=* & highway_width<3  [0x10109 resolution 22 continue]	
 	highway=* & highway_width>2 & highway_width<7 & trail_color!=* [0x10109 resolution 22 continue]
-	highway=* & highway_width>2 & highway_width<7 & trail_color=* [0x10108 resolution 22 continue]
-	highway=* & highway_width>6  [0x10108 resolution 22 continue]
+	highway=* & highway_width>2 & highway_width<7 & trail_color=* [0x10E08 resolution 22 continue]
+	highway=* & highway_width>6  [0x10E08 resolution 22 continue]
 else
 	highway=* & highway_width<3  [0x10107 resolution 22 continue]	
 	highway=* & highway_width>2 & highway_width<7 & trail_color!=* [0x10107 resolution 22 continue]
-	highway=* & highway_width>2 & highway_width<7 & trail_color=* [0x10108 resolution 22 continue]
-	highway=* & highway_width>6  [0x10108 resolution 22 continue]
+	highway=* & highway_width>2 & highway_width<7 & trail_color=* [0x10E08 resolution 22 continue]
+	highway=* & highway_width>6  [0x10E08 resolution 22 continue]
 end	
 end
 
