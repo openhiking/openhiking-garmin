@@ -20,9 +20,9 @@ natural=bay   [0x6503 resolution 22]
 if (natural=spring) then
 	water_characteristic=mineral  [0x6512 resolution 22]
 	spring:type=hot [0x2c0c resolution 24]
+	seasonal=* & seasonal!=no  [0x6510 resolution 24]
 	drinking_water=yes | drinking_water:legal=yes [0x650e resolution 22]
 	drinking_water=no [0x650f resolution 24]
-	seasonal=* & seasonal!=no  [0x6510 resolution 24]
 	() [0x6511 resolution 24]
 end
 
