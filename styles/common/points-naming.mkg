@@ -11,6 +11,7 @@
 shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 tourism=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 amenity=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+emergency=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 leisure=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 historic=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
 place=*    {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }

@@ -9,4 +9,4 @@
 ########################################################
 
 emergency=ambulance_station [0x4b00 resolution 24]
-emergency=mountain_rescue {name '${short_name}'|'${name}'} [0x11601 resolution 22]
+emergency=mountain_rescue  [0x11603 resolution 22]

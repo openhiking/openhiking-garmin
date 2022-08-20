@@ -11,7 +11,7 @@
 
 building=residential & historic!=* { delete building; }
 
-building=* & (amenity=* | shop=* | tourism=* | leisure=*) { add has_amenity=true; }
+building=* & (amenity=* | shop=* | tourism=* | leisure=* | emergency=*) { add has_amenity=true; }
 
 if (building=commercial | building=retail | building=supermarket) then
 	has_amenity!=true {name '${short_name}'|'${name}'} [0x08 resolution 24]
