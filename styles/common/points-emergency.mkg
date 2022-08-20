@@ -1,14 +1,12 @@
 #######################################################
 # OpenHikingMap
 #
-# Point rendering: Healthcare
+# Point rendering: Emergency services
 #
 # Copyright (c) 2021-2022 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-amenity=hospital | amenity=clinic [0x03002 resolution 24]
-amenity=doctors [0x6408 resolution 24]
-amenity=dentist [0x2f10 resolution 24]
-amenity=pharmacy [0x02E05 resolution 24]
+emergency=ambulance_station [0x4b00 resolution 24]
+emergency=mountain_rescue {name '${short_name}'|'${name}'} [0x11601 resolution 22]
