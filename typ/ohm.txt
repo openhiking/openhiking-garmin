@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 69769 octets
-; Fichier TYP compilé     20/08/2022     18:20:55
-; Décompilé le 8/20/2022 à 6:21:00 PM
+; Longueur: 69807 octets
+; Fichier TYP compilé     20/08/2022     19:03:17
+; Décompilé le 8/20/2022 à 7:04:38 PM
 
 [_id]
 ProductCode=1
@@ -3524,18 +3524,18 @@ ExtendedLabels=N
 Type=0x10e0c
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_13/Non-routable customizable line/Non NT, NT
 UseOrientation=N
-Xpm="32 8 2  1"
-"! c #000000"
+Xpm="32 6 2  1"
+"! c #FF6500"
 "  c none"
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 "                                "
 "                                "
-"                                "
-"                                "
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 ;12345678901234567890123456789012
+String1=0x04,Secured with ropes
+String2=0x14,Biztosított útszakasz
 ExtendedLabels=N
 [end]
 
@@ -3545,7 +3545,7 @@ Type=0x10e0d
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_14/Non-routable customizable line/Non NT, NT
 UseOrientation=N
 Xpm="32 12 2  1"
-"! c #000000"
+"! c #BD0000"
 "  c none"
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 "!!  !!  !!  !!  !!  !!  !!  !!  "
@@ -3560,6 +3560,8 @@ Xpm="32 12 2  1"
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 "!!  !!  !!  !!  !!  !!  !!  !!  "
 ;12345678901234567890123456789012
+String1=0x04,Secured with ropes
+String2=0x14,Biztosított útszakasz
 ExtendedLabels=N
 [end]
 
