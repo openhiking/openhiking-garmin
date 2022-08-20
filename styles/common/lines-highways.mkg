@@ -144,7 +144,8 @@ if (highway=path  & area!=yes ) then
 	sac_scale='demanding_alpine_hiking' {add sac_scale_level=5; add sac_scale_tag='T5'; }
 	sac_scale='difficult_alpine_hiking' {add sac_scale_level=6; add sac_scale_tag='T6'; }
 
-	assisted_trail=* | safety_rope=* | ladder=* | rungs=*  [0x10E0C resolution 22 continue]
+	(assisted_trail=* | safety_rope=* | ladder=* | rungs=*) & trail_color!=* [0x10E0C resolution 22 continue]
+	(assisted_trail=* | safety_rope=* | ladder=* | rungs=*) & trail_color=* [0x10E0D resolution 22 continue]
 
 	sac_scale_tag=*  { name '${bilingual_name} ${trail_name} (${sac_scale_tag})'|'${bilingual_name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}

@@ -32,7 +32,7 @@ end
 if (tunnel=yes) then
 	highway=* & highway!=proposed & highway!=construction & highway_width<5 & trail_color!=*  [0x10E00 resolution 22 continue]
 	highway=* & highway!=proposed & highway!=construction & (trail_color=* | highway_width>4) [0x10E01 resolution 22 continue]
-	waterway=*  [0x10E0D resolution 22 continue]	
+	waterway=*  [0x10E0E resolution 22 continue]	
 end
 
 if (embankment=yes) then
