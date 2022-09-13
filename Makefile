@@ -427,7 +427,7 @@ ifeq ($(GMAPI),yes)
 endif
 
 
-ZIPNAME=$(MAPNAME).zip
+IMG_ZIP_NAME?=$(MAPNAME).zip
 
 FAMILY_NAME_STRIPPED:=$(subst ",$(empty),$(FAMILY_NAME))
 GMAPI_DIR_NAME=$(FAMILY_NAME_STRIPPED).gmap
@@ -605,8 +605,8 @@ zip:
 ifeq ($(OUTPUT_DIR),)
 $(error MKG_OUTPUT_DIR env variable is not set!)
 endif
-	$(DEL) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)"
-	$(ZIP) $(ZIPARGS) "$(OUTPUT_DIR)$(PSEP)$(ZIPNAME)" "$(GMAP_DIR)$(PSEP)7*.img" "$(GMAP_DIR)$(PSEP)$(MAPNAME).img" \
+	$(DEL) "$(OUTPUT_DIR)$(PSEP)$(IMG_ZIP_NAME)"
+	$(ZIP) $(ZIPARGS) "$(OUTPUT_DIR)$(PSEP)$(IMG_ZIP_NAME)" "$(GMAP_DIR)$(PSEP)7*.img" "$(GMAP_DIR)$(PSEP)$(MAPNAME).img" \
 	"$(GMAP_DIR)$(PSEP)$(MAPNAME)_mdr.img" "$(GMAP_DIR)$(PSEP)*.mdx" "$(GMAP_DIR)$(PSEP)*.tdb" "$(GMAP_DIR)$(PSEP)*.typ"
 
 
