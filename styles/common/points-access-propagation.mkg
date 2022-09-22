@@ -15,7 +15,7 @@ foot=private | foot=customers { set foot=no; }
 bicycle=private {set bicycle=no; }
 motor_vehicle=private { set motor_vehicle=no; }
 
-barrier=* & foot=no { set mkgmap:foot=no }
+(barrier=gate | barrier=sliding_gate)  & foot=no { set mkgmap:foot=no }
 barrier=* & bicycle=no { set mkgmap:bicycle=no }
 barrier=* & motor_vehicle=no { set mkgmap:car=no }
 
