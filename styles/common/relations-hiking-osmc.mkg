@@ -291,5 +291,5 @@ if (type=route & route~'hiking|foot') then
 		add trail_p10_name='${short_name}'|'${name}'|'${ref}';
 		}
 	}
-
+	
 end

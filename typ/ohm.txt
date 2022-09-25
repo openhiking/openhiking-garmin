@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 69807 octets
-; Fichier TYP compilé     20/08/2022     19:03:17
-; Décompilé le 8/20/2022 à 7:04:38 PM
+; Longueur: 69891 octets
+; Fichier TYP compilé     25/09/2022     17:17:43
+; Décompilé le 9/25/2022 à 5:17:48 PM
 
 [_id]
 ProductCode=1
@@ -4162,6 +4162,123 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
+[end]
+
+
+[_line]
+Type=0x11600
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_257/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 5 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x11601
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_258/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 6 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x11602
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_259/Non-routable customizable line/Non NT, NT
+UseOrientation=Y
+Xpm="32 7 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x11603
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_260/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 8 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x11604
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_261/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 9 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x11605
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_262/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 10 2  1"
+"! c #FF9500"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+;12345678901234567890123456789012
+ExtendedLabels=N
 [end]
 
 

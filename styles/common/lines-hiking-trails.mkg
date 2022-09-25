@@ -66,3 +66,10 @@ trail_color=purple &  highway_width=4  [0x10101   resolution 22 continue]
 trail_color=purple &  highway_width=5  [0x10102   resolution 22 continue]
 trail_color=purple &  highway_width=6  [0x10103   resolution 22 continue]
 
+trail_color=orange &  highway_width=1  [0x11600   resolution 22 continue]
+trail_color=orange &  highway_width=2  [0x11601   resolution 22 continue]
+trail_color=orange &  highway_width=3  [0x11602   resolution 22 continue]
+trail_color=orange &  highway_width=4  [0x11603   resolution 22 continue]
+trail_color=orange &  highway_width=5  [0x11604   resolution 22 continue]
+trail_color=orange &  highway_width=6  [0x11605   resolution 22 continue]
+
