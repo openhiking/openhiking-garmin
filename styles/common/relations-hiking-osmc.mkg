@@ -192,11 +192,43 @@ if (type=route & route~'hiking|foot') then
 		}
 	}
 	
-	
+	osmc:symbol~'^:white:blue_triangle.*' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_triangle';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
+	}
+
+
 	osmc:symbol='blue:white:blue_dot' & jel!=* & kct_blue!=* & operator!=KST  {
 	apply {
 		add trail_p6_color=blue;
 		add trail_p6_symbol='blue:white:blue_dot';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
+	}
+
+	osmc:symbol~':yellow:blue_dot.*' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:yellow:blue_dot';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
+	}
+
+	osmc:symbol='blue:white:blue_rectangle' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_rectangle';
+		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
+		}
+	}
+
+	osmc:symbol~'^:white:blue_rectangle.*' & jel!=* & kct_blue!=* & operator!=KST  {
+	apply {
+		add trail_p6_color=blue;
+		add trail_p6_symbol='blue:white:blue_rectangle';
 		add trail_p6_name='${short_name}'|'${name}'|'${ref}';
 		}
 	}
@@ -229,6 +261,15 @@ if (type=route & route~'hiking|foot') then
 		}
 	}
 	
+	
+	osmc:symbol=':white:orange_dot:::' & jel!=* & kct_yellow!=* & operator!=KST  {
+	apply {
+		add trail_p7_color=orange;
+		add trail_p7_symbol='orange:white:orange_dot';
+		add trail_p7_name='${short_name}'|'${name}'|'${ref}';
+		}
+	}
+
 	
 	#######################################################
 	# Other OSMC Symbols
