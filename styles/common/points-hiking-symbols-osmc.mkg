@@ -172,6 +172,7 @@ if (source=hksymgen) then
 		trail_symbol='osmc:green:'       	[0x12D03 resolution 22]
 		trail_symbol='osmc:black:'       	[0x12D04 resolution 22]
 		trail_symbol='osmc:brown:'       	[0x12D05 resolution 22]
+		trail_symbol='osmc:orange:'       	[0x12D06 resolution 22]
 
 		trail_symbol='osmc:white:red_lower'     [0x12D08 resolution 22]
 		trail_symbol='osmc:white:blue_lower'    [0x12D09 resolution 22]
@@ -232,8 +233,8 @@ if (source=hksymgen) then
 		trail_symbol='osmc:white:black_triangle_line'  [0x12F08 resolution 22]
 		trail_symbol='osmc:yellow:black_triangle_line'  [0x12F09 resolution 22]
 		
-		trail_symbol='osmc:red:black_diamond_line'  	[0x12F0A resolution 24]
-		trail_symbol='osmc:yellow:black_diamond_line'  [0x12F0D resolution 24]
+		trail_symbol='osmc:red:black_diamond_line'  	[0x12F0A resolution 22]
+		trail_symbol='osmc:yellow:black_diamond_line'  [0x12F0D resolution 22]
 
 	else
 		trail_symbol='osmc:red_frame:red_cross' [0x12B17 resolution 24]		
@@ -248,6 +249,7 @@ if (source=hksymgen) then
 		trail_symbol='osmc:green:'       	[0x12D03 resolution 24]
 		trail_symbol='osmc:black:'       	[0x12D04 resolution 24]
 		trail_symbol='osmc:brown:'       	[0x12D05 resolution 24]
+		trail_symbol='osmc:orange:'       	[0x12D06 resolution 24]
 
 		trail_symbol='osmc:white:red_lower'     [0x12D08 resolution 24]
 		trail_symbol='osmc:white:blue_lower'    [0x12D09 resolution 24]
