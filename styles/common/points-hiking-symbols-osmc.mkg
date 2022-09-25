@@ -306,6 +306,9 @@ if (source=hksymgen) then
 		trail_symbol='osmc:white:yellow_triangle_line' [0x12F07 resolution 24]
 		trail_symbol='osmc:white:black_triangle_line'  [0x12F08 resolution 24]
 		trail_symbol='osmc:yellow:black_triangle_line'  [0x12F09 resolution 24]
+		
+		trail_symbol='osmc:red:black_diamond_line'  	[0x12F0A resolution 24]
+		trail_symbol='osmc:yellow:black_diamond_line'  [0x12F0D resolution 24]
 	end
 
 end

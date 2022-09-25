@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 69891 octets
-; Fichier TYP compilé     25/09/2022     17:17:43
-; Décompilé le 9/25/2022 à 5:17:48 PM
+; Longueur: 70125 octets
+; Fichier TYP compilé     25/09/2022     17:51:09
+; Décompilé le 9/25/2022 à 5:51:13 PM
 
 [_id]
 ProductCode=1
@@ -17623,6 +17623,58 @@ DayXpm="11 9 4 1"   Colormode=16
 "!#?%###%?#!"
 "!?%%%%%%%?!"
 "!#########!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f0a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_843/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 5 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #000000"
+"?	c #838383"
+"$	c #FF3000"
+"!!!!!!!!!!!"
+"!####%####!"
+"!##?%?%?##!"
+"!#?%$$$%?#!"
+"!%%$$$$$?%!"
+"!#?%$$$%?#!"
+"!##?%?%?##!"
+"!####%####!"
+"!!!!!!!!!!!"
+;12345678901
+[end]
+
+
+[_point]
+Type=0x12f0d
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_846/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="11 9 5 1"   Colormode=16
+"!	c #808080"
+"#	c #F8FCF8"
+"%	c #000000"
+"?	c #838383"
+"$	c #F8C800"
+"!!!!!!!!!!!"
+"!####%####!"
+"!##?%?%?##!"
+"!#?%$$$%?#!"
+"!%%$$$$$?%!"
+"!#?%$$$%?#!"
+"!##?%?%?##!"
+"!####%####!"
 "!!!!!!!!!!!"
 ;12345678901
 [end]

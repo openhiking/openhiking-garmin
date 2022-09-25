@@ -232,7 +232,7 @@ if (type=route & route~'hiking|foot') then
 	
 	#######################################################
 	# Other OSMC Symbols
-	
+
 	
 	osmc:symbol~'^red.+'  {
 	apply {
@@ -292,4 +292,14 @@ if (type=route & route~'hiking|foot') then
 		}
 	}
 	
+	#######################################################
+	# Default highlight
+	osmc:symbol=* {
+	apply {
+		add trail_p12_color=red;
+		add trail_p12_name='${short_name}'|'${name}'|'${from} - ${to} (${ref})'|'${from} - ${to}'|'${ref}';
+		}
+	}
+
+
 end
