@@ -43,10 +43,13 @@ include "../common/points-hiking-symbols.mkg"
 if (mkgmap:option:REGION=ce) then
 include "../common/points-hiking-symbols-hu.mkg"
 include "../common/points-hiking-symbols-czsk.mkg"
-#end
-
 include "../common/points-hiking-symbols-osmc.mkg"
 end
+
+if (mkgmap:option:REGION=balkans) then
+include "../common/points-hiking-symbols-osmc.mkg"
+end
+
 if (mkgmap:option:REGION=nordic) then
 include "../common/points-hiking-symbols-no.mkg"
 end
