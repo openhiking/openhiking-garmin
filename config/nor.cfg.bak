@@ -1,11 +1,11 @@
 # Map product configurations
 FAMILY_ID=3695
-FAMILY_NAME="OpenHiking NOR"
-SERIES_NAME="OpenHiking NOR"
+FAMILY_NAME="OpenHiking Nordics"
+SERIES_NAME="OpenHiking Nordics"
 MAPNAME=openhiking
 
 # Input data
-OSM_COUNTRY_LIST=norway
+OSM_COUNTRY_LIST=norway sweden
 SUPPLEMENTARY_DATA=
 CONTOUR_LINES=contour-norway-south-alos-10.o5m
 #BOUNDARY_POLYGON=norway-mid.poly
@@ -27,9 +27,9 @@ GENERATE_SEA=yes
 CODE_PAGE=1252
 USE_LOWERCASE=yes
 TYP_BASE=ohm
-GARMIN_MAP_ID=76161001
-GARMIN_SEGMENT_ID=76161001
-GMAPSUPP=yes
+GARMIN_MAP_ID=76165001
+GARMIN_SEGMENT_ID=76165001
+GMAPSUPP=no
 GMAPI=no
 
 #Packaging
