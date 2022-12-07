@@ -22,7 +22,7 @@ highway=* &
 { set surface_type=unpaved_hard; }
 
 highway=*
-& surface~'unpaved|ground|earth|dirt' 
+& surface~'unpaved|gravel|ground|earth|dirt' 
 { set surface_type=unpaved_normal; }
 
 highway=*
