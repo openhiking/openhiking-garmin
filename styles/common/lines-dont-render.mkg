@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Generic highway rendering definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+# Do not render private driveways
+highway=service & service=driveway & access=private & foot=no & name!=* & trail_color!=*  { deletealltags; }
