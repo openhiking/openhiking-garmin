@@ -49,6 +49,9 @@ if (highway=primary_link) then
 	() [0x02 road_class=3 road_speed=5 resolution 20]
 end
 
+# Do not render private driveway
+highway=service & service=driveway & access=private & foot=no & name!=* & trail_color!=*  { deletealltags; }
+
 # Declassification
 if (mkgmap:option:REGION=ce) then
 if (surface_type~'unpaved_hard|unpaved_normal|unpaved_soft') then
