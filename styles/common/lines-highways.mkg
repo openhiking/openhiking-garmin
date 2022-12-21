@@ -55,12 +55,12 @@ if (surface_type~'unpaved_hard|unpaved_normal|unpaved_soft') then
 	if (highway~'secondary|secondary_link|tertiary|tertiary_link') then
 		() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
 		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 21]
 	end
 	if (highway~'unclassified|residential|living_street|service' & area!=yes) then
 		()  {name  '${bilingual_name}'}
 		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 20]
+		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 21]
 	end
 end
 end
