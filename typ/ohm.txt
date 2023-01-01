@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 70330 octets
-; Fichier TYP compilé     19/12/2022     21:14:28
-; Décompilé le 12/21/2022 à 10:22:02 PM
+; Longueur: 70335 octets
+; Fichier TYP compilé     26/12/2022     11:36:36
+; Décompilé le 1/1/2023 à 9:31:00 PM
 
 [_id]
 ProductCode=1
@@ -1688,8 +1688,8 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x1100a
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_43/Customizable area/Non NT, NT
-String1=0x14,Park
-String2=0x04,Park
+String1=0x14,Állatkert
+String2=0x04,Zoo
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No

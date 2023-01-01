@@ -167,5 +167,5 @@ highway=bridleway   & area!=yes   [0x16 road_class=0 road_speed=1 resolution 22]
 
 if (highway=raceway  & area!=yes ) then
 	()  [0x13 road_class=0 road_speed=0 resolution 24 continue]
-	() {name '${name}'} [0x10F14 resolution 22]
+	() {name '${name}'} [0x10F13 resolution 22]
 end
