@@ -34,7 +34,7 @@ if (highway=bus_stop) then
 	() {name '${short_name}'|'${name}'} [0x2f08 resolution 24 ]
 end
 
-highway=tram_stop {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
+railway=tram_stop {name '${short_name}'|'${name}'} [0x2f08 resolution 24]
 
 
 amenity=ferry_terminal [0x02F09 resolution 24]
