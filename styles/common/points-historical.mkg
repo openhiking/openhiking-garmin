@@ -3,21 +3,33 @@
 #
 # Point rendering: Historical
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-# Historic building ruins
-historic~'castle|fort|tower' & ruins=* [0x2c12 resolution 22]
-historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
 
-# Other Ruins
+if (historic=castle) then
+	castle_type=palace & ruins!=*  [0x10D11 resolution 22]
+	(castle_type=stately | castle_type=manor) & ruins!=*  [0x10D12 resolution 22]
+	ruins!=*  [0x2c11 resolution 22]
+end
+
+historic=city_gate & ruins!=*  [0x6415 resolution 24]
+historic=fort & ruins!=* [0x2c11 resolution 22]
+man_made=tower & tower:type=defensive & ruins!=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'  } [0x6418 resolution 22]
+
+
+# Various ruins
+historic~'castle|fort|tower' & ruins=* [0x2c12 resolution 22]
+
 if (historic=ruins) then
 	ruins~'castle|fort|tower'  [0x2c12 resolution 22]
 	ruins~'chapel|church|monastery|temple'  [0x2c04 resolution 24]
 	() [0x2c13 resolution 24]
 end
+
+historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
 
 # Archeological sites
 if (historic=archaeological_site) then

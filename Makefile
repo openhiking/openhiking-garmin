@@ -187,6 +187,7 @@ else
 	COPY=copy /b
 	MOVE=move
 	DEL=del /f /q
+        RMDIR=rmdir /s /q
 endif
 
 #DEMMGR=tools$(PSEP)demmgr.py
@@ -644,9 +645,15 @@ endif
 	$(COPY) $(GMAP_DIR)$(PSEP)*.typ $(MAPSOURCE_DIR)
 
 clean:
+ifeq ($(LINUX),0)
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+endif
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleanall:
+ifeq ($(LINUX),0)
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+endif
 	$(DEL) $(TILES_DIR)$(PSEP)*
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
