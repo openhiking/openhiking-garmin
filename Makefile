@@ -248,6 +248,7 @@ endif
 ##############################################
 # Hiking Symbol Generation
 
+MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
 MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
@@ -479,7 +480,7 @@ $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^  -o=$@
 
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
-	$(MAKESYMBOLS) -p --exclude=$(SYMBOLS_EXCLUDE) --start-node-id=$(SYMBOLS_START_ID) --target-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
+	$(MAKESYMBOLS) --start-node-id=$(SYMBOLS_START_ID) --lookup-file=$(MAP_SYMBOL_LOOKUP_FILE) --pictogram-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
 
 
 symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
@@ -669,7 +670,7 @@ cleanoutput:
 
 
 test:
-	@echo $(GMAPI_ZIP_NAME)
+	@echo $(MAP_SYMBOL_LOOKUP_FILE)
 
 
 
