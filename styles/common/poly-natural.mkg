@@ -37,6 +37,7 @@ natural=wood | landuse=forest [0x50 resolution 16]
 natural=bare_rock  [0x10F0A resolution 16]
 natural=scree [0x10F08 resolution 16]
 natural=shingle [0x10F09 resolution 16]
+natural=fell [0x10F0F resolution 16]
 natural=glacier [0x4D resolution 16]
 
 natural=sand [0x53 resolution 16]

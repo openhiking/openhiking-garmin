@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 70335 octets
-; Fichier TYP compilé     26/12/2022     11:36:36
-; Décompilé le 1/1/2023 à 9:31:00 PM
+; Fichier TYP compilé     28/01/2023     10:28:17
+; Décompilé le 1/28/2023 à 10:45:53 AM
 
 [_id]
 ProductCode=1
@@ -42,6 +42,7 @@ Type=0x10f08,5
 Type=0x10f09,5
 Type=0x10f0a,5
 Type=0x10f0b,5
+Type=0x10f0f,5
 Type=0x10f10,5
 Type=0x03e,6
 Type=0x047,6
@@ -224,7 +225,7 @@ Type=0x0b
 String1=0x04,Hospital
 ExtendedLabels=N
 Xpm="0 0 1 0"
-"1 c #F86C68"
+"1 c #FCB6B4"
 [end]
 
 
@@ -264,7 +265,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #BD9500"
+"! c #C9B56A"
 "# c #D5D5D5"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
@@ -996,7 +997,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #E0E4E0"
+"! c #EBEDEB"
 "# c #888888"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 "#!!!!!!!!!!!!!!!!!!!#!!!!!!!!!!!"
@@ -1226,6 +1227,17 @@ Xpm="32 32 2 1"
 
 
 [_polygon]
+Type=0x10f0f
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_16/Customizable area/Non NT, NT
+String1=0x04,Fell
+String2=0x14,Alpesi tundra
+ExtendedLabels=N
+Xpm="0 0 1 0"
+"1 c #ECF6E2"
+[end]
+
+
+[_polygon]
 Type=0x10f10
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_17/Customizable area/Non NT, NT
 String1=0x14,Bánya
@@ -1404,7 +1416,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #69665F"
+"! c #C3C2C0"
 "# c #A5A4A0"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
@@ -1451,7 +1463,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #2B9F1C"
+"! c #A0EAA3"
 "# c #8ED43E"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
@@ -1990,9 +2002,14 @@ ContourColor=No
 Type=0x0d
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_ROUTE_LINE_1/Routable customizable line/Non NT, NT
 UseOrientation=N
-LineWidth=2
-Xpm="0 0 1 0"
-"1 c #7B3000"
+Xpm="32 4 2  1"
+"! c #383040"
+"# c #FFFFFF"
+"!!!!!!!!!!!#####!!!!!!!!!!!#####"
+"################################"
+"################################"
+"!!!!!!!!!!!#####!!!!!!!!!!!#####"
+;12345678901234567890123456789012
 String1=0x14,Makadámút
 String2=0x04,Macadam, compacted
 ExtendedLabels=Y
@@ -5227,7 +5244,7 @@ CustomColor=No
 ContourColor=No
 DayXpm="16 16 3 1"   Colormode=16
 "!	c #FFFFFF"
-"#	c #FF0000"
+"#	c #A80012"
 "  	c none"
 "         !#!    "
 "       !!!#!    "
@@ -9064,7 +9081,7 @@ NightcustomColor:#000000
 ContourColor=No
 DayXpm="16 16 3 1"   Colormode=16
 "!	c #FFFFFF"
-"#	c #FF0000"
+"#	c #A80012"
 "  	c none"
 "                "
 "       !!!      "
@@ -9098,7 +9115,7 @@ DaycustomColor:#000000
 NightcustomColor:#000000
 ContourColor=No
 DayXpm="15 14 3 1"   Colormode=16
-"!	c #663300"
+"!	c #A80012"
 "#	c #FFFFFF"
 "  	c none"
 "               "
@@ -12588,7 +12605,7 @@ CustomColor=No
 ContourColor=No
 DayXpm="16 16 3 1"   Colormode=16
 "!	c #FFFFFF"
-"#	c #FF0000"
+"#	c #A80012"
 "  	c none"
 "         !#!    "
 "       !!!#!    "
@@ -12772,18 +12789,16 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="14 7 5 1"   Colormode=16
-"!	c #7B0000"
+DayXpm="14 7 3 1"   Colormode=16
+"!	c #A80012"
 "#	c #FFFFFF"
-"%	c #7B3000"
-"?	c #943A00"
 "  	c none"
 " ############ "
-"#?!!!!!!!!!??#"
-"#?%%!!!!!!%%?#"
-" ##%!####!%## "
-"  #%!#  #!%#  "
-"  #??#  #??#  "
+"#!!!!!!!!!!!!#"
+"#!!!!!!!!!!!!#"
+" ##!!####!!## "
+"  #!!#  #!!#  "
+"  #!!#  #!!#  "
 "   ##    ##   "
 ;12345678901234
 [end]

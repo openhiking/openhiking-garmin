@@ -3,7 +3,7 @@
 #
 # Generic highway rendering definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -47,22 +47,6 @@ if (highway=primary_link) then
 	() {name '${ref} ${name}' | '${ref}' | '${name}'; }
 	() [0x10e14 resolution 18-19 continue]
 	() [0x02 road_class=3 road_speed=5 resolution 20]
-end
-
-# Declassification
-if (mkgmap:option:REGION=ce) then
-if (surface_type~'unpaved_hard|unpaved_normal|unpaved_soft') then
-	if (highway~'secondary|secondary_link|tertiary|tertiary_link') then
-		() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 21]
-	end
-	if (highway~'unclassified|residential|living_street|service' & area!=yes) then
-		()  {name  '${bilingual_name}'}
-		surface_type=unpaved_hard  [0x0d road_class=0 road_speed=1 resolution 20]
-		surface_type=unpaved_normal | surface_type=unpaved_soft  [0x0a road_class=0 road_speed=0 resolution 21]
-	end
-end
 end
 
 
@@ -113,11 +97,6 @@ end
 
 if (highway=track  & area!=yes ) then
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
-	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
-		motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=3 resolution 24 continue]
-		motor_vehicle_restricted=true  [0x10E11 resolution 20]
-		()  [0x05 road_class=0 road_speed=3 resolution 20]
-	end
 	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 21]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
@@ -132,7 +111,6 @@ highway=pedestrian  & area!=yes   [0x10 road_class=0 road_speed=1 resolution 21]
 
 if (highway=footway) then
 	() { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
-	surface=ground | surface=earth [0x16 road_class=0 road_speed=0 resolution 22]
 	() [0x11 road_class=0 road_speed=0 resolution 22]
 end
 
@@ -149,7 +127,6 @@ if (highway=path  & area!=yes ) then
 
 	sac_scale_tag=*  { name '${bilingual_name} ${trail_name} (${sac_scale_tag})'|'${bilingual_name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
-	surface=asphalt [0x11 road_class=0 road_speed=0 resolution 22]
 	sac_scale_level>2  [0x0e road_class=0 road_speed=0 resolution 22]
 	() [0x16 road_class=0 road_speed=0 resolution 22]
 end

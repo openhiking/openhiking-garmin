@@ -3,7 +3,7 @@
 #
 # Highway width definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -11,24 +11,12 @@
 highway=motorway | highway=trunk |highway=motorway_link | highway=trunk_link { set highway_width=6; }
 highway=primary | highway=secondary  { set highway_width=5 }
 
-if (highway=tertiary | highway = unclassified | highway=residential |  highway=living_street) then
-	if (surface = unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft) then
-		() { set highway_width=2 }
-	else
-		() { set highway_width=4 }
-	end
-end
-
-if (highway=service & area!=yes ) then
-	if (surface = unpaved_hard | surface_type=unpaved_normal | surface_type=unpaved_soft) then
-		() { set highway_width=2 }
-	else
-		() { set highway_width=3 }
-	end
-end
+highway=tertiary | highway = unclassified | highway=residential |  highway=living_street { set highway_width=4 }
+		
+highway=service & area!=yes { set highway_width=3 }
 
 if (highway=track ) then
-	if (surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone) then
+	if (tracktype~'grade1|grade2') then
 		() { set highway_width=4 }
 	else
 		() { set highway_width=2 }

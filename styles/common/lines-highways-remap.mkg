@@ -1,0 +1,31 @@
+#######################################################
+# OpenHikingMap
+#
+# Highway type remapping functions
+#
+# Copyright (c) 2021-2023 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+# Secondary, tertiary, unclassified, residential, living_street, service downgrade
+if  (highway~'secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service' & area!=yes) then
+    surface_type=unpaved_hard { set highway=track; set tracktype=grade1; }
+    surface_type=unpaved_normal | surface_type=unpaved_soft { set highway=track; set tracktype=grade3; }
+end
+
+# Track upgrade
+if (highway=track & area!=yes) then
+    surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { set highway=unclassified; }
+    surface_type=unpaved_hard { set tracktype=grade1; }
+end
+
+# Footway downgrade
+if (highway=footway & area!=yes) then
+	surface=ground | surface=earth { set highway=path; }
+end
+
+# Path upgrade
+if (highway=path & area!=yes) then
+    surface=asphalt { set highway=footway; }
+end
