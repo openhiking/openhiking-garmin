@@ -3,7 +3,7 @@
 #
 # Natural & waterways rendering definitions
 #
-# Copyright (C) 2021-2022 OpenHiking contributors
+# Copyright (C) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -14,8 +14,9 @@ waterway=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:
 natural=cliff   [0x10F0B resolution 24]
 natural=arete   [0x10F0F resolution 24]
 
-natural=valley & name=*  [0x10F0C resolution 24]
+natural~'valley|gorge' & name=*  [0x10F0C resolution 24]
 natural=ridge & name=*  [0x10F0D resolution 24]
+
 #natural=tree_row & name=*  [0x10F0E resolution 24]
 
 waterway=river & intermittent=yes  [0x26 resolution 22 ]
