@@ -14,10 +14,14 @@ if  (highway~'secondary|secondary_link|tertiary|tertiary_link|unclassified|resid
     surface_type=unpaved_normal | surface_type=unpaved_soft { set highway=track; set tracktype=grade3; }
 end
 
-# Track upgrade
+# Track remap
 if (highway=track & area!=yes) then
     surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { set highway=unclassified; }
     surface_type=unpaved_hard { set tracktype=grade1; }
+end
+
+if (highway=track & (tracktype=grade1 | tracktype=grade2) & area!=yes) then
+    surface_type=unpaved_normal | surface_type=unpaved_soft { set tracktype=grade3; }    
 end
 
 # Footway downgrade
