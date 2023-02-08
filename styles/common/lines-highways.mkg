@@ -98,7 +98,7 @@ end
 if (highway=track  & area!=yes ) then
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
-	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 21]
+	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
