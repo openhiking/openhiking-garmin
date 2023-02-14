@@ -10,7 +10,7 @@
 
 # Secondary, tertiary, unclassified, residential, living_street, service downgrade
 if  (highway~'secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service' & area!=yes) then
-    surface_type=unpaved_hard { set highway=track; set tracktype=grade1; }
+    surface_type=unpaved_hard | surface=gravel { set highway=track; set tracktype=grade1; }
     surface_type=unpaved_normal | surface_type=unpaved_soft { set highway=track; set tracktype=grade3; }
 end
 
