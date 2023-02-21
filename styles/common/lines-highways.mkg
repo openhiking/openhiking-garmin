@@ -136,7 +136,7 @@ if (highway=via_ferrata) then
 	()  { name '${name} ${trail_name}'|'${name}'|'${trail_name}'}[0x10E10 resolution 22]
 end
 
-highway=platform  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
+(highway=platform | railway=platform)  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
 highway=cycleway & area!=yes    [0x08 road_class=0 road_speed=1 resolution 21]
 highway=steps  & area!=yes   [0x12 road_class=0 road_speed=1 resolution 22]
 

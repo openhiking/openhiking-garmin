@@ -14,6 +14,8 @@
 #
 route=ferry { name '${name}'; } [0x1b road_class=0 road_speed=0 resolution 22 ]
 
+man_made=pier  [0x10E16 resolution 23]
+
 
 #######################################
 # Aeroways
@@ -41,6 +43,7 @@ power=line | power=minor_line [0x029  resolution 23]
 # Other
 #
 leisure=track [0x10F13 resolution 24]
+
 
 # Landuse boundary - keep continue
 landuse=military [0x10F06 resolution 20 continue]

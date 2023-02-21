@@ -28,5 +28,5 @@ highway=via_ferrata { set highway_width=5 }
 highway=cycleway { set highway_width=3 }
 (highway=pedestrian | highway=path) & area!=yes { set highway_width=2 }
 route=ferry { set highway_width= 2 }
-(highway=footway | highway=platform) & area!=yes { set highway_width=1 }
+(highway=footway | highway=platform | railway=platform) & area!=yes { set highway_width=1 }
 

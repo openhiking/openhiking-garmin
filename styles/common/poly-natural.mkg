@@ -14,8 +14,8 @@ waterway=riverbank | waterway=dock {name '${name}'} [0x47 resolution 16]
 natural=water & water=river  [0x47 resolution 16]
 natural=water & (tidal=yes | wetland=tidalflag )  [0x51 resolution 16]
 
-(natural=water | landuse=reservoir) & area_size()<10000 [0x4000 resolution 16]
-natural=water | landuse=reservoir  [0x3e00 resolution 16]
+(natural=water | landuse=reservoir | landuse=basin) & area_size()<10000 [0x4000 resolution 16]
+natural=water | landuse=reservoir | landuse=basin  [0x3e00 resolution 16]
 
 if (natural=wetland) then
 	wetland=reedbed  [0x10F0C resolution 16]
