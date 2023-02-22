@@ -16,7 +16,12 @@ man_made=petroleum_well [0x11511 resolution 24]
 man_made=works & building!=* {name '${short_name}'|'${name}'} [0x11512 resolution 24]
 man_made=chimney [0x11513 resolution 24]
 
-power=plant {name '${short_name}'|'${name}'} [0x11514 resolution 24]
+if (power=plant) then
+    () {name '${short_name}'|'${name}'}
+    plant:source=hydro [0x1150D resolution 24]
+    () [0x1150C resolution 24]
+end
+
 power=generator & generator:source=wind {name '${short_name}'|'${name}'} [0x11515 resolution 24]
 
 man_made=water_works { name '${short_name}'|'${name}'} [0x11516 resolution 24]
