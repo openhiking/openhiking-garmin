@@ -68,8 +68,8 @@ if (source=ohk) then
 		trail_symbol='hu:f'  [0x12B1C resolution 22]
 		trail_symbol='hu:t'  [0x12B15 resolution 22]
 	
-		trail_symbol='hu:kx'  [0x1290E resolution 22]
-		trail_symbol='hu:px'  [0x1291E resolution 22]
+		ski_route_symbol='hu:kx'  [0x1290E resolution 22]
+		ski_route_symbol='hu:px'  [0x1291E resolution 22]
 	
 		trail_symbol='hu:km'  [0x12B10 resolution 22]
 		trail_symbol='hu:pm'  [0x12B11 resolution 22]
@@ -135,8 +135,8 @@ if (source=ohk) then
 		trail_symbol='hu:f'  [0x12B1C resolution 24]
 		trail_symbol='hu:t'  [0x12B15 resolution 24]
 	
-		trail_symbol='hu:kx'  [0x1290E resolution 24]
-		trail_symbol='hu:px'  [0x1291E resolution 24]
+		ski_route_symbol='hu:kx'  [0x1290E resolution 24]
+		ski_route_symbol='hu:px'  [0x1291E resolution 24]
 	
 		trail_symbol='hu:km'  [0x12B10 resolution 24]
 		trail_symbol='hu:pm'  [0x12B11 resolution 24]
