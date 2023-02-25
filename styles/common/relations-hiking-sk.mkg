@@ -8,6 +8,7 @@
 #
 ########################################################
 
+if (type=route & route~'hiking|foot' & state!=proposed) then
 
 #######################################################
 # Standard trails
@@ -86,3 +87,5 @@ apply {
 	set trail_p9_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
+
+end

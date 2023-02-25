@@ -12,7 +12,7 @@
 # Primary OSMC Symbols
 
 
-if (type=route & route~'hiking|foot') then
+if (type=route & route~'hiking|foot' & state!=proposed) then
 
 	osmc:symbol~'red:white:red_bar.*' & jel!=* & kct_red!=* & operator!=KST  {
 	apply {
