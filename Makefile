@@ -252,7 +252,7 @@ MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
 MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
-ROUTE_CONDITION?="route=hiking or route=foot or ( route=piste and piste:type=nordic )"
+ROUTE_CONDITION?="route=hiking or route=foot or ( route=piste and piste:type=nordic ) or ( route=ski and piste:type=nordic )"
 
 MAP_HIKING_SYMBOLS_OSM_FP=$(TILES_DIR)$(PSEP)symbols.osm
 
