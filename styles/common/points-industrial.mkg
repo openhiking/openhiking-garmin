@@ -19,10 +19,11 @@ man_made=chimney [0x11513 resolution 24]
 if (power=plant) then
     () {name '${short_name}'|'${name}'}
     plant:source=hydro [0x1150D resolution 24]
+    plant:source=nuclear [0x1150E resolution 24]    
     () [0x1150C resolution 24]
 end
 
-power=generator & generator:source=wind {name '${short_name}'|'${name}'} [0x11515 resolution 24]
+power=generator & generator:source=wind {name '${short_name}'|'${name}'} [0x1150F resolution 24]
 
 man_made=water_works { name '${short_name}'|'${name}'} [0x11516 resolution 24]
 man_made=water_tower { name '${short_name}'|'${name}'} [0x11518 resolution 24]
