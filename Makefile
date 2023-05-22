@@ -647,13 +647,17 @@ endif
 
 clean:
 ifeq ($(LINUX),0)
+ifeq ($(GMAPI),yes)
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+endif
 endif
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleanall:
 ifeq ($(LINUX),0)
+ifeq ($(GMAPI),yes)
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+endif
 endif
 	$(DEL) $(TILES_DIR)$(PSEP)*
 	$(DEL) $(GMAP_DIR)$(PSEP)*

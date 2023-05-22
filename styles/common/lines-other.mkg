@@ -12,7 +12,7 @@
 #######################################
 # Ferries
 #
-route=ferry { name '${name}'; } [0x1b road_class=0 road_speed=0 resolution 22 ]
+route=ferry { name '${name}'; set mkgmap:ferry=yes; } [0x1b road_class=0 road_speed=0 resolution 22 ]
 
 man_made=pier  [0x10E16 resolution 23]
 
