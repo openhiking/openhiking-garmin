@@ -1,0 +1,16 @@
+#######################################################
+# OpenHikingMap
+#
+# Relation handling rules
+#
+# Copyright (c) 2021-2023 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+
+include "../common/relations-hiking-hu.mkg"
+include "../common/relations-hiking-sk.mkg"
+include "../common/relations-hiking-cz.mkg"
+include "../common/relations-hiking-osmc.mkg"
+include "../common/relations-hiking-generic.mkg"
