@@ -26,7 +26,7 @@ end
 
 # Footway downgrade
 if (highway=footway & area!=yes) then
-	surface_type=unpaved_normal | surface_type=unpaved_soft  { set highway=path; }
+	surface_type=unpaved_normal | surface_type=unpaved_soft | surface=wood  { set highway=path; }
 end
 
 # Path upgrade

@@ -9,7 +9,7 @@
 ########################################################
 
 highway=* &
- surface~'paved|asphalt|chipseal|concrete.*|paving_stones|metal|wood'
+ surface~'paved|asphalt|chipseal|concrete.*|paving_stones|metal'
  { set surface_type=paved_smooth; }
 
 highway=* & surface~'paving_stones'  { set surface_type=paved_pstone ; }
