@@ -9,7 +9,7 @@ drive-on:right
 #draw-priority:16
 show-profiles:1
 dem-interpolation=auto
-dem-dists=9942,9942,9942,13248,44176
+dem-dists=9942,9942,13248,44176
 overview-dem-dist=88368
 remove-short-arcs
 keep-going

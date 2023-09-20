@@ -3,7 +3,7 @@
 #
 # Map building automation
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -118,6 +118,10 @@ endif
 
 ifneq (${MKG_SPLITTER_THREADS},)
 SPLITTER_THREADS=--max-threads=${MKG_SPLITTER_THREADS}
+endif
+
+ifneq (${MKG_SPLITTER_MAX_NODES},)
+SPLITTER_MAX_NODES=${MKG_SPLITTER_MAX_NODES}
 endif
 
 ifneq (${MKG_SPLITTER_MAX_AREAS},)
@@ -338,6 +342,7 @@ endif
 
 TILE_ARGS=$(TILES_DIR)$(PSEP)template.args
 SPLITTER_MEMORY?=5000M
+SPLITTER_MAX_NODES?=1800000
 SPLITTER_MAX_AREAS?=255
 SPLITTER_STATUS_FREQ?=120
 
@@ -477,7 +482,7 @@ refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
 	@echo "Completed"
 
 $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
-	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
+	$(OSMCONVERT) $< --drop-version --drop-author -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --drop=$(PREFILTER_CONDITION) --drop-author --drop-version -o=$@
@@ -554,7 +559,7 @@ bounds: $(MAP_BOUNDS_O5M_FP)
 	@echo "Bounds created"
 
 tiles: $(MAP_SPLITTER_INP_PBF)
-	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=1600000 --max-areas=$(SPLITTER_MAX_AREAS) \
+	java -Xmx$(SPLITTER_MEMORY) -ea -jar $(SPLITTER) --mapid=$(GARMIN_SEGMENT_ID)  --max-nodes=$(SPLITTER_MAX_NODES) --max-areas=$(SPLITTER_MAX_AREAS) \
 	--status-freq=$(SPLITTER_STATUS_FREQ) $(SPLITTER_THREADS) $< --output-dir=$(TILES_DIR)
 
 
