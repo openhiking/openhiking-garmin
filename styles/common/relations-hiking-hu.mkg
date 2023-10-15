@@ -125,6 +125,23 @@ apply {
 	}
 }
 
+type=route & route=hiking & (jel='sgy' ) {
+	delete route;
+	delete jel;
+	delete osmc:symbol;
+}
+
+
+#######################################################
+# "Green trails"
+#
+type=route & route=hiking & jel=zut  {
+	delete route;
+	delete jel;
+	delete osmc:symbol;
+}	
+
+
 #######################################################
 # Local educational trails, others
 #
@@ -159,6 +176,7 @@ apply {
 	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
+
 
 #######################################################
 # Ski routes

@@ -482,7 +482,7 @@ refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
 	@echo "Completed"
 
 $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
-	$(OSMCONVERT) $< --drop-version --drop-author -B=$(BOUNDARY_POLYGON_FP) -o=$@
+	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --drop=$(PREFILTER_CONDITION) --drop-author --drop-version -o=$@
