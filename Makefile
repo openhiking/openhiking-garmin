@@ -140,6 +140,9 @@ ifneq (${MKG_MKGMAP_JOBS},)
 MKGMAP_JOBS=${MKG_MKGMAP_JOBS}
 endif
 
+ifneq (${MKG_MKGMAP_MEMORY},)
+MKGMAP_MEMORY=${MKG_MKGMAP_MEMORY}
+endif
 
 ifneq (${MKG_NSIGEN},)
 NSIGEN=${MKG_NSIGEN}
@@ -351,6 +354,7 @@ SPLITTER_STATUS_FREQ?=120
 
 GMAP_DIR=$(WORKING_DIR)$(PSEP)gmap-$(MAP)
 MKGMAP_JOBS?=2
+MKGMAP_MEMORY?=4192M
 DRAW_PRIORITY?=16
 
 ifeq ($(LINUX),0)
@@ -594,7 +598,7 @@ typ: $(TYP_FILE_FP)
 	@echo "Completed"
 
 map:  $(MERGED_ARGS) $(TYP_FILE_FP)
-	java -Xmx4192M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
+	java -Xmx$(MKGMAP_MEMORY) -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
 	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
 	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(BOUNDS_OPTS) \
