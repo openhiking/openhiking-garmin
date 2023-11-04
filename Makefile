@@ -377,7 +377,9 @@ STYLES=info lines options points polygons relations version
 MERGED_ARGS=$(TILES_DIR)$(PSEP)mkgmap.args
 STYLES_RP := $(foreach wrd,$(STYLES),$(STYLES_DIR)$(PSEP)$(wrd))
 
-HILL_SHADING_DIR=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
+ifneq ($(HILL_SHADING),)
+      HILL_SHADING_DIR=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
+endif
 
 ifeq ($(GENERATE_SEA),yes)
 #	GEN_SEA_OPTIONS=--generate-sea=extend-sea-sectors,close-gaps=500,land-tag=natural=land
