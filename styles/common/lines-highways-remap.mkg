@@ -33,3 +33,6 @@ end
 if (highway=path & area!=yes) then
     surface_type=paved_smooth | surface_type=paved_pstone | surface_type=paved_cstone { set highway=footway; }
 end
+
+# Ladder
+highway=ladder { set highway=steps; }

@@ -101,7 +101,12 @@ if (highway=track  & area!=yes ) then
 	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
-	tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
+	if (tracktype=grade5) then
+		obstacle=* [0x10E18 resolution 22 continue]
+		obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
+		tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
+	end
+
 	surface_type=unpaved_hard [0x0d road_class=0 road_speed=1 resolution 20]
 	()        	    [0x0a road_class=0 road_speed=1 resolution 21]
 end
@@ -128,6 +133,9 @@ if (highway=path  & area!=yes ) then
 	sac_scale_tag=*  { name '${bilingual_name} ${trail_name} (${sac_scale_tag})'|'${bilingual_name} (${sac_scale_tag})'|'${trail_name} (${sac_scale_tag})'| '${sac_scale_tag}'}
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	sac_scale_level>2  [0x0e road_class=0 road_speed=0 resolution 22]
+
+	obstacle=* [0x10E19 resolution 22 continue]
+	obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
 	() [0x16 road_class=0 road_speed=0 resolution 22]
 end
 

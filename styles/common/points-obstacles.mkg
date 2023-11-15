@@ -3,13 +3,13 @@
 #
 # Obstacle rendering definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2023 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
 
-obstacle=* {name '${obstacle_description}'|'${name}'|'${obstacle}'}
+obstacle=* {name '${obstacle_description}'|'${name}'}
 
 obstacle=fallen_tree & mkgmap:line2poi!=* [0x1171A resolution 24 ]
 obstacle=fallen_tree & mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)    [0x1171A resolution 24 ]

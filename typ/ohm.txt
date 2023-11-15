@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 71245 octets
-; Fichier TYP compilé     25/04/2023     19:12:40
-; Décompilé le 4/25/2023 à 7:16:54 PM
+; Longueur: 71343 octets
+; Fichier TYP compilé     15/11/2023     19:31:15
+; Décompilé le 11/15/2023 à 7:31:21 PM
 
 [_id]
 ProductCode=1
@@ -1999,6 +1999,19 @@ ContourColor=No
 
 
 [_line]
+Type=0x0b
+;GRMN_TYPE: Roads/MAJOR_CONNECTOR/Major highway connector/Non NT, NT
+UseOrientation=N
+Xpm="32 1 2  1"
+"! c #A87800"
+"  c none"
+"                                "
+;12345678901234567890123456789012
+ExtendedLabels=N
+[end]
+
+
+[_line]
 Type=0x0d
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_ROUTE_LINE_1/Routable customizable line/Non NT, NT
 UseOrientation=N
@@ -3719,6 +3732,44 @@ Xpm="32 3 2  1"
 String1=0x04,Pier
 String2=0x14,Móló
 ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10e18
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_25/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 2 2  1"
+"! c #FF3020"
+"  c none"
+"!!!!!    !!!!!!    !!!!!!    !!!"
+"!!!!!    !!!!!!    !!!!!!    !!!"
+;12345678901234567890123456789012
+String1=0x14,Gyenge földút
+String2=0x05,Track (poor)
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+[end]
+
+
+[_line]
+Type=0x10e19
+;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_26/Non-routable customizable line/Non NT, NT
+UseOrientation=N
+Xpm="32 2 2  1"
+"! c #FF3020"
+"  c none"
+"!!!!    !!!!    !!!!    !!!!    "
+"!!!!    !!!!    !!!!    !!!!    "
+;12345678901234567890123456789012
+String1=0x04,Path
+String2=0x14,Ösvény
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
 [end]
 
 
@@ -13355,6 +13406,7 @@ DayXpm="16 16 11 1"   Colormode=16
 Type=0x11719
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_90/User customizable point type/Non NT, NT
 String1=0x14,Útakadály
+String2=0x04,Obstacle
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
@@ -13387,7 +13439,7 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x1171a
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_91/User customizable point type/Non NT, NT
-String1=0x14,Kidőlt fák
+String1=0x14,Kidõlt fák
 String2=0x04,Fallen tree
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -13421,7 +13473,7 @@ DayXpm="16 16 4 1"   Colormode=16
 [_point]
 Type=0x1171b
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_92/User customizable point type/Non NT, NT
-String1=0x14,Benőtt
+String1=0x14,Benõtt útszakasz
 String2=0x04,Overgrown
 ExtendedLabels=Y
 FontStyle=SmallFont
