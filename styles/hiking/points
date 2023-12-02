@@ -38,6 +38,8 @@ include "../common/points-places.mkg"
 include "../common/points-fixme.mkg"
 include "../common/points-obstacles.mkg"
 include "../common/points-other.mkg"
+
+include "../common/points-pilgrimage-symbols.mkg"
 include "../common/points-hiking-symbols.mkg"
 
 if (mkgmap:option:REGION=ce) then

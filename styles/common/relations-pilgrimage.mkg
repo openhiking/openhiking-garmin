@@ -1,0 +1,63 @@
+#######################################################
+# OpenHikingMap
+#
+# Pilgrimage relations 
+#
+# Copyright (C) 2021-2023 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (type=route & route~'hiking|foot' & pilgrimage=yes) then
+
+state=proposed  {
+	delete route;
+	delete jel;
+	delete osmc:symbol;
+}	
+
+jel='lm' | osmc:symbol='purple:white:::M:purple' | osmc:symbol~'purple:purple::M.*:white' {
+	apply {
+		add trail_p9_color=purple;
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
+}
+
+jel='km' | osmc:symbol='blue:white:::M:blue' |  osmc:symbol~'blue:blue::M.*:white' {
+	apply {
+		add trail_p9_color=blue;
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
+}
+
+jel='pm' | osmc:symbol='red:white:::M:red' | osmc:symbol~'red:red::M.*:white' {
+	apply {
+		add trail_p9_color=red;
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
+}
+
+
+jel='sm' | osmc:symbol='yellow:white:::M:yellow' | osmc:symbol~'yellow:yellow::M.*:white'  {
+	apply {
+		add trail_p9_color=yellow;
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
+}
+
+
+jel='zm' | osmc:symbol='green:white:::M:green' |  osmc:symbol~'green:green::M.*:white' {
+	apply {
+		add trail_p9_color=green;
+		add trail_p9_name='${short_name}'|'${name}'|'${ref}';
+		}
+}
+
+
+pilgrimage=yes {
+	delete route;
+	delete jel;
+	delete osmc:symbol;
+}	
+
+end

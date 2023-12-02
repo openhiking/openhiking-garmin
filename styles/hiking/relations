@@ -12,6 +12,7 @@
 
 include "../common/relations-boundaries.mkg"
 
+include "../common/relations-pilgrimage.mkg"
 include "../common/relations-hiking-hu.mkg"
 include "../common/relations-hiking-sk.mkg"
 include "../common/relations-hiking-cz.mkg"

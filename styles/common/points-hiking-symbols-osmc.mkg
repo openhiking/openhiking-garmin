@@ -132,33 +132,6 @@ if (source=ohk) then
 		trail_symbol='osmc:white:yellow_corner'    [0x12C17 resolution 24]
 	end
 
-
-
-        if (trail_symbol_level=major) then
-		osmc:symbol='blue:white:::M:blue'         [0x12B10 resolution 22]
-		osmc:symbol='red:white:::M:red'           [0x12B11 resolution 22]
-		osmc:symbol='yellow:white:::M:yellow'     [0x12B12 resolution 22]
-		osmc:symbol='green:white:::M:green'        [0x12B13 resolution 22]
-		osmc:symbol='purple:white:::M:purple'      [0x12B14 resolution 22]
-		osmc:symbol~'blue:blue::M.*:white'         [0x12B10 resolution 22]
-		osmc:symbol~'red:red::M.*:white'           [0x12B11 resolution 22]
-		osmc:symbol~'yellow:yellow::M.*:white'     [0x12B12 resolution 22]
-		osmc:symbol~'green:green::M.*:white'        [0x12B13 resolution 22]
-		osmc:symbol~'purple:purple::M.*:white'      [0x12B14 resolution 22]
-        else
-		osmc:symbol='blue:white:::M:blue'         [0x12B10 resolution 24]
-		osmc:symbol='red:white:::M:red'           [0x12B11 resolution 24]
-		osmc:symbol='yellow:white:::M:yellow'     [0x12B12 resolution 24]
-		osmc:symbol='green:white:::M:green'        [0x12B13 resolution 24]
-		osmc:symbol='purple:white:::M:purple'      [0x12B14 resolution 24]
-		osmc:symbol~'blue:blue::M.*:white'         [0x12B10 resolution 24]
-		osmc:symbol~'red:red::M.*:white'           [0x12B11 resolution 24]
-		osmc:symbol~'yellow:yellow::M.*:white'     [0x12B12 resolution 24]
-		osmc:symbol~'green:green::M.*:white'        [0x12B13 resolution 24]
-		osmc:symbol~'purple:purple::M.*:white'      [0x12B14 resolution 24]
-        end
-
-
 	if (trail_symbol_level=major) then
 		trail_symbol='osmc:red_frame:red_cross' [0x12B17 resolution 22]	
 		trail_symbol='osmc:red:white_bar'       [0x12B18 resolution 22]
