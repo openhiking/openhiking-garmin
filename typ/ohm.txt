@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 71343 octets
-; Fichier TYP compilé     15/11/2023     19:31:15
-; Décompilé le 11/15/2023 à 7:31:21 PM
+; Longueur: 71364 octets
+; Fichier TYP compilé     01/05/2024     21:13:54
+; Décompilé le 1/5/2024 à 9:14:03 PM
 
 [_id]
 ProductCode=1
@@ -15476,6 +15476,35 @@ DayXpm="10 10 4 1"   Colormode=16
 "!########!"
 "!!!!!!!!!!"
 ;1234567890
+[end]
+
+
+[_point]
+Type=0x12b0f
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_720/User customizable point type/Non NT, NT
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+CustomColor=No
+ContourColor=No
+DayXpm="12 12 5 1"   Colormode=16
+"!	c #F8FCF8"
+"#	c #FFCA20"
+"%	c #FF9500"
+"?	c #F8ED07"
+"  	c none"
+"    #%%#    "
+"  #%#??#%#  "
+" #%??!!??%# "
+" %?%%%%%%?% "
+"##?%%%%%%?##"
+"%?!!!%%!!!?%"
+"%?!!!%%!!!?%"
+"##?!!%%!!?##"
+" %??!%%!??% "
+" #%??!!??%# "
+"  #%#??#%#  "
+"    #%%#    "
+;123456789012
 [end]
 
 

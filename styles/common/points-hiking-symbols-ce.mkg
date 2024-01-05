@@ -10,8 +10,8 @@
 
 if (source=ohk) then
     if (trail_symbol_level=major) then
-		trail_symbol='no:t'   [0x1291b resolution 22]
+        trail_symbol='ro:vt'  [0x12b0f resolution 22]
     else
-		trail_symbol='no:t'   [0x1291b resolution 24]
+        trail_symbol='ro:vt'  [0x12b0f resolution 22]
     end
 end

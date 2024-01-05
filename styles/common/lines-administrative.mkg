@@ -3,7 +3,7 @@
 #
 # Administrative boundary rendering definitions
 #
-# Copyright (C) 2021-2022 OpenHiking contributors
+# Copyright (C) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -11,9 +11,13 @@
 admin_level=2 & boundary=administrative [0x1e resolution 15]
 
 boundary=national_park 	{name '${name}'} [0x10F09 resolution 18 ]
-boundary=protected_area & protect_class=1  {name '${name}'} [0x10F0A resolution 20 ]
-boundary=protected_area & protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
-boundary=protected_area & is_np_member!=true {name '${name}'; } [0x10F08 resolution 20 ]
-boundary=protected_landscape_area {name '${name}'} [0x10F08 resolution 20 ]
+
+if (boundary=protected_area) then
+    protect_class~'1[ab]?'  {name '${name}'} [0x10F0A resolution 20 ]
+    protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
+    protect_class~'21|22|24'   { delete boundary; } 
+    is_np_member!=true {name '${name}'; } [0x10F08 resolution 20 ]
+end
+
 leisure=nature_reserve  {name '${name}'} [0x10F08 resolution 20 ]
 

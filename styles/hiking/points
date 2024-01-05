@@ -46,6 +46,7 @@ if (mkgmap:option:REGION=ce) then
 include "../common/points-hiking-symbols-hu.mkg"
 include "../common/points-hiking-symbols-czsk.mkg"
 include "../common/points-hiking-symbols-osmc.mkg"
+include "../common/points-hiking-symbols-ce.mkg"
 end
 
 if (mkgmap:option:REGION=balkans) then
