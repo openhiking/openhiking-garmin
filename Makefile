@@ -356,6 +356,7 @@ GMAP_DIR=$(WORKING_DIR)$(PSEP)gmap-$(MAP)
 MKGMAP_JOBS?=2
 MKGMAP_MEMORY?=4192M
 DRAW_PRIORITY?=16
+PRODUCT_VERSION?=100
 
 ifeq ($(LINUX),0)
 GMAP_DRIVE=$(word 1,$(subst :, ,$(GMAP_DIR))):
@@ -366,8 +367,8 @@ OHM_ARGS_TEMPLATE=$(CONFIG_DIR)$(PSEP)mkgmap.args
 
 
 ifeq ($(TYP_FILE),)
-	TYPE_BASENAME=$(TYP_BASE)$(MAP)
-	TYP_FILE=$(TYPE_BASENAME).typ
+	TYP_BASENAME=$(TYP_BASE)$(MAP)
+	TYP_FILE=$(TYP_BASENAME).typ
 endif
 
 TYP_FILE_FP=$(GMAP_DIR)$(PSEP)$(TYP_FILE)
@@ -407,7 +408,9 @@ else
 	TRANSPARENCY_OPT=
 endif
 
-
+ifeq ($(CYCLE_MAP),yes)
+	CYCLE_MAP_OPT=--cycke-map
+endif
 
 ifeq ($(GMAPSUPP),yes)
 	GMAPSUPP_OPTION=--gmapsupp
@@ -578,19 +581,33 @@ else
 endif
 
 
-$(GMAP_DIR)$(PSEP)openbike.typ: $(TYP_DIR)$(PSEP)openbike.typ
-	$(COPY) $< $(GMAP_DIR)
-$(GMAP_DIR)$(PSEP)openTEST.typ: $(TYP_DIR)$(PSEP)openTEST.typ
-	$(COPY) $< $(GMAP_DIR)
-
-$(GMAP_DIR)$(PSEP)$(TYP_BASE)%.typ: $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
-	$(COPY) $< $(GMAP_DIR)$(PSEP)$(TYPE_BASENAME).txt
+ifeq ($(TYP_COMPILE),yes)
+$(TYP_FILE_FP): $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
+	$(COPY) $< $(GMAP_DIR)$(PSEP)$(TYP_BASENAME).txt	
 ifeq ($(LINUX),1)
 	cd $(GMAP_DIR) && java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
-	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYP_BASENAME).txt --output-dir=$(GMAP_DIR)
 else
 	$(GMAP_DRIVE) & cd $(GMAP_DIR) & java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
-	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYPE_BASENAME).txt --output-dir=$(GMAP_DIR)
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYP_BASENAME).txt --output-dir=$(GMAP_DIR)
+endif
+	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.img
+	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.tdb
+
+else
+
+$(TYP_FILE_FP): $(TYP_DIR)$(PSEP)$(TYP_FILE)
+	$(COPY) $< $(GMAP_DIR)
+endif
+
+$(GMAP_DIR)$(PSEP)$(TYP_BASE)%.typ: $(TYP_DIR)$(PSEP)$(TYP_BASE).txt
+	$(COPY) $< $(GMAP_DIR)$(PSEP)$(TYP_BASENAME).txt
+ifeq ($(LINUX),1)
+	cd $(GMAP_DIR) && java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYP_BASENAME).txt --output-dir=$(GMAP_DIR)
+else
+	$(GMAP_DRIVE) & cd $(GMAP_DIR) & java -Xmx1024M -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --code-page=$(CODE_PAGE) $(TYP_BASENAME).txt --output-dir=$(GMAP_DIR)
 endif
 	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.img
 	$(DEL) $(GMAP_DIR)$(PSEP)osmmap.tdb
@@ -600,10 +617,11 @@ typ: $(TYP_FILE_FP)
 	@echo "Completed"
 
 map:  $(MERGED_ARGS) $(TYP_FILE_FP)
-	java -Xmx$(MKGMAP_MEMORY) -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) --family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) \
-	 --product-id=1 --series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
+	java -Xmx$(MKGMAP_MEMORY) -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
+	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --product-version=$(PRODUCT_VERSION) \
+	--series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
-	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(BOUNDS_OPTS) \
+	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);REGION=$(MAP_REGION)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
@@ -698,7 +716,7 @@ cleanoutput:
 
 
 test:
-	@echo $(MAP_SYMBOL_LOOKUP_FILE)
+	@echo $(TYP_FILE) $(TYP_BASENAME)
 
 
 
