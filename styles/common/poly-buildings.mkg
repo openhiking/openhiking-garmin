@@ -3,7 +3,7 @@
 #
 # Building rendering style definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -28,8 +28,7 @@ building=train_station | building=transportation | building=parking [0x0d resolu
 building=kindergarten | building=school | building=college | building=university [0x0d resolution 24]
 building=riding_hall | building=sports_hall | building=stadium  [0x0d resolution 24]
 
-building=* & historic=* [0x0d resolution 24]
-building=* & name=* & man_made!=tower [0x0d resolution 24]
+building=* & (name=* | heritage=* | historic=*)  & man_made!=tower [0x0d resolution 24]
 
 (building=industrial | building=warehouse) & area_size()>160 [0x0d resolution 24]
 building=* & is_in(landuse,residential,all)=false & area_size()>160 [0x0d resolution 24]

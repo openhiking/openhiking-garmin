@@ -409,7 +409,7 @@ else
 endif
 
 ifeq ($(CYCLE_MAP),yes)
-	CYCLE_MAP_OPT=--cycke-map
+	CYCLE_MAP_OPT=--cycle-map
 endif
 
 ifeq ($(GMAPSUPP),yes)
