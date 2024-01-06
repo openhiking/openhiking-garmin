@@ -420,6 +420,9 @@ ifeq ($(GMAPI),yes)
 	GMAPI_OPTION=--gmapi
 endif
 
+ifneq ($(MAP_REGION),)
+	MAP_REGION_SOPT=REGION=$(MAP_REGION)
+endif
 
 
 ifneq ($(LICENSE_FILE),)
@@ -622,7 +625,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	--series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
 	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
-	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);REGION=$(MAP_REGION)" \
+	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);$(MAP_REGION_SOPT)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
 
@@ -716,7 +719,7 @@ cleanoutput:
 
 
 test:
-	@echo $(TYP_FILE) $(TYP_BASENAME)
+	@echo $(MAP_REGION_SOPT) 	
 
 
 

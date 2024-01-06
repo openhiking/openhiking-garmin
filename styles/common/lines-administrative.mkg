@@ -15,8 +15,7 @@ boundary=national_park 	{name '${name}'} [0x10F09 resolution 18 ]
 if (boundary=protected_area & heritage!=*) then
     protect_class~'1[ab]?'  {name '${name}'} [0x10F0A resolution 20 ]
     protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
-    protect_class~'21|22|24'   { delete boundary; } 
-    is_np_member!=true {name '${name}'; } [0x10F08 resolution 20 ]
+    is_np_member!=true & !(protect_class~'21|22|24') {name '${name}'; } [0x10F08 resolution 20 ]
 end
 
 leisure=nature_reserve  {name '${name}'} [0x10F08 resolution 20 ]
