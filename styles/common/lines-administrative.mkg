@@ -14,10 +14,10 @@ boundary=national_park 	{name '${name}'} [0x10F09 resolution 18 ]
 
 
 if (boundary=protected_area & heritage!=*) then
-    protect_class~'1[ab]?'  {name '${name}'} [0x10F0A resolution 20 ]
-    protect_class=2  {name '${name}'} [0x10F09 resolution 20 ]
-    !(protect_class~'21|22|24') & is_np_member!=true {name '${name}'; } [0x10F08 resolution 20 ]
+    protect_class~'1[ab]?'  {name '${protection_title}' | '${name}'} [0x10F0A resolution 20 ]
+    protect_class=2  {name  '${protection_title}' | '${name}'} [0x10F09 resolution 20 ]
+    !(protect_class~'21|22|24') & is_np_member!=true {name  '${protection_title}' | '${name}'; } [0x10F08 resolution 20 ]
 end
 
-leisure=nature_reserve  {name '${name}'} [0x10F08 resolution 20 ]
+leisure=nature_reserve  {name  '${protection_title}' | '${name}'} [0x10F08 resolution 20 ]
 
