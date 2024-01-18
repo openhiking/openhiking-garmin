@@ -8,14 +8,18 @@ O,red:white::VM:red,12,red,hu:pm
 O,red:white::Mw:red,12,red,hu:pm
 O,yellow:white:::M:yellow,12,yellow,hu:sm
 O,green:white:::M:green,12,green,hu:zm
+O,red:red:red_bar:S:white,9,red,hu:palp
 O,:white:orange_dot:::,10,orange,osmc:white:orange_dot
 O,:yellow:blue_dot,7,blue,osmc:yellow:blue_dot
 O,::white:blue_rectangle,7,blue,osmc:white:blue_rectangle
 O,red:white: :T:red,5,red,no:t
 O,blue:blue::E4:yellow,-1,,
+O,orange:orange_circle::T:orange,5,orange,ro:vt
+J,palp,9,red,hu:palp
+J,salp,10,yellow,hu:salp
 J,t,13,blue,hu:t
 J,ztfl,13,green,hu:zt
-J,pek,13,yellow,
+J,pek,13,yellow,osmc:blue:yellow_lower
 J,mberc,13,blue,
 J,tny,13,blue,
 J,but,13,black,
