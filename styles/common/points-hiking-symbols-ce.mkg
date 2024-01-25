@@ -1,7 +1,7 @@
 #######################################################
 # OpenHikingMap
 #
-# Hiking symbols rendering for Norway
+# Special hiking symbols for Central Europe
 #
 # Copyright (C) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
@@ -12,6 +12,6 @@ if (source=ohk) then
     if (trail_symbol_level=major) then
         trail_symbol='ro:vt'  [0x12b0f resolution 22]
     else
-        trail_symbol='ro:vt'  [0x12b0f resolution 22]
+        trail_symbol='ro:vt'  [0x12b0f resolution 24]
     end
 end
