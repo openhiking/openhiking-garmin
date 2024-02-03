@@ -3,7 +3,7 @@
 #
 # Polygon - natural rendering definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -12,7 +12,7 @@ natural = sea [0x32 resolution 11]
 
 waterway=riverbank | waterway=dock {name '${name}'} [0x47 resolution 16]
 natural=water & water=river  [0x47 resolution 16]
-natural=water & (tidal=yes | wetland=tidalflag )  [0x51 resolution 16]
+natural=water & tidal=yes  [0x51 resolution 16]
 
 (natural=water | landuse=reservoir | landuse=basin) & area_size()<10000 [0x4000 resolution 16]
 natural=water | landuse=reservoir | landuse=basin  [0x3e00 resolution 16]
@@ -20,6 +20,7 @@ natural=water | landuse=reservoir | landuse=basin  [0x3e00 resolution 16]
 if (natural=wetland) then
 	wetland=reedbed  [0x10F0C resolution 16]
 	wetland=swamp  [0x10F0D resolution 16]
+	wetland=tidalflat [0x51 resolution 16]
 	() [0x51 resolution 16]
 end
 
