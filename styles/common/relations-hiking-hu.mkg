@@ -50,28 +50,28 @@ apply {
 }
 
 # Other standard hiking symbols
-jel~'k+|k3|k4|kq|kb|kl|ktmp|keml|kpec|kc' {
+jel~'k\+|k3|k4|kq|kb|kl|ktmp|keml|kpec|kc' {
 apply {
 	set trail_p5_color=blue;
 	set trail_p5_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-jel~'p+|p3|p4|pq|pb|pl|ptmp|peml|ppec|pc' {
+jel~'p\+|p3|p4|pq|pb|pl|ptmp|peml|ppec|pc' {
 apply {
 	set trail_p6_color=red;
 	set trail_p6_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-jel~'z+|z3|z4|zq|zb|zl|ztmp|zeml|zpec|zc' {
+jel~'z\+|z3|z4|zq|zb|zl|ztmp|zeml|zpec|zc' {
 apply {
 	set trail_p7_color=green;
 	set trail_p7_name='${short_name}'|'${name}'|'${ref}';
 	}
 }
 
-jel~'s+|s3|s4|sq|sb|sl|stmp|seml|spec|sc' {
+jel~'s\+|s3|s4|sq|sb|sl|stmp|seml|spec|sc' {
 apply {
 	set trail_p8_color=yellow;
 	set trail_p8_name='${short_name}'|'${name}'|'${ref}';
