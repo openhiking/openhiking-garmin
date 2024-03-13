@@ -9,7 +9,7 @@
 ########################################################
 
 if (type=route & route='hiking') then
-	jel!=* & osmc:symbol!=* & operator!=KST  {
+	jel!=* & osmc:symbol!=* & operator!=KST & !(ref~'ST.*') {
 	apply {
 		add trail_p12_color=red;
 		add trail_p12_name='${short_name}'|'${name}'|'${from} - ${to} (${ref})'|'${from} - ${to}'|'${ref}';
