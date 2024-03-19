@@ -3,7 +3,7 @@
 #
 # Obstacle rendering definitions
 #
-# Copyright (c) 2021-2023 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -11,16 +11,18 @@
 
 obstacle=* {name '${obstacle_description}'|'${name}'}
 
-obstacle=fallen_tree & mkgmap:line2poi!=* [0x1171A resolution 24 ]
-obstacle=fallen_tree & mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)    [0x1171A resolution 24 ]
-obstacle=fallen_tree & (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20  [0x1171A resolution 24 ]
+if (obstacle=fallen_tree & highway=*) then
+    mkgmap:line2poi!=*  [0x1171A resolution 24 ]
+    mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)    [0x1171A resolution 24 ]
+    (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20  [0x1171A resolution 24 ]
+end
 
+if (obstacle=vegetation & highway=*) then
+    mkgmap:line2poi!=*  [0x1171B resolution 24 ]
+    mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x1171B resolution 24 ]
+    (mkgmap:line2poitype=start | mkgmap:line2poitype=end)  &  mkgmap:way-length>=20  [0x1171B resolution 24 ]
+end
 
-obstacle=vegetation & mkgmap:line2poi!=*  [0x1171B resolution 24 ]
-obstacle=vegetation & mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x1171B resolution 24 ]
-obstacle=vegetation & (mkgmap:line2poitype=start | mkgmap:line2poitype=end)  &  mkgmap:way-length>=20  [0x1171B resolution 24 ]
-
-
-obstacle=* & mkgmap:line2poi!=*  [0x11719 resolution 24 ]
-obstacle=* & mkgmap:line2poitype=mid &  (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x11719 resolution 24 ]
-obstacle=* & (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20 [0x11719 resolution 24 ]
+obstacle=* & highway=* & mkgmap:line2poi!=*  [0x11719 resolution 24 ]
+obstacle=* & highway=* & mkgmap:line2poitype=mid &  (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x11719 resolution 24 ]
+obstacle=* & highway=* & (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20 [0x11719 resolution 24 ]

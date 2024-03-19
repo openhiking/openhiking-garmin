@@ -3,7 +3,7 @@
 #
 # Point rendering: Leisure
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -11,11 +11,12 @@
 leisure=* & (access=no | access=private | ownership=private) { delete leisure; }
 
 leisure=golf_course [0x02D05 resolution 24]
+leisure=fitness_centre [0x02D07 resolution 24]
 leisure=* & sport=skiing [0x02D06 resolution 24]
 leisure=ice_rink [0x02D08 resolution 24]
 
 leisure=swimming_pool & access=yes & mkgmap:area2poi!=true  [0x02D09 resolution 24]
-leisure=* & sport=soccer [0x02D0A resolution 24]
+leisure=* & sport=soccer [0x02C18 resolution 24]
 leisure=* & sport=tennis [0x02D0B resolution 24]
 leisure=horse_riding  [0x02D0D resolution 24]
 

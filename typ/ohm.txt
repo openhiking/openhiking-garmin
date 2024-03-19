@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 71364 octets
-; Fichier TYP compilé     01/05/2024     21:13:54
-; Décompilé le 1/5/2024 à 9:14:03 PM
+; Longueur: 71458 octets
+; Fichier TYP compilé     19/03/2024     20:44:29
+; Décompilé le 3/19/2024 à 8:44:32 PM
 
 [_id]
 ProductCode=1
@@ -6301,6 +6301,39 @@ DayXpm="16 16 33 2"   Colormode=16
 
 
 [_point]
+Type=0x02c18
+;GRMN_TYPE: //
+String1=0x04,Soccer
+String2=0x14,Focipálya
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 3 1"   Colormode=16
+"!	c #047E04"
+"#	c #FFFFFF"
+"  	c none"
+"                "
+"  ############  "
+"  #!!#!!!!#!!#  "
+"  #!!#!!!!#!!#  "
+"  #!!######!!#  "
+"  #!!!!!!!!!!#  "
+"  #!!!!##!!!!#  "
+"  #!!!#!!#!!!#  "
+"  ############  "
+"  #!!!#!!#!!!#  "
+"  #!!!!##!!!!#  "
+"  #!!!!!!!!!!#  "
+"  #!!######!!#  "
+"  #!!#!!!!#!!#  "
+"  #!!#!!!!#!!#  "
+"  ############  "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x02d01
 ;GRMN_TYPE: Business - Entertainment/LIVE_THEATER/Live theater/Non NT
 String1=0x04,Theatre
@@ -6557,6 +6590,49 @@ DayXpm="16 16 20 2"   Colormode=16
 
 
 [_point]
+Type=0x02d07
+;GRMN_TYPE: Business - Entertainment/BOWLING/Bowling alley/Non NT
+String1=0x14,Fitness központ
+String2=0x04,Fitness center
+ExtendedLabels=N
+DayXpm="16 16 16 1"   Colormode=16
+"!	c #722C11"
+"#	c #131313"
+"%	c #803B20"
+"?	c #8A4B33"
+"$	c #9B6550"
+"*	c #5E595E"
+"=	c #AF8574"
+"1	c #C8ACA0"
+"2	c #A9A9A9"
+"3	c #0723B7"
+"4	c #D5D5D5"
+"5	c #5061BE"
+"6	c #5364C2"
+"7	c #9CA3D4"
+"8	c #F8F7F6"
+"  	c none"
+"       88       "
+"      8?%8      "
+"     88%!8      "
+"    87668       "
+"   4!*3378   848"
+"  8$=733*48 8##2"
+"  8%8535?%?8##*2"
+"   88337888 8#*8"
+" 888173*8   8#48"
+"81!!!$4!=8  4#8 "
+" 888881!48 8**8 "
+"    88??8888#28 "
+" 84422!2**###28 "
+"8*############8 "
+"82###########28 "
+" 8888888888888  "
+;1234567890123456
+[end]
+
+
+[_point]
 Type=0x02d08
 ;GRMN_TYPE: Business - Entertainment/ICE_SKATING/Ice skating rink/Non NT
 String1=0x04,Ice rink
@@ -6636,39 +6712,6 @@ DayXpm="16 12 10 1"   Colormode=16
 "$?$#$??#$?$*$???"
 "#?#*#?$*#$?##*?$"
 "%%%%%%%%%%%%%%%%"
-;1234567890123456
-[end]
-
-
-[_point]
-Type=0x02d0a
-;GRMN_TYPE: Business - Entertainment/FITNESS_CENTER/Fitness center or gym/Non NT
-String1=0x04,Soccer
-String2=0x14,Focipálya
-ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
-ContourColor=No
-DayXpm="16 16 3 1"   Colormode=16
-"!	c #047E04"
-"#	c #FFFFFF"
-"  	c none"
-"                "
-"  ############  "
-"  #!!#!!!!#!!#  "
-"  #!!#!!!!#!!#  "
-"  #!!######!!#  "
-"  #!!!!!!!!!!#  "
-"  #!!!!##!!!!#  "
-"  #!!!#!!#!!!#  "
-"  ############  "
-"  #!!!#!!#!!!#  "
-"  #!!!!##!!!!#  "
-"  #!!!!!!!!!!#  "
-"  #!!######!!#  "
-"  #!!#!!!!#!!#  "
-"  #!!#!!!!#!!#  "
-"  ############  "
 ;1234567890123456
 [end]
 
