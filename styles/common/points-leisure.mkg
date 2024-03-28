@@ -19,9 +19,11 @@ sport=swimming & leisure~'sports_centre|sports_hall|water_park'  [0x02D09 resolu
 leisure=fitness_centre | (leisure=* & sport=fitness)   [0x02D0A resolution 24]
 sport=tennis & leisure=*  [0x02D0B resolution 24]
 leisure=horse_riding  [0x02D0D resolution 24]
+sport=equestrian & leisure=* [0x02D0D resolution 24]
+
 
 leisure=stadium & mkgmap:area2poi!=true  [0x02C08 resolution 24]
-leisure=sports_centre & mkgmap:area2poi!=true  [0x02C17 resolution 24]
+leisure=sports_centre & mkgmap:area2poi!=true  [0x10D08 resolution 24]
 
 (amenity=public_bath | amenity=spa | leisure=spa)  [0x05400 resolution 24]
 leisure=water_park [0x05400 resolution 24]
