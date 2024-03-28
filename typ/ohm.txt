@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 73064 octets
-; Fichier TYP compilé     28/03/2024     21:27:35
-; Décompilé le 3/28/2024 à 9:27:38 PM
+; Fichier TYP compilé     28/03/2024     21:41:43
+; Décompilé le 3/28/2024 à 9:41:45 PM
 
 [_id]
 ProductCode=1
@@ -86,6 +86,7 @@ Type=0x11008,9
 Type=0x1101b,9
 Type=0x1101d,9
 Type=0x1101f,9
+Type=0x11101,9
 [End]
 
 
@@ -2107,6 +2108,17 @@ Type=0x1101f
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_64/Customizable area/Non NT, NT
 String1=0x04,Sport facility
 String2=0x14,Sportlétesítmény
+ExtendedLabels=N
+Xpm="0 0 1 0"
+"1 c #BD9500"
+[end]
+
+
+[_polygon]
+Type=0x11101
+;GRMN_TYPE: //
+String1=0x04,Swimming facility
+String2=0x14,Uszoda
 ExtendedLabels=N
 Xpm="32 32 2 1"
 "! c #0095D5"

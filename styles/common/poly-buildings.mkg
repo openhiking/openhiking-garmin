@@ -31,10 +31,11 @@ building=government | building=hospital | building=public | building=civic [0x0d
 building=train_station | building=transportation | building=parking [0x0d resolution 24]
 building=kindergarten | building=school | building=college | building=university [0x0d resolution 24]
 
+sport=swimming & leisure~'sports_hall|sports_centre'  [0x11101 resolution 24]
+building~'sports_hall|sports_centre' & sport=swimming [0x11101 resolution 24]
 building~'riding_hall|sports_hall|sports_centre|stadium' [0x1101f resolution 24]
 building=* & leisure=sports_centre [0x1101f resolution 24]
 leisure=sports_hall [0x1101f resolution 24]
-leisure=sports_centre & sport=swimming [0x1101f resolution 24]
 
 building~'castle|pagoda|windmill' [0x1101b resolution 24]
 building=* & (heritage=* | historic=*)  & man_made!=tower [0x1101b resolution 24]
