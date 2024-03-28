@@ -34,6 +34,7 @@ building=kindergarten | building=school | building=college | building=university
 building~'riding_hall|sports_hall|sports_centre|stadium' [0x1101f resolution 24]
 building=* & leisure=sports_centre [0x1101f resolution 24]
 leisure=sports_hall [0x1101f resolution 24]
+leisure=sports_centre & sport=swimming [0x1101f resolution 24]
 
 building~'castle|pagoda|windmill' [0x1101b resolution 24]
 building=* & (heritage=* | historic=*)  & man_made!=tower [0x1101b resolution 24]
