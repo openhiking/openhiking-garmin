@@ -29,8 +29,10 @@ landuse=brownfield   [0x13 resolution 20]
 landuse=construction   [0x13 resolution 20]
 landuse=logging | man_made=clearcut [0x10F01 resolution 20]
 
-#religion=jewish & (landuse=cemetery | amenity=grave_yard) {name '${name}'} [0x1a resolution 22]
-landuse=cemetery | amenity=grave_yard  [0x1a resolution 22]
+if (landuse=cemetery | amenity=grave_yard) then
+    religion=jewish [0x10F18 resolution 22]
+    () [0x1a resolution 22]
+end
 
 landuse=plant_nursery   [0x10F11 resolution 20]
 landuse=greenhouse_horticulture   [0x10F12 resolution 20]
