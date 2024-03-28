@@ -10,7 +10,7 @@
 
 leisure=* & (access=no | access=private | ownership=private) { delete leisure; }
 
-leisure=* & sport=soccer [0x02C18 resolution 24]
+sport=soccer & leisure=*  [0x02C18 resolution 24]
 
 leisure=golf_course |  (leisure=* & sport='golf')  [0x02D05 resolution 24]
 sport=skiing & leisure=* [0x02D06 resolution 24]
@@ -23,7 +23,7 @@ leisure=horse_riding  [0x02D0D resolution 24]
 leisure=stadium & mkgmap:area2poi!=true  [0x02C08 resolution 24]
 leisure=sports_centre & mkgmap:area2poi!=true  [0x02C17 resolution 24]
 
-(amenity=public_bath | amenity=spa) & foot!=no  [0x05400 resolution 24]
+(amenity=public_bath | amenity=spa | leisure=spa)  [0x05400 resolution 24]
 leisure=water_park [0x05400 resolution 24]
 leisure=beach_resort  [0x06604 resolution 24]
 
