@@ -13,10 +13,12 @@ building=residential & historic!=* { delete building; }
 
 building=* & (amenity=* | shop=* | tourism=* | leisure=* | emergency=*) { add has_amenity=true; }
 
-if (building=commercial | building=retail | building=supermarket) then
-	has_amenity!=true {name '${short_name}'|'${name}'} [0x08 resolution 24]
-	() [0x08 resolution 24]
+if (building~'retail|supermarket|warehouse|kiosk') then
+	has_amenity!=true {name '${short_name}'|'${name}'} [0x1101d resolution 24]
+	() [0x1101d resolution 24]
 end
+building=* & shop=* [0x1101d resolution 24]
+
 
 building=* & name=* & has_amenity!=true  {name '${short_name}'|'${name}'} [0x0d resolution 24]
 
@@ -26,9 +28,14 @@ building=mosque | building=synagogue [0x0d resolution 24]
 building=government | building=hospital | building=public | building=civic [0x0d resolution 24]
 building=train_station | building=transportation | building=parking [0x0d resolution 24]
 building=kindergarten | building=school | building=college | building=university [0x0d resolution 24]
-building=riding_hall | building=sports_hall | building=stadium  [0x0d resolution 24]
 
-building=* & (name=* | heritage=* | historic=*)  & man_made!=tower [0x0d resolution 24]
+building~'riding_hall|sports_hall|sports_centre|stadium' [0x1101f resolution 24]
+building=* & leisure~'sports_hall|sports_centre' [0x1101f resolution 24]
+
+building~'castle|pagoda|windmill' [0x1101b resolution 24]
+building=* & (heritage=* | historic=*)  & man_made!=tower [0x1101b resolution 24]
+
+building=* & name=* & man_made!=tower [0x0d resolution 24]
 
 (building=industrial | building=warehouse) & area_size()>160 [0x0d resolution 24]
 building=* & is_in(landuse,residential,all)=false & area_size()>160 [0x0d resolution 24]
