@@ -44,8 +44,8 @@ end
 
 if (leisure=swimming_pool ) then
 	swimming_pool=personal { deletealltags; }
-        access=yes & (location!=indoor)  [0x3f00 resolution 22]
-        area_size()>150 & (location!=indoor)  [0x3f00 resolution 22]
+    access=yes & (location!=indoor)  [0x3f00 resolution 22]
+    area_size()>150 & (location!=indoor)  [0x3f00 resolution 22]
 end
 
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
