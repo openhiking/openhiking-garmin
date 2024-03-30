@@ -11,36 +11,54 @@
 
 building=residential & historic!=* { delete building; }
 
+
+# Remapping
 building=* & (amenity=* | shop=* | tourism=* | leisure=* | emergency=*) { add has_amenity=true; }
 
-if (building~'supermarket|warehouse|kiosk') then
-	has_amenity!=true {name '${short_name}'|'${name}'} [0x1101d resolution 24]
-	() [0x1101d resolution 24]
+building~'kiosk' { set building=supermarket}
+building~'yes|commercial|retail|warehouse' & shop=* { set building=supermarket}
+
+building~'chapel|temple|church|cathedral|basilica|monastery|synagogue|mosque' { set building=religious}
+
+building~'civic|fire_station|government' { set building=public}
+building=yes & tourism=museum { set building=museum}
+
+building~'kindergarten|school|college|university' { set building=education}
+building=yes & amenity~'kindergarten|school|college|university' { set building=education}
+
+building~'clinic' { set building=hospital}
+building=yes & amenity~'clinic|hospital'  { set building=hospital}
+
+building~'train_station|parking' { set building=transportation}
+
+if (sport=swimming) then
+	building~'sports_hall|sports_centre' { set building=swimming_facility}
+	leisure~'sports_hall|sports_centre'  { set building=swimming_facility}
+else 
+	building~'riding_hall|sports_hall|stadium' {set building=sports_centre }
+	leisure=sports_hall { set building=sports_centre}
 end
-building=* & shop=* [0x1101d resolution 24]
+
+building~'castle|pagoda|windmill' { set building=historic}
+building=* & (heritage=* | historic=*)  & man_made!=tower { set building=historic}
 
 
+# Rendering
 building=* & name=* & has_amenity!=true  {name '${short_name}'|'${name}'} [0x0d resolution 24]
 
-building=retail [0x0d resolution 24]
+building=supermarket [0x1101d resolution 24]
+building=religious [0x1101a resolution 24]
+building=public [0x11013 resolution 24]
+building=museum [0x11012 resolution 24]
+building=education [0x11014 resolution 24]
+building=hospital [0x11015 resolution 24]
+building=transportation [0x11016 resolution 24]
+building=sports_centre [0x1101f resolution 24]
+building=swimming_facility [0x11101 resolution 24]
+building=historic [0x1101b resolution 24]
 
-building=cathedral | building=church | building=temple | building=monastery [0x0d resolution 24]
-building=mosque | building=synagogue [0x0d resolution 24]
 
-building=government | building=hospital | building=public | building=civic [0x0d resolution 24]
-building=train_station | building=transportation | building=parking [0x0d resolution 24]
-building=kindergarten | building=school | building=college | building=university [0x0d resolution 24]
-
-sport=swimming & leisure~'sports_hall|sports_centre'  [0x11101 resolution 24]
-building~'sports_hall|sports_centre' & sport=swimming [0x11101 resolution 24]
-building~'riding_hall|sports_hall|sports_centre|stadium' [0x1101f resolution 24]
-building=* & leisure=sports_centre [0x1101f resolution 24]
-leisure=sports_hall [0x1101f resolution 24]
-
-building~'castle|pagoda|windmill' [0x1101b resolution 24]
-building=* & (heritage=* | historic=*)  & man_made!=tower [0x1101b resolution 24]
-
+# Others
 building=* & name=* & man_made!=tower [0x0d resolution 24]
-
-(building=industrial | building=warehouse) & area_size()>160 [0x0d resolution 24]
+building~'retail|warehouse|industrial' & area_size()>160 [0x0d resolution 24]
 building=* & is_in(landuse,residential,all)=false & area_size()>160 [0x0d resolution 24]

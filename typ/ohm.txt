@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 73064 octets
-; Fichier TYP compilé     28/03/2024     21:41:43
-; Décompilé le 3/28/2024 à 9:41:45 PM
+; Longueur: 73105 octets
+; Fichier TYP compilé     30/03/2024     15:17:54
+; Décompilé le 3/30/2024 à 3:24:40 PM
 
 [_id]
 ProductCode=1
@@ -83,6 +83,12 @@ Type=0x11004,9
 Type=0x11005,9
 Type=0x11006,9
 Type=0x11008,9
+Type=0x11012,9
+Type=0x11013,9
+Type=0x11014,9
+Type=0x11015,9
+Type=0x11016,9
+Type=0x1101a,9
 Type=0x1101b,9
 Type=0x1101d,9
 Type=0x1101f,9
@@ -2038,6 +2044,122 @@ CustomColor=No
 ContourColor=No
 Xpm="0 0 1 0"
 "1 c #DDD340"
+[end]
+
+
+[_polygon]
+Type=0x11012
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_51/Customizable area/Non NT, NT
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="32 32 2 1"
+"! c #FF65B4"
+"# c #BD956A"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+"#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
+"!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
+;12345678901234567890123456789012
+[end]
+
+
+[_polygon]
+Type=0x11013
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_52/Customizable area/Non NT, NT
+String1=0x04,Public building
+String2=0x14,Középület
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="0 0 1 0"
+"1 c #BD956A"
+[end]
+
+
+[_polygon]
+Type=0x11014
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_53/Customizable area/Non NT, NT
+String1=0x04,Education building
+String2=0x14,Oktatás
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="0 0 1 0"
+"1 c #BD956A"
+[end]
+
+
+[_polygon]
+Type=0x11015
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_54/Customizable area/Non NT, NT
+String1=0x04,Healthcare building
+String2=0x14,Egészségügyi épület
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="0 0 1 0"
+"1 c #BD956A"
+[end]
+
+
+[_polygon]
+Type=0x11016
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_55/Customizable area/Non NT, NT
+String1=0x04,Transportation building
+String2=0x14,Közlekedés épület
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="0 0 1 0"
+"1 c #BD956A"
+[end]
+
+
+[_polygon]
+Type=0x1101a
+;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_59/Customizable area/Non NT, NT
+String1=0x04,Religiou building
+String2=0x14,Vallási épület
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+Xpm="0 0 1 0"
+"1 c #BD956A"
 [end]
 
 
