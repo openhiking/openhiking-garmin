@@ -21,6 +21,7 @@ nsis
 tdbfile
 order-by-decreasing-area
 add-pois-to-areas
+pois-to-areas-placement=
 add-pois-to-lines
 link-pois-to-ways
 remove-ovm-work-files
