@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 73105 octets
-; Fichier TYP compilé     30/03/2024     15:17:54
-; Décompilé le 3/30/2024 à 3:24:40 PM
+; Longueur: 73489 octets
+; Fichier TYP compilé     30/03/2024     17:00:24
+; Décompilé le 3/30/2024 à 5:00:26 PM
 
 [_id]
 ProductCode=1
@@ -2050,12 +2050,14 @@ Xpm="0 0 1 0"
 [_polygon]
 Type=0x11012
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_51/Customizable area/Non NT, NT
+String1=0x04,Museum
+String2=0x14,Múzeum
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #FF65B4"
+"! c #7B306A"
 "# c #BD956A"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"

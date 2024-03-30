@@ -19,7 +19,7 @@ building~'yes|commercial|kiosk|retail|warehouse' & shop~'department_store|mall|s
 
 building~'chapel|temple|church|cathedral|basilica|monastery|synagogue|mosque' { set building=religious}
 
-building~'civic|fire_station|government' { set building=public}
+building~'civic|fire_station|government|library' { set building=public}
 building=yes & tourism=museum { set building=museum}
 
 building~'kindergarten|school|college|university' { set building=education}
@@ -43,7 +43,7 @@ building=* & (heritage=* | historic=*)  & man_made!=tower { set building=histori
 
 
 # Rendering
-building=* & name=* & has_amenity!=true  {name '${short_name}'|'${name}'} [0x0d resolution 24]
+building=* & name=* & has_amenity!=true  {name '${short_name}'|'${name}'} 
 
 building=supermarket [0x1101d resolution 24]
 building=religious [0x1101a resolution 24]
