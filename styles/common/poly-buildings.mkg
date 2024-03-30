@@ -15,8 +15,7 @@ building=residential & historic!=* { delete building; }
 # Remapping
 building=* & (amenity=* | shop=* | tourism=* | leisure=* | emergency=*) { add has_amenity=true; }
 
-building~'kiosk' { set building=supermarket}
-building~'yes|commercial|retail|warehouse' & shop=* { set building=supermarket}
+building~'yes|commercial|kiosk|retail|warehouse' & shop~'department_store|mall|supermarket' { set building=supermarket}
 
 building~'chapel|temple|church|cathedral|basilica|monastery|synagogue|mosque' { set building=religious}
 
