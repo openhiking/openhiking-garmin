@@ -38,7 +38,7 @@ else
 	leisure=sports_hall { set building=sports_centre}
 end
 
-building~'castle|pagoda|windmill' { set building=historic}
+building~'castle|gatehouse|pagoda|windmill' { set building=historic}
 building=* & (heritage=* | historic=*)  & man_made!=tower { set building=historic}
 
 
