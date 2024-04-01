@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 73507 octets
-; Fichier TYP compilé     30/03/2024     19:59:02
-; Décompilé le 3/30/2024 à 7:59:06 PM
+; Longueur: 74293 octets
+; Fichier TYP compilé     04/01/2024     10:38:26
+; Décompilé le 4/1/2024 à 10:38:29 AM
 
 [_id]
 ProductCode=1
@@ -1705,7 +1705,7 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #BD9500"
+"! c #CF6D50"
 "# c #FF958B"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -2324,7 +2324,7 @@ Xpm="32 32 2 1"
 [_polygon]
 Type=0x1101a
 ;GRMN_TYPE: Customizable Areas/CUSTOMIZABLE_AREA_59/Customizable area/Non NT, NT
-String1=0x04,Religiou building
+String1=0x04,Religious building
 String2=0x14,Vallási épület
 ExtendedLabels=Y
 FontStyle=SmallFont
@@ -2345,8 +2345,8 @@ FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
 Xpm="32 32 2 1"
-"! c #BD6541"
-"# c #FFCAD5"
+"! c #BD9520"
+"# c #FF656A"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
 "!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#"
 "#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!"
