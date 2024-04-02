@@ -3,7 +3,7 @@
 #
 # Map building automation
 #
-# Copyright (c) 2021-2023 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -412,6 +412,14 @@ ifeq ($(CYCLE_MAP),yes)
 	CYCLE_MAP_OPT=--cycle-map
 endif
 
+ifneq ($(NEARBY_POI_CFG_FILE),)
+	NEARBY_POI_CFG_OPT=--nearby-poi-rules-config=$(CONFIG_DIR)$(PSEP)$(NEARBY_POI_CFG_FILE)
+endif
+
+ifneq ($(ROAD_NAME_CFG_FILE),)
+	ROAD_NAME_CFG_OPT=--road-name-config=$(CONFIG_DIR)$(PSEP)$(ROAD_NAME_CFG_FILE)
+endif
+
 ifeq ($(GMAPSUPP),yes)
 	GMAPSUPP_OPTION=--gmapsupp
 endif
@@ -624,7 +632,8 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --product-version=$(PRODUCT_VERSION) \
 	--series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
-	 --code-page=$(CODE_PAGE) $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
+	 --code-page=$(CODE_PAGE)  $(NEARBY_POI_CFG_OPT) $(ROAD_NAME_CFG_OPT) \
+	 $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);$(MAP_REGION_SOPT)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
@@ -719,7 +728,8 @@ cleanoutput:
 
 
 test:
-	@echo $(MAP_REGION_SOPT) 	
+	@echo $(NEARBY_POI_CFG_OPT) 	
+	@echo $(ROAD_NAME_CFG_OPT) 	
 
 
 
