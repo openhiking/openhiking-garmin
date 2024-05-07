@@ -9,6 +9,7 @@
 ########################################################
 
 #contour=elevation & contour_ext=elevation_minor		{ name '${ele|conv:m=>ft}'; }	[0x20 resolution 24]
+contour=elevation & contour_ext=elevation_minor { delete contour; delete contour_ext;  }
 contour=elevation & contour_ext=elevation_medium	{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 22]
 contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[0x22 resolution 21]
 contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
