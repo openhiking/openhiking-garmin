@@ -1,0 +1,60 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering rule definitions
+#
+# Copyright (c) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (mkgmap:option:CODE_PAGE=1252) then
+include "../common/codepage-remapping.mkg"
+end
+
+include "../common/points-line2poi-removal.mkg"
+include "../common/points-access-propagation.mkg"
+include "../common/points-naming.mkg"
+include "../common/points-natural.mkg"
+include "../common/points-public-services.mkg"
+include "../common/points-shops.mkg"
+include "../common/points-food.mkg"
+include "../common/points-accomodation.mkg"
+include "../common/points-culture.mkg"
+include "../common/points-religious-facilities.mkg"
+include "../common/points-education.mkg"
+include "../common/points-healthcare.mkg"
+include "../common/points-emergency.mkg"
+include "../common/points-financial.mkg"
+include "../common/points-transportation.mkg"
+include "../common/points-barriers.mkg"
+include "../common/points-leisure.mkg"
+include "../common/points-wilderness.mkg"
+include "../common/points-waterway.mkg"
+include "../common/points-industrial.mkg"
+include "../common/points-military.mkg"
+include "../common/points-historical.mkg"
+include "../common/points-places.mkg"
+include "../common/points-fixme.mkg"
+include "../common/points-obstacles.mkg"
+include "../common/points-other.mkg"
+
+include "../common/points-pilgrimage-symbols.mkg"
+include "../common/points-hiking-symbols.mkg"
+
+if (mkgmap:option:REGION=ce) then
+include "../common/points-hiking-symbols-hu.mkg"
+include "../common/points-hiking-symbols-czsk.mkg"
+include "../common/points-hiking-symbols-osmc.mkg"
+include "../common/points-hiking-symbols-ce.mkg"
+end
+
+if (mkgmap:option:REGION=balkans) then
+include "../common/points-hiking-symbols-osmc.mkg"
+end
+
+if (mkgmap:option:REGION=nordic) then
+include "../common/points-hiking-symbols-no.mkg"
+end
+
+

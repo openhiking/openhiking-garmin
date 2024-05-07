@@ -1,0 +1,35 @@
+#######################################################
+# OpenHikingMap
+#
+# Line rendering style definitions
+#
+# Copyright (c) 2021-2024 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (mkgmap:option:CODE_PAGE=1252 & mkgmap:option:REGION=ce) then
+include "../common/codepage-remapping.mkg"
+end
+
+include "../common/lines-tagging-simplification.mkg"
+include "../common/lines-access-propagation.mkg"
+include "../common/lines-dont-render.mkg"
+
+include "../common/lines-surface-groups.mkg"
+include "../common/lines-highways-remap.mkg"
+include "../common/lines-highways-width.mkg"
+include "../common/lines-hiking-markings.mkg"
+include "../common/lines-hiking-trails.mkg"
+include "../common/lines-structures.mkg"
+include "../common/lines-access-restriction.mkg"
+include "../common/lines-highways.mkg"
+
+include "../common/lines-administrative.mkg"
+include "../common/lines-contours-rare.mkg"
+include "../common/lines-fences.mkg"
+include "../common/lines-natural.mkg"
+include "../common/lines-railways.mkg"
+include "../common/lines-aerialways.mkg"
+include "../common/lines-ski-tracks.mkg"
+include "../common/lines-other.mkg"
