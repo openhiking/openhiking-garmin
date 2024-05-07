@@ -634,7 +634,7 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
 	 --code-page=$(CODE_PAGE)  $(NEARBY_POI_CFG_OPT) $(ROAD_NAME_CFG_OPT) \
 	 $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
-	 --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --style-option="CODE_PAGE=$(CODE_PAGE);$(MAP_REGION_SOPT)" \
+	 --style-file=$(STYLES_DIR) --style="$(MAP_STYLE)" --style-option="CODE_PAGE=$(CODE_PAGE);$(MAP_REGION_SOPT)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
 
