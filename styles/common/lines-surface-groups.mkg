@@ -3,7 +3,7 @@
 #
 # Surface group definitions
 #
-# Copyright (c) 2021-2023 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -18,11 +18,11 @@ highway=* &
  surface~'sett|cobblestone'  { set surface_type=paved_cstone  ; }
 
 highway=* &
- surface~'fine_gravel|compacted|pebblestone|rock|grass_paver'
+ surface~'fine_gravel|compacted|pebblestone|grass_paver'
 { set surface_type=unpaved_hard; }
 
 highway=*
-& surface~'ground|earth|dirt' 
+& surface~'ground|earth|dirt|rock' 
 { set surface_type=unpaved_normal; }
 
 highway=*
