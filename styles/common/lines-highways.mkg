@@ -12,7 +12,7 @@ highway=motorway | highway=trunk | highway=motorway_link | highway=trunk_link { 
 
 highway=* & (motor_vehicle=no | motor_vehicle=forestry | motor_vehicle=agricultural | motor_vehicle=permit) &  (foot!=* | foot=yes | foot=designated) { set motor_vehicle_restricted=true; }
 
-highway=* & name=* { set mkgmap:street='${name}' }
+highway=* & name=* { set mkgmap:street='${name}'; }
 highway=* {set mkgmap:label:2='${alt_name}'}
 highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
 

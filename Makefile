@@ -319,7 +319,7 @@ BOUNDS_DIR?=$(BOUNDS_CACHE_DIR)$(PSEP)bounds-$(TILES_SOURCE)
 MAP_BOUNDS_O5M=bounds.o5m
 MAP_BOUNDS_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_O5M)
 
-BOUNDS_ADMIN_CONDITION?="boundary=administrative and ( admin_level=8 or admin_level=9 )"
+BOUNDS_ADMIN_CONDITION?="boundary=administrative and ( admin_level=2 or admin_level=8 or admin_level=9 )"
 
 MAP_BOUNDS_TEMP1_O5M=bounds-temp1.o5m
 MAP_BOUNDS_TEMP1_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_BOUNDS_TEMP1_O5M)
@@ -331,7 +331,7 @@ POSTAL_CODES=2026 2099 2407 2453 2485 2508 2509 2660 2835 2879 2903 2921 3065 30
 BOUNDS_POSTAL_CONDITION="( boundary=postal_code and ( first
 BOUNDS_POSTAL_CONDITION+=$(foreach POSTAL_CODE,$(POSTAL_CODES),or postal_code=$(POSTAL_CODE))
 BOUNDS_POSTAL_CONDITION:=$(subst first or ,,$(BOUNDS_POSTAL_CONDITION))
-BOUNDS_POSTAL_CONDITION+=) ) or ( boundary=administrative and ( admin_level=8 or admin_level=9 ) )"
+BOUNDS_POSTAL_CONDITION+=) ) or ( boundary=administrative and (  admin_level=2 or admin_level=8 or admin_level=9 ) )"
 
 
 ##############################################

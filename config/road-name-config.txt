@@ -1,0 +1,32 @@
+# -*- coding: UTF-8 -*-
+#######################################################
+# OpenHikingMap
+#
+# Road name configuration
+#
+# Copyright (c) 2024 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+##########################################################################
+# Section 1
+# prefix1:<lang> list of 1st words
+# prefix2:<lang> further words to combine with each prefix1 word, separated with a blank
+# suffix:<lang> gives list of suffix words
+
+# German
+suffix:de = " Straße", "-Straße", " Strasse", "-Strasse", " Weg", "-Weg"
+
+# Hungarian
+suffix:hu = " út", " útja", " körút", " utca", " tér", " Tere", " Köz", " Sor", " Park", " Sétány", " Dűlő", " Lejtő", " Lépcső", " Udvar", " Árok", " Part", " Rakpart"
+
+#########################################################################
+# Section 2
+# Map three letter ISO country codes to list of used languages for road names.
+# It is assumed that the style sets mkgmap:country to one of these ISO codes.
+
+lang:AUT = de
+lang:HUN = hu
+
+

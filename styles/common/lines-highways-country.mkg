@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Road name configuration
+#
+# Copyright (c) 2024 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+highway=* & name=* { set mkgmap:country='${mkgmap:admin_level2}' }
+#highway=* & name=* { set mkgmap:country='HUN' }
