@@ -17,7 +17,7 @@ leisure=picnic_table & foot!=no [0x6404 resolution 24]
 amenity=bench & foot!=no  [0x1170a resolution 24]
 leisure=firepit & foot!=no [0x5300 resolution 24]
 
-man_made=tower & tower:type=observation & (tourism=viewpoint | viewpoint=yes | access=yes) & foot!=no {name '${short_name}'|'${name}'} [0x6400 resolution 22]
+man_made=tower & tower:type~'observation|observation;communication' & (tourism=viewpoint | viewpoint=yes | access=yes) & foot!=no {name '${short_name}'|'${name}'} [0x6400 resolution 22]
 
 tourism=viewpoint & foot!=no [0x6603 resolution 22]
 
