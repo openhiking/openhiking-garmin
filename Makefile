@@ -78,7 +78,7 @@ OSM_COUNTRIES_EUROPE_FP := $(foreach ds,$(OSM_COUNTRIES_EUROPE),$(OSM_CACHE_DIR)
 OSM_COUNTRIES_ASIA_FP := $(foreach ds,$(OSM_COUNTRIES_ASIA),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 OSM_COUNTRIES_GLOBAL_FP := $(foreach ds,$(OSM_COUNTRIES_GLOBAL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
-MAP_OSM_LATEST_PBF := $(OSM_COUNTRIES_EUROPE_FP) $(OSM_COUNTRIES_ASIA_FP) $(OSM_COUNTRIES_GLOBAL_FP)
+MAP_OSM_LATEST_PBF = $(OSM_COUNTRIES_EUROPE_FP) $(OSM_COUNTRIES_ASIA_FP) $(OSM_COUNTRIES_GLOBAL_FP)
 
 ##############################################
 # Preprocessing
@@ -88,7 +88,6 @@ BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
 PREFILTER_CONDITION?="building=residential building=apartments building=detached building=house building=garage building=garages natural=tree_row"
 
-#MAP_OSM_LATEST_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
 ifeq ($(PREFILTERING),yes)
 	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
