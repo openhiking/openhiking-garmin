@@ -78,6 +78,8 @@ OSM_COUNTRIES_EUROPE_FP := $(foreach ds,$(OSM_COUNTRIES_EUROPE),$(OSM_CACHE_DIR)
 OSM_COUNTRIES_ASIA_FP := $(foreach ds,$(OSM_COUNTRIES_ASIA),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 OSM_COUNTRIES_GLOBAL_FP := $(foreach ds,$(OSM_COUNTRIES_GLOBAL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
+OSM_COUNTRIES_ALL = $(OSM_COUNTRIES_EUROPE) $(OSM_COUNTRIES_ASIA) $(OSM_COUNTRIES_GLOBAL)
+
 MAP_OSM_LATEST_PBF = $(OSM_COUNTRIES_EUROPE_FP) $(OSM_COUNTRIES_ASIA_FP) $(OSM_COUNTRIES_GLOBAL_FP)
 
 ##############################################
@@ -90,11 +92,11 @@ PREFILTER_CONDITION?="building=residential building=apartments building=detached
 
 
 ifeq ($(PREFILTERING),yes)
-	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
-	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
+	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
+	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
 else
-	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
-	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
 endif
 
 
@@ -102,7 +104,7 @@ endif
 # Hiking Symbol Generation
 
 MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
-MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
+MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
 ROUTE_CONDITION?="route=hiking or route=foot or ( route=piste and piste:type=nordic ) or ( route=ski and piste:type=nordic )"
@@ -119,7 +121,7 @@ SYMBOLS_START_ID=120000000000
 ##############################################
 # Merging
 
-MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
+MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
 MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
 
 
@@ -152,7 +154,7 @@ else
 	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-clipped.o5m
 endif
 
-MAP_INP_OSC := $(foreach ds,$(OSM_COUNTRY_LIST),$(TILES_DIR)$(PSEP)$(ds)-places.osc)
+MAP_INP_OSC := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-places.osc)
 
 MAP_MERGED_NAMED_PBF=master$(MAP)-named.pbf
 MAP_MERGED_NAMED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_NAMED_PBF)
