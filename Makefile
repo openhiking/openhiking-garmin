@@ -12,6 +12,9 @@
 ##############################################
 # Builder configuratios
 CONFIG_DIR=config
+BOUNDARY_DIR=boundaries
+STYLES_DIR=styles
+TYP_DIR=typ
 
 
 ##############################################
@@ -583,7 +586,7 @@ cleanoutput:
 
 test:
 	@echo $(OSM_COUNTRIES_EUROPE_FP) 	
-	@echo $(MAP_OSM_LATEST_PBF) 	
+	@echo $(BOUNDARY_POLYGON_FP) 	
 
 
 
