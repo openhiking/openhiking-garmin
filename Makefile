@@ -67,9 +67,10 @@ endif
 
 ##############################################
 # OSM Data Acquisition
-GEOFABRIK_URL=http://download.geofabrik.de/europe/
+
 GEOFABRIK_URL_EUROPE=http://download.geofabrik.de/europe/
 GEOFABRIK_URL_ASIA=https://download.geofabrik.de/asia/
+GEOFABRIK_URL_GLOBAL=https://download.geofabrik.de/
 
 OSM_COUNTRIES_EUROPE?=$(OSM_COUNTRY_LIST)
 
@@ -342,14 +343,16 @@ contour-hr:
 	 --max-nodes-per-tile=0 --o5m -o $(CONTOUR_FILE_FP) $(DEM_SOURCE_TILES)
 
 
-
-#$(OSM_CACHE_DIR)$(PSEP2)%-latest.osm.pbf:
-$(OSM_COUNTRIES_EUROPE_FP):
-	$(WGET) $(GEOFABRIK_URL_EUROPE)$*-latest.osm.pbf -P $(OSM_CACHE_DIR)
-
+$(OSM_COUNTRIES_EUROPE_FP): GEOFABRIK_URL = $(GEOFABRIK_URL_EUROPE)
+$(OSM_COUNTRIES_ASIA_FP): GEOFABRIK_URL = $(GEOFABRIK_URL_ASIA)
+$(OSM_COUNTRIES_GLOBAL_FP): GEOFABRIK_URL = $(GEOFABRIK_URL_GLOBAL)
+$(OSM_CACHE_DIR)$(PSEP2)%-latest.osm.pbf:
+	@echo	$(WGET) $(GEOFABRIK_URL)$*-latest.osm.pbf -P $(OSM_CACHE_DIR)
 
 refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
 	@echo "Completed"
+
+
 
 $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
