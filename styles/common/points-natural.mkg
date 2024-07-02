@@ -8,10 +8,10 @@
 #
 ########################################################
 
-waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' } [0x6508 resolution 24]
-natural=peak & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' |'${name:hu} (${ele})' } [0x06616 resolution 22]
+waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' | '${name:en}' } [0x6508 resolution 24]
+natural=peak & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' |'${name:hu} (${ele})' | '${name:en} (${ele})' } [0x06616 resolution 22]
 
-natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' }
+natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' | '${name:en}' }
 
 
 natural=peak [0x06616 resolution 22]
