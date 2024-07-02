@@ -8,10 +8,10 @@
 #
 ########################################################
 
-shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
-tourism=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
-amenity=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
-emergency=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
-leisure=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
-historic=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${old_name}' | '${name:hu}' }
-place=*    {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' }
+shop=* {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+tourism=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+amenity=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+emergency=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+leisure=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+historic=*  {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${old_name}' | '${name:hu}' | '${name:en}' }
+place=*    {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
