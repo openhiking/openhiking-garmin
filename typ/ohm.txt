@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 74293 octets
-; Fichier TYP compilé     04/01/2024     10:38:26
-; Décompilé le 4/1/2024 à 10:38:29 AM
+; Longueur: 74294 octets
+; Fichier TYP compilé     07/06/2024     10:31:06
+; Décompilé le 7/6/2024 à 10:31:10 AM
 
 [_id]
 ProductCode=1
@@ -3856,6 +3856,24 @@ Xpm="32 1 2  1"
 ;12345678901234567890123456789012
 String1=0x14,Árok
 String2=0x04,Ditch
+ExtendedLabels=N
+[end]
+
+
+[_line]
+Type=0x10b04
+;GRMN_TYPE: Political Borders/INTRN_PLTCL_BDRY(NT)/International boundary/NT
+UseOrientation=N
+Xpm="32 4 2  1"
+"! c #CC00FF"
+"  c none"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"  !   !   !   !   !   !   !   ! "
+" !   !   !   !   !   !   !   !  "
+;12345678901234567890123456789012
+String1=0x14,Régió határ
+String2=0x04,Region border
 ExtendedLabels=N
 [end]
 
