@@ -122,6 +122,14 @@ apply {
 	}
 }
 
+jel=vcv {
+apply {
+	set trail_p10_color=orange;
+	set trail_p10_name='${short_name}'|'${name}'|'${ref}';
+	}
+}
+
+
 end
 
 
