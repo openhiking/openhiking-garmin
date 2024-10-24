@@ -1,27 +1,17 @@
 #######################################################
 # OpenHikingMap
 #
-# Point rendering: Historical
+# Point rendering: Historical objects
 #
-# Copyright (c) 2021-2023 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
 
-if (historic=castle) then
-	castle_type=palace & ruins!=*  [0x10D11 resolution 22]
-	(castle_type=stately | castle_type=manor) & ruins!=*  [0x10D12 resolution 22]
-	ruins!=*  [0x2c11 resolution 22]
-end
-
-historic=city_gate & ruins!=*  [0x6415 resolution 24]
-historic=fort & ruins!=* [0x2c11 resolution 22]
-man_made=tower & tower:type=defensive & ruins!=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'  } [0x6418 resolution 22]
-
-
 # Various ruins
 historic~'castle|fort|tower' & ruins=* [0x2c12 resolution 22]
+historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
 
 if (historic=ruins) then
 	ruins~'castle|fort|tower'  [0x2c12 resolution 22]
@@ -29,7 +19,18 @@ if (historic=ruins) then
 	() [0x2c13 resolution 24]
 end
 
-historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
+# Non-ruins
+if (historic=castle) then
+	castle_type=palace   [0x10D11 resolution 22]
+	(castle_type=stately | castle_type=manor)  [0x10D12 resolution 22]
+	()  [0x2c11 resolution 22]
+end
+
+historic=manor  [0x10D12 resolution 22]
+historic=city_gate  [0x6415 resolution 24]
+historic=fort [0x2c11 resolution 22]
+man_made=tower & tower:type=defensive & ruins!=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'  } [0x6418 resolution 22]
+
 
 # Archeological sites
 if (historic=archaeological_site) then
