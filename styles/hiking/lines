@@ -28,7 +28,7 @@ include "../common/lines-highways.mkg"
 
 include "../common/lines-administrative.mkg"
 include "../common/lines-contours.mkg"
-include "../common/lines-fences.mkg"
+include "../common/lines-barriers.mkg"
 include "../common/lines-natural.mkg"
 include "../common/lines-railways.mkg"
 include "../common/lines-aerialways.mkg"

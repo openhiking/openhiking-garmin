@@ -25,14 +25,6 @@ aeroway=runway [0x27 resolution 22]
 
 
 #######################################
-# Walls
-#
-barrier=wall & wall=castle_wall [0x10F10 resolution 24 ]
-barrier=city_wall [0x10F10 resolution 24]
-barrier=wall & wall!=castle_wall [0x10F11 resolution 24 ]
-
-
-#######################################
 # Pipes
 #
 man_made=pipeline & location=overground [0x028 resolution 24]

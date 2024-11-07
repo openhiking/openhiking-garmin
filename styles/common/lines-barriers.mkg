@@ -1,0 +1,18 @@
+#######################################################
+# OpenHikingMap
+#
+# Barrier rendering definitions
+#
+# Copyright (C) 2021-2024 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+# May be landuse boundary 
+barrier=fence & is_in(landuse,residential,all_in_or_on)=false & is_in(landuse,allotments,all_in_or_on)=false [0x10F11 resolution 24 continue]
+
+#######################################
+# Walls
+barrier=wall & wall=castle_wall [0x10F10 resolution 24 ]
+barrier=city_wall [0x10F10 resolution 24]
+barrier=wall  [0x10F11 resolution 24 continue]
