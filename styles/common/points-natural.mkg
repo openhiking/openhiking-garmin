@@ -3,7 +3,7 @@
 #
 # Point rendering: Natural
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -15,6 +15,7 @@ natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'
 
 
 natural=peak [0x06616 resolution 22]
+natural=volcano [0x06608 resolution 22]
 natural=bay   [0x6503 resolution 22]
 
 if (natural=spring) then
@@ -39,7 +40,7 @@ if (natural=sinkhole) then
 	() [0x0660C resolution 24]
 end
 
-natural=cave_entrance  [0x06608 resolution 24]
+natural=cave_entrance  [0x06609 resolution 24]
 natural=saddle & name=*  [0x06613 resolution 24]
 natural=geyser  [0x06509 resolution 24]
 

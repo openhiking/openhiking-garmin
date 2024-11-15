@@ -50,7 +50,7 @@ end
 historic=tomb & tomb=tumulus  [0x6406 resolution 24]
 historic=tomb   [0x6405 resolution 24]
 
-historic=mine | historic=adit  [0x640d resolution 24]
+historic=mine | historic=mine_shaft | historic=mine_adit | historic=adit [0x640d resolution 24]
 man_made=adit & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
 man_made=mineshaft & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
 

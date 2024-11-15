@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 74420 octets
-; Fichier TYP compilé     28/09/2024     08:50:56
-; Décompilé le 9/28/2024 à 8:51:05 AM
+; Longueur: 74397 octets
+; Fichier TYP compilé     15/11/2024     09:31:47
+; Décompilé le 11/15/2024 à 9:31:56 AM
 
 [_id]
 ProductCode=1
@@ -11387,6 +11387,40 @@ DayXpm="15 13 3 1"   Colormode=16
 [_point]
 Type=0x06608
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/CRATER/Crater/Non NT, NT
+String1=0x04,Peak
+String2=0x14,Csúcs
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #BD006A"
+"#	c #BD0020"
+"%	c #BD3000"
+"  	c none"
+"                "
+"                "
+"                "
+"                "
+"                "
+"       #        "
+"      %#%       "
+"      ###       "
+"     %!#!%      "
+"     #####      "
+"                "
+"                "
+"                "
+"                "
+"                "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x06609
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/FLAT/Flat/Non NT, NT
 String1=0x04,Cave
 String2=0x14,Barlang
 ExtendedLabels=Y
