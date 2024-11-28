@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 74397 octets
-; Fichier TYP compilé     15/11/2024     09:31:47
-; Décompilé le 11/15/2024 à 9:31:56 AM
+; Longueur: 74559 octets
+; Fichier TYP compilé     28/11/2024     22:22:19
+; Décompilé le 11/28/2024 à 10:22:21 PM
 
 [_id]
 ProductCode=1
@@ -8228,6 +8228,70 @@ DayXpm="16 16 7 1"   Colormode=16
 
 
 [_point]
+Type=0x02e0f
+;GRMN_TYPE: //
+String1=0x14,Trafik
+String2=0x04,Tobacco shop
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="17 17 33 2"   Colormode=16
+"!!	c #B23127"
+"!#	c #8A3B2F"
+"!%	c #BA3A32"
+"!?	c #833F34"
+"!$	c #6E4434"
+"!*	c #31623F"
+"!=	c #724D40"
+"!1	c #BF4841"
+"!2	c #375841"
+"!3	c #7C5042"
+"!4	c #7B594F"
+"!5	c #437050"
+"!6	c #81645B"
+"!7	c #C8645D"
+"!8	c #846D66"
+"!9	c #8A736B"
+"#!	c #987E75"
+"##	c #998883"
+"#%	c #A89088"
+"#?	c #B19C95"
+"#$	c #AAA2A0"
+"#*	c #B5ABA9"
+"#=	c #BCB0AC"
+"#1	c #BBB5B4"
+"#2	c #E6BAB7"
+"#3	c #C8BDBA"
+"#4	c #C8D5CC"
+"#5	c #D7D4D4"
+"#6	c #E6DFDD"
+"#7	c #E3E9E5"
+"#8	c #FCFBFB"
+"#9	c #FFFFFF"
+"  	c none"
+"          #9#9#9#9#9#9#9          "
+"      #9#8#1!9!6!3!6!9#1#8#9      "
+"    #9#6!6!8#$#5#!###3!4!8#6#9    "
+"  #9#6!3#!#*!3!?!#!?!8#!##!6#6#9  "
+"  #8!6#!##!#!!!1!7!1!!!##!!8!6#8  "
+"#9#1!$!$!#!%#2#8#7#8#2!%!#!$!$#1#9"
+"#9!9!$!$!!#2#4!5!*!5#4#2!!!$!$!9#9"
+"#9!=!3!#!1#8!5#8#8#8!5#8!1!#!3!=#9"
+"#9!$!$!#!7#7!*!*#9!2!*#7!7!#!$!$#9"
+"#9!=!$!#!1#8!5!*#8!2!5#8!1!#!$!=#9"
+"#9#!#=!4!!#2#4!5!*!5#4#2!!!3#*#!#9"
+"#9#1!8#!!#!%#2#8#7#8#2!%!#!6!4#1#9"
+"  #8!9#*!6!#!!!1!7!1!!!#!6#?###8  "
+"  #9#6!=#1!6!6!#!#!#!4!6#3!8#6#9  "
+"    #9#6!8!6#1#%###3!9#$!6#6#9    "
+"      #9#8#1#!!4!4!6!9#1#8#9      "
+"          #9#9#9#9#9#9#9          "
+;12345678901234567
+[end]
+
+
+[_point]
 Type=0x02f01
 ;GRMN_TYPE: Business - Services/GAS_STATION/Gas, fuel station/Non NT
 String1=0x14,Benzinkút
@@ -11387,34 +11451,26 @@ DayXpm="15 13 3 1"   Colormode=16
 [_point]
 Type=0x06608
 ;GRMN_TYPE: Geographical Named Points of Interest - Land Related/CRATER/Crater/Non NT, NT
-String1=0x04,Peak
-String2=0x14,Csúcs
+String1=0x04,Volcano
+String2=0x14,Vulkán
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 4 1"   Colormode=16
-"!	c #BD006A"
-"#	c #BD0020"
-"%	c #BD3000"
+DayXpm="9 8 4 1"   Colormode=16
+"!	c #FF0000"
+"#	c #FF9500"
+"%	c #FFFFFF"
 "  	c none"
-"                "
-"                "
-"                "
-"                "
-"                "
-"       #        "
-"      %#%       "
-"      ###       "
-"     %!#!%      "
-"     #####      "
-"                "
-"                "
-"                "
-"                "
-"                "
-"                "
-;1234567890123456
+"    %    "
+"   %!%   "
+"  %#!#%  "
+"  %!!!%  "
+" %#!!!#% "
+" %!!!!!% "
+"%#!!!!!#%"
+" %%%%%%% "
+;123456789
 [end]
 
 
@@ -11560,6 +11616,91 @@ DayXpm="13 11 4 1"   Colormode=16
 "  %!! ! !!%  "
 "   %%! !%%   "
 ;1234567890123
+[end]
+
+
+[_point]
+Type=0x0660f
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/PILLAR/Pillar/Non NT, NT
+String1=0x14,Bazaltorgona
+String2=0x04,Columnar jointing
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="14 16 9 1"   Colormode=16
+"!	c #000000"
+"#	c #C5C5C5"
+"%	c #A4A4A4"
+"?	c #838383"
+"$	c #737373"
+"*	c #D5D5D5"
+"=	c #FFFFFF"
+"1	c #E6E6E6"
+"  	c none"
+"   ==         "
+"  =!!=        "
+" =!=#!==      "
+"=!=1#%!!=     "
+"=!!1%!1#!==   "
+"=!#!!1###!!=  "
+"=!#%?!##!1#!= "
+"=!#%?#!!##%%!="
+"=!#%?!**!%%!!="
+"=!#%!11*#!!?!="
+"=!#%!!1#!!%?!="
+"=!#%!#!!$!%?!="
+"=!#%!#%?$!%?!="
+"=!#%!#%?$!%?!="
+"=!#%!#%?$!%?!="
+" ============ "
+;12345678901234
+[end]
+
+
+[_point]
+Type=0x06612
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/RESERVE/Reserve/Non NT, NT
+String1=0x14,Hasadékkürtõ
+String2=0x04,Volcanic vent
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 16 1"   Colormode=16
+"!	c #B02713"
+"#	c #69271F"
+"%	c #202020"
+"?	c #D84023"
+"$	c #753730"
+"*	c #505050"
+"=	c #D3796C"
+"1	c #7F807F"
+"2	c #D59184"
+"3	c #CFA69F"
+"4	c #B7B7B7"
+"5	c #E5C2BC"
+"6	c #EBDBD9"
+"7	c #FFFFFF"
+"8	c #FF0000"
+"  	c none"
+"        7       "
+"       7=7      "
+"     775=7      "
+"    7272!77     "
+"    7?6=8767    "
+"    7???=6=77   "
+"    7?88=?2767  "
+"   77=8!?=5=37  "
+"  767?!8!8??7   "
+"  7=8?=8=!!=7   "
+"   7?8!!!8!57   "
+"   75!8!8!?7    "
+"  741!!!8!$477  "
+" 71*#!!!!!!$%17 "
+"7117777777777117"
+" 77          77 "
+;1234567890123456
 [end]
 
 
@@ -11899,44 +12040,51 @@ DayXpm="16 16 29 2"   Colormode=16
 [_point]
 Type=0x10d08
 ;GRMN_TYPE: Business - Attractions/ARENA(NT)/Arena or track/NT
-String1=0x04,Sport centre
-String2=0x14,Sport központ
+String1=0x14,Sport Központ
+String2=0x04,Sport centre
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="16 16 14 1"   Colormode=16
-"!	c #672E31"
-"#	c #5E3E40"
-"%	c #4D4E51"
-"?	c #6F5053"
-"$	c #715256"
-"*	c #375D68"
-"=	c #C96A6F"
-"1	c #727172"
-"2	c #ADA8AE"
-"3	c #C5C5C5"
-"4	c #C6EBF8"
-"5	c #B7ECFC"
-"6	c #FEFEFE"
+DayXpm="17 14 23 2"   Colormode=16
+"!!	c #000000"
+"!#	c #FF0000"
+"!%	c #7B6500"
+"!?	c #525252"
+"!$	c #737373"
+"!*	c #FF958B"
+"!=	c #949494"
+"!1	c #AAAAAA"
+"!2	c #B1B1B1"
+"!3	c #7BBCBC"
+"!4	c #BCBCBC"
+"!5	c #7BC2C2"
+"!6	c #C2C2C2"
+"!7	c #C5C5C5"
+"!8	c #7BCDCD"
+"!9	c #7BD3D3"
+"#!	c #DEDEDE"
+"##	c #E3E3E3"
+"#%	c #7BF0F0"
+"#?	c #7BF3F3"
+"#$	c #7BFFFF"
+"#*	c #FFFFFF"
 "  	c none"
-"    66    666   "
-"   6%%6  6%%6   "
-"  62%%6666%%26  "
-"  6#%%!!!!%%#6  "
-"  62%%6666%%26  "
-"   6%%6  6%%6   "
-"   6666666666   "
-" 66111111111166 "
-"62=2621331262=26"
-"63$$$$$?$$$$$$36"
-" 613%5*45*5%316 "
-" 613%5*45*5%316 "
-" 613%5*45*5%316 "
-"6613%5*45*5%3166"
-"?$$$$$$?$$$$$$$$"
-"6666666666666666"
-;1234567890123456
+"                #*#*#*            "
+"              #*!!!#!*#*          "
+"              #*!!!#!#!*          "
+"          #*#*#*!!#*#*#*          "
+"      #*#*!=!$!$!$!$!$!=#*#*      "
+"    #*!$!=!7!7!7!7!7!7!7!=!$#*    "
+"  #*!$!2!6!7!7!7!7!7!7!7!4!1!$#*  "
+"  #*!?!?!?!?!?!?!?!?!?!?!?!?!?#*  "
+"  #*!%!6!%##!%#*!%#*!%#!!%!4!%#*  "
+"  #*!%!%!%!%!%!%!%!%!%!%!%!%!%#*  "
+"  #*!!!5!9!!#?#$!!#$#%!!!8!3!!#*  "
+"  #*!!!5!9!!#?#$!!#$#%!!!8!3!!#*  "
+"#*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#*"
+"#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*"
+;12345678901234567
 [end]
 
 
@@ -12013,6 +12161,55 @@ DayXpm="16 16 8 1"   Colormode=16
 "   ?*********?  "
 "    ?????????   "
 ;1234567890123456
+[end]
+
+
+[_point]
+Type=0x10d0d
+;GRMN_TYPE: Business - Attractions/POW_MOSQUE(NT)/Religious place of worship/NT
+String1=0x14,Minaret
+String2=0x04,Minaret
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 17 18 2"   Colormode=16
+"!!	c #090907"
+"!#	c #20171D"
+"!%	c #2E2E2C"
+"!?	c #31312E"
+"!$	c #534F51"
+"!*	c #5B5659"
+"!=	c #645960"
+"!1	c #6E626A"
+"!2	c #6F3F60"
+"!3	c #7E7B72"
+"!4	c #8C897E"
+"!5	c #90517D"
+"!6	c #BC74A2"
+"!7	c #C5C5C5"
+"!8	c #F2F2F2"
+"!9	c #FFFFFF"
+"#!	c #CF9CBC"
+"  	c none"
+"            !9!?!9            "
+"          !9!*!?!*!9          "
+"          !1!?!?!?!1!9        "
+"        !9!%!?!?!?!%!9        "
+"        !9!%!1!4!7!%!9        "
+"        !9!%!1!4!7!%!9        "
+"        !9!%!1!4!#!%!9        "
+"    !9!9!9!%!1!4!!!%!9!9!9    "
+"  !1!%!%!%!%!%!%!!!%!?!*!*!4  "
+"!9!%!6!5!5!2!2!5!5!6!6#!#!!*!9"
+"!9!$!6!5!5!2!2!5!5!6!6#!#!!4!9"
+"  !9!3!=!$!2!2!5!5!6!1!3!4!9  "
+"    !8!9!3!%!%!%!%!%!3!9!8    "
+"        !9!%!1!4!7!%!9        "
+"        !9!%!1!4!7!%!9        "
+"        !9!%!1!4!7!%!9        "
+"          !9!9!9!9!9          "
+;123456789012345
 [end]
 
 
@@ -12362,6 +12559,48 @@ DayXpm="14 18 7 1"   Colormode=16
 
 
 [_point]
+Type=0x11104
+;GRMN_TYPE: Business - Emergency and Government/COURTHOUSE(NT)/Courthouse/NT
+String1=0x14,Óratorony
+String2=0x04,Clock tower
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="11 17 11 1"   Colormode=16
+"!	c #000000"
+"#	c #24180D"
+"%	c #5B4C36"
+"?	c #977148"
+"$	c #A2815C"
+"*	c #D0B262"
+"=	c #BCA783"
+"1	c #C6B591"
+"2	c #F7FACE"
+"3	c #FFFFFF"
+"  	c none"
+"     3     "
+"    3%3    "
+"   3%%%3   "
+"  3%%%%%3  "
+" 3%*****%3 "
+"3%#######%3"
+"3#??$=$??#3"
+"3#?12221?#3"
+"3#?222!2?#3"
+"3#?22!22?#3"
+"3#?22222?#3"
+"3#?=222=?#3"
+"3#??$=$??#3"
+"3%#######%3"
+" 3%*****%3 "
+" 3%*****%3 "
+"  3333333  "
+;12345678901
+[end]
+
+
+[_point]
 Type=0x11500
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_1/User customizable point type/Non NT, NT
 String1=0x04,Gate
@@ -12604,6 +12843,51 @@ DayXpm="16 16 9 1"   Colormode=16
 "1$*****$1       "
 "!!!!!!!!!1      "
 "111111111       "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1150b
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_12/User customizable point type/Non NT, NT
+String1=0x14,Hűtőtorony
+String2=0x04,Cooling tower
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 15 1"   Colormode=16
+"!	c #4E4E4E"
+"#	c #595959"
+"%	c #6F6F6F"
+"?	c #818181"
+"$	c #8C8C8C"
+"*	c #9A9A9A"
+"=	c #A9A9A9"
+"1	c #AFAFAF"
+"2	c #B9B9B9"
+"3	c #C7C7C7"
+"4	c #D4D4D4"
+"5	c #E0E0E0"
+"6	c #EFEFEF"
+"7	c #FFFFFF"
+"  	c none"
+" 7777777777     "
+"73$$$$$$$$37    "
+"7$77777777$7    "
+"73$$$$$777$7    "
+" 777777777777   "
+"    7$!##!!!$7  "
+"    73%=$?%#37  "
+"     7%=$?%!7   "
+"     7%=$?%!7   "
+"     7%=$?%!7   "
+"    7=?=$?%!17  "
+"    7?*=$?%#%67 "
+"   75#2=$?%%!47 "
+"   7#*2=$?%%#!7 "
+"   7!!!!!!!!!!7 "
+"    7777777777  "
 ;1234567890123456
 [end]
 
@@ -12961,6 +13245,66 @@ DayXpm="9 18 11 1"   Colormode=16
 
 
 [_point]
+Type=0x11515
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_22/User customizable point type/Non NT, NT
+String1=0x14,Szennyvíztelep
+String2=0x04,Wastewater plant
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="18 13 33 2"   Colormode=16
+"!!	c #040204"
+"!#	c #565556"
+"!%	c #5D5C5D"
+"!?	c #656465"
+"!$	c #6D6C6D"
+"!*	c #757475"
+"!=	c #7D7C7D"
+"!1	c #858485"
+"!2	c #109A8B"
+"!3	c #8D8C8D"
+"!4	c #159F90"
+"!5	c #949394"
+"!6	c #19A394"
+"!7	c #1DA798"
+"!8	c #9C9B9C"
+"!9	c #21AB9C"
+"#!	c #25AFA0"
+"##	c #A5A3A5"
+"#%	c #2FB9AA"
+"#?	c #ACABAC"
+"#$	c #33BCAD"
+"#*	c #B4B3B4"
+"#=	c #39C3B4"
+"#1	c #3BC5B6"
+"#2	c #3DC7B8"
+"#3	c #3FC9BA"
+"#4	c #BCBBBC"
+"#5	c #44CEBF"
+"#6	c #47D0C1"
+"#7	c #BDFFD5"
+"#8	c #FFFFFF"
+"#9	c #FFFF00"
+"  	c none"
+"            #8#8#8#8#8#8            "
+"      #8#8#8!!!!!!!!!!!!#8#8#8      "
+"    #8!!!!!!#!#!!9!7!6!4!!!!!!#8    "
+"  #8!!#1#=#$#%#%#7#9!7#9!6#9!2!!#8  "
+"#8!!#5#3#2#=#$#7#8!!!!!!!!!!!!!!!!#8"
+"#8!!!!#6#5#3#1#=#7#%#9#!#9!9#9!!!!#8"
+"#8!!!#!!!!!!#3#2#=#$#$#%!!!!!!#4!!#8"
+"#8!!!#!%!?!$!!!!!!!!!!!!###?#*#4!!#8"
+"  #8!!!%!?!$!*!=!1!3!5!8###?#*!!#8  "
+"    #8!!!!!!!*!=!1!3!5!8!!!!!!#8    "
+"      #8#8#8!!!!!!!!!!!!#8#8#8      "
+"            #8#8#8#8#8#8            "
+"                                    "
+;123456789012345678
+[end]
+
+
+[_point]
 Type=0x11516
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_23/User customizable point type/Non NT, NT
 String1=0x04,Water works
@@ -13049,60 +13393,89 @@ DayXpm="14 17 18 2"   Colormode=16
 [_point]
 Type=0x11519
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_26/User customizable point type/Non NT, NT
-String1=0x14,Szennyvíztelep
-String2=0x04,Wastewater plant
+String1=0x04,Radar
+String2=0x14,Radar állomás
 ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="18 13 33 2"   Colormode=16
-"!!	c #040204"
-"!#	c #565556"
-"!%	c #5D5C5D"
-"!?	c #656465"
-"!$	c #6D6C6D"
-"!*	c #757475"
-"!=	c #7D7C7D"
-"!1	c #858485"
-"!2	c #109A8B"
-"!3	c #8D8C8D"
-"!4	c #159F90"
-"!5	c #949394"
-"!6	c #19A394"
-"!7	c #1DA798"
-"!8	c #9C9B9C"
-"!9	c #21AB9C"
-"#!	c #25AFA0"
-"##	c #A5A3A5"
-"#%	c #2FB9AA"
-"#?	c #ACABAC"
-"#$	c #33BCAD"
-"#*	c #B4B3B4"
-"#=	c #39C3B4"
-"#1	c #3BC5B6"
-"#2	c #3DC7B8"
-"#3	c #3FC9BA"
-"#4	c #BCBBBC"
-"#5	c #44CEBF"
-"#6	c #47D0C1"
-"#7	c #BDFFD5"
-"#8	c #FFFFFF"
-"#9	c #FFFF00"
+DayXpm="16 17 19 2"   Colormode=16
+"!!	c #000000"
+"!#	c #EE0063"
+"!%	c #A68F75"
+"!?	c #AC977F"
+"!$	c #B6A38F"
+"!*	c #C3B3A2"
+"!=	c #CCBFB0"
+"!1	c #D9CFC4"
+"!2	c #E4DDD5"
+"!3	c #EBE6E0"
+"!4	c #F1EEEA"
+"!5	c #FFFFFF"
+"!6	c #626262"
+"!7	c #414141"
+"!8	c #A20000"
+"!9	c #BD306A"
+"#!	c #D14981"
+"##	c #8D0000"
 "  	c none"
-"            #8#8#8#8#8#8            "
-"      #8#8#8!!!!!!!!!!!!#8#8#8      "
-"    #8!!!!!!#!#!!9!7!6!4!!!!!!#8    "
-"  #8!!#1#=#$#%#%#7#9!7#9!6#9!2!!#8  "
-"#8!!#5#3#2#=#$#7#8!!!!!!!!!!!!!!!!#8"
-"#8!!!!#6#5#3#1#=#7#%#9#!#9!9#9!!!!#8"
-"#8!!!#!!!!!!#3#2#=#$#$#%!!!!!!#4!!#8"
-"#8!!!#!%!?!$!!!!!!!!!!!!###?#*#4!!#8"
-"  #8!!!%!?!$!*!=!1!3!5!8###?#*!!#8  "
-"    #8!!!!!!!*!=!1!3!5!8!!!!!!#8    "
-"      #8#8#8!!!!!!!!!!!!#8#8#8      "
-"            #8#8#8#8#8#8            "
-"                                    "
-;123456789012345678
+"            !5!5!5!5            "
+"        !5!5!6!!!!!6!5!5        "
+"      !5!6!!!7!3!1!7!!!6!5      "
+"      !5!!!4!5!5!4!1!*!!!5      "
+"    !5!6!7!5!5!5!5!2!=!7!6!5    "
+"    !5!!!2!5!5!5!5!2!=!$!!!5    "
+"    !5!!!1!3!4!4!3!1!*!?!!!5    "
+"  !5!5!6!7!1!2!2!1!=!$!7!6!5!5  "
+"!5!7!5!5!!!*!=!*!*!$!%!!!5!5!7!5"
+"!5!6!##!!9!8!8####!8!8!9#!!#!6!5"
+"!5!6!##!!9!8!8####!8!8!9#!!#!6!5"
+"  !5!5!5##!9!5!5!5!5!9##!5!5!5  "
+"      !5##!5!9!5!5!9!5##!5      "
+"      !5##!5!5!#!#!5!5##!5      "
+"      !5##!5!5!#!#!5!5##!5      "
+"      !5##!5!9!5!5!9!5##!5      "
+"      !5##!9!5!5!5!5!9##!5      "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1151a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_27/User customizable point type/Non NT, NT
+String1=0x14,Világító torony
+String2=0x04,Light tower
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 15 10 1"   Colormode=16
+"!	c #000000"
+"#	c #F8FCF8"
+"%	c #FF9500"
+"?	c #FF6500"
+"$	c #FFCA6A"
+"*	c #FFFF00"
+"=	c #626262"
+"1	c #A4A4A4"
+"2	c #414141"
+"  	c none"
+"            ## "
+"      #   ##$*#"
+"     #1# #%%## "
+"    #1=1#%     "
+"    #===#??%$* "
+"    #=#=#%##   "
+"   #=1#1=#%%## "
+"   #=###=###$*#"
+"   #22222#  ## "
+"   #2###2#     "
+"   #!###!#     "
+"   #!222!#     "
+"   #!###!#     "
+"   #!# #!#     "
+"               "
+;123456789012345
 [end]
 
 
@@ -13370,6 +13743,131 @@ DayXpm="16 16 6 1"   Colormode=16
 "   %$$?%%?$$%   "
 "    %$$??$$%    "
 ;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11609
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_42/User customizable point type/Non NT, NT
+String1=0x14,Horpa
+String2=0x04,Historic quarry
+ExtendedLabels=N
+DayXpm="16 15 17 1"   Colormode=16
+"!	c #0B0B0B"
+"#	c #181818"
+"%	c #212121"
+"?	c #333333"
+"$	c #4A4A4A"
+"*	c #5C5C5C"
+"=	c #7E7E7E"
+"1	c #888888"
+"2	c #919191"
+"3	c #A2A2A2"
+"4	c #B3B3B3"
+"5	c #C1C1C1"
+"6	c #D2D2D2"
+"7	c #E0E0E0"
+"8	c #EFEFEF"
+"9	c #FFFFFF"
+"  	c none"
+"  9999          "
+" 9=**399        "
+"  994?#199      "
+"    992!%399    "
+"      9!!!?59   "
+"     9=!%!!#9   "
+"    96!#75?39   "
+"    9?!39999    "
+"   91!$9   99   "
+"  96!#79  9?$9  "
+"  9$!39   9!$9  "
+" 92!$9  9979977 "
+"96!!69 9%#99!!!9"
+"9$!29 9?!!99!!!9"
+"9999   999 8999 "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1160a
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_43/User customizable point type/Non NT, NT
+String1=0x14,Mészégető
+String2=0x04,
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="16 16 17 1"   Colormode=16
+"!	c #262626"
+"#	c #B35D26"
+"%	c #4C4B4A"
+"?	c #626262"
+"$	c #FF6262"
+"*	c #FF996A"
+"=	c #696C6D"
+"1	c #7D7D81"
+"2	c #E99D88"
+"3	c #9B999C"
+"4	c #FFD1A0"
+"5	c #ADA9AC"
+"6	c #C0C3CE"
+"7	c #DCDEEB"
+"8	c #FDFAF6"
+"9	c #F8FCF8"
+"  	c none"
+"   3        3   "
+"   3      1 1   "
+"    1 1   1 17  "
+"   =   1 1  71  "
+" 3 %   % %   1  "
+" 1 %  9999   1  "
+"  =  9?$??9 =7  "
+"  % 9??667$  =  "
+"   9$627767?9%  "
+"  9?76787*6$?9  "
+"  9?367=!=81$9  "
+"  9?364!!!66?9  "
+" 97$#66!!!416?9 "
+" 9$1355!!!6#1$9 "
+"9!!!!!!!!!!!!!!9"
+" 99999999999999 "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x1160b
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_44/User customizable point type/Non NT, NT
+String1=0x14,Bombakráter
+String2=0x04,
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="13 13 8 1"   Colormode=16
+"!	c #FFFF8B"
+"#	c #BD9500"
+"%	c #A4A4A4"
+"?	c #626262"
+"$	c #101010"
+"*	c #FFCA00"
+"=	c #FFFFFF"
+"  	c none"
+"    =====    "
+"   =$$$$$=   "
+"  =$!!!!!$=  "
+" =$!*###*!$= "
+"=$!*#%%%#*!$="
+"=$!#%$$$%#!$="
+"=$!#%$?$%#!$="
+"=$!#%$$$%#!$="
+"=$!*#%%%#*!$="
+" =$!*###*!$= "
+"  =$!!!!!$=  "
+"  ==$$$$$=   "
+"    =====    "
+;1234567890123
 [end]
 
 
@@ -13731,6 +14229,45 @@ DayXpm="14 7 3 1"   Colormode=16
 "  #!!#  #!!#  "
 "   ##    ##   "
 ;12345678901234
+[end]
+
+
+[_point]
+Type=0x1170c
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_77/User customizable point type/Non NT, NT
+String1=0x04,Closed lookout tower
+String2=0x14,Lezárt kilátótorony
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 18 7 1"   Colormode=16
+"!	c #5A4040"
+"#	c #664747"
+"%	c #795F51"
+"?	c #9F866B"
+"$	c #FFFFFF"
+"*	c #FF0000"
+"  	c none"
+"      $$$      "
+"    $$?%?$$    "
+"  $$%#!!!#%$$$ "
+" $%#!!!!!!!?**$"
+"$#!!!!!!!!?***$"
+" $$!!$$$$$***$ "
+"  $!!$   ***$  "
+"$$$!!$$$***?$$$"
+"$!!!!!?***?!!!$"
+"$!%!!%***%!!%!$"
+"$!!!?***?!!!!!$"
+"$$$?*** $!!!$$$"
+"  $***?$!$!!$  "
+" $***$$!$$!!$  "
+"$***?$!$!$!!$  "
+"$**?!!$ $!!!$  "
+" $$!!$   $!!$  "
+"   $$     $$   "
+;123456789012345
 [end]
 
 
@@ -14406,6 +14943,140 @@ DayXpm="16 16 25 2"   Colormode=16
 "      #1!!!!!!!!!!!!!!!!#1      "
 "        #1#1#1#1#1#1#1#1        "
 ;1234567890123456
+[end]
+
+
+[_point]
+Type=0x12113
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_404/User customizable point type/Non NT, NT
+String1=0x04,Ruined palace
+String2=0x14,Romos kastély
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="17 16 22 2"   Colormode=16
+"!!	c #000000"
+"!#	c #C14D2E"
+"!%	c #313131"
+"!?	c #A53D36"
+"!$	c #D5373F"
+"!*	c #414141"
+"!=	c #C45350"
+"!1	c #525252"
+"!2	c #DC5071"
+"!3	c #737373"
+"!4	c #E2938D"
+"!5	c #E2858E"
+"!6	c #999999"
+"!7	c #A4A4A4"
+"!8	c #B4B4B4"
+"!9	c #D5D5D5"
+"#!	c #E6E6E6"
+"##	c #FFFFFF"
+"#%	c #EAE26D"
+"#?	c #E7D0D3"
+"#$	c #A35700"
+"  	c none"
+"              ######              "
+"          ####!5!$!%####          "
+"    ######!5!$!4!4!4!3!%######    "
+"  ##!5!$!?!=!4!4#?#?#?#?!3!%!3##  "
+"##!5!$!=!4!4!4!%!%!3#?##!9##!9!3##"
+"##!2!?!4!5!4!%#%#%#%!1########!%##"
+"!#!?!?!?!5!!#%#%#%#%#%!9!9!9##!9!3"
+"##!!!!!7!3!!#%!*#%!*#%!!!8!3!9!3##"
+"##!!#%#%#%#$#%!*#%!*#%#$!9####!1##"
+"##!!#%!%#%#$#%!*#%!*#%!3!8!6##!7##"
+"##!!#%#%#%!3#%#%#%#%#%#$#%####!1##"
+"##!7!9!%#%!3#%!7!1!8#%!3#%!%##!!##"
+"###!!9!%#%#$#%!6!1!8#%#$#%!%#%!3##"
+"######!9!9#$#%!6!%!8#%!3#%#%#%!!##"
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+"##################################"
+;12345678901234567
+[end]
+
+
+[_point]
+Type=0x12114
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_405/User customizable point type/Non NT, NT
+String1=0x01,Ruined manor
+String2=0x14,Romos kúria
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 13 15 1"   Colormode=16
+"!	c #000000"
+"#	c #C15B3F"
+"%	c #414141"
+"?	c #A74A43"
+"$	c #525252"
+"*	c #C95E53"
+"=	c #737373"
+"1	c #949494"
+"2	c #EA98A0"
+"3	c #C5C5C5"
+"4	c #F6D4DC"
+"5	c #E6E6E6"
+"6	c #F9F9F9"
+"7	c #FFFFFF"
+"  	c none"
+"     66666     "
+"  6662??$1666  "
+" 62?*?*453=$36 "
+"62?**24255731%6"
+"#?*22*?2275577$"
+"6!!!!=$??2333$6"
+"6!555!522?177=6"
+"6!5=5%5$5%116%6"
+"6$555$655%633%6"
+"63515!6$5$5$6!6"
+"67555!6$5$556!6"
+"!!!!!!!!!!!!!!!"
+"666666666666666"
+;123456789012345
+[end]
+
+
+[_point]
+Type=0x12115
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_406/User customizable point type/Non NT, NT
+String1=0x04,Ruined church
+String2=0x14,Templomrom
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="17 16 10 1"   Colormode=16
+"!	c #000000"
+"#	c #525252"
+"%	c #E6E6E6"
+"?	c #FFFFFF"
+"$	c #A4A4A4"
+"*	c #E6E6E6"
+"=	c #C5C5C5"
+"1	c #737373"
+"2	c #414141"
+"  	c none"
+"       ?2?       "
+"      ?!21?      "
+"       ?2?       "
+"      ?!!$?      "
+"     ?!=%?!?     "
+"    ?!=?!??1?    "
+"   ?!=?!*1??!?   "
+"    ?!=?2??#?    "
+"   ?2!==?*=1#?   "
+"  ?!12====?#*2?  "
+" ?!1=2==!=*!**2? "
+" ?!==!=$2$=#=*2? "
+" ?2*=2=12$=!===? "
+" ?$**1=121=!==!? "
+"?!!!!!!!!!2!!2!2?"
+" ??????????????? "
+;12345678901234567
 [end]
 
 

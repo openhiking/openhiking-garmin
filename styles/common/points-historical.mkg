@@ -9,24 +9,37 @@
 ########################################################
 
 
+# Castles
+if (historic=castle) then
+	if (castle_type=palace) then
+		ruins=* [0x12113 resolution 22]
+		() [0x10D11 resolution 22]
+	end
+	if (castle_type=stately | castle_type=manor) then
+		ruins=* [0x12114 resolution 22]
+		() [0x10D12 resolution 22]
+	end
+	()  [0x2c11 resolution 22]
+end
+
+historic=manor & ruins=*  [0x12114 resolution 22]
+historic=manor  [0x10D12 resolution 22]
+
+
 # Various ruins
-historic~'castle|fort|tower' & ruins=* [0x2c12 resolution 22]
-historic~'aqueduct|building|church|city_gate|farm|manor' & ruins=* [0x2c04 resolution 24]
+historic~'fort|tower' & ruins=* [0x2c12 resolution 22]
+historic~'church' & ruins=* [0x12115 resolution 22]
+historic~'aqueduct|building|city_gate|farm|' & ruins=* [0x2c04 resolution 24]
 
 if (historic=ruins) then
-	ruins~'castle|fort|tower'  [0x2c12 resolution 22]
-	ruins~'chapel|church|monastery|temple'  [0x2c04 resolution 24]
+	ruins~'castle|fort'  [0x2c12 resolution 22]
+	ruins~'palace'  [0x12113 resolution 22]
+	ruins~'manor'  [0x12114 resolution 22]	
+	ruins~'chapel|church|monastery|temple'  [0x12115 resolution 24]
 	() [0x2c13 resolution 24]
 end
 
 # Non-ruins
-if (historic=castle) then
-	castle_type=palace   [0x10D11 resolution 22]
-	(castle_type=stately | castle_type=manor)  [0x10D12 resolution 22]
-	()  [0x2c11 resolution 22]
-end
-
-historic=manor  [0x10D12 resolution 22]
 historic=city_gate  [0x6415 resolution 24]
 historic=fort [0x2c11 resolution 22]
 man_made=tower & tower:type=defensive & ruins!=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'  } [0x6418 resolution 22]

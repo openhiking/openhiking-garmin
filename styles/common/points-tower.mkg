@@ -1,0 +1,24 @@
+#######################################################
+# OpenHikingMap
+#
+# Point rendering: Towers
+#
+# Copyright (c) 2024 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+if (man_made=tower) then
+    () {name '${name} (${name:hu|not-equal:name})' | '${short_name} (${name:hu|not-equal:short_name})' | '${short_name}'| '${name}' | '${name:hu}' | '${name:en}' }
+    tower:type=clock  [0x11104 resolution 24]    
+    tower:type=communication [0x1151B resolution 24]
+    tower:type=cooling [0x1150B resolution 24]
+    tower:type=observation  [0x1151C resolution 24]
+    tower:type=radar [0x11519 resolution 24]    
+    tower:type=watchtower  [0x1151D resolution 24]
+    ()  [0x06411 resolution 24]
+end
+
+man_made=chimney [0x11513 resolution 24]
+man_made=communications_tower  {name '${short_name}'|'${name}'} [0x1151B resolution 24]
+man_made=mast {name '${short_name}'|'${name}'} [0x1151B resolution 24]
