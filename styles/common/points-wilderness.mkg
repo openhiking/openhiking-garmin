@@ -3,7 +3,7 @@
 #
 # Point rendering: Wilderness Facilities
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2024 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -16,6 +16,11 @@ tourism=picnic_site & foot!=no [0x6404 resolution 24]
 leisure=picnic_table & foot!=no [0x6404 resolution 24]
 amenity=bench & foot!=no  [0x1170a resolution 24]
 leisure=firepit & foot!=no [0x5300 resolution 24]
+
+if (man_made=tower & tower:type~'observation|observation;communication') then
+    (abandoned:tourism=viewpoint | disused:tourism=viewpoint) {name '${short_name}'|'${name}'} [0x1170C resolution 22]
+    (tourism=viewpoint | viewpoint=yes | access=yes) & foot!=no {name '${short_name}'|'${name}'} [0x6400 resolution 22]
+end
 
 man_made=tower & tower:type~'observation|observation;communication' & (tourism=viewpoint | viewpoint=yes | access=yes) & foot!=no {name '${short_name}'|'${name}'} [0x6400 resolution 22]
 
