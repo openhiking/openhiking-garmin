@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 74559 octets
-; Fichier TYP compilé     28/11/2024     22:22:19
-; Décompilé le 11/28/2024 à 10:22:21 PM
+; Longueur: 78601 octets
+; Fichier TYP compilé     29/11/2024     20:57:50
+; Décompilé le 11/29/2024 à 9:05:33 PM
 
 [_id]
 ProductCode=1
@@ -13245,6 +13245,43 @@ DayXpm="9 18 11 1"   Colormode=16
 
 
 [_point]
+Type=0x11514
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_21/User customizable point type/Non NT, NT
+String1=0x14,Világítótorony
+String2=0x04,Lighthouse
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="15 15 8 1"   Colormode=16
+"!	c #000000"
+"#	c #F8FCF8"
+"%	c #A4A4A4"
+"?	c #414141"
+"$	c #FF3020"
+"*	c #BB5244"
+"=	c #FFFF00"
+"  	c none"
+"      #!#      "
+"     #!=!#     "
+"     #!=!#     "
+"    ##*$*##    "
+"    #*$$$*#    "
+"    #*$$$*#    "
+"    #?###?#    "
+"    #?###?#    "
+"    #*$$$*#    "
+"    #*$$$*#    "
+"    #?###?#    "
+"    ?%###%?    "
+"    *$$$$$*    "
+"   #*$$$$$*#   "
+"   #*$$$$$*#   "
+;123456789012345
+[end]
+
+
+[_point]
 Type=0x11515
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_22/User customizable point type/Non NT, NT
 String1=0x14,Szennyvíztelep
@@ -15052,30 +15089,30 @@ ContourColor=No
 DayXpm="17 16 10 1"   Colormode=16
 "!	c #000000"
 "#	c #525252"
-"%	c #E6E6E6"
-"?	c #FFFFFF"
-"$	c #A4A4A4"
-"*	c #E6E6E6"
-"=	c #C5C5C5"
-"1	c #737373"
-"2	c #414141"
+"%	c #FFFFFF"
+"?	c #A4A4A4"
+"$	c #E6E6E6"
+"*	c #C5C5C5"
+"=	c #737373"
+"1	c #414141"
+"2	c #B4B4B4"
 "  	c none"
-"       ?2?       "
-"      ?!21?      "
-"       ?2?       "
-"      ?!!$?      "
-"     ?!=%?!?     "
-"    ?!=?!??1?    "
-"   ?!=?!*1??!?   "
-"    ?!=?2??#?    "
-"   ?2!==?*=1#?   "
-"  ?!12====?#*2?  "
-" ?!1=2==!=*!**2? "
-" ?!==!=$2$=#=*2? "
-" ?2*=2=12$=!===? "
-" ?$**1=121=!==!? "
-"?!!!!!!!!!2!!2!2?"
-" ??????????????? "
+"       %1%       "
+"      %!1=%      "
+"       %1%       "
+"      %!!?%      "
+"     %!2%%!%     "
+"    %!2%*%%=%    "
+"   %!2%#%%%%!%   "
+"    %!2%=%%#%    "
+"   %1!22%%%=#%   "
+"  %!=1222$%#%1%  "
+" %!=*122!2$!%%1% "
+" %?**!21%12#*%1% "
+" %%%*121%$$!2*$% "
+" %1%$=21%$$!22!% "
+"%!!!!!!!!!1!!1!1%"
+" %%%%%%%%%%%%%%% "
 ;12345678901234567
 [end]
 

@@ -12,6 +12,7 @@ man_made=adit & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [
 man_made=mineshaft  & disused!=yes & abandoned!=yes {name '${short_name}'|'${name}'} [0x11510 resolution 24]
 
 man_made=petroleum_well [0x11511 resolution 24]
+man_made=lighthouse [0x11514 resolution 24]
 
 man_made=works & building!=* {name '${short_name}'|'${name}'} [0x11512 resolution 24]
 

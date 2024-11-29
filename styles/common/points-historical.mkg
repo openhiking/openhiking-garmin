@@ -78,11 +78,12 @@ historic=tomb   [0x6405 resolution 24]
 historic=mine | historic=mine_shaft | historic=mine_adit | historic=adit [0x640d resolution 24]
 man_made=adit & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
 man_made=mineshaft & (disused=yes | abandoned=yes) {name '${short_name}'|'${name}'|'${name:hu}'} [0x640d resolution 24]
+historic=quarry {name '${short_name}'|'${name}'|'${name:hu}'} [0x11609 resolution 24]
 
 man_made=watermill {name '${short_name}'|'${name}'|'${name:hu}'} [0x641e resolution 24]
 man_made=windmill {name '${short_name}'|'${name}'|'${name:hu}'} [0x641f resolution 24]
 
-#man_made=kiln & historic=yes  [0x1160A resolution 24]
+historic=lime_kiln [0x1160A resolution 24]
 
 historic=memorial & memorial=plaque  [0x10D03 resolution 24]
 historic=memorial  [0x10D02 resolution 24]
