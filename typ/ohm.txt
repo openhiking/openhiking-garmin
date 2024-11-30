@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 78803 octets
-; Fichier TYP compilé     30/11/2024     10:03:22
-; Décompilé le 11/30/2024 à 10:03:24 AM
+; Fichier TYP compilé     30/11/2024     10:35:13
+; Décompilé le 11/30/2024 à 10:35:14 AM
 
 [_id]
 ProductCode=1
@@ -13792,7 +13792,10 @@ Type=0x11609
 ;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_42/User customizable point type/Non NT, NT
 String1=0x14,Horpa
 String2=0x04,Historic quarry
-ExtendedLabels=N
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
 DayXpm="16 15 16 1"   Colormode=16
 "!	c #0B0B0B"
 "#	c #181818"
