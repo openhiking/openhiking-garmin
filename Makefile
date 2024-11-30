@@ -585,8 +585,8 @@ cleanoutput:
 
 
 test:
-	@echo $(OSM_COUNTRIES_EUROPE_FP) 	
-	@echo $(BOUNDARY_POLYGON_FP) 	
+	@echo $(MAKESYMBOLS)
+	@echo $(MKG_ROUTEMAPPER)
 
 
 
