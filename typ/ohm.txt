@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 78784 octets
-; Fichier TYP compilé     29/11/2024     22:10:35
-; Décompilé le 11/29/2024 à 10:10:44 PM
+; Longueur: 78803 octets
+; Fichier TYP compilé     30/11/2024     10:03:22
+; Décompilé le 11/30/2024 à 10:03:24 AM
 
 [_id]
 ProductCode=1
@@ -11800,8 +11800,9 @@ Type=0x06616
 String1=0x04,Peak
 String2=0x14,Csúcs
 ExtendedLabels=Y
-FontStyle=SmallFont
-CustomColor=No
+FontStyle=NormalFont
+CustomColor=Day
+DaycustomColor:#393000
 ContourColor=No
 DayXpm="16 16 4 1"   Colormode=16
 "!	c #404028"
@@ -13792,7 +13793,7 @@ Type=0x11609
 String1=0x14,Horpa
 String2=0x04,Historic quarry
 ExtendedLabels=N
-DayXpm="16 15 17 1"   Colormode=16
+DayXpm="16 15 16 1"   Colormode=16
 "!	c #0B0B0B"
 "#	c #181818"
 "%	c #212121"
@@ -13808,23 +13809,22 @@ DayXpm="16 15 17 1"   Colormode=16
 "6	c #D2D2D2"
 "7	c #E0E0E0"
 "8	c #EFEFEF"
-"9	c #FFFFFF"
 "  	c none"
-"  9999          "
-" 9=**399        "
-"  994?#199      "
-"    992!%399    "
-"      9!!!?59   "
-"     9=!%!!#9   "
-"    96!#75?39   "
-"    9?!39999    "
-"   91!$9   99   "
-"  96!#79  9?$9  "
-"  9$!39   9!$9  "
-" 92!$9  9979977 "
-"96!!69 9%#99!!!9"
-"9$!29 9?!!99!!!9"
-"9999   999 8999 "
+"                "
+"  =**3          "
+"    4?#1        "
+"      2!%3      "
+"       !!!?5    "
+"      =!%!!#    "
+"     6!#75?3    "
+"     ?!3        "
+"    1!$         "
+"   6!#7    ?$   "
+"   $!3     !$   "
+"  2!$     7  77 "
+" 6!!6   %#  !!! "
+" $!2   ?!!  !!! "
+"           8    "
 ;1234567890123456
 [end]
 
