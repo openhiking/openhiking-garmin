@@ -1,3 +1,6 @@
+R,E4,15,blue,
+R,E7,15,blue,
+R,ST,-1,,
 O,purple:white:::M:purple,13,purple,hu:lm
 O,purple:purple::M01:white,13,purple,hu:lm
 O,blue:white:::M:blue,14,blue,hu:km
@@ -13,7 +16,6 @@ O,:white:orange_dot:::,10,orange,osmc:white:orange_dot
 O,:yellow:blue_dot,7,blue,osmc:yellow:blue_dot
 O,::white:blue_rectangle,7,blue,osmc:white:blue_rectangle
 O,red:white: :T:red,5,red,no:t
-O,blue:blue::E4:yellow,-1,,
 O,orange:orange_circle::T:orange,5,orange,ro:vt
 O,orange:white:orange_trapezoid,10,orange,hu:vcv
 J,vcv,10,orange,hu:vcv
