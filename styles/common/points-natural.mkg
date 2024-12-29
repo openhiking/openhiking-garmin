@@ -15,8 +15,13 @@ natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'
 
 
 natural=peak [0x06616 resolution 22]
-natural=volcano & volcano:status=active [0x06608 resolution 22]
-natural=volcano [0x06616 resolution 22]
+
+if (natural=volcano) then
+	volcano:status=active | geological=volcanic_vent [0x06608 resolution 22]
+	() [0x06616 resolution 22]
+end
+
+geological=volcanic_vent [0x06612 resolution 22]
 
 natural=bay   [0x6503 resolution 22]
 
