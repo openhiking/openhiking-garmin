@@ -104,9 +104,11 @@ endif
 
 
 ##############################################
-# Hiking Symbol Generation
+# Route processing
 
+MAP_SYMBOL_PRIORITY_FILE=$(CONFIG_DIR)$(PSEP)symbol-priorities.csv
 MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
+
 MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
@@ -375,7 +377,7 @@ $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
 	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^  -o=$@
 
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
-	$(MAKESYMBOLS) --start-node-id=$(SYMBOLS_START_ID) --lookup-file=$(MAP_SYMBOL_LOOKUP_FILE) --pictogram-file=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
+	$(ROUTEMAPPER) --start-node-id=$(SYMBOLS_START_ID) --prio=$(MAP_SYMBOL_PRIORITY_FILE) --lookup=$(MAP_SYMBOL_LOOKUP_FILE) --pictogram=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
 
 
 symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
