@@ -3,12 +3,12 @@
 #
 # Pilgrimage relations 
 #
-# Copyright (C) 2021-2023 OpenHiking contributors
+# Copyright (C) 2021-2025 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-if (type=route & route~'hiking|foot' & pilgrimage=yes) then
+if (type=route & route~'hiking|foot' & pilgrimage=* & pilgrimage!=no) then
 
 state=proposed  {
 	delete route;
@@ -54,7 +54,7 @@ jel='zm' | osmc:symbol='green:white:::M:green' |  osmc:symbol~'green:green::M.*:
 }
 
 
-pilgrimage=yes {
+pilgrimage=* & pilgrimage!=no {
 	delete route;
 	delete jel;
 	delete osmc:symbol;
