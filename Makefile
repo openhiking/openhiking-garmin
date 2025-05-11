@@ -599,12 +599,20 @@ endif
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleanall:
-	$(DEL) $(TILES_DIR)$(PSEP)*
-	$(DEL) $(GMAP_DIR)$(PSEP)*
 ifeq ($(GMAPI),yes)
-	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+ifeq ($(LINUX),0)
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+else
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)*"
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_hdr$(PSEP)*"
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_hdr"
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)*"
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 endif
+endif
+	$(DEL) $(TILES_DIR)$(PSEP)*
+	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
