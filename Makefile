@@ -77,9 +77,13 @@ GEOFABRIK_URL_GLOBAL=https://download.geofabrik.de/
 
 OSM_COUNTRIES_EUROPE?=$(OSM_COUNTRY_LIST)
 
-OSM_COUNTRIES_EUROPE_FP := $(foreach ds,$(OSM_COUNTRIES_EUROPE),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
-OSM_COUNTRIES_ASIA_FP := $(foreach ds,$(OSM_COUNTRIES_ASIA),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
-OSM_COUNTRIES_GLOBAL_FP := $(foreach ds,$(OSM_COUNTRIES_GLOBAL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
+OSM_COUNTRIES_EUROPE_ALL := $(OSM_COUNTRIES_EUROPE) $(OSM_COUNTRIES_EUROPE_PARTIAL)
+OSM_COUNTRIES_ASIA_ALL := $(OSM_COUNTRIES_ASIA) $(OSM_COUNTRIES_ASIA_PARTIAL)
+OSM_COUNTRIES_GLOBAL_ALL := $(OSM_COUNTRIES_GLOBAL) $(OSM_COUNTRIES_GLOBAL_PARTIAL)
+
+OSM_COUNTRIES_EUROPE_FP := $(foreach ds,$(OSM_COUNTRIES_EUROPE_ALL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
+OSM_COUNTRIES_ASIA_FP := $(foreach ds,$(OSM_COUNTRIES_ASIA_ALL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
+OSM_COUNTRIES_GLOBAL_FP := $(foreach ds,$(OSM_COUNTRIES_GLOBAL_ALL),$(OSM_CACHE_DIR)$(PSEP)$(ds)-latest.osm.pbf)
 
 OSM_COUNTRIES_ALL = $(OSM_COUNTRIES_EUROPE) $(OSM_COUNTRIES_ASIA) $(OSM_COUNTRIES_GLOBAL)
 
@@ -88,18 +92,33 @@ MAP_OSM_LATEST_PBF = $(OSM_COUNTRIES_EUROPE_FP) $(OSM_COUNTRIES_ASIA_FP) $(OSM_C
 ##############################################
 # Preprocessing
 
+COMMON_DIR=$(WORKING_DIR)$(PSEP)common
 TILES_DIR=$(WORKING_DIR)$(PSEP)tiles-$(TILES_SOURCE)
 BOUNDARY_POLYGON_FP=$(BOUNDARY_DIR)$(PSEP)$(BOUNDARY_POLYGON)
 
 PREFILTER_CONDITION?="building=residential building=apartments building=detached building=house building=garage building=garages natural=tree_row"
+
+OSM_COUNTRIES_FULL = $(OSM_COUNTRIES_EUROPE) $(OSM_COUNTRIES_ASIA) $(OSM_COUNTRIES_GLOBAL)
+OSM_COUNTRIES_PARTIAL = $(OSM_COUNTRIES_EUROPE_PARTIAL) $(OSM_COUNTRIES_ASIA_PARTIAL) $(OSM_COUNTRIES_GLOBAL_PARTIAL)
+ALL_COUNTRIES=$(OSM_COUNTRIES_FULL) $(OSM_COUNTRIES_PARTIAL)
 
 
 ifeq ($(PREFILTERING),yes)
 	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
 	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-flt.o5m)
 else
-	MAP_INP_OSM_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
-	MAP_PREFILTER_OUTPUT_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+	MAP_INP_OSM_O5M_1 := $(foreach ds,$(OSM_COUNTRIES_FULL),$(COMMON_DIR)$(PSEP)$(ds)-latest.o5m)
+	MAP_INP_OSM_O5M_2 := $(foreach ds,$(OSM_COUNTRIES_PARTIAL),$(TILES_DIR)$(PSEP)$(ds)-clipped.o5m)
+	MAP_INP_OSM_O5M := $(MAP_INP_OSM_O5M_1) $(MAP_INP_OSM_O5M_2)
+endif
+
+#MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
+#MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
+
+ifeq (${LINUX},1)
+OSMC_COMPLETE_OPTS=--complete-ways --complete-multipolygons --complete-boundaries
+else
+OSMC_COMPLETE_OPTS=
 endif
 
 
@@ -124,10 +143,6 @@ endif
 
 ##############################################
 # Merging
-
-MAP_INP_OSM_PBF := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-clipped.pbf)
-MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
-
 
 MAP_INP_SUPP := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
 MAP_INP_SUPP_PBF := $(foreach ds,$(SUPPLEMENTARY_DATA),$(OSM_CACHE_DIR)$(PSEP)$(ds))
@@ -330,7 +345,15 @@ GMAPI_ZIP_NAME?=$(subst $(space),$(empty),$(FAMILY_NAME_STRIPPED)).zip
 ##############################################
 # Recipes
 
+check_defined_MAP= \
+    $(if $(MAP),, \
+        $(error MAP variable must be set1))
+
 .PHONY: refresh symbols merge bounds tiles map typ install zip clean cleanall cleancache 
+
+__check_MAP: 
+	@:$(call check_defined_MAP)
+
 
 alos:
 	$(DEMMGR) -r --poly=$(BOUNDARY_POLYGON_FP) --dem=$(DEM_DIR) --alos=$(ALOS_DOWNLOAD_SUBDIR)
@@ -357,23 +380,27 @@ $(OSM_CACHE_DIR)$(PSEP2)%-latest.osm.pbf:
 refresh:  $(MAP_OSM_LATEST_PBF) $(SUPPLEMENTARY_CACHED)
 	@echo "Completed"
 
+$(COMMON_DIR)$(PSEP2)%-latest.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
+	$(OSMCONVERT) $< -o=$@
 
 
 $(TILES_DIR)$(PSEP2)%-clipped.o5m: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
-	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
+	$(OSMCONVERT) $(OSMC_COMPLETE_OPTS) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 $(TILES_DIR)$(PSEP2)%-flt.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --drop=$(PREFILTER_CONDITION) --drop-author --drop-version -o=$@
-
-$(TILES_DIR)$(PSEP2)%-routes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
-	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
 
 $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 	$(OSMCONVERT) $< -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
-$(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M)
-	$(OSMCONVERT) --hash-memory=240-30-2  --drop-version $^  -o=$@
+
+$(COMMON_DIR)$(PSEP2)%-routes.o5m: $(COMMON_DIR)$(PSEP)%-latest.o5m
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
+
+$(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M) | __check_MAP
+	$(OSMCONVERT) --hash-memory=240-30-2  -B=$(BOUNDARY_POLYGON_FP) --drop-version $^  -o=$@
+
 
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
 	$(ROUTEMAPPER) --config=$(MAP_ROUTE_MAPPING_CONFIG) --prio=$(MAP_SYMBOL_PRIORITY_FILE) --lookup=$(MAP_SYMBOL_LOOKUP_FILE) --pictogram=$(MAP_HIKING_SYMBOLS_OSM_FP) $(MAP_ROUTES_PBF_FP)
@@ -384,7 +411,7 @@ symbols: $(MAP_HIKING_SYMBOLS_OSM_FP)
 
 
 $(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP) $(MAP_INP_CONTOUR)
-	$(OSMCONVERT) --hash-memory=240-30-2  $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
+	$(OSMCONVERT) $(OSMC_COMPLETE_OPTS) --hash-memory=240-30-2  $^ -B=$(BOUNDARY_POLYGON_FP) -o=$@
 
 
 merge: $(MAP_MERGED_PBF_FP)
