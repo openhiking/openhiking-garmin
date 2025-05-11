@@ -168,13 +168,9 @@ MAP_MERGED_O5M_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_O5M)
 
 PLACE_CONDITION?="place= or landuse=residential"
 
-ifeq ($(PREFILTERING),yes)
-	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-flt.o5m
-else
-	MAP_NAMING_INP_O5M := $(TILES_DIR)$(PSEP)%-clipped.o5m
-endif
-
-MAP_INP_OSC := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-places.osc)
+MAP_INP_OSC_1 := $(foreach ds,$(OSM_COUNTRIES_FULL),$(COMMON_DIR)$(PSEP)$(ds)-places.osc)
+MAP_INP_OSC_2 := $(foreach ds,$(OSM_COUNTRIES_PARTIAL),$(TILES_DIR)$(PSEP)$(ds)-cplaces.osc)
+MAP_INP_OSC := $(MAP_INP_OSC_1) $(MAP_INP_OSC_2)
 
 MAP_MERGED_NAMED_PBF=master$(MAP)-named.pbf
 MAP_MERGED_NAMED_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_MERGED_NAMED_PBF)
@@ -417,14 +413,23 @@ $(MAP_MERGED_PBF_FP):  $(MAP_INP_OSM_O5M) $(MAP_INP_SYMBOLS_OSM) $(MAP_INP_SUPP)
 
 merge: $(MAP_MERGED_PBF_FP)
 	@echo "Merge completed"
-	
-$(TILES_DIR)$(PSEP2)%-places.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+
+$(COMMON_DIR)$(PSEP2)%-places.o5m: $(COMMON_DIR)$(PSEP)%-latest.o5m
 	$(OSMFILTER) $< --keep=$(PLACE_CONDITION)  -o=$@
 
-$(TILES_DIR)$(PSEP2)%-places.pbf: $(TILES_DIR)$(PSEP)%-places.o5m
+$(COMMON_DIR)$(PSEP2)%-places.pbf: $(COMMON_DIR)$(PSEP)%-places.o5m
 	$(OSMCONVERT) $< -o=$@
 
-$(TILES_DIR)$(PSEP2)%-places.osc: $(TILES_DIR)$(PSEP)%-places.pbf
+$(COMMON_DIR)$(PSEP2)%-places.osc: $(COMMON_DIR)$(PSEP)%-places.pbf
+	$(MAKENAMES) $^ $@
+
+$(TILES_DIR)$(PSEP2)%-cplaces.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
+	$(OSMFILTER) $< --keep=$(PLACE_CONDITION)  -o=$@
+
+$(TILES_DIR)$(PSEP2)%-cplaces.pbf: $(TILES_DIR)$(PSEP)%-cplaces.o5m
+	$(OSMCONVERT) $< -o=$@
+
+$(TILES_DIR)$(PSEP2)%-cplaces.osc: $(TILES_DIR)$(PSEP)%-cplaces.pbf
 	$(MAKENAMES) $^ $@
 
 
