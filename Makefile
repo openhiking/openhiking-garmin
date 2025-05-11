@@ -130,7 +130,9 @@ MAP_SYMBOL_PRIORITY_FILE=$(CONFIG_DIR)$(PSEP)symbol-priorities.csv
 MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
 
 #MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
-MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(ALL_COUNTRIES),$(COMMON_DIR)$(PSEP)$(ds)-routes.o5m)
+MAP_COUNTRY_ROUTES_O5M_1 := $(foreach ds,$(OSM_COUNTRIES_FULL),$(COMMON_DIR)$(PSEP)$(ds)-routes.o5m)
+MAP_COUNTRY_ROUTES_O5M_2 := $(foreach ds,$(OSM_COUNTRIES_PARTIAL),$(TILES_DIR)$(PSEP)$(ds)-croutes.o5m)
+MAP_COUNTRY_ROUTES_O5M := $(MAP_COUNTRY_ROUTES_O5M_1) $(MAP_COUNTRY_ROUTES_O5M_2)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
 ROUTE_CONDITION?="route=hiking or route=foot or ( route=piste and piste:type=nordic ) or ( route=ski and piste:type=nordic )"
@@ -393,6 +395,9 @@ $(TILES_DIR)$(PSEP2)%-clipped.pbf: $(OSM_CACHE_DIR)$(PSEP)%-latest.osm.pbf
 
 
 $(COMMON_DIR)$(PSEP2)%-routes.o5m: $(COMMON_DIR)$(PSEP)%-latest.o5m
+	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
+
+$(TILES_DIR)$(PSEP2)%-croutes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
 $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M) | __check_MAP
