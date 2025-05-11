@@ -594,16 +594,16 @@ endif
 	$(DEL) $(GMAP_DIR)$(PSEP)*
 
 cleanall:
-ifeq ($(LINUX),0)
-ifeq ($(GMAPI),yes)
-	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
-endif
-endif
 	$(DEL) $(TILES_DIR)$(PSEP)*
 	$(DEL) $(GMAP_DIR)$(PSEP)*
+ifeq ($(GMAPI),yes)
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+endif
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
+	$(DEL) $(COMMON_DIR)$(PSEP)*.o5m
 
 cleanbounds:
 	$(DEL) $(BOUNDS_DIR)$(PSEP)*
