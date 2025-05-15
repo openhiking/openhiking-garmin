@@ -632,8 +632,8 @@ cleanoutput:
 
 
 test:
-	@echo "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)$(FAMILY_NAME).gmap$(PSEP)7*$(PSEP)*"
-	ls -l "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)$(FAMILY_NAME).gmap$(PSEP)7*$(PSEP)*"	
+	@echo "$(GMAP_DIR)$(PSEP)$(FAMILY_NAME).gmap$(PSEP)Product1/7*/*"
+	ls "$(GMAP_DIR)$(PSEP)$(FAMILY_NAME)$(PSEP)Product1"/7*/*
 	@echo $(MKG_ROUTEMAPPER)
 
 
