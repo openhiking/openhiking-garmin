@@ -609,12 +609,13 @@ ifeq ($(LINUX),0)
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 else
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/7*/*
-	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/*
-	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_hdr"/*
-	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)"/*	
-#$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"
-	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_hdr"
-	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)$(MAPNAME)"/*	
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/*	
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_mdr"/*
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_mdr"	
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"*
+#	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 endif
 endif
 	$(DEL) $(TILES_DIR)$(PSEP)*
