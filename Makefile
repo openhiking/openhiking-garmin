@@ -614,8 +614,8 @@ else
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_mdr"/*
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_mdr"	
-	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"*
-#	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
+	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"/*
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 endif
 endif
 	$(DEL) $(TILES_DIR)$(PSEP)*
