@@ -611,6 +611,7 @@ else
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/7*/*
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)$(MAPNAME)"/*	
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/7*	
+	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1$(PSEP)$(MAPNAME")	
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/*	
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"
 	$(DEL) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)openhiking_mdr"/*
