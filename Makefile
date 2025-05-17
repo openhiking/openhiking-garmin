@@ -625,7 +625,7 @@ endif
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
-	$(DEL) $(COMMON_DIR)$(PSEP)*.o5m
+	$(DEL) $(COMMON_DIR)$(PSEP)*
 
 cleanbounds:
 	$(DEL) $(BOUNDS_DIR)$(PSEP)*

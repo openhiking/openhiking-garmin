@@ -3,7 +3,7 @@
 #
 # Polygon - natural rendering definitions
 #
-# Copyright (c) 2021-2024 OpenHiking contributors
+# Copyright (c) 2021-2025 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -15,28 +15,40 @@ waterway=riverbank | waterway=dock {name '${name}'} [0x47 resolution 16]
 if (natural=water) then
 	water=river  [0x47 resolution 16]
 	tidal=yes  [0x51 resolution 16]
-	area_size()<10000 [0x4000 resolution 16]
+	area_size()<10000 [0x4000 resolution 18]
 	() [0x3e00 resolution 16]
 end
 
 if (landuse=reservoir | landuse=basin) then
-	area_size()<10000 [0x4000 resolution 16]
+	area_size()<10000 [0x4000 resolution 18]
 	() [0x3e00 resolution 16]
 end
 
 if (natural=wetland) then
-	wetland=reedbed  [0x10F0C resolution 16]
-	wetland=swamp  [0x10F0D resolution 16]
-	wetland=tidalflat [0x51 resolution 16]
+	wetland=reedbed  [0x10F0C resolution 18]
+	wetland=swamp  [0x10F0D resolution 18]
+	area_size()<10000 [0x51 resolution 18]	
 	() [0x51 resolution 16]
+	#wetland=tidalflat [0x51 resolution 16]
 end
 
 natural=marsh  [0x51 resolution 16]
-natural=mud [0x10F0B resolution 16]
+natural=mud [0x10F0B resolution 18]
 
-landuse=meadow | natural=grassland | landuse=grass | natural=fell  [0x16 resolution 16]
-natural=heath  [0x10F07 resolution 16]
-natural=scrub  [0x4f resolution 16]
+if (landuse=meadow | natural=grassland | landuse=grass | natural=fell) then
+	area_size()<10000 [0x16 resolution 18]	
+	() [0x16 resolution 16]
+end 
+	
+if (natural=heath)	then
+	area_size()<10000 [0x10F07 resolution 18]	
+	() [0x10F07 resolution 16]
+end
+
+if (natural=scrub)	then
+	area_size()<10000 [0x4f resolution 18]	
+	() [0x4f resolution 16]
+end
 
 if (natural=wood | landuse=forest) then
 	(wood=coniferous | leaf_type=needleleaved)  [0x10F00 resolution 16]
@@ -44,11 +56,35 @@ if (natural=wood | landuse=forest) then
 end
 
 geological=volcanic_lava_field [0x10F0E resolution 16]
-natural=bare_rock  [0x10F0A resolution 16]
-natural=scree [0x10F08 resolution 16]
-natural=shingle [0x10F09 resolution 16]
-natural=fell [0x10F0F resolution 16]
-natural=glacier [0x4D resolution 16]
 
-natural=sand [0x53 resolution 16]
+if (natural=bare_rock) then
+	area_size()<10000 [0x10F0A resolution 18]	
+	() [0x10F0A resolution 16]
+end
+
+if (natural=scree) then
+	area_size()<10000 [0x10F08 resolution 18]	
+	() [0x10F08 resolution 16]
+end
+
+if (natural=shingle) then
+	area_size()<10000 [0x10F09 resolution 18]	
+	() [0x10F09 resolution 16]
+end
+
+if (natural=fell) then
+	area_size()<10000 [0x10F0F resolution 18]	
+	() [0x10F0F resolution 16]
+end
+
+if (natural=glacier) then
+	area_size()<10000 [0x4D resolution 18]	
+	() [0x4D resolution 16]
+end
+
+if (natural=sand) then
+	area_size()<10000 [0x53 resolution 18]	
+	() [0x53 resolution 16]
+end
+
 natural=beach & natural!=bay [0x1b resolution 20]
