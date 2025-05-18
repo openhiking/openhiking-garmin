@@ -116,7 +116,7 @@ endif
 #MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
 
 ifeq (${LINUX},1)
-OSMC_COMPLETE_OPTS=--complete-ways --complete-multipolygons --complete-boundaries
+OSMC_COMPLETE_OPTS=--complete-ways --complete-multipolygons 
 else
 OSMC_COMPLETE_OPTS=
 endif
@@ -596,14 +596,6 @@ endif
 	$(COPY) $(GMAP_DIR)$(PSEP)*.typ $(MAPSOURCE_DIR)
 
 clean:
-ifeq ($(LINUX),0)
-ifeq ($(GMAPI),yes)
-	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
-endif
-endif
-	$(DEL) $(GMAP_DIR)$(PSEP)*
-
-cleanall:
 ifeq ($(GMAPI),yes)
 ifeq ($(LINUX),0)
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
@@ -620,8 +612,10 @@ else
 	$(RMDIR) "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)"
 endif
 endif
-	$(DEL) $(TILES_DIR)$(PSEP)*
 	$(DEL) $(GMAP_DIR)$(PSEP)*
+
+cleanall: clean
+	$(DEL) $(TILES_DIR)$(PSEP)*
 
 cleancache:
 	$(DEL) $(OSM_CACHE_DIR)$(PSEP)*.pbf
@@ -638,8 +632,6 @@ cleanoutput:
 test:
 	@echo $(FAMILY_NAME_STRIPPED)
 	@echo $(GMAPI_DIR_NAME)
-	@echo "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1/7*/*"
-	ls "$(GMAP_DIR)$(PSEP)$(GMAPI_DIR_NAME)$(PSEP)Product1"/7*/*
 
 
 

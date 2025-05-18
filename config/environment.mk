@@ -142,7 +142,7 @@ ifeq (${ComSpec},)
 	CMDLIST=&&
 	COPY=cp
 	MOVE=mv
-	DEL=rm
+	DEL=rm -f
         RMDIR=rmdir
 	CAT=cat
 else
