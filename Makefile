@@ -116,7 +116,7 @@ endif
 #MAP_INP_OSM_PBF_ARGS=$(foreach wrd,$(MAP_INP_OSM_PBF),--read-pbf file=$(wrd))
 
 ifeq (${LINUX},1)
-OSMC_COMPLETE_OPTS=--complete-ways --complete-multipolygons 
+OSMC_COMPLETE_OPTS=--complete-ways
 else
 OSMC_COMPLETE_OPTS=
 endif

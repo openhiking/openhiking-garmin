@@ -3,7 +3,7 @@
 #
 # Point rendering: Places
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2025 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -29,8 +29,8 @@ if (place=village ) then
 end
 
 
-place=suburb  [0x00B00 resolution 22  ]
-place=hamlet | place=farm  [0x00D00 resolution 22 ]
-place=islet [0x00D00 resolution 24 ]
-place=locality [0x06602 resolution 24 ]
+place=suburb & name=* [0x00B00 resolution 22  ]
+place~'hamlet|farm' & name=*  [0x00D00 resolution 22 ]
+place=islet & name=* [0x00D00 resolution 24 ]
+place=locality & name=* [0x06602 resolution 24 ]
 
