@@ -131,7 +131,7 @@ MAP_SYMBOL_LOOKUP_FILE=$(CONFIG_DIR)$(PSEP)symbol-lookup.csv
 
 #MAP_COUNTRY_ROUTES_O5M := $(foreach ds,$(OSM_COUNTRIES_ALL),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_COUNTRY_ROUTES_O5M_1 := $(foreach ds,$(OSM_COUNTRIES_FULL),$(COMMON_DIR)$(PSEP)$(ds)-routes.o5m)
-MAP_COUNTRY_ROUTES_O5M_2 := $(foreach ds,$(OSM_COUNTRIES_PARTIAL),$(TILES_DIR)$(PSEP)$(ds)-croutes.o5m)
+MAP_COUNTRY_ROUTES_O5M_2 := $(foreach ds,$(OSM_COUNTRIES_PARTIAL),$(TILES_DIR)$(PSEP)$(ds)-routes.o5m)
 MAP_COUNTRY_ROUTES_O5M := $(MAP_COUNTRY_ROUTES_O5M_1) $(MAP_COUNTRY_ROUTES_O5M_2)
 MAP_ROUTES_FILE=routes
 MAP_ROUTES_PBF_FP=$(TILES_DIR)$(PSEP)$(MAP_ROUTES_FILE).pbf
@@ -401,7 +401,7 @@ $(TILES_DIR)$(PSEP2)%-croutes.o5m: $(TILES_DIR)$(PSEP)%-clipped.o5m
 	$(OSMFILTER) $< --keep-nodes= --keep-ways-relations=$(ROUTE_CONDITION)  -o=$@
 
 $(MAP_ROUTES_PBF_FP):  $(MAP_COUNTRY_ROUTES_O5M) | __check_MAP
-	$(OSMCONVERT) --hash-memory=240-30-2  -B=$(BOUNDARY_POLYGON_FP) --drop-version $^  -o=$@
+	$(OSMCONVERT) --hash-memory=240-30-2 -B=$(BOUNDARY_POLYGON_FP) --drop-version $^  -o=$@
 
 
 $(MAP_HIKING_SYMBOLS_OSM_FP): $(MAP_ROUTES_PBF_FP)
