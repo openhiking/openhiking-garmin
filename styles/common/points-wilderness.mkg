@@ -3,17 +3,29 @@
 #
 # Point rendering: Wilderness Facilities
 #
-# Copyright (c) 2021-2024 OpenHiking contributors
+# Copyright (c) 2021-2025 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-amenity=shelter & shelter_type=basic_hut & foot!=no  [0x6401 resolution 22]
-amenity=shelter & shelter_type=picnic_shelter & foot!=no [0x6403 resolution 22]
-amenity=shelter & shelter_type!=public_transport & foot!=no [0x6402 resolution 22]
+if (amenity=shelter & foot!=no) then
+    shelter_type=basic_hut [0x6401 resolution 22]
+    shelter_type=picnic_shelter [0x6403 resolution 22]
+    shelter_type!=public_transport [0x6402 resolution 22]
+end
+
+#amenity=shelter & shelter_type=basic_hut & foot!=no  [0x6401 resolution 22]
+#amenity=shelter & shelter_type=picnic_shelter & foot!=no [0x6403 resolution 22]
+#amenity=shelter & shelter_type!=public_transport & foot!=no [0x6402 resolution 22]
 
 tourism=picnic_site & foot!=no [0x6404 resolution 24]
-leisure=picnic_table & foot!=no [0x6404 resolution 24]
+
+if (leisure=picnic_table & foot!=no) then
+    covered=yes [0x6403 resolution 22]
+    () [0x6404 resolution 24]
+end
+
+# leisure=picnic_table & foot!=no [0x6404 resolution 24]
 amenity=bench & foot!=no  [0x1170a resolution 24]
 leisure=firepit & foot!=no [0x5300 resolution 24]
 
