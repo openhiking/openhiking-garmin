@@ -3,10 +3,11 @@
 #
 # Forestry boundary rendering definitions
 #
-# Copyright (C) 2021-2022 OpenHiking contributors
+# Copyright (C) 2025 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
-boundary=forest_section {name '${name}' } [0x10e00 resolution 24]
+boundary=administrative {name '${name}' } [0x10e00 resolution 24]
+boundary=forest_section {name '${name}' } [0x10e01 resolution 24]
 
