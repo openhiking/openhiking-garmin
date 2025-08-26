@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Forestry boundary rendering definitions
+#
+# Copyright (C) 2021-2022 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+boundary=forest_section {name '${name}' } [0x10e00 resolution 24]
+
