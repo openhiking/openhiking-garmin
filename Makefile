@@ -630,8 +630,8 @@ cleanoutput:
 
 
 test:
-	@echo $(FAMILY_NAME_STRIPPED)
-	@echo $(GMAPI_DIR_NAME)
+	@echo $(TRANSPARENT)
+	@echo $(TRANSPARENCY_OPT)
 
 
 
