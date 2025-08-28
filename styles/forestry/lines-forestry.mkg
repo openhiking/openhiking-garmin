@@ -8,5 +8,5 @@
 #
 ########################################################
 
-#boundary=forest_section  [0x10e01 resolution 22]
-#boundary=administrative  [0x10e00 resolution 20]
+boundary=forest_section  [0x10e01 resolution 22 continue]
+boundary=administrative  [0x10e00 resolution 20 continue]
