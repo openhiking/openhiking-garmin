@@ -1,7 +1,7 @@
 ; for.typ
-; Longueur: 165 octets
-; Fichier TYP compilé     28/08/2025     18:53:56
-; Décompilé le 8/28/2025 à 6:54:03 PM
+; Longueur: 466 octets
+; Fichier TYP compilé     09/01/2025     20:49:59
+; Décompilé le 9/1/2025 à 8:50:01 PM
 
 [_id]
 ProductCode=1
@@ -159,3 +159,41 @@ ExtendedLabels=N
 
 
 ;====================== POINTS ==========================
+
+
+[_point]
+Type=0x00c00
+;GRMN_TYPE: Political Entities/CITY_LT5K, SMALL_CITY/Small city or town center, typically less than 50K inhabitants/Non NT
+String1=0x01,
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#FF3000
+ContourColor=No
+DayXpm="3 3 2 1"   Colormode=16
+"!	c #FFFFFF"
+"  	c none"
+"   "
+" ! "
+"   "
+;123
+[end]
+
+
+[_point]
+Type=0x00d00
+;GRMN_TYPE: Political Entities/CITY_UNKNOWN/City of unknown population/Non NT
+String1=0x01,
+ExtendedLabels=Y
+FontStyle=Default
+CustomColor=Day
+DaycustomColor:#009500
+ContourColor=No
+DayXpm="3 3 2 1"   Colormode=16
+"!	c #FFFFFF"
+"  	c none"
+"   "
+" ! "
+"   "
+;123
+[end]

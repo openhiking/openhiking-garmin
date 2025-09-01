@@ -1,0 +1,12 @@
+#######################################################
+# OpenHikingMap
+#
+# Forestry naming rendering
+#
+# Copyright (C) 2025 OpenHiking contributors
+# SPDX-License-Identifier: GPL-3.0-only
+#
+########################################################
+
+boundary=administrative  {name '${name}' } [0xc00 resolution 20 ]
+boundary=forest_section  {name '${name}' } [0xd00 resolution 22 ]
