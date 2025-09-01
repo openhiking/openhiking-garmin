@@ -8,7 +8,7 @@
 #
 ########################################################
 
-
+include "../common/codepage-remapping.mkg"
 include "points-forestry.mkg"
 
 
