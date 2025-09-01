@@ -8,4 +8,6 @@
 #
 ########################################################
 
+
+include "../common/codepage-remapping.mkg"
 include "poly-forestry.mkg"

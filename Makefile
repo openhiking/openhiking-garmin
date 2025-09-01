@@ -245,7 +245,12 @@ MERGED_ARGS=$(TILES_DIR)$(PSEP)mkgmap.args
 STYLES_RP := $(foreach wrd,$(STYLES),$(STYLES_DIR)$(PSEP)$(wrd))
 
 ifneq ($(HILL_SHADING),)
-      HILL_SHADING_DIR=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
+	DEM_PATH_OPT=--dem=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
+	DEM_POLY_OPT=--dem-poly=$(BOUNDARY_POLYGON_FP)
+#      HILL_SHADING_DIR=$(DEM_DIR)$(PSEP)$(HILL_SHADING)
+else
+	DEM_PATH_OPT=
+	DEM_POLY_OPT=
 endif
 
 ifeq ($(GENERATE_SEA),yes)
@@ -527,13 +532,12 @@ map:  $(MERGED_ARGS) $(TYP_FILE_FP)
 	java -Xmx$(MKGMAP_MEMORY) -ea -jar $(MKGMAP) --mapname=$(GARMIN_MAP_ID) \
 	--family-id=$(FAMILY_ID) --family-name=$(FAMILY_NAME) --product-id=1 --product-version=$(PRODUCT_VERSION) \
 	--series-name=$(SERIES_NAME) --overview-mapname=$(MAPNAME) --description:$(MAPNAME) \
-	 $(TYP_FILE_FP) --dem=$(HILL_SHADING_DIR) --dem-poly=$(BOUNDARY_POLYGON_FP) --draw-priority=$(DRAW_PRIORITY) \
+	 $(TYP_FILE_FP) $(DEM_PATH_OPT) $(DEM_POLY_OPT) --draw-priority=$(DRAW_PRIORITY) \
 	 --code-page=$(CODE_PAGE)  $(NEARBY_POI_CFG_OPT) $(ROAD_NAME_CFG_OPT) \
 	 $(PRECOMP_SEA_OPTION) $(LOWER_CASE) $(TRANSPARENCY_OPT) $(CYCLE_MAP_OPT) $(BOUNDS_OPTS) \
 	 --style-file=$(STYLES_DIR) --style="$(MAP_STYLE)" --style-option="CODE_PAGE=$(CODE_PAGE);$(MAP_REGION_SOPT)" \
 	 $(LICENSE_OPTION) $(COPYRIGHT_OPTION) $(GMAPSUPP_OPTION) $(GMAPI_OPTION) \
 	 --output-dir=$(GMAP_DIR) -c $(MERGED_ARGS) --max-jobs=$(MKGMAP_JOBS)
-
 check:
 	java -Xmx4192M -ea -jar $(MKGMAP) --style-file=$(STYLES_DIR) --style=$(MAP_STYLE) --check-styles
 
@@ -630,8 +634,8 @@ cleanoutput:
 
 
 test:
-	@echo $(TRANSPARENT)
-	@echo $(TRANSPARENCY_OPT)
+	@echo $(DEM_PATH_OPT)
+	@echo $(DEM_POLY_OPT)
 
 
 
