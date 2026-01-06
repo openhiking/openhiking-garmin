@@ -3,7 +3,7 @@
 #
 # Polygon - leisure rendering definitions
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2026 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -48,5 +48,6 @@ if (leisure=swimming_pool ) then
     area_size()>150 & (location!=indoor)  [0x3f00 resolution 22]
 end
 
+leisure=summer_camp {name '${short_name}'|'${name}'} [0x0900 resolution 20]
 tourism=camp_site {name '${short_name}'|'${name}'} [0x0900 resolution 20]
 
