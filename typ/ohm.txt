@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 78980 octets
-; Fichier TYP compilé     29/12/2024     18:08:45
-; Décompilé le 12/29/2024 à 6:08:48 PM
+; Fichier TYP compilé     01/06/2026     20:15:56
+; Décompilé le 1/6/2026 à 8:15:58 PM
 
 [_id]
 ProductCode=1
@@ -14247,6 +14247,37 @@ DayXpm="16 16 7 1"   Colormode=16
 " ############## "
 "  ###      ###  "
 "  ###      ###  "
+"                "
+;1234567890123456
+[end]
+
+
+[_point]
+Type=0x11705
+;GRMN_TYPE: User Customizable Points/CUSTOMIZABLE_POINT_70/User customizable point type/Non NT, NT
+String1=0x04,Summer camp
+String2=0x14,Ifjúsági tábor
+ExtendedLabels=N
+DayXpm="16 16 4 1"   Colormode=16
+"!	c #FFCA00"
+"#	c #FF9520"
+"%	c #7B6500"
+"  	c none"
+"                "
+"          #     "
+"          #     "
+"      %# ###    "
+"      ####!#    "
+"      %!!!!##   "
+"     %##!!!!#   "
+"     %#%!!!!!#  "
+"    %!##%!!!!#  "
+"    ###!%!!!!!# "
+"    %!####!!!!##"
+"   %!##!#%!!!## "
+"  ###!##!%!!##  "
+" ##!!##!#!%##   "
+" %#%%#%%#%%#    "
 "                "
 ;1234567890123456
 [end]

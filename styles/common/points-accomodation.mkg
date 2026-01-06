@@ -3,7 +3,7 @@
 #
 # Point rendering: Accomodation
 #
-# Copyright (c) 2021-2022 OpenHiking contributors
+# Copyright (c) 2021-2026 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -15,12 +15,16 @@ tourism=apartment & foot!=no [0x02B02 resolution 24]
 tourism=chalet & foot!=no  [0x02B03 resolution 24]
 tourism=motel  [0x02B04 resolution 24]
 
-tourism=camp_site & (camp_site=basic | backcountry=yes ) & foot!=no [0x04800 resolution 24]
-tourism=caravan_site & foot!=no [0x02B05 resolution 22]
+leisure=summer_camp [0x11705 resolution 24]
+tourism=camp_site &	group_only=yes [0x11705 resolution 24]
+
 if (tourism=camp_site & foot!=no) then
+	(camp_site=basic | backcountry=yes )  [0x04800 resolution 24]
 	()  [0x11702 resolution 22-24 continue]
 	()  [0x02B05 resolution 24]
 end
+
+tourism=caravan_site & foot!=no [0x02B05 resolution 22]
 
 if (tourism=alpine_hut & foot!=no) then
 	() [0x11700 resolution 22-24 continue]
