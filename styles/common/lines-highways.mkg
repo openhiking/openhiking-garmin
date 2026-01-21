@@ -55,11 +55,15 @@ end
 
 
 if (highway=secondary | highway=secondary_link) then
-#	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-	() {name '${ref|highway-symbol:box} ${bilingual_name}' | '${ref|highway-symbol:box}' | '${bilingual_name}';  }
+if (mkgmap:option:REGION=is) then
+	() {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';  }
+else
+	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+end
 	() [0x10e15 resolution 18-19 continue]
 	() [0x03 road_class=2 road_speed=4 resolution 20]
 end
+
 
 if (highway=tertiary | highway=tertiary_link) then
 if (mkgmap:option:REGION=is) then
