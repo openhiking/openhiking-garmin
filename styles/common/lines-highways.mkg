@@ -3,7 +3,7 @@
 #
 # Generic highway rendering definitions
 #
-# Copyright (c) 2021-2023 OpenHiking contributors
+# Copyright (c) 2021-2026 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -16,7 +16,11 @@ highway=* & name=* { set mkgmap:street='${name}'; }
 highway=* {set mkgmap:label:2='${alt_name}'}
 highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
 
-highway=* {set bilingual_name = '${name} (${name:hu|not-equal:name})' | '${name}'; }
+if (mkgmap:option:REGION=ce) then
+	highway=* {set bilingual_name = '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}'; }
+else
+	highway=* {set bilingual_name = '${name}'; }
+end
 
 highway=* & motorcar=destination { set mkgmap:throughroute=no; }
 highway=* & access=destination { set mkgmap:throughroute=no;  }
@@ -51,19 +55,28 @@ end
 
 
 if (highway=secondary | highway=secondary_link) then
-	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+#	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+	() {name '${ref|highway-symbol:box} ${bilingual_name}' | '${ref|highway-symbol:box}' | '${bilingual_name}';  }
 	() [0x10e15 resolution 18-19 continue]
 	() [0x03 road_class=2 road_speed=4 resolution 20]
 end
 
 if (highway=tertiary | highway=tertiary_link) then
+if (mkgmap:option:REGION=is) then
+	() {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';  }
+else
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+end
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
 
 
 if (highway=unclassified) then
+if (mkgmap:option:REGION=is) then
+	() {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';  }
+else
 	()  {name  '${bilingual_name}'}
+end
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=3 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
@@ -94,9 +107,12 @@ if (highway=service  & area!=yes ) then
 end
 
 
-
 if (highway=track  & area!=yes ) then
+if (mkgmap:option:REGION=is) then
+	() {name '${ref|highway-symbol:box} ${trail_name}' | ${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}' |'${trail_name}';  }
+else
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
+end
 	tracktype=grade1    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade2    [0x0d road_class=0 road_speed=1 resolution 20]
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
