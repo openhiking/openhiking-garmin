@@ -66,21 +66,13 @@ end
 
 
 if (highway=tertiary | highway=tertiary_link) then
-if (mkgmap:option:REGION=is) then
-	() {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';  }
-else
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-end
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
 
 
 if (highway=unclassified) then
-if (mkgmap:option:REGION=is) then
-	() {name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';  }
-else
-	()  {name  '${bilingual_name}'}
-end
+	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
 	motor_vehicle_restricted=true  [0x13 road_class=0 road_speed=3 resolution 24 continue]
 	motor_vehicle_restricted=true  [0x10E11 resolution 19]
 	()  [0x05 road_class=0 road_speed=3 resolution 19]
@@ -113,7 +105,7 @@ end
 
 if (highway=track  & area!=yes ) then
 if (mkgmap:option:REGION=is) then
-	() {name '${ref|highway-symbol:box} ${trail_name}' | '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}' |'${trail_name}';  }
+	() { name '${ref} ${name}'| '${ref} ${trail_name}' | '${ref}' | '${name}' |'${trail_name}'}
 else
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 end
