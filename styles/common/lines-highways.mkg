@@ -109,7 +109,7 @@ end
 
 if (highway=track  & area!=yes ) then
 if (mkgmap:option:REGION=is) then
-	() {name '${ref|highway-symbol:box} ${trail_name}' | ${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}' |'${trail_name}';  }
+	() {name '${ref|highway-symbol:box} ${trail_name}' | '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}' |'${trail_name}';  }
 else
 	() { name '${name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 end
