@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 79159 octets
-; Fichier TYP compilé     02/07/2026     18:19:36
-; Décompilé le 2/7/2026 à 6:19:40 PM
+; Longueur: 79255 octets
+; Fichier TYP compilé     02/07/2026     21:45:37
+; Décompilé le 2/7/2026 à 9:45:40 PM
 
 [_id]
 ProductCode=1
@@ -11718,16 +11718,16 @@ CustomColor=No
 ContourColor=No
 DayXpm="9 8 4 1"   Colormode=16
 "!	c #FF9541"
-"#	c #FFCA20"
+"#	c #FF3020"
 "%	c #FFFFFF"
 "  	c none"
 "    %    "
-"   %!%   "
+"   %#%   "
 "  %#!#%  "
-"  %!!!%  "
+"  %#!#%  "
 " %#!!!#% "
-" %!!!!!% "
-"%#!!!!!#%"
+" %#!!!#% "
+"%#######%"
 " %%%%%%% "
 ;123456789
 [end]
