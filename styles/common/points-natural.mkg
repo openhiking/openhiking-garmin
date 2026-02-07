@@ -3,25 +3,31 @@
 #
 # Point rendering: Natural
 #
-# Copyright (c) 2021-2024 OpenHiking contributors
+# Copyright (c) 2021-2026 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
 
 waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' | '${name:en}' } [0x6508 resolution 24]
-natural=peak & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' |'${name:hu} (${ele})' | '${name:en} (${ele})' } [0x06616 resolution 22]
-
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' | '${name:en}' }
-
+natural~'peak|volcano' & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' |'${name:hu} (${ele})' | '${name:en} (${ele})' } [0x06616 resolution 22]
 
 natural=peak [0x06616 resolution 22]
 
 if (natural=volcano) then
-	volcano:status=active | geological=volcanic_vent [0x06608 resolution 18]
-	() [0x06616 resolution 22]
+	if (volcano:status=active) then
+		name=* | ele=* [0x06608 resolution 20]
+		() [0x06612 resolution 20]
+	end
+	volcano:status=dormant [0x06611 resolution 22]
+	name=* | ele=* [0x06616 resolution 20]
+	() { delete natural; }
 end
 
-geological=volcanic_vent [0x06612 resolution 22]
+if (geological=volcanic_vent) then
+	name=* | ele=* [0x06612 resolution 20]
+	() { delete geological; }
+end
 
 natural=bay   [0x6503 resolution 22]
 

@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 79159 octets
-; Fichier TYP compilé     31/01/2026     22:33:11
-; Décompilé le 1/31/2026 à 10:42:03 PM
+; Fichier TYP compilé     02/07/2026     18:19:36
+; Décompilé le 2/7/2026 à 6:19:40 PM
 
 [_id]
 ProductCode=1
@@ -11704,6 +11704,32 @@ DayXpm="14 16 9 1"   Colormode=16
 "=!#%!#%?$!%?!="
 " ============ "
 ;12345678901234
+[end]
+
+
+[_point]
+Type=0x06611
+;GRMN_TYPE: Geographical Named Points of Interest - Land Related/RANGE/Range/Non NT, NT
+String1=0x04,Dormant volcano
+String2=0x14,Alvó tûzhányó
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=No
+ContourColor=No
+DayXpm="9 8 4 1"   Colormode=16
+"!	c #FF9541"
+"#	c #FFCA20"
+"%	c #FFFFFF"
+"  	c none"
+"    %    "
+"   %!%   "
+"  %#!#%  "
+"  %!!!%  "
+" %#!!!#% "
+" %!!!!!% "
+"%#!!!!!#%"
+" %%%%%%% "
+;123456789
 [end]
 
 
