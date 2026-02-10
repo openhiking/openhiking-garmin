@@ -3,7 +3,7 @@
 #
 # Point rendering: Leisure
 #
-# Copyright (c) 2021-2024 OpenHiking contributors
+# Copyright (c) 2021-2026 OpenHiking contributors
 # SPDX-License-Identifier: GPL-3.0-only
 #
 ########################################################
@@ -25,7 +25,12 @@ sport=equestrian & leisure=* [0x02D0D resolution 24]
 leisure=stadium & mkgmap:area2poi!=true  [0x02C08 resolution 24]
 leisure=sports_centre & mkgmap:area2poi!=true  [0x10D08 resolution 24]
 
-(amenity=public_bath | amenity=spa | leisure=spa)  [0x05400 resolution 24]
+if (amenity~'public_bath|spa') then
+    bath:type~'hot_spring|thermal' [0x6000 resolution 24]
+    natural=hot_spring [0x6000 resolution 24]
+    () [0x05400 resolution 24]
+end
+
 leisure=water_park [0x05400 resolution 24]
 leisure=beach_resort  [0x06604 resolution 24]
 

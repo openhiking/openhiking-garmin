@@ -36,7 +36,7 @@ if (natural=spring) then
 end
 
 disused:natural=spring [0x6510 resolution 24]
-natural=hot_spring [0x2c0c resolution 24]
+natural=hot_spring & amenity!=public_bath [0x2c0c resolution 24]
 
 natural=cliff & mkgmap:area2poi!=true [0x6607 resolution 22]
 natural=rock [0x06614 resolution 23]
