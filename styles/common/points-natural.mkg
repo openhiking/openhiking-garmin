@@ -16,7 +16,7 @@ natural=peak [0x06616 resolution 22]
 
 if (natural=volcano) then
 	volcano:status=active [0x06608 resolution 20]
-	volcano:status=dormant [0x06611 resolution 20]	
+	volcano:status=dormant [0x06611 resolution 22]	
 	name=* | ele=* [0x06616 resolution 22]
 end
 
@@ -50,6 +50,6 @@ end
 
 natural=cave_entrance  [0x06609 resolution 24]
 natural=saddle & name=*  [0x06613 resolution 24]
-natural=geyser  [0x06509 resolution 24]
+natural=geyser  [0x06509 resolution 22]
 
 natural=tree & name=* {name '${short_name}'|'${name}'} [0x06618 resolution 24]
