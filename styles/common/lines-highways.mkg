@@ -60,16 +60,26 @@ if (mkgmap:option:REGION=is) then
 else
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
 end
+if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved')
+	() [0x10e19 resolution 18-19 continue]
+	() [0x10e18 resolution 20 continue]		
+	() [0x0b road_class=0 road_speed=1 resolution 20]		
+else
 	() [0x10e15 resolution 18-19 continue]
 	() [0x03 road_class=2 road_speed=4 resolution 20]
+end
 end
 
 
 if (highway=tertiary | highway=tertiary_link) then
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
+if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved')
+	() [0x10e1A resolution 20 continue]		
+	() [0x0b road_class=0 road_speed=1 resolution 20]		
+else
 	()  [0x04 road_class=1 road_speed=4 resolution 19]
 end
-
+end
 
 if (highway=unclassified) then
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
@@ -114,7 +124,7 @@ end
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
 	if (tracktype=grade5) then
-		obstacle=* [0x10E18 resolution 22 continue]
+		obstacle=* [0x10E1B resolution 22 continue]
 		obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
 		tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
 	end
@@ -146,7 +156,7 @@ if (highway=path  & area!=yes ) then
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	sac_scale_level>2  [0x0e road_class=0 road_speed=0 resolution 22]
 
-	obstacle=* [0x10E19 resolution 22 continue]
+	obstacle=* [0x10E1C resolution 22 continue]
 	obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
 	() [0x16 road_class=0 road_speed=0 resolution 22]
 end
