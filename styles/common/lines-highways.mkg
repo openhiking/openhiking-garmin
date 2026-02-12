@@ -60,7 +60,7 @@ if (mkgmap:option:REGION=is) then
 else
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
 end
-if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved')
+if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved') then
 	() [0x10e19 resolution 18-19 continue]
 	() [0x10e18 resolution 20 continue]		
 	() [0x0b road_class=0 road_speed=1 resolution 20]		
@@ -73,7 +73,7 @@ end
 
 if (highway=tertiary | highway=tertiary_link) then
 	() {name '${ref} ${bilingual_name}' | '${ref}' | '${bilingual_name}';  }
-if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved')
+if (4wd_only=yes | surface_type~'unpaved_hard|unpaved_normalunpaved_soft' | surface~'gravel|unpaved') then
 	() [0x10e1A resolution 20 continue]		
 	() [0x0b road_class=0 road_speed=1 resolution 20]		
 else
