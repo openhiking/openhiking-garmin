@@ -12,8 +12,6 @@ waterway=waterfall {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${
 natural~'peak|volcano' & ele=* {name '${name} (${name:hu|not-equal:name}) (${ele})' | '${short_name} (${ele})'|'${name} (${ele})' |'${name:hu} (${ele})' | '${name:en} (${ele})' } [0x06616 resolution 22]
 natural=* {name '${name} (${name:hu|not-equal:name})' | '${name}' | '${name:hu}' | '${name:en}' }
 
-natural=peak [0x06616 resolution 22]
-
 if (natural=volcano) then
 	volcano:status=active [0x06608 resolution 20]
 	volcano:status=dormant [0x06611 resolution 22]	
@@ -23,6 +21,8 @@ end
 if (geological=volcanic_vent) then
 	volcano:status=active {name '${name}' } [0x06608 resolution 20]
 end
+
+natural=peak [0x06616 resolution 22]
 
 natural=bay   [0x6503 resolution 22]
 
