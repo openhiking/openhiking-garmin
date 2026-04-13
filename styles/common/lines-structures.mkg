@@ -35,6 +35,8 @@ if (tunnel=yes) then
 	waterway=*  [0x10E0E resolution 22 continue]	
 end
 
+embankment=yes & embankment:side~'left|right' { delete embankment; }
+
 if (embankment=yes) then
 	highway=* & highway!=proposed & highway!=construction & highway_width<3 [0x10E02 resolution 22 continue]
 	highway=* & highway!=proposed & highway!=construction & highway_width>2 & highway_width<7 & trail_color!=* [0x10E02 resolution 22 continue]
