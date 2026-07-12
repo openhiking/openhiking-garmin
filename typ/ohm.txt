@@ -1,7 +1,7 @@
 ; ohm.typ
-; Longueur: 79892 octets
-; Fichier TYP compilé     07/11/2026     19:00:24
-; Décompilé le 7/11/2026 à 7:00:26 PM
+; Longueur: 79984 octets
+; Fichier TYP compilé     07/12/2026     10:16:57
+; Décompilé le 7/12/2026 à 10:17:00 AM
 
 [_id]
 ProductCode=1
@@ -11231,7 +11231,7 @@ ExtendedLabels=Y
 FontStyle=SmallFont
 CustomColor=No
 ContourColor=No
-DayXpm="12 16 15 1"   Colormode=16
+DayXpm="12 16 16 1"   Colormode=16
 "!	c #130000"
 "#	c #270000"
 "%	c #5A0B00"
@@ -11242,23 +11242,24 @@ DayXpm="12 16 15 1"   Colormode=16
 "1	c #863F11"
 "2	c #985325"
 "3	c #5E8896"
-"4	c #39FFFF"
-"5	c #39FFFF"
+"4	c #3995FF"
+"5	c #39CAFF"
 "6	c #BDFFFF"
 "7	c #FFFFFF"
+"8	c #39FFFF"
 "  	c none"
 "     777    "
-"   776667   "
-"  76464667  "
-" 7666666467 "
-" 7666656667 "
-"  76465667  "
-"  76646467  "
-"  76644667  "
-"   764647   "
-"   766567   "
-"    7467    "
-"    7667    "
+"   768467   "
+"  76456487  "
+" 7846686467 "
+" 7458646547 "
+"  75465847  "
+"  74586467  "
+"   754687   "
+"   748647   "
+"    7547    "
+"    7487    "
+"    7647    "
 "   7*#!37   "
 " 72?$1?#2?7 "
 "71*%%=#?%*17"
