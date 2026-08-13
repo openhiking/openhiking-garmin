@@ -9,6 +9,7 @@
 ########################################################
 
 overgrown=yes & highway=* & obstacle!=* {set obstacle=vegetation;}
+(highway=track_doubtful | highway=path_doubtful) & obstacle=* { delete obstacle; }
 obstacle=* {name '${obstacle_description}'|'${name}'}
 
 
@@ -18,7 +19,7 @@ if (obstacle=fallen_tree & highway=*) then
     (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20  [0x1171A resolution 24 ]
 end
 
-if (overgrown=yes & highway=*) then
+if (obstacle=vegetation & highway=* & highway!=track_doubtful & highway!=path_doubtful) then
     mkgmap:line2poi!=*  [0x1171B resolution 24 ]
     mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x1171B resolution 24 ]
     (mkgmap:line2poitype=start | mkgmap:line2poitype=end)  &  mkgmap:way-length>=20  [0x1171B resolution 24 ]
