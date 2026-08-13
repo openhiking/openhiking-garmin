@@ -23,10 +23,11 @@ if (highway=track ) then
 	end
 end
 
+highway=track_doubtful {set highway_width=2}
 highway=steps & area!=yes { set highway_width=5 }
 highway=via_ferrata { set highway_width=5 }
 highway=cycleway { set highway_width=3 }
-(highway=pedestrian | highway=path) & area!=yes { set highway_width=2 }
+(highway=pedestrian | highway=path | highway=path_doubtful) & area!=yes { set highway_width=2 }
 route=ferry { set highway_width= 2 }
 (highway=footway | highway=platform | railway=platform) & area!=yes { set highway_width=1 }
 

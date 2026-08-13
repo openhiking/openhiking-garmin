@@ -124,8 +124,8 @@ end
 	tracktype=grade3    [0x0a road_class=0 road_speed=1 resolution 21]
 	tracktype=grade4    [0x0a road_class=0 road_speed=1 resolution 21]
 	if (tracktype=grade5) then
-		obstacle=* [0x10E1B resolution 22 continue]
-		obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
+		overgrown=yes | obstacle=* [0x10E1B resolution 22 continue]
+		overgrown=yes | obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
 		tracktype=grade5    [0x0f road_class=0 road_speed=1 resolution 22]
 	end
 
@@ -156,8 +156,8 @@ if (highway=path  & area!=yes ) then
 	sac_scale_tag!=* { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}
 	sac_scale_level>2  [0x0e road_class=0 road_speed=0 resolution 22]
 
-	obstacle=* [0x10E1C resolution 22 continue]
-	obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
+	overgrown=yes | obstacle=* [0x10E1C resolution 22 continue]
+	overgrown=yes | obstacle=* [0x0b road_class=0 road_speed=0 resolution 22]
 	() [0x16 road_class=0 road_speed=0 resolution 22]
 end
 
@@ -169,6 +169,9 @@ end
 (highway=platform | railway=platform)  & area!=yes  { name '${bilingual_name} ${trail_name}'|'${bilingual_name}'|'${trail_name}'}    [0x11 road_class=0 road_speed=1 resolution 22]
 highway=cycleway & area!=yes    [0x08 road_class=0 road_speed=1 resolution 21]
 highway=steps  & area!=yes   [0x12 road_class=0 road_speed=1 resolution 22]
+
+highway=track_doubtful [0x10E1D resolution 24]
+highway=path_doubtful [0x10E1E resolution 24]
 
 highway=bridleway   & area!=yes   [0x16 road_class=0 road_speed=1 resolution 22]
 
