@@ -1,7 +1,7 @@
 ; ohm.typ
 ; Longueur: 80194 octets
-; Fichier TYP compilé     13/08/2026     17:16:41
-; Décompilé le 8/13/2026 à 5:16:43 PM
+; Fichier TYP compilé     13/08/2026     17:20:35
+; Décompilé le 8/13/2026 à 5:20:38 PM
 
 [_id]
 ProductCode=1
@@ -4544,7 +4544,7 @@ Type=0x10e1e
 ;GRMN_TYPE: Customizable Line Types/CUSTOMIZABLE_LINE_31/Non-routable customizable line/Non NT, NT
 UseOrientation=Y
 Xpm="32 2 2  1"
-"! c #C5C5C5"
+"! c #B4B4B4"
 "  c none"
 "!!!!    !!!!    !!!!    !!!!    "
 "!!!!    !!!!    !!!!    !!!!    "
