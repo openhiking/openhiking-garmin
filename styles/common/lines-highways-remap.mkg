@@ -8,8 +8,8 @@
 #
 ########################################################
 
-highway=track & fixme=resurvey & (obstacle=vegetation|overgrown=yes) { set highway=track_doubtful; }
-highway=path & fixme=resurvey & (obstacle=vegetation|overgrown=yes) { set highway=path_doubtful; }
+highway=track & fixme=resurvey & (obstacle=vegetation|overgrown=yes) { set highway=track_doubtful; delete obstacle; delete overgrown; }
+highway=path & fixme=resurvey & (obstacle=vegetation|overgrown=yes) { set highway=path_doubtful; delete obstacle; delete overgrown;}
 
 # Secondary, tertiary, unclassified, residential, living_street, service downgrade
 #if  (highway~'secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service' & area!=yes) then
