@@ -8,8 +8,9 @@
 #
 ########################################################
 
-
+overgrown=yes & highway=* & obstacle!=* {set obstacle=vegetation;}
 obstacle=* {name '${obstacle_description}'|'${name}'}
+
 
 if (obstacle=fallen_tree & highway=*) then
     mkgmap:line2poi!=*  [0x1171A resolution 24 ]
@@ -17,7 +18,7 @@ if (obstacle=fallen_tree & highway=*) then
     (mkgmap:line2poitype=start | mkgmap:line2poitype=end) &  mkgmap:way-length>=20  [0x1171A resolution 24 ]
 end
 
-if ((obstacle=vegetation|overgrown=yes) & highway=*) then
+if (overgrown=yes & highway=*) then
     mkgmap:line2poi!=*  [0x1171B resolution 24 ]
     mkgmap:line2poitype=mid & (mkgmap:way-length<20 | mkgmap:way-length>150)  [0x1171B resolution 24 ]
     (mkgmap:line2poitype=start | mkgmap:line2poitype=end)  &  mkgmap:way-length>=20  [0x1171B resolution 24 ]
