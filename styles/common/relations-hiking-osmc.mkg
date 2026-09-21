@@ -101,7 +101,7 @@ if (type=route & route~'hiking|foot' & state!=proposed) then
 	
 	
 	# Yellow
-	osmc:symbol~'^yellow:white:yellow_bar.+' & jel!=* & kct_yellow!=* & operator!=KST {
+	osmc:symbol~'^yellow:white:yellow_bar.*' & jel!=* & kct_yellow!=* & operator!=KST {
 	apply {
 		add trail_p4_color=yellow;
 		add trail_p4_symbol='${osmc:symbol}';
